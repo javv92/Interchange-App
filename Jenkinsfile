@@ -20,7 +20,7 @@ pipeline {
                 LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
                 APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
 
-                sh (returnStdout: true, script: "aws s3 cp s3://intelica-devops/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")
+                sh (returnStdout: true, script: "aws s3 cp s3://itl-0009-devops-all-s3-main-01/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")
             }
           }
         }
@@ -28,7 +28,7 @@ pipeline {
         stage('Infrastructure Provisioning'){
             steps {
                 script {
-                    sh (returnStdout: true, script: "aws s3 cp infrastructure/cfn-main-template.yaml s3://intelica-devops/app-interchange/cloudformation-templates/${ENVIRONMENT}/cfn-main-template.yaml", label: "Uploading from s3")
+                    sh (returnStdout: true, script: "aws s3 cp infrastructure/cfn-main-template.yaml s3://itl-0009-devops-all-s3-main-01/app-interchange/cloudformation-templates/${ENVIRONMENT}/cfn-main-template.yaml", label: "Uploading from s3")
 
                     dir('infrastructure'){
 
@@ -78,7 +78,7 @@ pipeline {
                     dir('Lambdas/lambda_app'){
                         sh (returnStdout: false, script: "zip -r ${LAMBDA_APP_ZIP_NAME} *", label: "Compressing files ..." )
 
-                        sh (returnStdout: true, script: "aws s3 cp ${LAMBDA_APP_ZIP_NAME} s3://intelica-devops/app-interchange/builds/${ENVIRONMENT}/lambda-app/", label: "Uploading to s3")
+                        sh (returnStdout: true, script: "aws s3 cp ${LAMBDA_APP_ZIP_NAME} s3://itl-0009-devops-all-s3-main-01/app-interchange/builds/${ENVIRONMENT}/lambda-app/", label: "Uploading to s3")
 
                         def scriptString = "aws lambda update-function-code \
                                           --function-name ${LAMBDA_APP_ARN} \
@@ -129,13 +129,13 @@ pipeline {
 
                     sh (returnStdout: false, script: "zip -ur ${APP_ZIP_NAME} *.py .env", label: "Compressing python files ..." )
 
-                    sh (returnStdout: false, script: "aws s3 cp ${APP_ZIP_NAME} s3://intelica-devops/app-interchange/builds/${ENVIRONMENT}/ec2-app/", label: "Uploading to s3")
+                    sh (returnStdout: false, script: "aws s3 cp ${APP_ZIP_NAME} s3://itl-0009-devops-all-s3-main-01/app-interchange/builds/${ENVIRONMENT}/ec2-app/", label: "Uploading to s3")
 
                     def deployment = sh (returnStdout: true, script: "aws deploy create-deployment \
                         --application-name Application-app-interchange \
                         --deployment-group-name Dg-app-interchange-${ENVIRONMENT} \
                         --file-exists-behavior OVERWRITE --ignore-application-stop-failures \
-                        --s3-location bucket=intelica-devops,bundleType=zip,key=app-interchange/builds/${ENVIRONMENT}/ec2-app/${APP_ZIP_NAME}", label: "Deploying App ...")
+                        --s3-location bucket=itl-0009-devops-all-s3-main-01,bundleType=zip,key=app-interchange/builds/${ENVIRONMENT}/ec2-app/${APP_ZIP_NAME}", label: "Deploying App ...")
 
                     def jsonResult = readJSON text: deployment
 
