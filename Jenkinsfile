@@ -194,7 +194,7 @@ def getEnvironment()
         environment = 'dev'
       }
 
-      if(vcs == 'github.com' && org == 'Intelica-Interchange'){
+      if(vcs == 'github.com'/* && org == 'Intelica-Interchange'*/){
           if (isDevelop()) {
             environment = 'dev'
           }
