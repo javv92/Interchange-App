@@ -1,0 +1,12 @@
+dev:
+  RdsInstanceType: db.r5.xlarge
+  ApplicationInstanceType: r6g.xlarge
+  RdsPort: 5432
+qas:
+  RdsInstanceType: db.r5.xlarge
+  ApplicationInstanceType: r6g.2xlarge
+  RdsPort: 5432
+prd:
+  RdsInstanceType: db.r5.2xlarge
+  ApplicationInstanceType: r6g.2xlarge
+  RdsPort: 5432

@@ -1,0 +1,527 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Interchange Module Stack
+
+Parameters:
+  Environment:
+    Description: Nombre de entorno el cual sera utilizado como sufijo de los recursos.
+    Type: String
+    Default: dev
+  ProjectName:
+    Description: Nombre del proyecto.
+    Type: String
+    Default: app-interchange
+  VpcId:
+    Description: Elegir cual VPC sera utilizado.
+    Type: AWS::EC2::VPC::Id
+    Default: vpc-03759c63613bfc1c4
+  PrivateSubnetIds:
+    Description: Elegir que subnets privadas usará
+    Type: List<AWS::EC2::Subnet::Id>
+    Default: subnet-05fe09864c5df8970,subnet-04f96756abe051995
+  ApplicationAmiId:
+    Description: Elegir que id de ami usar para la aplicación
+    Type: String
+    Default: ami-05f3141013eebdc12
+  ApplicationInstanceType:
+    Description: Elegir que tipo de instancia usar para la aplicación
+    Type: String
+    Default: r6g.2xlarge
+  KeyPairName:
+    Description: Elegir la llave para acceder a las instancias
+    Type: String
+    Default: dev_intellica
+  RdsInstanceType:
+    Description: Elegir que tipo de instancia usar para el rds
+    Type: String
+    Default: db.r5.xlarge
+  RdsPort:
+    Description: Puerto de instancia rds
+    Type: Number
+    Default: 5432
+
+Mappings:
+  EnvironmentUpperName:
+    dev:
+      Name: DEV
+    qas:
+      Name: QAS
+    prd:
+      Name: PRD
+  CwRetentionDays:
+    dev:
+      Days: 7
+    qas:
+      Days: 7
+    prd:
+      Days: 30
+
+Resources:
+
+# ---------------------------------------------------------------------------- #
+#                                  Security and Permission                     #
+# ---------------------------------------------------------------------------- #
+
+
+  ApplicationEc2SecurityGroup:
+     Type: AWS::EC2::SecurityGroup
+     Properties:
+       GroupDescription: 'SecurityGroup para puertos de la ec2 app'
+       GroupName: !Sub ${ProjectName}-sg-ec2-${Environment}
+       SecurityGroupEgress:
+          - CidrIp: 0.0.0.0/0
+            FromPort: -1
+            IpProtocol: -1
+            ToPort: -1
+       SecurityGroupIngress:
+          - CidrIp: 0.0.0.0/0
+            Description: 'Accesos ssh'
+            FromPort: 22
+            IpProtocol: tcp
+            ToPort: 22
+       Tags:
+          - Key: Name
+            Value: !Join [ "", ['SG_APP_INTERCHANGE_EC2_', !FindInMap [ EnvironmentUpperName, !Ref Environment, Name ]  ]]
+       VpcId: !Ref VpcId
+
+  RdsSecurityGroup:
+     Type: AWS::EC2::SecurityGroup
+     Properties:
+       GroupDescription: 'SecurityGroup para puertos del rds'
+       GroupName: !Sub ${ProjectName}-sg-rds-${Environment}
+       SecurityGroupEgress:
+          - CidrIp: 0.0.0.0/0
+            FromPort: -1
+            IpProtocol: -1
+            ToPort: -1
+       SecurityGroupIngress:
+          - CidrIp: 0.0.0.0/0
+            Description: 'Accesos psql'
+            FromPort: !Ref RdsPort
+            IpProtocol: tcp
+            ToPort: !Ref RdsPort
+       Tags:
+          - Key: Name
+            Value: !Join [ "", ['SG_APP_INTERCHANGE_RDS_', !FindInMap [ EnvironmentUpperName, !Ref Environment, Name ]  ]]
+       VpcId: !Ref VpcId
+
+  LambdaIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${ProjectName}-role-lambda-execution-${Environment}
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: !Sub ${ProjectName}-app-policy-s3-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 's3:ListBucket'
+              Resource: !Sub arn:aws:s3:::intelica-interchange-landing-${Environment}
+            - Effect: Allow
+              Action:
+                - 's3:GetBucketLocation'
+                - 's3:GetObject'
+                - 's3:GetObjectAcl'
+                - 's3:PutObject'
+                - 's3:PutObjectAcl'
+                - 's3:DeleteObject'
+              Resource: !Sub arn:aws:s3:::intelica-interchange-landing-${Environment}/*
+        - PolicyName: !Sub ${ProjectName}-app-policy-sqs-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 'sqs:SendMessage'
+                - 'sqs:GetQueueAttributes'
+              Resource: !Sub arn:aws:sqs:us-east-1:${AWS::AccountId}:${ProjectName}*-${Environment}
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  RdsIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${ProjectName}-role-rds-${Environment}
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - rds.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: !Sub ${ProjectName}-rds-policy-s3-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 's3:GetBucketLocation'
+                - 's3:ListBucket'
+                - 's3:GetObject'
+                - 's3:GetObjectAcl'
+                - 's3:PutObject'
+                - 's3:PutObjectAcl'
+                - 's3:DeleteObject'
+              Resource: !Sub arn:aws:s3:::intelica-interchange*-${Environment}/*
+            - Effect: Allow
+              Action:
+                - 's3:ListBucket'
+              Resource: !Sub arn:aws:s3:::intelica-interchange*-${Environment}
+
+  ApplicationEc2IamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${ProjectName}-role-ec2-${Environment}
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: !Sub ${ProjectName}-app-policy-s3-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 's3:GetBucketLocation'
+                - 's3:ListBucket'
+                - 's3:GetObject'
+                - 's3:GetObjectAcl'
+                - 's3:PutObject'
+                - 's3:PutObjectAcl'
+                - 's3:DeleteObject'
+              Resource: !Sub arn:aws:s3:::intelica-interchange*-${Environment}/*
+            - Effect: Allow
+              Action:
+                - 's3:ListBucket'
+              Resource: !Sub arn:aws:s3:::intelica-interchange*-${Environment}
+        - PolicyName: !Sub ${ProjectName}-devops-policy-s3-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 's3:List*'
+              Resource: !Sub arn:aws:s3:::intelica-devops
+            - Effect: Allow
+              Action:
+                - 's3:Get*'
+              Resource: !Sub arn:aws:s3:::intelica-devops/*
+        - PolicyName: !Sub ${ProjectName}-app-policy-sqs-${Environment}
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+                - 'sqs:ReceiveMessage'
+                - 'sqs:SendMessage'
+                - 'sqs:DeleteMessage'
+                - 'sqs:GetQueueAttributes'
+              Resource: !Sub arn:aws:sqs:us-east-1:${AWS::AccountId}:${ProjectName}*-${Environment}
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+
+  ProfileApplicationEc2IamRole:
+    DependsOn:
+      - ApplicationEc2IamRole
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: !Sub ${ProjectName}-role-ec2-${Environment}
+      Path: "/"
+      Roles:
+        - !Ref ApplicationEc2IamRole
+
+
+# ---------------------------------------------------------------------------- #
+#                                Application                                   #
+# ---------------------------------------------------------------------------- #
+
+  LandingS3Bucket:
+    Type: AWS::S3::Bucket
+    DependsOn:
+      - LambdaInvokePermission
+    Properties:
+      BucketName: !Sub intelica-interchange-landing-${Environment}
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: s3:ObjectCreated:*
+            Function: !GetAtt LambdaFunction.Arn
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  LogS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub intelica-interchange-log-${Environment}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  SchemeFeeS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub intelica-operational-scheme-fee-${Environment}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  OperationalS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub intelica-interchange-operational-${Environment}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  RawS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub intelica-interchange-raw-${Environment}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  StructuredcS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub intelica-interchange-structured-${Environment}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  ApplicationEc2:
+    Type: AWS::EC2::Instance
+    Properties:
+      BlockDeviceMappings:
+      - DeviceName: "/dev/xvda"
+        Ebs:
+          VolumeType: "gp2"
+          DeleteOnTermination: "true"
+          VolumeSize: "80"
+      EbsOptimized: true
+      IamInstanceProfile: !Ref ProfileApplicationEc2IamRole
+      ImageId: !Ref ApplicationAmiId
+      InstanceType: !Ref ApplicationInstanceType
+      KeyName: !Ref KeyPairName
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            yum update -y
+            yum groupinstall "Development Tools" -y
+            yum erase openssl-devel -y
+            yum install openssl11 openssl11-devel libffi-devel sqlite-devel bzip2-devel wget -y
+            mkdir /python-versions
+            wget -c https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz -O - | tar xz -C /python-versions/
+            cd /python-versions/Python-3.10.5/
+            ./configure --enable-optimizations
+            make
+            make altinstall
+            yum install python3-pip
+            rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+            echo -e "[elastic-8.x]\n\
+            name=Elastic repository for 8.x packages\n\
+            baseurl=https://artifacts.elastic.co/packages/8.x/yum\n\
+            gpgcheck=1\n\
+            gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch\n\
+            enabled=1\n\
+            autorefresh=1\n\
+            type=rpm-md" > /etc/yum.repos.d/repoelastic.repo
+            yum install filebeat -y
+            systemctl enable filebeat
+            rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+            yum install logstash -y
+            systemctl enable logstash
+            cd /usr/share/logstash/
+            bin/logstash-plugin install logstash-output-opensearch
+      Monitoring: true
+      PropagateTagsToVolumeOnCreation: true
+      SecurityGroupIds:
+        - !Ref ApplicationEc2SecurityGroup
+      SubnetId: !Select [ 0, !Ref PrivateSubnetIds ]
+      Tags:
+        - Key: Name
+          Value: !Join [ "", ['APP_INTERCHANGE_', !FindInMap [ EnvironmentUpperName, !Ref Environment, Name ]  ]]
+
+  LambdaFunction:
+    DependsOn:
+      - LambdaIamRole
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub ${ProjectName}-lambda-${Environment}
+      Timeout: 180
+      MemorySize: 128
+      Architectures:
+        - x86_64
+      Role: !GetAtt LambdaIamRole.Arn
+      Handler: trigger_app.lambda_handler
+      Runtime: python3.8
+      Code:
+        ZipFile: |
+            import json
+
+            def lambda_handler(event, context):
+                return {
+                    'statusCode': 200,
+                    'body': json.dumps('Hello from Lambda!')
+                }
+
+  CloudWatchLogsGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${ProjectName}-lambda-${Environment}
+      RetentionInDays: !FindInMap [CwRetentionDays, !Ref Environment , Days ]
+
+  LambdaInvokePermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      FunctionName: !Ref LambdaFunction
+      Action: 'lambda:InvokeFunction'
+      Principal: s3.amazonaws.com
+      SourceAccount: !Sub '${AWS::AccountId}'
+      SourceArn: !Sub 'arn:aws:s3:::intelica-interchange-landing-${Environment}'
+
+  RdsAuroraSecrets:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub ${ProjectName}-secret-rds-credentials-${Environment}
+      Description: 'Credenciales root Rds App Interchange'
+      GenerateSecretString:
+        SecretStringTemplate: '{"username": "root"}'
+        GenerateStringKey: 'password'
+        PasswordLength: 16
+        ExcludeCharacters: '"@/\$'
+
+  RdsAuroraCluster:
+    DependsOn:
+      - RdsAuroraSecrets
+      - RdsIamRole
+    Type: AWS::RDS::DBCluster
+    Properties:
+      CopyTagsToSnapshot: true
+      DBClusterIdentifier: !Sub ${ProjectName}-aurora-psql-cluster-${Environment}
+      DBClusterParameterGroupName: default.aurora-postgresql13
+      AssociatedRoles:
+      - FeatureName: s3Import
+        RoleArn: !GetAtt RdsIamRole.Arn
+      DBSubnetGroupName: default-vpc-03759c63613bfc1c4
+      DeletionProtection: false
+      Engine: aurora-postgresql
+      EngineMode: provisioned
+      EngineVersion: '13.6'
+      MasterUsername: !Join ['', ['{{resolve:secretsmanager:', !Ref RdsAuroraSecrets, ':SecretString:username}}' ]]
+      MasterUserPassword: !Join ['', ['{{resolve:secretsmanager:', !Ref RdsAuroraSecrets, ':SecretString:password}}' ]]
+      DatabaseName: "interchange"
+      Port: !Ref RdsPort
+      StorageEncrypted: true
+      VpcSecurityGroupIds:
+        - !Ref RdsSecurityGroup
+
+  RdsAuroraInstance:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      DBInstanceIdentifier: !Sub ${ProjectName}-aurora-psql-instance-1-${Environment}
+      Engine: aurora-postgresql
+      DBClusterIdentifier: !Ref RdsAuroraCluster
+      PubliclyAccessible: 'true'
+      DBInstanceClass: !Ref RdsInstanceType
+
+
+#---------------------------------------------------------------------------- #
+#                               OpenSearch                                    #
+#---------------------------------------------------------------------------- #
+
+  OpenSearchSecrets:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub ${ProjectName}-secret-opensearch-credentials-${Environment}
+      Description: 'opensearch-credentials'
+      GenerateSecretString:
+        SecretStringTemplate: '{"username": "master"}'
+        GenerateStringKey: 'password'
+        PasswordLength: 16
+        ExcludeCharacters: '"@/\$'
+
+  OpenSearchService:
+    DependsOn:
+      - OpenSearchSecrets
+    Type: AWS::OpenSearchService::Domain
+    Properties:
+      AccessPolicies:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: 'Allow'
+            Principal:
+              AWS: '*'
+            Action: 'es:*'
+            Resource: !Sub arn:aws:es:us-east-1:${AWS::AccountId}:domain/${ProjectName}-logs-${Environment}/*
+      ClusterConfig:
+        DedicatedMasterEnabled: false
+        InstanceCount: 3
+        ZoneAwarenessEnabled: false
+        InstanceType: 't3.small.search'
+        WarmEnabled: false
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: '60'
+        VolumeType: 'gp3'
+      DomainName: !Sub ${ProjectName}-logs-${Environment}
+      DomainEndpointOptions:
+        EnforceHTTPS: true
+        TLSSecurityPolicy: Policy-Min-TLS-1-2-2019-07
+      NodeToNodeEncryptionOptions:
+        Enabled: true
+      EncryptionAtRestOptions:
+        Enabled: true
+      AdvancedSecurityOptions:
+        Enabled: true
+        InternalUserDatabaseEnabled: true
+        MasterUserOptions:
+          MasterUserName: !Join ['', ['{{resolve:secretsmanager:', !Ref OpenSearchSecrets, ':SecretString:username}}' ]]
+          MasterUserPassword: !Join ['', ['{{resolve:secretsmanager:', !Ref OpenSearchSecrets, ':SecretString:password}}' ]]
+
+Outputs:
+  LambdaFunctionName:
+    Description: Arn de la funcion lambda app
+    Value: !GetAtt LambdaFunction.Arn
+  OpenSearchDomainEndpoint:
+    Value: !GetAtt OpenSearchService.DomainEndpoint
+  OpenSearchSecret:
+    Value: !Ref OpenSearchSecrets
+  RdsAuroraSecret:
+    Value: !Ref RdsAuroraSecrets
+  RdsAuroraEndpoint:
+    Value: !GetAtt RdsAuroraInstance.Endpoint.Address

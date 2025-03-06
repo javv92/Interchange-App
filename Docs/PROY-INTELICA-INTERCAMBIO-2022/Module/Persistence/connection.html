@@ -1,0 +1,3599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from datetime import date, datetime, timedelta                                              
+import pandas as pd
+import os
+import sys
+from typing import Any, List
+import boto3
+import pgdb
+import json
+import botocore
+import Logs.logs
+import sqlalchemy
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+from dateutil.relativedelta import relativedelta
+
+
+class connect_to_s3:
+    &#34;&#34;&#34;Connection methods to s3 repository.&#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        load_dotenv()
+        self.log_name = None
+        self.typeLog = None
+        self.client = None
+        self.exec_module = None
+
+    def loading_credentials(self, bucket: str) -&gt; List:
+        &#34;&#34;&#34;Loading credentials from .env config file.
+        
+        Args:
+            bucket (str): bucket to be accesed.
+    
+        Returns:
+            List: list of credentials.
+
+        &#34;&#34;&#34;
+        try:
+            buckets = self.get_buckets()
+            if bucket in buckets:
+                aws_region = os.getenv(&#34;AWS_DEFAULT_REGION_1&#34;, &#34;us-west-2&#34;)
+                aws_access_key_id = os.getenv(&#34;AWS_ACCESS_KEY_ID_1&#34;, &#34;&#34;)
+                aws_secret_key = os.getenv(&#34;AWS_SECRET_ACCESS_KEY_1&#34;, &#34;&#34;)
+            else:
+                print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+                sys.exit()
+            return [
+                aws_region,
+                aws_access_key_id,
+                aws_secret_key,
+            ]
+        except Exception as error:
+            print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+            sys.exit()
+
+    def __connect_s3(self, bucket: str) -&gt; object:
+        &#34;&#34;&#34;Connection to s3 buckets 
+        Args:
+            bucket: bucket to be accessed.
+
+        Returns 
+            object: boto3 object.
+        &#34;&#34;&#34;
+        try:
+            credentials = self.loading_credentials(bucket)
+            s3 = boto3.resource(
+                service_name=&#34;s3&#34;,
+                region_name=credentials[0],
+                aws_access_key_id=credentials[1],
+                aws_secret_access_key=credentials[2],
+            )
+            return s3
+        except Exception as error:
+            print(&#34;CRITICAL ERROR :&#34; + str(error) + &#34; ; Terminating script&#34;)
+            sys.exit()
+        except botocore.errorfactory.NoSuchBucket as error:
+            print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+            sys.exit()
+
+    def get_buckets(self) -&gt; list:
+        &#34;&#34;&#34;get list of buckets from enviroment.
+        
+        Returns:
+            buckets (list): list of buckets.
+        
+        &#34;&#34;&#34;
+        buckets = json.loads(os.getenv(&#34;BUCKETS&#34;))
+        return buckets
+
+    def upload_object(self, bucket: str, path_to_file: str, path_to_save: str) -&gt; bool:
+        &#34;&#34;&#34;Upload object to the specified bucket, returns True/False.
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file to be uploaded.
+            path_to_save (str): destiny path in bucket.
+        
+        Returns:
+            bool: True if is successfully uploaded, False if not.
+        
+        &#34;&#34;&#34;
+        try:
+            s3 = connect_to_s3().__connect_s3(bucket)
+            s3.Bucket(bucket).upload_file(Filename=path_to_file, Key=path_to_save)
+            return True
+        except boto3.exceptions.S3UploadFailedError as error:
+            if self.typeLog is not None:
+                Logs.logs.logs().exist_file(self.typeLog,self.client,&#34;VISA AND MASTERCARD&#34;,self.log_name,&#34;UPLOADING FILE TO S3&#34;,&#34;CRITICAL&#34;,f&#34;Exception {error} | terminating script &#34;,self.exec_module,upload=False)
+            else:
+                print(f&#34;Exception {error} | terminating script &#34;)
+            return False,error
+
+    def get_object(
+        self, bucket: str, path_to_file: str, path_to_save: str, download: bool = True
+    ) -&gt; bool | Any:
+        &#34;&#34;&#34;Download specified object from bucket
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file in bucket.
+            path_to_save (str): destiny path in local path.  
+            download (bool): 
+
+        Returns:
+            Any: True/False or Response object.
+        
+        &#34;&#34;&#34;
+        try:
+            s3 = connect_to_s3().__connect_s3(bucket)
+            if download:
+                &#34;&#34;&#34;Download object&#34;&#34;&#34;
+                result = s3.Bucket(bucket).download_file(
+                    Key=path_to_file, Filename=path_to_save
+                )
+
+                return True
+            else:
+                &#34;&#34;&#34;Gets response dict as return&#34;&#34;&#34;
+                response = s3.Bucket(bucket).Object(path_to_file).get()
+                return response
+        except botocore.exceptions.ClientError as Error:
+            print(Error)
+            return False
+
+    def delete_object(self, bucket: str, path_to_file: str) -&gt; bool:
+        &#34;&#34;&#34;Deletes specified object at bucket
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file in bucket
+
+        Returns:
+            bool: True if success or False if fails.
+        
+        &#34;&#34;&#34;
+        s3 = connect_to_s3().__connect_s3(bucket)
+        result = s3.Object(bucket, path_to_file).delete()
+        return True if (result[&#34;ResponseMetadata&#34;][&#34;HTTPStatusCode&#34;] == 204) else False
+
+    def list_content(self, bucket: str, filter: str = None) -&gt; list:
+        &#34;&#34;&#34;lists the contents of the specified bucket
+        
+        Args:
+            bucket (str): bucket to be searched.
+            filter (str): filter or folder in bucket.
+        
+        Returns:
+            list_of_objects (list): list of contents of specified bucket
+
+        &#34;&#34;&#34;
+        s3 = connect_to_s3().__connect_s3(bucket)
+        filter = &#34;&#34; if (filter == None) else filter
+        list_of_objects = []
+        for obj in s3.Bucket(bucket).objects.filter(Delimiter=&#34;\\&#34;, Prefix=filter):
+            list_of_objects.append(obj.key)
+        return list_of_objects
+
+
+class connect_to_postgreSQL:
+    &#34;&#34;&#34;Connection to postgreSQL database defined in .env&#34;&#34;&#34;
+
+    def __init__(self, bool_query:bool = False) -&gt; None:
+        load_dotenv()
+        self.bool_query = bool_query
+        self.query = &#39;&#39;
+
+    def __loading_credentials(self) -&gt; list:
+        &#34;&#34;&#34;Loading credentials from .env config file
+        
+        Returns:
+            list: list with credentials.
+        &#34;&#34;&#34;
+        database = os.getenv(&#34;POSTGRE_DATABASE&#34;, &#34;postgres&#34;)
+        host = os.getenv(
+            &#34;POSTGRE_HOST&#34;,
+            &#34;db-dev-intelica-instance-1.cf3zxr6zcsiz.us-east-1.rds.amazonaws.com&#34;,
+        )
+        port = os.getenv(&#34;POSTGRE_PORT&#34;, &#34;5432&#34;)
+        user = os.getenv(&#34;POSTGRE_USER&#34;, &#34;postgres_dev&#34;)
+        password = os.getenv(&#34;POSTGRE_PASSWORD&#34;, &#34;7s1Jy5ewQAu0NfDO9iwV&#34;)
+        return [database, host, port, user, password]
+
+    def conecction(self) -&gt; object:
+        &#34;&#34;&#34;Returns a connection class already initializated for postgreSQL database
+            Example of use:
+                connecting to database
+                x = connect_to_postgreSQL().conecction()
+                cur = x.cursor()
+                Exec function
+                cur.execute(&#39;SELECT version()&#39;)
+                Fetching result
+                db_version = cur.fetchone()
+                shows version
+                print(db_version)
+                then we close cursor
+                cur.close()
+
+            Returns:
+                object: connection object.
+        &#34;&#34;&#34;
+        try:
+            credentials = self.__loading_credentials()
+            connection = pgdb.Connection(
+                database=credentials[0],
+                host=credentials[1],
+                user=credentials[3],
+                password=credentials[4],
+                **{&#34;port&#34;: credentials[2]},
+            )
+            return connection
+        except Exception as e:
+            print(e)
+            return [(False, e)]
+
+    def prepare_engine(self) -&gt; object:
+        &#34;&#34;&#34;Creates an engine with sqlAlchemy using the credentials
+        
+        Returns:
+            object: Engine object.
+        &#34;&#34;&#34;
+        credentials = self.__loading_credentials()
+        connection_string = f&#34;postgresql://{credentials[3]}:{credentials[4]}@{credentials[1]}/{credentials[0]}&#34;
+        return create_engine(connection_string)
+
+    def execute_block(self, query: str, return_row_count: bool = False) -&gt; Any:
+        &#34;&#34;&#34;Executes a query
+        
+        Args:
+            query (str): query string
+            return_row_count (bool): return rows affected as message or as number.
+
+        Returns:
+            Any:  result_message if return_row_count = False or a list with the message and rows afectected.
+        &#34;&#34;&#34;
+        try:
+            conn = self.conecction()
+            cur = conn.cursor()
+            cur.execute(query)
+            result_message = f&#34;Query successfully executed, {cur.rowcount} row(s) affected&#34;
+            conn.commit()
+            cur.close()
+            conn.close()
+            if return_row_count:
+                return [result_message,cur.rowcount]
+            else:
+                return result_message
+        except Exception as e:
+            raise
+    def insert(self, query: str, records) -&gt; Any:
+        &#34;&#34;&#34;Executes insert query, returns message
+
+        Args:
+            query (str): query string
+            records (Any): a list of records to be insrted.
+
+        Returns:
+            result_message (str): Message.
+        
+        &#34;&#34;&#34;
+        try:
+            conn = self.conecction()
+            cur = conn.cursor()
+            sql_insert_query = query
+            result = cur.executemany(sql_insert_query, records)
+            result_message = &#34;records inserted/updated successfully into table&#34;
+            conn.commit()
+            cur.close()
+            conn.close()
+            return result_message
+        except Exception as e:
+            raise
+
+    def insert_log(self, records_list) -&gt; str:
+        &#34;&#34;&#34;Insert into Table control.t_log, returns message
+        
+        Args:
+            records_list (Any): list of records.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        sql_insert_query = &#34;&#34;&#34; insert into CONTROL.T_LOG (customer,brand,process_name,process_message,description_status,start_date,end_date,file_name) values (%s,%s,%s,%s,%s,CURRENT_TIMESTAMP,NULL,%s)&#34;&#34;&#34;
+        result_message = self.insert(sql_insert_query, records_list)
+        return result_message
+
+    def insert_control_file(self, records_list) -&gt; Any:
+        &#34;&#34;&#34;Insert into Table control.t_control_file , returns message
+        
+        Args:
+            records_list (Any): list of records.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        sql_insert_query = &#34;&#34;&#34; INSERT INTO CONTROL.T_CONTROL_FILE (CODE, BRAND, CUSTOMER, log_file_name, process_file_name,records_number,process_date,file_date,control_message,description_status,file_type,parent_zip,execution_id) VALUES(%s,%s,%s,%s,%s,0,%s,%s,%s,%s,%s,%s,%s)&#34;&#34;&#34;
+        result_message = self.insert(sql_insert_query, records_list)
+        return result_message
+
+    def truncate_table(self, table: str) -&gt; Any:
+        &#34;&#34;&#34;truncate table, returns message
+        
+        Args:
+            table (str): table name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table)]
+        query = &#34;truncate table %s&#34; % table
+        result_message = self.insert(query, records)
+        result_message = &#39;truncated : &#39; + table
+        return result_message
+
+    def drop_table(self, table_name: str) -&gt;Any:
+        &#34;&#34;&#34;Drops table, returns message
+        
+        Args:
+            table_name (str): table name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query = &#34;drop table if exists %s&#34; % table_name
+        if self.bool_query:
+            self.query+=query+&#39;;&#39;
+            result_message = f&#34;{table_name} is going to be droped&#34;
+        else:
+            result_message = self.insert(query, records)
+            result_message = &#39;droped : &#39; + table_name
+
+        return result_message
+
+    def get_structure_table_from_db(self, table_scheme: str, table_name: str, order_by: str = &#39;order by ordinal_position&#39;) -&gt; list:
+        &#34;&#34;&#34;Gets table structure from of given table, returns a list with said structure.
+        
+        Args:
+            table_scheme (str): name of schem of table.
+            table_name (str): name of table.
+            order_by (str): query for order by.
+
+        Returns:
+
+            list: list of rows selected.
+        
+        &#34;&#34;&#34;
+        query_where = f&#34;where table_schema= &#39;{table_scheme}&#39; and table_name = &#39;{table_name}&#39; {order_by}&#34;
+        query_columns = &#39;table_schema,table_name,column_name,data_type,ordinal_position,character_maximum_length as length,numeric_precision,numeric_scale&#39;
+        query_table = &#39;information_schema.columns&#39;
+        return self.select(query_table, query_where.lower(), query_columns.lower())
+
+    def validate_structure(self,source_table : str,target_table : str, column_name : str = &#39;column_name&#39;) -&gt; bool:
+        &#34;&#34;&#34;Validates if a column exists, returns a True/False
+        
+        Args:
+            source_table (str): source table and schema.
+            target_table (str): target table and schema.
+            column_name (str): target column.
+
+        Returns:
+            bool_result (bool): True if exists, False if not.
+        
+        &#34;&#34;&#34;
+        list_source_table = source_table.split(&#39;.&#39;)
+        list_target_table = target_table.split(&#39;.&#39;)
+        table = f&#34;(select column_name,character_maximum_length from information_schema.columns where table_name = &#39;{list_source_table[1]}&#39; and table_schema = &#39;{list_source_table[0]}&#39; and data_type=&#39;character varying&#39;) a full join(select {column_name}, length from {target_table} where current_date between start_date and coalesce(end_date,current_date)) b on (a.column_name = b.{column_name} and a.character_maximum_length = b.length)&#34;
+        cols = f&#39;case when count(a.column_name) - 5 = count(b.{column_name}) then 1 else 0 end flag_structure&#39;
+        bool_result = False
+        if self.table_exists(target_table):
+            result = self.select(table,None,cols)
+            if  result[0][&#39;flag_structure&#39;] == 1:
+                bool_result = True
+        return bool_result
+    
+    def table_count(self, table_scheme: str, table_name: str, where_query: str = None)-&gt;str:
+        &#34;&#34;&#34;Counts rows in table, returns quantity of rows
+        
+        Args:
+            table_scheme (str): target schema.
+            table_name (str): target table name.
+            where_query (str): query conditions.
+
+        Returns:
+            str : result of count query.
+        &#34;&#34;&#34;
+        table = f&#39;{table_scheme}.{table_name}&#39;
+        if where_query == None:
+            where_query=&#39;&#39;
+        result = self.select(table,where_query,&#39;count(1) count&#39;)
+        return str(result[0][&#39;count&#39;])
+
+    
+    def table_exists(self, table_name : str) -&gt; bool:
+        &#34;&#34;&#34;Verify if table exists.
+        
+        Args:
+            table_name (str): target table name and schema.
+
+        Returns:
+            bool : True if exists, False if not.
+        &#34;&#34;&#34;
+        table = f&#34;(SELECT to_regclass(&#39;{table_name}&#39;) table_exists) dummy&#34;
+        result = self.select(table,cols=&#39;table_exists&#39;)
+        if result[0][&#39;table_exists&#39;] == None:
+            return False
+        else:
+            return True
+    def add_column(self, list_structure: list, table_scheme: str, table_name: str) -&gt; str:
+        &#34;&#34;&#34;add a column to specified table.
+        
+        Args:
+            list_structure (list): list with columns data to be inserted.
+            table_scheme (str): scheme of table.
+            table_name (str): table name.
+
+        Returns:
+            result_message : result message.
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        add_counts = 0
+        for value in list_structure:
+            if value[&#34;column_type&#34;] == &#39;varchar&#39;:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}({value[&#34;length&#34;]})&#39;
+            if value[&#34;column_type&#34;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}&#39;
+            else:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} text&#39;
+            result_message = self.insert(query, records)
+            add_counts+=1
+        result_message = f&#39;{add_counts} columns added to table : {table_scheme}.{table_name}&#39;
+        return result_message
+
+    def insert_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str)-&gt; str:
+        &#34;&#34;&#34; inserts from one table to another.
+
+        Args:
+            source_table_scheme (str): source table scheme.
+            source_table_name (str): source table name.
+            target_table_scheme (str): target table scheme.
+            target_table_name (str): target table name.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(target_table_name)]
+        df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+        if df_source.empty:
+            return &#39;0 records&#39;
+        str_columns = &#39;&#34;&#39; + &#39;&#34;,&#34;&#39;.join(map(str,list(df_source[&#39;column_name&#39;].values))) + &#39;&#34;&#39;
+        query = f&#39;insert into {target_table_scheme}.{target_table_name} ({str_columns}) select {str_columns} from {source_table_scheme}.{source_table_name}&#39;
+        result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+        return result_message
+
+    def update_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str, key_columns: list)-&gt; str:
+        &#34;&#34;&#34; updates from one table to another, both tables must have the same columns names.
+
+        Args:
+            source_table_scheme (str): source table scheme.
+            source_table_name (str): source table name.
+            target_table_scheme (str): target table scheme.
+            target_table_name (str): target table name.
+            key_columns (list): list of columns to be updated.
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(target_table_name)]
+        df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+        df_source = df_source[~df_source[&#39;column_name&#39;].isin(key_columns)]
+        query_where = &#39;&#39;
+        query_set = &#39;&#39;
+        for value in key_columns:
+            query_where+=f&#39;t.{value} = s.{value} and &#39;
+        query_where = query_where[:-4]
+        for value in df_source[&#39;column_name&#39;].values:
+            query_set+=f&#39;{value} = s.{value},&#39;
+        query_set = query_set[:-1]
+        query_update = f&#34;&#34;&#34;
+        update {target_table_scheme}.{target_table_name} t
+        set {query_set}
+        from {source_table_scheme}.{source_table_name} s
+        where {query_where}
+        &#34;&#34;&#34;
+        result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query_update,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+        return result_message
+    
+    def create_table_from_select(self, select_query : str, table: str)-&gt; str:
+        &#34;&#34;&#34; creates a table from another as base.
+
+        Args:
+            select_query (str): base select query of origin table.
+            table (str): new table name and schema.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(table)]
+        query_create = f&#39;create table {table} as &#39; + select_query
+        result_message = self.insert(query_create,records)
+        result_message = f&#39;table created : {table}&#39;
+        return result_message
+
+    def create_table_index(self, table_scheme: str, table_name: str, index_name: str, table_column: str)-&gt; str:
+        &#34;&#34;&#34;creates an index column in specified table.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            index_name (str): new index name.
+            table_column (str): target table column.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        table = f&#39;{table_scheme}.{table_name}&#39;
+        records = [(table)]
+        query_index = f&#39;create index if not exists {index_name} on {table}({table_column})&#39;
+        result_message = self.insert(query_index,records)
+        result_message = f&#39;index created : {table_scheme}.{index_name}&#39;
+        return result_message
+    
+    def drop_table_index(self,index_scheme: str, index_name: str)-&gt; str:
+        &#34;&#34;&#34;drops specified table index
+            
+        Args:
+            index_scheme (str): target index scheme.
+            index_name (str): target index name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+
+        index = f&#39;{index_scheme}.{index_name}&#39;
+        records = [(index)]
+        query = f&#34;drop index {index}&#34;
+        result_message = self.insert(query, records)
+        result_message = &#39;droped : &#39; + index
+        return result_message
+    
+    def create_table_partition_list(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_value: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table partition.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            partition_value (str): new partition value.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} for values in ({partition_value})&#34;
+        query_create = query_create + query_subpartition
+        result_message = self.insert(query_create, records)
+        result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, table_name + &#39;_others&#39;)
+        result_message = f&#39;partitions added to table : {partition_scheme}.{partition_name}&#39;
+        return result_message
+    def create_table_partition_range(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_start_value: str, partition_end_value: str = None, partition_range_type: str = &#39;daily&#39;, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table partition range.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            partition_start_value (str): new partition start value.
+            partition_end_value (str): new partition end value.
+            partition_range_type (str): new partition range type.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        counts = 0
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        if partition_end_value == None:
+            partition_end_value = partition_start_value
+        if partition_range_type == &#39;daily&#39;:
+            start_date = datetime.strptime(partition_start_value,&#39;%Y%m%d&#39;)
+            end_date = datetime.strptime(partition_end_value,&#39;%Y%m%d&#39;)
+            for value in pd.date_range(start_date,end_date):
+                    counts+=1
+            query_block = f&#34;&#34;&#34;
+            do $$
+            declare
+            r text;
+            BEGIN
+                for r in 
+                    select to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;) + s.name::integer from generate_series(0,to_date(&#39;{partition_end_value}&#39;,&#39;yyyymmdd&#39;)-to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;)) s
+                loop
+                    execute &#39;create table if not exists {partition_scheme}.{partition_name}_&#39;||to_char(to_date(r,&#39;yyyy-mm-dd&#39;),&#39;yyyymmdd&#39;)||&#39; partition of {table_scheme}.{partition_name} for values from (&#39;&#39;&#39;||r||&#39;&#39;&#39;) to (&#39;&#39;&#39;||to_date(r,&#39;yyyy-mm-dd&#39;)+1||&#39;&#39;&#39;) {query_subpartition}&#39;;
+                end loop;
+            END $$;
+            &#34;&#34;&#34;
+            result_message = self.execute_block(query_block)
+        if partition_range_type == &#39;monthly&#39;:
+            start_date = datetime.strptime(partition_start_value[0:6]+&#39;01&#39;,&#39;%Y%m%d&#39;)
+            end_date = start_date + relativedelta(months=+1)
+            query_create = f&#34;create table if not exists {partition_scheme}.{partition_name}_{start_date.strftime(&#39;%Y%m&#39;)} partition of {table_scheme}.{table_name} for values from (&#39;{start_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;) to (&#39;{end_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;)&#34;
+            query_create = query_create + query_subpartition
+            result_message = self.insert(query_create, records)
+
+        result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, partition_name + &#39;_others&#39;)
+        result_message = f&#39;{counts} partitions added to table : {table_scheme}.{table_name}&#39;
+        return result_message
+
+    def query_block(self)-&gt;str:
+        &#34;&#34;&#34; executes a query block
+            
+        Args:
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        query_block = f&#34;&#34;&#34;
+        do $$
+        declare
+        r text;
+        BEGIN
+                {self.query}
+        END $$;
+        &#34;&#34;&#34;
+        result_message = self.execute_block(query_block)
+        return result_message
+    
+    def create_table_partition_default(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table default partition.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} default&#34;
+        query_create = query_create + query_subpartition
+        result_message = self.insert(query_create, records)
+        return result_message
+
+    def create_table(self, list_structure : list = None, table_name : str = None, column_type : bool = False, column_partition : str = None, partition_type : str = None, simple_structure: list = None)-&gt; str:
+        &#34;&#34;&#34; Creates a new table.
+            
+        Args:
+            list_structure (list): list with structure for table
+            table_name (str): target table scheme and name.
+            column_type (bool): indicator for specified column type.
+            column_partition (str): column for partition.
+            column_subpartition (str): column for subpartition.
+            partition_type (str): partition type.
+            simple_structure (list): simple structure list.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        result = self.table_exists(table_name)
+        query_partition = &#39;&#39;
+        list_columns = []
+        if result:
+            result = self.drop_table(table_name)
+        if column_partition != None and partition_type != None:
+            query_partition+= f&#39;partition by {partition_type}({column_partition})&#39;
+        if simple_structure != None:
+            list_columns.extend(simple_structure)
+        else:
+            list_columns.extend(list_structure)
+        query = &#39;create table &#39;+table_name+&#39; (&#39;
+        for row in list_columns:
+            
+            if not column_type:
+                if simple_structure != None:
+                    query += &#39;&#34;&#39;+row.lower()+&#39;&#34;&#39; + &#39; text,&#39;
+                else:
+                    query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+                continue
+            if column_type:
+                if row[&#39;column_type&#39;]==&#39;varchar&#39;:
+                    query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+                    continue
+                if row[&#39;column_type&#39;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+                    query += f&#39;&#34;{row[&#34;column_name&#34;].lower()}&#34; {row[&#34;column_type&#34;]},&#39;
+                    continue
+
+        query = query + &#39; app_creation_user text DEFAULT USER,app_creation_date timestamp DEFAULT CURRENT_TIMESTAMP)&#39; + query_partition
+        result_message = self.insert(query, records)
+        return result_message
+
+    def insert_from_csv(
+        self,
+        table: str,
+        option_text: str,
+        bucket: str,
+        file_path: str,
+        columns_table: str = None,
+        truncate_table: bool = True,
+    ) -&gt; Any:
+        &#34;&#34;&#34; insert into table from CSV format.
+            
+        Args:
+            table (str): target table scheme and name.
+            option_text (str): options text for query.
+            bucket (str): source bucket.
+            file_path (str): file path in bucket.
+            columns_table (str): columns to extract.
+            truncate_table (bool): truncate table before insertion .
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        list_credentials = connect_to_s3().loading_credentials(bucket=bucket)
+        columns_table = &#34;&#34; if columns_table == None else columns_table
+        records = [(table, columns_table, option_text, bucket, file_path, list_credentials[0],list_credentials[1],list_credentials[2])]
+        query = &#34;&#34;&#34;SELECT aws_s3.table_import_from_s3(%s, %s, %s, aws_commons.create_s3_uri(%s, %s, %s),    aws_commons.create_aws_credentials(%s, %s, &#39;&#39;))&#34;&#34;&#34;
+        if truncate_table:
+            result_truncate = self.truncate_table(table)
+        result_insert = self.insert(query, records)
+                                                                
+        return result_insert
+
+    def select(
+        self, table: str, conditions: str = None, cols: str | list = None
+    ) -&gt; list:
+        &#34;&#34;&#34;Simple select from any table with conditions, returns List
+
+        Args:
+            table (str): target table scheme and name.
+            conditions (str): query conditions.
+            cols (str): selected columns.
+
+        Returns:
+            rows (list): selected rows as list.
+        
+        &#34;&#34;&#34;
+        try:
+            query = &#34;SELECT &#34;
+
+            if isinstance(cols, str):
+                columns = cols
+            elif isinstance(cols, list):
+                columns = &#34;,&#34;.join(str(x) for x in cols)
+            else:
+                columns = &#34;*&#34;
+
+            if conditions == None:
+                conditions = &#34;&#34;
+
+            query += columns + &#34; FROM &#34; + table + &#34; &#34; + conditions
+            con = self.conecction()
+            cursor = con.cursor()
+            cursor.execute(query)
+            rows = []
+            for buff in cursor:
+                row = {}
+                c = 0
+                for col in cursor.description:
+                    row.update({str(col[0]): buff[c]})
+                    c += 1
+                rows.append(row)
+            cursor.close()
+            return rows
+        except Exception as e:
+            print(str(e))
+            return [False, {&#34;Message&#34;: str(e)}]
+
+    def insert_from_dataframe(self,table:str,schema:str,dataframe:pd.DataFrame,engine=None,index: bool = False,if_exists:str =&#34;fail&#34;,dtype:dict ={})-&gt; int:
+        &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+        Args:
+            table (str): target table and name.
+            schema (str): target schema.
+            dataframe (DataFrame): data from dataframe.
+            engine (object): engine conecction object.
+            index (bool): index column in dataframe.
+            if_exists: option for dataframe in case of table already exists.
+            dtype: type of columns dictionary.
+
+        Result:
+            inserted_rows (int): inserted rows number.
+
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        engine = pe.connect()
+        with engine as con:
+            
+            inserted_rows = dataframe.to_sql(
+                table,
+                schema =schema,
+                con=con,
+                if_exists=if_exists,
+                index=index,
+                dtype=dtype,
+            )
+
+        return inserted_rows
+    
+    def insert_from_df(self, df : pd.DataFrame, table_schema:str,table_name:str,if_exists:str =&#39;replace&#39;,index:bool=False,dtype:dict = None)-&gt; str:
+        &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+        Args:
+            table (str): target table and name.
+            schema (str): target schema.
+            dataframe (DataFrame): data from dataframe.
+            engine (object): engine conecction object.
+            index (bool): index column in dataframe.
+            if_exists: option for dataframe in case of table already exists.
+            dtype: type of columns dictionary.
+
+        Result:
+            result_message (str): inserted rows number.
+
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        en = pe.connect()
+        result_message=df.to_sql(
+            name = table_name,
+            schema =table_schema,
+            con=en,
+            if_exists=if_exists,
+            index=index,
+            dtype=dtype
+        )
+        return result_message
+
+    def select_to_df_object(self,query:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;inserts into dataframe from select query
+        
+        Args:
+            query (str): select query.
+
+        Returns:
+            df (DataFrame): dataframe with data.
+        
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        df = None
+        with pe.connect() as con:
+            df = pd.read_sql(query,con=con)
+        return df
+
+    def update( self, table: str, conditions: str, cols: dict)-&gt; List:
+        &#34;&#34;&#34;Simple update query using dictionary {col:value}, only works with condition
+        
+        Args:
+            table (str): table name.
+            conditions (str): conditions for update.
+            cols (dict): dictionary of update columns.
+
+        Returns:
+            List: list with message and confirmation bool.
+        
+        &#34;&#34;&#34;
+        try:
+            query = &#34;UPDATE &#34; + table + &#34; SET &#34;
+            column_data = []
+            for key in cols:
+                par_value = f&#34;{key}=&#39;{cols[key]}&#39;&#34;
+                column_data.append(par_value)
+            
+            if(len(column_data) &gt; 0):
+                query+= &#34;,&#34;.join(x for x in column_data)
+            else:
+                return [False,{&#34;Message&#34;:&#34;Malformed query&#34;}]
+            
+            query+=&#34; &#34;+conditions
+            conn = self.conecction()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            updated_rows = cursor.rowcount
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return [True,{&#34;Message&#34;:f&#34;updated_rows: {updated_rows}&#34;}]
+        except Exception as e:
+            print(str(e))
+            return [False, {&#34;Message&#34;:str(e)}]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL"><code class="flex name class">
+<span>class <span class="ident">connect_to_postgreSQL</span></span>
+<span>(</span><span>bool_query: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Connection to postgreSQL database defined in .env</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class connect_to_postgreSQL:
+    &#34;&#34;&#34;Connection to postgreSQL database defined in .env&#34;&#34;&#34;
+
+    def __init__(self, bool_query:bool = False) -&gt; None:
+        load_dotenv()
+        self.bool_query = bool_query
+        self.query = &#39;&#39;
+
+    def __loading_credentials(self) -&gt; list:
+        &#34;&#34;&#34;Loading credentials from .env config file
+        
+        Returns:
+            list: list with credentials.
+        &#34;&#34;&#34;
+        database = os.getenv(&#34;POSTGRE_DATABASE&#34;, &#34;postgres&#34;)
+        host = os.getenv(
+            &#34;POSTGRE_HOST&#34;,
+            &#34;db-dev-intelica-instance-1.cf3zxr6zcsiz.us-east-1.rds.amazonaws.com&#34;,
+        )
+        port = os.getenv(&#34;POSTGRE_PORT&#34;, &#34;5432&#34;)
+        user = os.getenv(&#34;POSTGRE_USER&#34;, &#34;postgres_dev&#34;)
+        password = os.getenv(&#34;POSTGRE_PASSWORD&#34;, &#34;7s1Jy5ewQAu0NfDO9iwV&#34;)
+        return [database, host, port, user, password]
+
+    def conecction(self) -&gt; object:
+        &#34;&#34;&#34;Returns a connection class already initializated for postgreSQL database
+            Example of use:
+                connecting to database
+                x = connect_to_postgreSQL().conecction()
+                cur = x.cursor()
+                Exec function
+                cur.execute(&#39;SELECT version()&#39;)
+                Fetching result
+                db_version = cur.fetchone()
+                shows version
+                print(db_version)
+                then we close cursor
+                cur.close()
+
+            Returns:
+                object: connection object.
+        &#34;&#34;&#34;
+        try:
+            credentials = self.__loading_credentials()
+            connection = pgdb.Connection(
+                database=credentials[0],
+                host=credentials[1],
+                user=credentials[3],
+                password=credentials[4],
+                **{&#34;port&#34;: credentials[2]},
+            )
+            return connection
+        except Exception as e:
+            print(e)
+            return [(False, e)]
+
+    def prepare_engine(self) -&gt; object:
+        &#34;&#34;&#34;Creates an engine with sqlAlchemy using the credentials
+        
+        Returns:
+            object: Engine object.
+        &#34;&#34;&#34;
+        credentials = self.__loading_credentials()
+        connection_string = f&#34;postgresql://{credentials[3]}:{credentials[4]}@{credentials[1]}/{credentials[0]}&#34;
+        return create_engine(connection_string)
+
+    def execute_block(self, query: str, return_row_count: bool = False) -&gt; Any:
+        &#34;&#34;&#34;Executes a query
+        
+        Args:
+            query (str): query string
+            return_row_count (bool): return rows affected as message or as number.
+
+        Returns:
+            Any:  result_message if return_row_count = False or a list with the message and rows afectected.
+        &#34;&#34;&#34;
+        try:
+            conn = self.conecction()
+            cur = conn.cursor()
+            cur.execute(query)
+            result_message = f&#34;Query successfully executed, {cur.rowcount} row(s) affected&#34;
+            conn.commit()
+            cur.close()
+            conn.close()
+            if return_row_count:
+                return [result_message,cur.rowcount]
+            else:
+                return result_message
+        except Exception as e:
+            raise
+    def insert(self, query: str, records) -&gt; Any:
+        &#34;&#34;&#34;Executes insert query, returns message
+
+        Args:
+            query (str): query string
+            records (Any): a list of records to be insrted.
+
+        Returns:
+            result_message (str): Message.
+        
+        &#34;&#34;&#34;
+        try:
+            conn = self.conecction()
+            cur = conn.cursor()
+            sql_insert_query = query
+            result = cur.executemany(sql_insert_query, records)
+            result_message = &#34;records inserted/updated successfully into table&#34;
+            conn.commit()
+            cur.close()
+            conn.close()
+            return result_message
+        except Exception as e:
+            raise
+
+    def insert_log(self, records_list) -&gt; str:
+        &#34;&#34;&#34;Insert into Table control.t_log, returns message
+        
+        Args:
+            records_list (Any): list of records.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        sql_insert_query = &#34;&#34;&#34; insert into CONTROL.T_LOG (customer,brand,process_name,process_message,description_status,start_date,end_date,file_name) values (%s,%s,%s,%s,%s,CURRENT_TIMESTAMP,NULL,%s)&#34;&#34;&#34;
+        result_message = self.insert(sql_insert_query, records_list)
+        return result_message
+
+    def insert_control_file(self, records_list) -&gt; Any:
+        &#34;&#34;&#34;Insert into Table control.t_control_file , returns message
+        
+        Args:
+            records_list (Any): list of records.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        sql_insert_query = &#34;&#34;&#34; INSERT INTO CONTROL.T_CONTROL_FILE (CODE, BRAND, CUSTOMER, log_file_name, process_file_name,records_number,process_date,file_date,control_message,description_status,file_type,parent_zip,execution_id) VALUES(%s,%s,%s,%s,%s,0,%s,%s,%s,%s,%s,%s,%s)&#34;&#34;&#34;
+        result_message = self.insert(sql_insert_query, records_list)
+        return result_message
+
+    def truncate_table(self, table: str) -&gt; Any:
+        &#34;&#34;&#34;truncate table, returns message
+        
+        Args:
+            table (str): table name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table)]
+        query = &#34;truncate table %s&#34; % table
+        result_message = self.insert(query, records)
+        result_message = &#39;truncated : &#39; + table
+        return result_message
+
+    def drop_table(self, table_name: str) -&gt;Any:
+        &#34;&#34;&#34;Drops table, returns message
+        
+        Args:
+            table_name (str): table name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query = &#34;drop table if exists %s&#34; % table_name
+        if self.bool_query:
+            self.query+=query+&#39;;&#39;
+            result_message = f&#34;{table_name} is going to be droped&#34;
+        else:
+            result_message = self.insert(query, records)
+            result_message = &#39;droped : &#39; + table_name
+
+        return result_message
+
+    def get_structure_table_from_db(self, table_scheme: str, table_name: str, order_by: str = &#39;order by ordinal_position&#39;) -&gt; list:
+        &#34;&#34;&#34;Gets table structure from of given table, returns a list with said structure.
+        
+        Args:
+            table_scheme (str): name of schem of table.
+            table_name (str): name of table.
+            order_by (str): query for order by.
+
+        Returns:
+
+            list: list of rows selected.
+        
+        &#34;&#34;&#34;
+        query_where = f&#34;where table_schema= &#39;{table_scheme}&#39; and table_name = &#39;{table_name}&#39; {order_by}&#34;
+        query_columns = &#39;table_schema,table_name,column_name,data_type,ordinal_position,character_maximum_length as length,numeric_precision,numeric_scale&#39;
+        query_table = &#39;information_schema.columns&#39;
+        return self.select(query_table, query_where.lower(), query_columns.lower())
+
+    def validate_structure(self,source_table : str,target_table : str, column_name : str = &#39;column_name&#39;) -&gt; bool:
+        &#34;&#34;&#34;Validates if a column exists, returns a True/False
+        
+        Args:
+            source_table (str): source table and schema.
+            target_table (str): target table and schema.
+            column_name (str): target column.
+
+        Returns:
+            bool_result (bool): True if exists, False if not.
+        
+        &#34;&#34;&#34;
+        list_source_table = source_table.split(&#39;.&#39;)
+        list_target_table = target_table.split(&#39;.&#39;)
+        table = f&#34;(select column_name,character_maximum_length from information_schema.columns where table_name = &#39;{list_source_table[1]}&#39; and table_schema = &#39;{list_source_table[0]}&#39; and data_type=&#39;character varying&#39;) a full join(select {column_name}, length from {target_table} where current_date between start_date and coalesce(end_date,current_date)) b on (a.column_name = b.{column_name} and a.character_maximum_length = b.length)&#34;
+        cols = f&#39;case when count(a.column_name) - 5 = count(b.{column_name}) then 1 else 0 end flag_structure&#39;
+        bool_result = False
+        if self.table_exists(target_table):
+            result = self.select(table,None,cols)
+            if  result[0][&#39;flag_structure&#39;] == 1:
+                bool_result = True
+        return bool_result
+    
+    def table_count(self, table_scheme: str, table_name: str, where_query: str = None)-&gt;str:
+        &#34;&#34;&#34;Counts rows in table, returns quantity of rows
+        
+        Args:
+            table_scheme (str): target schema.
+            table_name (str): target table name.
+            where_query (str): query conditions.
+
+        Returns:
+            str : result of count query.
+        &#34;&#34;&#34;
+        table = f&#39;{table_scheme}.{table_name}&#39;
+        if where_query == None:
+            where_query=&#39;&#39;
+        result = self.select(table,where_query,&#39;count(1) count&#39;)
+        return str(result[0][&#39;count&#39;])
+
+    
+    def table_exists(self, table_name : str) -&gt; bool:
+        &#34;&#34;&#34;Verify if table exists.
+        
+        Args:
+            table_name (str): target table name and schema.
+
+        Returns:
+            bool : True if exists, False if not.
+        &#34;&#34;&#34;
+        table = f&#34;(SELECT to_regclass(&#39;{table_name}&#39;) table_exists) dummy&#34;
+        result = self.select(table,cols=&#39;table_exists&#39;)
+        if result[0][&#39;table_exists&#39;] == None:
+            return False
+        else:
+            return True
+    def add_column(self, list_structure: list, table_scheme: str, table_name: str) -&gt; str:
+        &#34;&#34;&#34;add a column to specified table.
+        
+        Args:
+            list_structure (list): list with columns data to be inserted.
+            table_scheme (str): scheme of table.
+            table_name (str): table name.
+
+        Returns:
+            result_message : result message.
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        add_counts = 0
+        for value in list_structure:
+            if value[&#34;column_type&#34;] == &#39;varchar&#39;:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}({value[&#34;length&#34;]})&#39;
+            if value[&#34;column_type&#34;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}&#39;
+            else:
+                query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} text&#39;
+            result_message = self.insert(query, records)
+            add_counts+=1
+        result_message = f&#39;{add_counts} columns added to table : {table_scheme}.{table_name}&#39;
+        return result_message
+
+    def insert_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str)-&gt; str:
+        &#34;&#34;&#34; inserts from one table to another.
+
+        Args:
+            source_table_scheme (str): source table scheme.
+            source_table_name (str): source table name.
+            target_table_scheme (str): target table scheme.
+            target_table_name (str): target table name.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(target_table_name)]
+        df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+        if df_source.empty:
+            return &#39;0 records&#39;
+        str_columns = &#39;&#34;&#39; + &#39;&#34;,&#34;&#39;.join(map(str,list(df_source[&#39;column_name&#39;].values))) + &#39;&#34;&#39;
+        query = f&#39;insert into {target_table_scheme}.{target_table_name} ({str_columns}) select {str_columns} from {source_table_scheme}.{source_table_name}&#39;
+        result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+        return result_message
+
+    def update_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str, key_columns: list)-&gt; str:
+        &#34;&#34;&#34; updates from one table to another, both tables must have the same columns names.
+
+        Args:
+            source_table_scheme (str): source table scheme.
+            source_table_name (str): source table name.
+            target_table_scheme (str): target table scheme.
+            target_table_name (str): target table name.
+            key_columns (list): list of columns to be updated.
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(target_table_name)]
+        df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+        df_source = df_source[~df_source[&#39;column_name&#39;].isin(key_columns)]
+        query_where = &#39;&#39;
+        query_set = &#39;&#39;
+        for value in key_columns:
+            query_where+=f&#39;t.{value} = s.{value} and &#39;
+        query_where = query_where[:-4]
+        for value in df_source[&#39;column_name&#39;].values:
+            query_set+=f&#39;{value} = s.{value},&#39;
+        query_set = query_set[:-1]
+        query_update = f&#34;&#34;&#34;
+        update {target_table_scheme}.{target_table_name} t
+        set {query_set}
+        from {source_table_scheme}.{source_table_name} s
+        where {query_where}
+        &#34;&#34;&#34;
+        result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query_update,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+        return result_message
+    
+    def create_table_from_select(self, select_query : str, table: str)-&gt; str:
+        &#34;&#34;&#34; creates a table from another as base.
+
+        Args:
+            select_query (str): base select query of origin table.
+            table (str): new table name and schema.
+
+        Returns:
+            result_message (str): result message.
+        &#34;&#34;&#34;
+        records = [(table)]
+        query_create = f&#39;create table {table} as &#39; + select_query
+        result_message = self.insert(query_create,records)
+        result_message = f&#39;table created : {table}&#39;
+        return result_message
+
+    def create_table_index(self, table_scheme: str, table_name: str, index_name: str, table_column: str)-&gt; str:
+        &#34;&#34;&#34;creates an index column in specified table.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            index_name (str): new index name.
+            table_column (str): target table column.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        table = f&#39;{table_scheme}.{table_name}&#39;
+        records = [(table)]
+        query_index = f&#39;create index if not exists {index_name} on {table}({table_column})&#39;
+        result_message = self.insert(query_index,records)
+        result_message = f&#39;index created : {table_scheme}.{index_name}&#39;
+        return result_message
+    
+    def drop_table_index(self,index_scheme: str, index_name: str)-&gt; str:
+        &#34;&#34;&#34;drops specified table index
+            
+        Args:
+            index_scheme (str): target index scheme.
+            index_name (str): target index name.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+
+        index = f&#39;{index_scheme}.{index_name}&#39;
+        records = [(index)]
+        query = f&#34;drop index {index}&#34;
+        result_message = self.insert(query, records)
+        result_message = &#39;droped : &#39; + index
+        return result_message
+    
+    def create_table_partition_list(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_value: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table partition.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            partition_value (str): new partition value.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} for values in ({partition_value})&#34;
+        query_create = query_create + query_subpartition
+        result_message = self.insert(query_create, records)
+        result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, table_name + &#39;_others&#39;)
+        result_message = f&#39;partitions added to table : {partition_scheme}.{partition_name}&#39;
+        return result_message
+    def create_table_partition_range(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_start_value: str, partition_end_value: str = None, partition_range_type: str = &#39;daily&#39;, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table partition range.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            partition_start_value (str): new partition start value.
+            partition_end_value (str): new partition end value.
+            partition_range_type (str): new partition range type.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        counts = 0
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        if partition_end_value == None:
+            partition_end_value = partition_start_value
+        if partition_range_type == &#39;daily&#39;:
+            start_date = datetime.strptime(partition_start_value,&#39;%Y%m%d&#39;)
+            end_date = datetime.strptime(partition_end_value,&#39;%Y%m%d&#39;)
+            for value in pd.date_range(start_date,end_date):
+                    counts+=1
+            query_block = f&#34;&#34;&#34;
+            do $$
+            declare
+            r text;
+            BEGIN
+                for r in 
+                    select to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;) + s.name::integer from generate_series(0,to_date(&#39;{partition_end_value}&#39;,&#39;yyyymmdd&#39;)-to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;)) s
+                loop
+                    execute &#39;create table if not exists {partition_scheme}.{partition_name}_&#39;||to_char(to_date(r,&#39;yyyy-mm-dd&#39;),&#39;yyyymmdd&#39;)||&#39; partition of {table_scheme}.{partition_name} for values from (&#39;&#39;&#39;||r||&#39;&#39;&#39;) to (&#39;&#39;&#39;||to_date(r,&#39;yyyy-mm-dd&#39;)+1||&#39;&#39;&#39;) {query_subpartition}&#39;;
+                end loop;
+            END $$;
+            &#34;&#34;&#34;
+            result_message = self.execute_block(query_block)
+        if partition_range_type == &#39;monthly&#39;:
+            start_date = datetime.strptime(partition_start_value[0:6]+&#39;01&#39;,&#39;%Y%m%d&#39;)
+            end_date = start_date + relativedelta(months=+1)
+            query_create = f&#34;create table if not exists {partition_scheme}.{partition_name}_{start_date.strftime(&#39;%Y%m&#39;)} partition of {table_scheme}.{table_name} for values from (&#39;{start_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;) to (&#39;{end_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;)&#34;
+            query_create = query_create + query_subpartition
+            result_message = self.insert(query_create, records)
+
+        result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, partition_name + &#39;_others&#39;)
+        result_message = f&#39;{counts} partitions added to table : {table_scheme}.{table_name}&#39;
+        return result_message
+
+    def query_block(self)-&gt;str:
+        &#34;&#34;&#34; executes a query block
+            
+        Args:
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        query_block = f&#34;&#34;&#34;
+        do $$
+        declare
+        r text;
+        BEGIN
+                {self.query}
+        END $$;
+        &#34;&#34;&#34;
+        result_message = self.execute_block(query_block)
+        return result_message
+    
+    def create_table_partition_default(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+        &#34;&#34;&#34; Creates a new table default partition.
+            
+        Args:
+            table_scheme (str): target table scheme.
+            table_name (str): target table name.
+            partition_scheme (str): new partition scheme.
+            partition_name (str): new partition name.
+            column_subpartition (str): column for subpartition.
+            subpartition_type (str): subpartition type.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        query_subpartition = &#39;&#39;
+        if column_subpartition != None and subpartition_type!= None:
+            query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+        query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} default&#34;
+        query_create = query_create + query_subpartition
+        result_message = self.insert(query_create, records)
+        return result_message
+
+    def create_table(self, list_structure : list = None, table_name : str = None, column_type : bool = False, column_partition : str = None, partition_type : str = None, simple_structure: list = None)-&gt; str:
+        &#34;&#34;&#34; Creates a new table.
+            
+        Args:
+            list_structure (list): list with structure for table
+            table_name (str): target table scheme and name.
+            column_type (bool): indicator for specified column type.
+            column_partition (str): column for partition.
+            column_subpartition (str): column for subpartition.
+            partition_type (str): partition type.
+            simple_structure (list): simple structure list.
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        records = [(table_name)]
+        result = self.table_exists(table_name)
+        query_partition = &#39;&#39;
+        list_columns = []
+        if result:
+            result = self.drop_table(table_name)
+        if column_partition != None and partition_type != None:
+            query_partition+= f&#39;partition by {partition_type}({column_partition})&#39;
+        if simple_structure != None:
+            list_columns.extend(simple_structure)
+        else:
+            list_columns.extend(list_structure)
+        query = &#39;create table &#39;+table_name+&#39; (&#39;
+        for row in list_columns:
+            
+            if not column_type:
+                if simple_structure != None:
+                    query += &#39;&#34;&#39;+row.lower()+&#39;&#34;&#39; + &#39; text,&#39;
+                else:
+                    query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+                continue
+            if column_type:
+                if row[&#39;column_type&#39;]==&#39;varchar&#39;:
+                    query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+                    continue
+                if row[&#39;column_type&#39;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+                    query += f&#39;&#34;{row[&#34;column_name&#34;].lower()}&#34; {row[&#34;column_type&#34;]},&#39;
+                    continue
+
+        query = query + &#39; app_creation_user text DEFAULT USER,app_creation_date timestamp DEFAULT CURRENT_TIMESTAMP)&#39; + query_partition
+        result_message = self.insert(query, records)
+        return result_message
+
+    def insert_from_csv(
+        self,
+        table: str,
+        option_text: str,
+        bucket: str,
+        file_path: str,
+        columns_table: str = None,
+        truncate_table: bool = True,
+    ) -&gt; Any:
+        &#34;&#34;&#34; insert into table from CSV format.
+            
+        Args:
+            table (str): target table scheme and name.
+            option_text (str): options text for query.
+            bucket (str): source bucket.
+            file_path (str): file path in bucket.
+            columns_table (str): columns to extract.
+            truncate_table (bool): truncate table before insertion .
+
+        Returns:
+            result_message (str): result message.
+        
+        &#34;&#34;&#34;
+        list_credentials = connect_to_s3().loading_credentials(bucket=bucket)
+        columns_table = &#34;&#34; if columns_table == None else columns_table
+        records = [(table, columns_table, option_text, bucket, file_path, list_credentials[0],list_credentials[1],list_credentials[2])]
+        query = &#34;&#34;&#34;SELECT aws_s3.table_import_from_s3(%s, %s, %s, aws_commons.create_s3_uri(%s, %s, %s),    aws_commons.create_aws_credentials(%s, %s, &#39;&#39;))&#34;&#34;&#34;
+        if truncate_table:
+            result_truncate = self.truncate_table(table)
+        result_insert = self.insert(query, records)
+                                                                
+        return result_insert
+
+    def select(
+        self, table: str, conditions: str = None, cols: str | list = None
+    ) -&gt; list:
+        &#34;&#34;&#34;Simple select from any table with conditions, returns List
+
+        Args:
+            table (str): target table scheme and name.
+            conditions (str): query conditions.
+            cols (str): selected columns.
+
+        Returns:
+            rows (list): selected rows as list.
+        
+        &#34;&#34;&#34;
+        try:
+            query = &#34;SELECT &#34;
+
+            if isinstance(cols, str):
+                columns = cols
+            elif isinstance(cols, list):
+                columns = &#34;,&#34;.join(str(x) for x in cols)
+            else:
+                columns = &#34;*&#34;
+
+            if conditions == None:
+                conditions = &#34;&#34;
+
+            query += columns + &#34; FROM &#34; + table + &#34; &#34; + conditions
+            con = self.conecction()
+            cursor = con.cursor()
+            cursor.execute(query)
+            rows = []
+            for buff in cursor:
+                row = {}
+                c = 0
+                for col in cursor.description:
+                    row.update({str(col[0]): buff[c]})
+                    c += 1
+                rows.append(row)
+            cursor.close()
+            return rows
+        except Exception as e:
+            print(str(e))
+            return [False, {&#34;Message&#34;: str(e)}]
+
+    def insert_from_dataframe(self,table:str,schema:str,dataframe:pd.DataFrame,engine=None,index: bool = False,if_exists:str =&#34;fail&#34;,dtype:dict ={})-&gt; int:
+        &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+        Args:
+            table (str): target table and name.
+            schema (str): target schema.
+            dataframe (DataFrame): data from dataframe.
+            engine (object): engine conecction object.
+            index (bool): index column in dataframe.
+            if_exists: option for dataframe in case of table already exists.
+            dtype: type of columns dictionary.
+
+        Result:
+            inserted_rows (int): inserted rows number.
+
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        engine = pe.connect()
+        with engine as con:
+            
+            inserted_rows = dataframe.to_sql(
+                table,
+                schema =schema,
+                con=con,
+                if_exists=if_exists,
+                index=index,
+                dtype=dtype,
+            )
+
+        return inserted_rows
+    
+    def insert_from_df(self, df : pd.DataFrame, table_schema:str,table_name:str,if_exists:str =&#39;replace&#39;,index:bool=False,dtype:dict = None)-&gt; str:
+        &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+        Args:
+            table (str): target table and name.
+            schema (str): target schema.
+            dataframe (DataFrame): data from dataframe.
+            engine (object): engine conecction object.
+            index (bool): index column in dataframe.
+            if_exists: option for dataframe in case of table already exists.
+            dtype: type of columns dictionary.
+
+        Result:
+            result_message (str): inserted rows number.
+
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        en = pe.connect()
+        result_message=df.to_sql(
+            name = table_name,
+            schema =table_schema,
+            con=en,
+            if_exists=if_exists,
+            index=index,
+            dtype=dtype
+        )
+        return result_message
+
+    def select_to_df_object(self,query:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;inserts into dataframe from select query
+        
+        Args:
+            query (str): select query.
+
+        Returns:
+            df (DataFrame): dataframe with data.
+        
+        &#34;&#34;&#34;
+        pe = self.prepare_engine()
+        df = None
+        with pe.connect() as con:
+            df = pd.read_sql(query,con=con)
+        return df
+
+    def update( self, table: str, conditions: str, cols: dict)-&gt; List:
+        &#34;&#34;&#34;Simple update query using dictionary {col:value}, only works with condition
+        
+        Args:
+            table (str): table name.
+            conditions (str): conditions for update.
+            cols (dict): dictionary of update columns.
+
+        Returns:
+            List: list with message and confirmation bool.
+        
+        &#34;&#34;&#34;
+        try:
+            query = &#34;UPDATE &#34; + table + &#34; SET &#34;
+            column_data = []
+            for key in cols:
+                par_value = f&#34;{key}=&#39;{cols[key]}&#39;&#34;
+                column_data.append(par_value)
+            
+            if(len(column_data) &gt; 0):
+                query+= &#34;,&#34;.join(x for x in column_data)
+            else:
+                return [False,{&#34;Message&#34;:&#34;Malformed query&#34;}]
+            
+            query+=&#34; &#34;+conditions
+            conn = self.conecction()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            updated_rows = cursor.rowcount
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return [True,{&#34;Message&#34;:f&#34;updated_rows: {updated_rows}&#34;}]
+        except Exception as e:
+            print(str(e))
+            return [False, {&#34;Message&#34;:str(e)}]</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.add_column"><code class="name flex">
+<span>def <span class="ident">add_column</span></span>(<span>self, list_structure: list, table_scheme: str, table_name: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>add a column to specified table.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>list_structure</code></strong> :&ensp;<code>list</code></dt>
+<dd>list with columns data to be inserted.</dd>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>scheme of table.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>result_message </code></dt>
+<dd>result message.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_column(self, list_structure: list, table_scheme: str, table_name: str) -&gt; str:
+    &#34;&#34;&#34;add a column to specified table.
+    
+    Args:
+        list_structure (list): list with columns data to be inserted.
+        table_scheme (str): scheme of table.
+        table_name (str): table name.
+
+    Returns:
+        result_message : result message.
+    &#34;&#34;&#34;
+    records = [(table_name)]
+    add_counts = 0
+    for value in list_structure:
+        if value[&#34;column_type&#34;] == &#39;varchar&#39;:
+            query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}({value[&#34;length&#34;]})&#39;
+        if value[&#34;column_type&#34;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+            query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} {value[&#34;column_type&#34;]}&#39;
+        else:
+            query = f&#39;alter table {table_scheme}.{table_name} add {value[&#34;column_name&#34;]} text&#39;
+        result_message = self.insert(query, records)
+        add_counts+=1
+    result_message = f&#39;{add_counts} columns added to table : {table_scheme}.{table_name}&#39;
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.conecction"><code class="name flex">
+<span>def <span class="ident">conecction</span></span>(<span>self) ‑> object</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a connection class already initializated for postgreSQL database
+Example of use:
+connecting to database
+x = connect_to_postgreSQL().conecction()
+cur = x.cursor()
+Exec function
+cur.execute('SELECT version()')
+Fetching result
+db_version = cur.fetchone()
+shows version
+print(db_version)
+then we close cursor
+cur.close()</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>object</code></dt>
+<dd>connection object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def conecction(self) -&gt; object:
+    &#34;&#34;&#34;Returns a connection class already initializated for postgreSQL database
+        Example of use:
+            connecting to database
+            x = connect_to_postgreSQL().conecction()
+            cur = x.cursor()
+            Exec function
+            cur.execute(&#39;SELECT version()&#39;)
+            Fetching result
+            db_version = cur.fetchone()
+            shows version
+            print(db_version)
+            then we close cursor
+            cur.close()
+
+        Returns:
+            object: connection object.
+    &#34;&#34;&#34;
+    try:
+        credentials = self.__loading_credentials()
+        connection = pgdb.Connection(
+            database=credentials[0],
+            host=credentials[1],
+            user=credentials[3],
+            password=credentials[4],
+            **{&#34;port&#34;: credentials[2]},
+        )
+        return connection
+    except Exception as e:
+        print(e)
+        return [(False, e)]</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table"><code class="name flex">
+<span>def <span class="ident">create_table</span></span>(<span>self, list_structure: list = None, table_name: str = None, column_type: bool = False, column_partition: str = None, partition_type: str = None, simple_structure: list = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new table.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>list_structure</code></strong> :&ensp;<code>list</code></dt>
+<dd>list with structure for table</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme and name.</dd>
+<dt><strong><code>column_type</code></strong> :&ensp;<code>bool</code></dt>
+<dd>indicator for specified column type.</dd>
+<dt><strong><code>column_partition</code></strong> :&ensp;<code>str</code></dt>
+<dd>column for partition.</dd>
+<dt><strong><code>column_subpartition</code></strong> :&ensp;<code>str</code></dt>
+<dd>column for subpartition.</dd>
+<dt><strong><code>partition_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>partition type.</dd>
+<dt><strong><code>simple_structure</code></strong> :&ensp;<code>list</code></dt>
+<dd>simple structure list.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table(self, list_structure : list = None, table_name : str = None, column_type : bool = False, column_partition : str = None, partition_type : str = None, simple_structure: list = None)-&gt; str:
+    &#34;&#34;&#34; Creates a new table.
+        
+    Args:
+        list_structure (list): list with structure for table
+        table_name (str): target table scheme and name.
+        column_type (bool): indicator for specified column type.
+        column_partition (str): column for partition.
+        column_subpartition (str): column for subpartition.
+        partition_type (str): partition type.
+        simple_structure (list): simple structure list.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    records = [(table_name)]
+    result = self.table_exists(table_name)
+    query_partition = &#39;&#39;
+    list_columns = []
+    if result:
+        result = self.drop_table(table_name)
+    if column_partition != None and partition_type != None:
+        query_partition+= f&#39;partition by {partition_type}({column_partition})&#39;
+    if simple_structure != None:
+        list_columns.extend(simple_structure)
+    else:
+        list_columns.extend(list_structure)
+    query = &#39;create table &#39;+table_name+&#39; (&#39;
+    for row in list_columns:
+        
+        if not column_type:
+            if simple_structure != None:
+                query += &#39;&#34;&#39;+row.lower()+&#39;&#34;&#39; + &#39; text,&#39;
+            else:
+                query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+            continue
+        if column_type:
+            if row[&#39;column_type&#39;]==&#39;varchar&#39;:
+                query += &#39;&#34;&#39;+row[&#39;column_name&#39;].lower()+&#39;&#34;&#39; + &#39; varchar(&#39;+str(int(row[&#39;length&#39;]))+&#39;),&#39;
+                continue
+            if row[&#39;column_type&#39;] in [&#39;date&#39;,&#39;integer&#39;,&#39;bigint&#39;,&#39;text&#39;,&#39;numeric&#39;,&#39;timestamp&#39;]:
+                query += f&#39;&#34;{row[&#34;column_name&#34;].lower()}&#34; {row[&#34;column_type&#34;]},&#39;
+                continue
+
+    query = query + &#39; app_creation_user text DEFAULT USER,app_creation_date timestamp DEFAULT CURRENT_TIMESTAMP)&#39; + query_partition
+    result_message = self.insert(query, records)
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_from_select"><code class="name flex">
+<span>def <span class="ident">create_table_from_select</span></span>(<span>self, select_query: str, table: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates a table from another as base.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>select_query</code></strong> :&ensp;<code>str</code></dt>
+<dd>base select query of origin table.</dd>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>new table name and schema.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_from_select(self, select_query : str, table: str)-&gt; str:
+    &#34;&#34;&#34; creates a table from another as base.
+
+    Args:
+        select_query (str): base select query of origin table.
+        table (str): new table name and schema.
+
+    Returns:
+        result_message (str): result message.
+    &#34;&#34;&#34;
+    records = [(table)]
+    query_create = f&#39;create table {table} as &#39; + select_query
+    result_message = self.insert(query_create,records)
+    result_message = f&#39;table created : {table}&#39;
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_index"><code class="name flex">
+<span>def <span class="ident">create_table_index</span></span>(<span>self, table_scheme: str, table_name: str, index_name: str, table_column: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates an index column in specified table.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>index_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>new index name.</dd>
+<dt><strong><code>table_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table column.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_index(self, table_scheme: str, table_name: str, index_name: str, table_column: str)-&gt; str:
+    &#34;&#34;&#34;creates an index column in specified table.
+        
+    Args:
+        table_scheme (str): target table scheme.
+        table_name (str): target table name.
+        index_name (str): new index name.
+        table_column (str): target table column.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    table = f&#39;{table_scheme}.{table_name}&#39;
+    records = [(table)]
+    query_index = f&#39;create index if not exists {index_name} on {table}({table_column})&#39;
+    result_message = self.insert(query_index,records)
+    result_message = f&#39;index created : {table_scheme}.{index_name}&#39;
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_default"><code class="name flex">
+<span>def <span class="ident">create_table_partition_default</span></span>(<span>self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, column_subpartition: str = None, subpartition_type: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new table default partition.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>partition_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition scheme.</dd>
+<dt><strong><code>partition_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition name.</dd>
+<dt><strong><code>column_subpartition</code></strong> :&ensp;<code>str</code></dt>
+<dd>column for subpartition.</dd>
+<dt><strong><code>subpartition_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>subpartition type.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_partition_default(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+    &#34;&#34;&#34; Creates a new table default partition.
+        
+    Args:
+        table_scheme (str): target table scheme.
+        table_name (str): target table name.
+        partition_scheme (str): new partition scheme.
+        partition_name (str): new partition name.
+        column_subpartition (str): column for subpartition.
+        subpartition_type (str): subpartition type.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    records = [(table_name)]
+    query_subpartition = &#39;&#39;
+    if column_subpartition != None and subpartition_type!= None:
+        query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+    query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} default&#34;
+    query_create = query_create + query_subpartition
+    result_message = self.insert(query_create, records)
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_list"><code class="name flex">
+<span>def <span class="ident">create_table_partition_list</span></span>(<span>self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_value: str, column_subpartition: str = None, subpartition_type: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new table partition.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>partition_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition scheme.</dd>
+<dt><strong><code>partition_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition name.</dd>
+<dt><strong><code>partition_value</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition value.</dd>
+<dt><strong><code>column_subpartition</code></strong> :&ensp;<code>str</code></dt>
+<dd>column for subpartition.</dd>
+<dt><strong><code>subpartition_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>subpartition type.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_partition_list(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_value: str, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+    &#34;&#34;&#34; Creates a new table partition.
+        
+    Args:
+        table_scheme (str): target table scheme.
+        table_name (str): target table name.
+        partition_scheme (str): new partition scheme.
+        partition_name (str): new partition name.
+        partition_value (str): new partition value.
+        column_subpartition (str): column for subpartition.
+        subpartition_type (str): subpartition type.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    records = [(table_name)]
+    query_subpartition = &#39;&#39;
+    if column_subpartition != None and subpartition_type!= None:
+        query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+    query_create = f&#34;create table if not exists {partition_scheme}.{partition_name} partition of {table_scheme}.{table_name} for values in ({partition_value})&#34;
+    query_create = query_create + query_subpartition
+    result_message = self.insert(query_create, records)
+    result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, table_name + &#39;_others&#39;)
+    result_message = f&#39;partitions added to table : {partition_scheme}.{partition_name}&#39;
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_range"><code class="name flex">
+<span>def <span class="ident">create_table_partition_range</span></span>(<span>self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_start_value: str, partition_end_value: str = None, partition_range_type: str = 'daily', column_subpartition: str = None, subpartition_type: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new table partition range.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>partition_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition scheme.</dd>
+<dt><strong><code>partition_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition name.</dd>
+<dt><strong><code>partition_start_value</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition start value.</dd>
+<dt><strong><code>partition_end_value</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition end value.</dd>
+<dt><strong><code>partition_range_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>new partition range type.</dd>
+<dt><strong><code>column_subpartition</code></strong> :&ensp;<code>str</code></dt>
+<dd>column for subpartition.</dd>
+<dt><strong><code>subpartition_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>subpartition type.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_partition_range(self, table_scheme: str, table_name: str, partition_scheme: str, partition_name: str, partition_start_value: str, partition_end_value: str = None, partition_range_type: str = &#39;daily&#39;, column_subpartition: str = None, subpartition_type: str = None)-&gt;str:
+    &#34;&#34;&#34; Creates a new table partition range.
+        
+    Args:
+        table_scheme (str): target table scheme.
+        table_name (str): target table name.
+        partition_scheme (str): new partition scheme.
+        partition_name (str): new partition name.
+        partition_start_value (str): new partition start value.
+        partition_end_value (str): new partition end value.
+        partition_range_type (str): new partition range type.
+        column_subpartition (str): column for subpartition.
+        subpartition_type (str): subpartition type.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    
+    records = [(table_name)]
+    query_subpartition = &#39;&#39;
+    counts = 0
+    if column_subpartition != None and subpartition_type!= None:
+        query_subpartition += f&#39; partition by {subpartition_type}({column_subpartition})&#39;
+    if partition_end_value == None:
+        partition_end_value = partition_start_value
+    if partition_range_type == &#39;daily&#39;:
+        start_date = datetime.strptime(partition_start_value,&#39;%Y%m%d&#39;)
+        end_date = datetime.strptime(partition_end_value,&#39;%Y%m%d&#39;)
+        for value in pd.date_range(start_date,end_date):
+                counts+=1
+        query_block = f&#34;&#34;&#34;
+        do $$
+        declare
+        r text;
+        BEGIN
+            for r in 
+                select to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;) + s.name::integer from generate_series(0,to_date(&#39;{partition_end_value}&#39;,&#39;yyyymmdd&#39;)-to_date(&#39;{partition_start_value}&#39;,&#39;yyyymmdd&#39;)) s
+            loop
+                execute &#39;create table if not exists {partition_scheme}.{partition_name}_&#39;||to_char(to_date(r,&#39;yyyy-mm-dd&#39;),&#39;yyyymmdd&#39;)||&#39; partition of {table_scheme}.{partition_name} for values from (&#39;&#39;&#39;||r||&#39;&#39;&#39;) to (&#39;&#39;&#39;||to_date(r,&#39;yyyy-mm-dd&#39;)+1||&#39;&#39;&#39;) {query_subpartition}&#39;;
+            end loop;
+        END $$;
+        &#34;&#34;&#34;
+        result_message = self.execute_block(query_block)
+    if partition_range_type == &#39;monthly&#39;:
+        start_date = datetime.strptime(partition_start_value[0:6]+&#39;01&#39;,&#39;%Y%m%d&#39;)
+        end_date = start_date + relativedelta(months=+1)
+        query_create = f&#34;create table if not exists {partition_scheme}.{partition_name}_{start_date.strftime(&#39;%Y%m&#39;)} partition of {table_scheme}.{table_name} for values from (&#39;{start_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;) to (&#39;{end_date.strftime(&#39;%Y-%m-%d&#39;)}&#39;)&#34;
+        query_create = query_create + query_subpartition
+        result_message = self.insert(query_create, records)
+
+    result = self.create_table_partition_default(table_scheme, table_name, partition_scheme, partition_name + &#39;_others&#39;)
+    result_message = f&#39;{counts} partitions added to table : {table_scheme}.{table_name}&#39;
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table"><code class="name flex">
+<span>def <span class="ident">drop_table</span></span>(<span>self, table_name: str) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drops table, returns message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drop_table(self, table_name: str) -&gt;Any:
+    &#34;&#34;&#34;Drops table, returns message
+    
+    Args:
+        table_name (str): table name.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    records = [(table_name)]
+    query = &#34;drop table if exists %s&#34; % table_name
+    if self.bool_query:
+        self.query+=query+&#39;;&#39;
+        result_message = f&#34;{table_name} is going to be droped&#34;
+    else:
+        result_message = self.insert(query, records)
+        result_message = &#39;droped : &#39; + table_name
+
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table_index"><code class="name flex">
+<span>def <span class="ident">drop_table_index</span></span>(<span>self, index_scheme: str, index_name: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>drops specified table index</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target index scheme.</dd>
+<dt><strong><code>index_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target index name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drop_table_index(self,index_scheme: str, index_name: str)-&gt; str:
+    &#34;&#34;&#34;drops specified table index
+        
+    Args:
+        index_scheme (str): target index scheme.
+        index_name (str): target index name.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+
+    index = f&#39;{index_scheme}.{index_name}&#39;
+    records = [(index)]
+    query = f&#34;drop index {index}&#34;
+    result_message = self.insert(query, records)
+    result_message = &#39;droped : &#39; + index
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.execute_block"><code class="name flex">
+<span>def <span class="ident">execute_block</span></span>(<span>self, query: str, return_row_count: bool = False) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Executes a query</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>query string</dd>
+<dt><strong><code>return_row_count</code></strong> :&ensp;<code>bool</code></dt>
+<dd>return rows affected as message or as number.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Any</code></dt>
+<dd>result_message if return_row_count = False or a list with the message and rows afectected.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def execute_block(self, query: str, return_row_count: bool = False) -&gt; Any:
+    &#34;&#34;&#34;Executes a query
+    
+    Args:
+        query (str): query string
+        return_row_count (bool): return rows affected as message or as number.
+
+    Returns:
+        Any:  result_message if return_row_count = False or a list with the message and rows afectected.
+    &#34;&#34;&#34;
+    try:
+        conn = self.conecction()
+        cur = conn.cursor()
+        cur.execute(query)
+        result_message = f&#34;Query successfully executed, {cur.rowcount} row(s) affected&#34;
+        conn.commit()
+        cur.close()
+        conn.close()
+        if return_row_count:
+            return [result_message,cur.rowcount]
+        else:
+            return result_message
+    except Exception as e:
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.get_structure_table_from_db"><code class="name flex">
+<span>def <span class="ident">get_structure_table_from_db</span></span>(<span>self, table_scheme: str, table_name: str, order_by: str = 'order by ordinal_position') ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets table structure from of given table, returns a list with said structure.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of schem of table.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of table.</dd>
+<dt><strong><code>order_by</code></strong> :&ensp;<code>str</code></dt>
+<dd>query for order by.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>list of rows selected.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_structure_table_from_db(self, table_scheme: str, table_name: str, order_by: str = &#39;order by ordinal_position&#39;) -&gt; list:
+    &#34;&#34;&#34;Gets table structure from of given table, returns a list with said structure.
+    
+    Args:
+        table_scheme (str): name of schem of table.
+        table_name (str): name of table.
+        order_by (str): query for order by.
+
+    Returns:
+
+        list: list of rows selected.
+    
+    &#34;&#34;&#34;
+    query_where = f&#34;where table_schema= &#39;{table_scheme}&#39; and table_name = &#39;{table_name}&#39; {order_by}&#34;
+    query_columns = &#39;table_schema,table_name,column_name,data_type,ordinal_position,character_maximum_length as length,numeric_precision,numeric_scale&#39;
+    query_table = &#39;information_schema.columns&#39;
+    return self.select(query_table, query_where.lower(), query_columns.lower())</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, query: str, records) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Executes insert query, returns message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>query string</dd>
+<dt><strong><code>records</code></strong> :&ensp;<code>Any</code></dt>
+<dd>a list of records to be insrted.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): Message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert(self, query: str, records) -&gt; Any:
+    &#34;&#34;&#34;Executes insert query, returns message
+
+    Args:
+        query (str): query string
+        records (Any): a list of records to be insrted.
+
+    Returns:
+        result_message (str): Message.
+    
+    &#34;&#34;&#34;
+    try:
+        conn = self.conecction()
+        cur = conn.cursor()
+        sql_insert_query = query
+        result = cur.executemany(sql_insert_query, records)
+        result_message = &#34;records inserted/updated successfully into table&#34;
+        conn.commit()
+        cur.close()
+        conn.close()
+        return result_message
+    except Exception as e:
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_control_file"><code class="name flex">
+<span>def <span class="ident">insert_control_file</span></span>(<span>self, records_list) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Insert into Table control.t_control_file , returns message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>records_list</code></strong> :&ensp;<code>Any</code></dt>
+<dd>list of records.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_control_file(self, records_list) -&gt; Any:
+    &#34;&#34;&#34;Insert into Table control.t_control_file , returns message
+    
+    Args:
+        records_list (Any): list of records.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    sql_insert_query = &#34;&#34;&#34; INSERT INTO CONTROL.T_CONTROL_FILE (CODE, BRAND, CUSTOMER, log_file_name, process_file_name,records_number,process_date,file_date,control_message,description_status,file_type,parent_zip,execution_id) VALUES(%s,%s,%s,%s,%s,0,%s,%s,%s,%s,%s,%s,%s)&#34;&#34;&#34;
+    result_message = self.insert(sql_insert_query, records_list)
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_csv"><code class="name flex">
+<span>def <span class="ident">insert_from_csv</span></span>(<span>self, table: str, option_text: str, bucket: str, file_path: str, columns_table: str = None, truncate_table: bool = True) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>insert into table from CSV format.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme and name.</dd>
+<dt><strong><code>option_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>options text for query.</dd>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>source bucket.</dd>
+<dt><strong><code>file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>file path in bucket.</dd>
+<dt><strong><code>columns_table</code></strong> :&ensp;<code>str</code></dt>
+<dd>columns to extract.</dd>
+<dt><strong><code>truncate_table</code></strong> :&ensp;<code>bool</code></dt>
+<dd>truncate table before insertion .</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_from_csv(
+    self,
+    table: str,
+    option_text: str,
+    bucket: str,
+    file_path: str,
+    columns_table: str = None,
+    truncate_table: bool = True,
+) -&gt; Any:
+    &#34;&#34;&#34; insert into table from CSV format.
+        
+    Args:
+        table (str): target table scheme and name.
+        option_text (str): options text for query.
+        bucket (str): source bucket.
+        file_path (str): file path in bucket.
+        columns_table (str): columns to extract.
+        truncate_table (bool): truncate table before insertion .
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    list_credentials = connect_to_s3().loading_credentials(bucket=bucket)
+    columns_table = &#34;&#34; if columns_table == None else columns_table
+    records = [(table, columns_table, option_text, bucket, file_path, list_credentials[0],list_credentials[1],list_credentials[2])]
+    query = &#34;&#34;&#34;SELECT aws_s3.table_import_from_s3(%s, %s, %s, aws_commons.create_s3_uri(%s, %s, %s),    aws_commons.create_aws_credentials(%s, %s, &#39;&#39;))&#34;&#34;&#34;
+    if truncate_table:
+        result_truncate = self.truncate_table(table)
+    result_insert = self.insert(query, records)
+                                                            
+    return result_insert</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_dataframe"><code class="name flex">
+<span>def <span class="ident">insert_from_dataframe</span></span>(<span>self, table: str, schema: str, dataframe: pandas.core.frame.DataFrame, engine=None, index: bool = False, if_exists: str = 'fail', dtype: dict = {}) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inserts data from dataframe using SQLAlchemy engine</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table and name.</dd>
+<dt><strong><code>schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>target schema.</dd>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>DataFrame</code></dt>
+<dd>data from dataframe.</dd>
+<dt><strong><code>engine</code></strong> :&ensp;<code>object</code></dt>
+<dd>engine conecction object.</dd>
+<dt><strong><code>index</code></strong> :&ensp;<code>bool</code></dt>
+<dd>index column in dataframe.</dd>
+<dt><strong><code>if_exists</code></strong></dt>
+<dd>option for dataframe in case of table already exists.</dd>
+<dt><strong><code>dtype</code></strong></dt>
+<dd>type of columns dictionary.</dd>
+</dl>
+<h2 id="result">Result</h2>
+<p>inserted_rows (int): inserted rows number.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_from_dataframe(self,table:str,schema:str,dataframe:pd.DataFrame,engine=None,index: bool = False,if_exists:str =&#34;fail&#34;,dtype:dict ={})-&gt; int:
+    &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+    Args:
+        table (str): target table and name.
+        schema (str): target schema.
+        dataframe (DataFrame): data from dataframe.
+        engine (object): engine conecction object.
+        index (bool): index column in dataframe.
+        if_exists: option for dataframe in case of table already exists.
+        dtype: type of columns dictionary.
+
+    Result:
+        inserted_rows (int): inserted rows number.
+
+    &#34;&#34;&#34;
+    pe = self.prepare_engine()
+    engine = pe.connect()
+    with engine as con:
+        
+        inserted_rows = dataframe.to_sql(
+            table,
+            schema =schema,
+            con=con,
+            if_exists=if_exists,
+            index=index,
+            dtype=dtype,
+        )
+
+    return inserted_rows</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_df"><code class="name flex">
+<span>def <span class="ident">insert_from_df</span></span>(<span>self, df: pandas.core.frame.DataFrame, table_schema: str, table_name: str, if_exists: str = 'replace', index: bool = False, dtype: dict = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inserts data from dataframe using SQLAlchemy engine</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table and name.</dd>
+<dt><strong><code>schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>target schema.</dd>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>DataFrame</code></dt>
+<dd>data from dataframe.</dd>
+<dt><strong><code>engine</code></strong> :&ensp;<code>object</code></dt>
+<dd>engine conecction object.</dd>
+<dt><strong><code>index</code></strong> :&ensp;<code>bool</code></dt>
+<dd>index column in dataframe.</dd>
+<dt><strong><code>if_exists</code></strong></dt>
+<dd>option for dataframe in case of table already exists.</dd>
+<dt><strong><code>dtype</code></strong></dt>
+<dd>type of columns dictionary.</dd>
+</dl>
+<h2 id="result">Result</h2>
+<p>result_message (str): inserted rows number.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_from_df(self, df : pd.DataFrame, table_schema:str,table_name:str,if_exists:str =&#39;replace&#39;,index:bool=False,dtype:dict = None)-&gt; str:
+    &#34;&#34;&#34;Inserts data from dataframe using SQLAlchemy engine
+
+    Args:
+        table (str): target table and name.
+        schema (str): target schema.
+        dataframe (DataFrame): data from dataframe.
+        engine (object): engine conecction object.
+        index (bool): index column in dataframe.
+        if_exists: option for dataframe in case of table already exists.
+        dtype: type of columns dictionary.
+
+    Result:
+        result_message (str): inserted rows number.
+
+    &#34;&#34;&#34;
+    pe = self.prepare_engine()
+    en = pe.connect()
+    result_message=df.to_sql(
+        name = table_name,
+        schema =table_schema,
+        con=en,
+        if_exists=if_exists,
+        index=index,
+        dtype=dtype
+    )
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_table"><code class="name flex">
+<span>def <span class="ident">insert_from_table</span></span>(<span>self, source_table_scheme: str, source_table_name: str, target_table_scheme: str, target_table_name: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>inserts from one table to another.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>source_table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>source table scheme.</dd>
+<dt><strong><code>source_table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>source table name.</dd>
+<dt><strong><code>target_table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>target_table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str)-&gt; str:
+    &#34;&#34;&#34; inserts from one table to another.
+
+    Args:
+        source_table_scheme (str): source table scheme.
+        source_table_name (str): source table name.
+        target_table_scheme (str): target table scheme.
+        target_table_name (str): target table name.
+
+    Returns:
+        result_message (str): result message.
+    &#34;&#34;&#34;
+    records = [(target_table_name)]
+    df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+    if df_source.empty:
+        return &#39;0 records&#39;
+    str_columns = &#39;&#34;&#39; + &#39;&#34;,&#34;&#39;.join(map(str,list(df_source[&#39;column_name&#39;].values))) + &#39;&#34;&#39;
+    query = f&#39;insert into {target_table_scheme}.{target_table_name} ({str_columns}) select {str_columns} from {source_table_scheme}.{source_table_name}&#39;
+    result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_log"><code class="name flex">
+<span>def <span class="ident">insert_log</span></span>(<span>self, records_list) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Insert into Table control.t_log, returns message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>records_list</code></strong> :&ensp;<code>Any</code></dt>
+<dd>list of records.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_log(self, records_list) -&gt; str:
+    &#34;&#34;&#34;Insert into Table control.t_log, returns message
+    
+    Args:
+        records_list (Any): list of records.
+
+    Returns:
+        result_message (str): result message.
+    &#34;&#34;&#34;
+    sql_insert_query = &#34;&#34;&#34; insert into CONTROL.T_LOG (customer,brand,process_name,process_message,description_status,start_date,end_date,file_name) values (%s,%s,%s,%s,%s,CURRENT_TIMESTAMP,NULL,%s)&#34;&#34;&#34;
+    result_message = self.insert(sql_insert_query, records_list)
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.prepare_engine"><code class="name flex">
+<span>def <span class="ident">prepare_engine</span></span>(<span>self) ‑> object</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an engine with sqlAlchemy using the credentials</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>object</code></dt>
+<dd>Engine object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prepare_engine(self) -&gt; object:
+    &#34;&#34;&#34;Creates an engine with sqlAlchemy using the credentials
+    
+    Returns:
+        object: Engine object.
+    &#34;&#34;&#34;
+    credentials = self.__loading_credentials()
+    connection_string = f&#34;postgresql://{credentials[3]}:{credentials[4]}@{credentials[1]}/{credentials[0]}&#34;
+    return create_engine(connection_string)</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.query_block"><code class="name flex">
+<span>def <span class="ident">query_block</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>executes a query block</p>
+<p>Args:</p>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_block(self)-&gt;str:
+    &#34;&#34;&#34; executes a query block
+        
+    Args:
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    query_block = f&#34;&#34;&#34;
+    do $$
+    declare
+    r text;
+    BEGIN
+            {self.query}
+    END $$;
+    &#34;&#34;&#34;
+    result_message = self.execute_block(query_block)
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select"><code class="name flex">
+<span>def <span class="ident">select</span></span>(<span>self, table: str, conditions: str = None, cols: str | list = None) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simple select from any table with conditions, returns List</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme and name.</dd>
+<dt><strong><code>conditions</code></strong> :&ensp;<code>str</code></dt>
+<dd>query conditions.</dd>
+<dt><strong><code>cols</code></strong> :&ensp;<code>str</code></dt>
+<dd>selected columns.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>rows (list): selected rows as list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select(
+    self, table: str, conditions: str = None, cols: str | list = None
+) -&gt; list:
+    &#34;&#34;&#34;Simple select from any table with conditions, returns List
+
+    Args:
+        table (str): target table scheme and name.
+        conditions (str): query conditions.
+        cols (str): selected columns.
+
+    Returns:
+        rows (list): selected rows as list.
+    
+    &#34;&#34;&#34;
+    try:
+        query = &#34;SELECT &#34;
+
+        if isinstance(cols, str):
+            columns = cols
+        elif isinstance(cols, list):
+            columns = &#34;,&#34;.join(str(x) for x in cols)
+        else:
+            columns = &#34;*&#34;
+
+        if conditions == None:
+            conditions = &#34;&#34;
+
+        query += columns + &#34; FROM &#34; + table + &#34; &#34; + conditions
+        con = self.conecction()
+        cursor = con.cursor()
+        cursor.execute(query)
+        rows = []
+        for buff in cursor:
+            row = {}
+            c = 0
+            for col in cursor.description:
+                row.update({str(col[0]): buff[c]})
+                c += 1
+            rows.append(row)
+        cursor.close()
+        return rows
+    except Exception as e:
+        print(str(e))
+        return [False, {&#34;Message&#34;: str(e)}]</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select_to_df_object"><code class="name flex">
+<span>def <span class="ident">select_to_df_object</span></span>(<span>self, query: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>inserts into dataframe from select query</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>select query.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>df (DataFrame): dataframe with data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_to_df_object(self,query:str)-&gt; pd.DataFrame:
+    &#34;&#34;&#34;inserts into dataframe from select query
+    
+    Args:
+        query (str): select query.
+
+    Returns:
+        df (DataFrame): dataframe with data.
+    
+    &#34;&#34;&#34;
+    pe = self.prepare_engine()
+    df = None
+    with pe.connect() as con:
+        df = pd.read_sql(query,con=con)
+    return df</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_count"><code class="name flex">
+<span>def <span class="ident">table_count</span></span>(<span>self, table_scheme: str, table_name: str, where_query: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Counts rows in table, returns quantity of rows</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target schema.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>where_query</code></strong> :&ensp;<code>str</code></dt>
+<dd>query conditions.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str </code></dt>
+<dd>result of count query.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def table_count(self, table_scheme: str, table_name: str, where_query: str = None)-&gt;str:
+    &#34;&#34;&#34;Counts rows in table, returns quantity of rows
+    
+    Args:
+        table_scheme (str): target schema.
+        table_name (str): target table name.
+        where_query (str): query conditions.
+
+    Returns:
+        str : result of count query.
+    &#34;&#34;&#34;
+    table = f&#39;{table_scheme}.{table_name}&#39;
+    if where_query == None:
+        where_query=&#39;&#39;
+    result = self.select(table,where_query,&#39;count(1) count&#39;)
+    return str(result[0][&#39;count&#39;])</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_exists"><code class="name flex">
+<span>def <span class="ident">table_exists</span></span>(<span>self, table_name: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Verify if table exists.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name and schema.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool </code></dt>
+<dd>True if exists, False if not.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def table_exists(self, table_name : str) -&gt; bool:
+    &#34;&#34;&#34;Verify if table exists.
+    
+    Args:
+        table_name (str): target table name and schema.
+
+    Returns:
+        bool : True if exists, False if not.
+    &#34;&#34;&#34;
+    table = f&#34;(SELECT to_regclass(&#39;{table_name}&#39;) table_exists) dummy&#34;
+    result = self.select(table,cols=&#39;table_exists&#39;)
+    if result[0][&#39;table_exists&#39;] == None:
+        return False
+    else:
+        return True</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.truncate_table"><code class="name flex">
+<span>def <span class="ident">truncate_table</span></span>(<span>self, table: str) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>truncate table, returns message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def truncate_table(self, table: str) -&gt; Any:
+    &#34;&#34;&#34;truncate table, returns message
+    
+    Args:
+        table (str): table name.
+
+    Returns:
+        result_message (str): result message.
+    
+    &#34;&#34;&#34;
+    records = [(table)]
+    query = &#34;truncate table %s&#34; % table
+    result_message = self.insert(query, records)
+    result_message = &#39;truncated : &#39; + table
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, table: str, conditions: str, cols: dict) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simple update query using dictionary {col:value}, only works with condition</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name.</dd>
+<dt><strong><code>conditions</code></strong> :&ensp;<code>str</code></dt>
+<dd>conditions for update.</dd>
+<dt><strong><code>cols</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary of update columns.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>list with message and confirmation bool.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update( self, table: str, conditions: str, cols: dict)-&gt; List:
+    &#34;&#34;&#34;Simple update query using dictionary {col:value}, only works with condition
+    
+    Args:
+        table (str): table name.
+        conditions (str): conditions for update.
+        cols (dict): dictionary of update columns.
+
+    Returns:
+        List: list with message and confirmation bool.
+    
+    &#34;&#34;&#34;
+    try:
+        query = &#34;UPDATE &#34; + table + &#34; SET &#34;
+        column_data = []
+        for key in cols:
+            par_value = f&#34;{key}=&#39;{cols[key]}&#39;&#34;
+            column_data.append(par_value)
+        
+        if(len(column_data) &gt; 0):
+            query+= &#34;,&#34;.join(x for x in column_data)
+        else:
+            return [False,{&#34;Message&#34;:&#34;Malformed query&#34;}]
+        
+        query+=&#34; &#34;+conditions
+        conn = self.conecction()
+        cursor = conn.cursor()
+        cursor.execute(query)
+        updated_rows = cursor.rowcount
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return [True,{&#34;Message&#34;:f&#34;updated_rows: {updated_rows}&#34;}]
+    except Exception as e:
+        print(str(e))
+        return [False, {&#34;Message&#34;:str(e)}]</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update_from_table"><code class="name flex">
+<span>def <span class="ident">update_from_table</span></span>(<span>self, source_table_scheme: str, source_table_name: str, target_table_scheme: str, target_table_name: str, key_columns: list) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>updates from one table to another, both tables must have the same columns names.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>source_table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>source table scheme.</dd>
+<dt><strong><code>source_table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>source table name.</dd>
+<dt><strong><code>target_table_scheme</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table scheme.</dd>
+<dt><strong><code>target_table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table name.</dd>
+<dt><strong><code>key_columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of columns to be updated.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_message (str): result message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_from_table(self, source_table_scheme : str, source_table_name: str, target_table_scheme: str, target_table_name: str, key_columns: list)-&gt; str:
+    &#34;&#34;&#34; updates from one table to another, both tables must have the same columns names.
+
+    Args:
+        source_table_scheme (str): source table scheme.
+        source_table_name (str): source table name.
+        target_table_scheme (str): target table scheme.
+        target_table_name (str): target table name.
+        key_columns (list): list of columns to be updated.
+    Returns:
+        result_message (str): result message.
+    &#34;&#34;&#34;
+    records = [(target_table_name)]
+    df_source = pd.DataFrame(self.get_structure_table_from_db(source_table_scheme,source_table_name))
+    df_source = df_source[~df_source[&#39;column_name&#39;].isin(key_columns)]
+    query_where = &#39;&#39;
+    query_set = &#39;&#39;
+    for value in key_columns:
+        query_where+=f&#39;t.{value} = s.{value} and &#39;
+    query_where = query_where[:-4]
+    for value in df_source[&#39;column_name&#39;].values:
+        query_set+=f&#39;{value} = s.{value},&#39;
+    query_set = query_set[:-1]
+    query_update = f&#34;&#34;&#34;
+    update {target_table_scheme}.{target_table_name} t
+    set {query_set}
+    from {source_table_scheme}.{source_table_name} s
+    where {query_where}
+    &#34;&#34;&#34;
+    result_message = self.table_count(source_table_scheme,source_table_name) + &#39; &#39; + self.insert(query_update,records) + &#39; &#39; + target_table_scheme + &#39;.&#39; + target_table_name
+    return result_message</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.validate_structure"><code class="name flex">
+<span>def <span class="ident">validate_structure</span></span>(<span>self, source_table: str, target_table: str, column_name: str = 'column_name') ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Validates if a column exists, returns a True/False</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>source_table</code></strong> :&ensp;<code>str</code></dt>
+<dd>source table and schema.</dd>
+<dt><strong><code>target_table</code></strong> :&ensp;<code>str</code></dt>
+<dd>target table and schema.</dd>
+<dt><strong><code>column_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>target column.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>bool_result (bool): True if exists, False if not.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validate_structure(self,source_table : str,target_table : str, column_name : str = &#39;column_name&#39;) -&gt; bool:
+    &#34;&#34;&#34;Validates if a column exists, returns a True/False
+    
+    Args:
+        source_table (str): source table and schema.
+        target_table (str): target table and schema.
+        column_name (str): target column.
+
+    Returns:
+        bool_result (bool): True if exists, False if not.
+    
+    &#34;&#34;&#34;
+    list_source_table = source_table.split(&#39;.&#39;)
+    list_target_table = target_table.split(&#39;.&#39;)
+    table = f&#34;(select column_name,character_maximum_length from information_schema.columns where table_name = &#39;{list_source_table[1]}&#39; and table_schema = &#39;{list_source_table[0]}&#39; and data_type=&#39;character varying&#39;) a full join(select {column_name}, length from {target_table} where current_date between start_date and coalesce(end_date,current_date)) b on (a.column_name = b.{column_name} and a.character_maximum_length = b.length)&#34;
+    cols = f&#39;case when count(a.column_name) - 5 = count(b.{column_name}) then 1 else 0 end flag_structure&#39;
+    bool_result = False
+    if self.table_exists(target_table):
+        result = self.select(table,None,cols)
+        if  result[0][&#39;flag_structure&#39;] == 1:
+            bool_result = True
+    return bool_result</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3"><code class="flex name class">
+<span>class <span class="ident">connect_to_s3</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Connection methods to s3 repository.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class connect_to_s3:
+    &#34;&#34;&#34;Connection methods to s3 repository.&#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        load_dotenv()
+        self.log_name = None
+        self.typeLog = None
+        self.client = None
+        self.exec_module = None
+
+    def loading_credentials(self, bucket: str) -&gt; List:
+        &#34;&#34;&#34;Loading credentials from .env config file.
+        
+        Args:
+            bucket (str): bucket to be accesed.
+    
+        Returns:
+            List: list of credentials.
+
+        &#34;&#34;&#34;
+        try:
+            buckets = self.get_buckets()
+            if bucket in buckets:
+                aws_region = os.getenv(&#34;AWS_DEFAULT_REGION_1&#34;, &#34;us-west-2&#34;)
+                aws_access_key_id = os.getenv(&#34;AWS_ACCESS_KEY_ID_1&#34;, &#34;&#34;)
+                aws_secret_key = os.getenv(&#34;AWS_SECRET_ACCESS_KEY_1&#34;, &#34;&#34;)
+            else:
+                print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+                sys.exit()
+            return [
+                aws_region,
+                aws_access_key_id,
+                aws_secret_key,
+            ]
+        except Exception as error:
+            print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+            sys.exit()
+
+    def __connect_s3(self, bucket: str) -&gt; object:
+        &#34;&#34;&#34;Connection to s3 buckets 
+        Args:
+            bucket: bucket to be accessed.
+
+        Returns 
+            object: boto3 object.
+        &#34;&#34;&#34;
+        try:
+            credentials = self.loading_credentials(bucket)
+            s3 = boto3.resource(
+                service_name=&#34;s3&#34;,
+                region_name=credentials[0],
+                aws_access_key_id=credentials[1],
+                aws_secret_access_key=credentials[2],
+            )
+            return s3
+        except Exception as error:
+            print(&#34;CRITICAL ERROR :&#34; + str(error) + &#34; ; Terminating script&#34;)
+            sys.exit()
+        except botocore.errorfactory.NoSuchBucket as error:
+            print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+            sys.exit()
+
+    def get_buckets(self) -&gt; list:
+        &#34;&#34;&#34;get list of buckets from enviroment.
+        
+        Returns:
+            buckets (list): list of buckets.
+        
+        &#34;&#34;&#34;
+        buckets = json.loads(os.getenv(&#34;BUCKETS&#34;))
+        return buckets
+
+    def upload_object(self, bucket: str, path_to_file: str, path_to_save: str) -&gt; bool:
+        &#34;&#34;&#34;Upload object to the specified bucket, returns True/False.
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file to be uploaded.
+            path_to_save (str): destiny path in bucket.
+        
+        Returns:
+            bool: True if is successfully uploaded, False if not.
+        
+        &#34;&#34;&#34;
+        try:
+            s3 = connect_to_s3().__connect_s3(bucket)
+            s3.Bucket(bucket).upload_file(Filename=path_to_file, Key=path_to_save)
+            return True
+        except boto3.exceptions.S3UploadFailedError as error:
+            if self.typeLog is not None:
+                Logs.logs.logs().exist_file(self.typeLog,self.client,&#34;VISA AND MASTERCARD&#34;,self.log_name,&#34;UPLOADING FILE TO S3&#34;,&#34;CRITICAL&#34;,f&#34;Exception {error} | terminating script &#34;,self.exec_module,upload=False)
+            else:
+                print(f&#34;Exception {error} | terminating script &#34;)
+            return False,error
+
+    def get_object(
+        self, bucket: str, path_to_file: str, path_to_save: str, download: bool = True
+    ) -&gt; bool | Any:
+        &#34;&#34;&#34;Download specified object from bucket
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file in bucket.
+            path_to_save (str): destiny path in local path.  
+            download (bool): 
+
+        Returns:
+            Any: True/False or Response object.
+        
+        &#34;&#34;&#34;
+        try:
+            s3 = connect_to_s3().__connect_s3(bucket)
+            if download:
+                &#34;&#34;&#34;Download object&#34;&#34;&#34;
+                result = s3.Bucket(bucket).download_file(
+                    Key=path_to_file, Filename=path_to_save
+                )
+
+                return True
+            else:
+                &#34;&#34;&#34;Gets response dict as return&#34;&#34;&#34;
+                response = s3.Bucket(bucket).Object(path_to_file).get()
+                return response
+        except botocore.exceptions.ClientError as Error:
+            print(Error)
+            return False
+
+    def delete_object(self, bucket: str, path_to_file: str) -&gt; bool:
+        &#34;&#34;&#34;Deletes specified object at bucket
+        
+        Args:
+            bucket (str): destiny bucket.
+            path_to_file (str): path to file in bucket
+
+        Returns:
+            bool: True if success or False if fails.
+        
+        &#34;&#34;&#34;
+        s3 = connect_to_s3().__connect_s3(bucket)
+        result = s3.Object(bucket, path_to_file).delete()
+        return True if (result[&#34;ResponseMetadata&#34;][&#34;HTTPStatusCode&#34;] == 204) else False
+
+    def list_content(self, bucket: str, filter: str = None) -&gt; list:
+        &#34;&#34;&#34;lists the contents of the specified bucket
+        
+        Args:
+            bucket (str): bucket to be searched.
+            filter (str): filter or folder in bucket.
+        
+        Returns:
+            list_of_objects (list): list of contents of specified bucket
+
+        &#34;&#34;&#34;
+        s3 = connect_to_s3().__connect_s3(bucket)
+        filter = &#34;&#34; if (filter == None) else filter
+        list_of_objects = []
+        for obj in s3.Bucket(bucket).objects.filter(Delimiter=&#34;\\&#34;, Prefix=filter):
+            list_of_objects.append(obj.key)
+        return list_of_objects</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.delete_object"><code class="name flex">
+<span>def <span class="ident">delete_object</span></span>(<span>self, bucket: str, path_to_file: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes specified object at bucket</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>destiny bucket.</dd>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to file in bucket</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if success or False if fails.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_object(self, bucket: str, path_to_file: str) -&gt; bool:
+    &#34;&#34;&#34;Deletes specified object at bucket
+    
+    Args:
+        bucket (str): destiny bucket.
+        path_to_file (str): path to file in bucket
+
+    Returns:
+        bool: True if success or False if fails.
+    
+    &#34;&#34;&#34;
+    s3 = connect_to_s3().__connect_s3(bucket)
+    result = s3.Object(bucket, path_to_file).delete()
+    return True if (result[&#34;ResponseMetadata&#34;][&#34;HTTPStatusCode&#34;] == 204) else False</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_buckets"><code class="name flex">
+<span>def <span class="ident">get_buckets</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get list of buckets from enviroment.</p>
+<h2 id="returns">Returns</h2>
+<p>buckets (list): list of buckets.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_buckets(self) -&gt; list:
+    &#34;&#34;&#34;get list of buckets from enviroment.
+    
+    Returns:
+        buckets (list): list of buckets.
+    
+    &#34;&#34;&#34;
+    buckets = json.loads(os.getenv(&#34;BUCKETS&#34;))
+    return buckets</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_object"><code class="name flex">
+<span>def <span class="ident">get_object</span></span>(<span>self, bucket: str, path_to_file: str, path_to_save: str, download: bool = True) ‑> Union[bool, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Download specified object from bucket</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>destiny bucket.</dd>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to file in bucket.</dd>
+<dt><strong><code>path_to_save</code></strong> :&ensp;<code>str</code></dt>
+<dd>destiny path in local path.
+</dd>
+<dt><strong><code>download</code></strong> :&ensp;<code>bool</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Any</code></dt>
+<dd>True/False or Response object.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_object(
+    self, bucket: str, path_to_file: str, path_to_save: str, download: bool = True
+) -&gt; bool | Any:
+    &#34;&#34;&#34;Download specified object from bucket
+    
+    Args:
+        bucket (str): destiny bucket.
+        path_to_file (str): path to file in bucket.
+        path_to_save (str): destiny path in local path.  
+        download (bool): 
+
+    Returns:
+        Any: True/False or Response object.
+    
+    &#34;&#34;&#34;
+    try:
+        s3 = connect_to_s3().__connect_s3(bucket)
+        if download:
+            &#34;&#34;&#34;Download object&#34;&#34;&#34;
+            result = s3.Bucket(bucket).download_file(
+                Key=path_to_file, Filename=path_to_save
+            )
+
+            return True
+        else:
+            &#34;&#34;&#34;Gets response dict as return&#34;&#34;&#34;
+            response = s3.Bucket(bucket).Object(path_to_file).get()
+            return response
+    except botocore.exceptions.ClientError as Error:
+        print(Error)
+        return False</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.list_content"><code class="name flex">
+<span>def <span class="ident">list_content</span></span>(<span>self, bucket: str, filter: str = None) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>lists the contents of the specified bucket</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>bucket to be searched.</dd>
+<dt><strong><code>filter</code></strong> :&ensp;<code>str</code></dt>
+<dd>filter or folder in bucket.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list_of_objects (list): list of contents of specified bucket</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_content(self, bucket: str, filter: str = None) -&gt; list:
+    &#34;&#34;&#34;lists the contents of the specified bucket
+    
+    Args:
+        bucket (str): bucket to be searched.
+        filter (str): filter or folder in bucket.
+    
+    Returns:
+        list_of_objects (list): list of contents of specified bucket
+
+    &#34;&#34;&#34;
+    s3 = connect_to_s3().__connect_s3(bucket)
+    filter = &#34;&#34; if (filter == None) else filter
+    list_of_objects = []
+    for obj in s3.Bucket(bucket).objects.filter(Delimiter=&#34;\\&#34;, Prefix=filter):
+        list_of_objects.append(obj.key)
+    return list_of_objects</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.loading_credentials"><code class="name flex">
+<span>def <span class="ident">loading_credentials</span></span>(<span>self, bucket: str) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loading credentials from .env config file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>bucket to be accesed.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>list of credentials.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def loading_credentials(self, bucket: str) -&gt; List:
+    &#34;&#34;&#34;Loading credentials from .env config file.
+    
+    Args:
+        bucket (str): bucket to be accesed.
+
+    Returns:
+        List: list of credentials.
+
+    &#34;&#34;&#34;
+    try:
+        buckets = self.get_buckets()
+        if bucket in buckets:
+            aws_region = os.getenv(&#34;AWS_DEFAULT_REGION_1&#34;, &#34;us-west-2&#34;)
+            aws_access_key_id = os.getenv(&#34;AWS_ACCESS_KEY_ID_1&#34;, &#34;&#34;)
+            aws_secret_key = os.getenv(&#34;AWS_SECRET_ACCESS_KEY_1&#34;, &#34;&#34;)
+        else:
+            print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+            sys.exit()
+        return [
+            aws_region,
+            aws_access_key_id,
+            aws_secret_key,
+        ]
+    except Exception as error:
+        print(&#34;CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script&#34;)
+        sys.exit()</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.upload_object"><code class="name flex">
+<span>def <span class="ident">upload_object</span></span>(<span>self, bucket: str, path_to_file: str, path_to_save: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Upload object to the specified bucket, returns True/False.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bucket</code></strong> :&ensp;<code>str</code></dt>
+<dd>destiny bucket.</dd>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to file to be uploaded.</dd>
+<dt><strong><code>path_to_save</code></strong> :&ensp;<code>str</code></dt>
+<dd>destiny path in bucket.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if is successfully uploaded, False if not.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def upload_object(self, bucket: str, path_to_file: str, path_to_save: str) -&gt; bool:
+    &#34;&#34;&#34;Upload object to the specified bucket, returns True/False.
+    
+    Args:
+        bucket (str): destiny bucket.
+        path_to_file (str): path to file to be uploaded.
+        path_to_save (str): destiny path in bucket.
+    
+    Returns:
+        bool: True if is successfully uploaded, False if not.
+    
+    &#34;&#34;&#34;
+    try:
+        s3 = connect_to_s3().__connect_s3(bucket)
+        s3.Bucket(bucket).upload_file(Filename=path_to_file, Key=path_to_save)
+        return True
+    except boto3.exceptions.S3UploadFailedError as error:
+        if self.typeLog is not None:
+            Logs.logs.logs().exist_file(self.typeLog,self.client,&#34;VISA AND MASTERCARD&#34;,self.log_name,&#34;UPLOADING FILE TO S3&#34;,&#34;CRITICAL&#34;,f&#34;Exception {error} | terminating script &#34;,self.exec_module,upload=False)
+        else:
+            print(f&#34;Exception {error} | terminating script &#34;)
+        return False,error</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL">connect_to_postgreSQL</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.add_column" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.add_column">add_column</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.conecction" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.conecction">conecction</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table">create_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_from_select" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_from_select">create_table_from_select</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_index" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_index">create_table_index</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_default" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_default">create_table_partition_default</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_list" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_list">create_table_partition_list</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_range" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.create_table_partition_range">create_table_partition_range</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table">drop_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table_index" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.drop_table_index">drop_table_index</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.execute_block" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.execute_block">execute_block</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.get_structure_table_from_db" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.get_structure_table_from_db">get_structure_table_from_db</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert">insert</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_control_file" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_control_file">insert_control_file</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_csv" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_csv">insert_from_csv</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_dataframe" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_dataframe">insert_from_dataframe</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_df" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_df">insert_from_df</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_from_table">insert_from_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_log" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.insert_log">insert_log</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.prepare_engine" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.prepare_engine">prepare_engine</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.query_block" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.query_block">query_block</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select">select</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select_to_df_object" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.select_to_df_object">select_to_df_object</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_count" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_count">table_count</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_exists" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.table_exists">table_exists</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.truncate_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.truncate_table">truncate_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update">update</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update_from_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.update_from_table">update_from_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.validate_structure" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_postgreSQL.validate_structure">validate_structure</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3">connect_to_s3</a></code></h4>
+<ul class="two-column">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.delete_object" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.delete_object">delete_object</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_buckets" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_buckets">get_buckets</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_object" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.get_object">get_object</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.list_content" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.list_content">list_content</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.loading_credentials" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.loading_credentials">loading_credentials</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.upload_object" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Persistence.connection.connect_to_s3.upload_object">upload_object</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

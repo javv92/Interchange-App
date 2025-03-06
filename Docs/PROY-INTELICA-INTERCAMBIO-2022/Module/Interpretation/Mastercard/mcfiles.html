@@ -1,0 +1,3146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import time
+import ebcdic
+import io
+import struct
+import binascii
+import pathlib
+import glob
+import pandas as pd
+import Module.Interpretation.Mastercard.dataelements as de
+import Module.Logs.logs as log
+from Module.Persistence.connection import (
+    connect_to_postgreSQL as conn,
+    connect_to_s3 as s3,
+)
+from typing import List
+from datetime import datetime
+
+
+class read_files:
+    &#34;&#34;&#34;Class for read and interpretation of mastercard interchange files.&#34;&#34;&#34;
+    def __init__(self):
+        pass
+
+    def read_mc_file(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+        blocked: bool = True,
+        ebcdic: bool = False,
+        encoding: str = None,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start decoding MC transaction files
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        try:
+            if ebcdic == True and encoding == None:
+                encoding = &#34;cp500&#34;
+            elif ebcdic == False and encoding == None:
+                encoding = &#34;Latin-1&#34;
+            step = &#34;INTERPRETATION OF FILE&#34;
+            module = &#34;INTERPRETATION&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;opening file: &#34;
+                + path_to_file
+                + &#34; |Blocked: &#34;
+                + str(blocked)
+                + &#34; |ebcdic: &#34;
+                + str(ebcdic)
+                + &#34; |encoding: &#34;
+                + encoding,
+                module
+            )
+            file = open(path_to_file, &#34;br&#34;)
+            filezise = os.path.getsize(path_to_file)
+            bufferfile = io.BytesIO(file.read(-1))
+
+            if blocked:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;unblocking file&#34;,
+                    module
+                )
+                unblocked_str = self.unblock_file(bufferfile, filezise)
+                unblocked_str = io.BytesIO(unblocked_str)
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;file is now unblocked&#34;,
+                    module
+                )
+            else:
+                unblocked_str = bufferfile
+            file.close()
+            self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/MASTERCARD/&#34; + type
+            pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+            parameters = de.Parameters().getdataelements()
+            reads = True
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Reading file: &#34; + path_to_file,
+                module
+            )
+            messages = 0
+            on_error = False
+            finished_out = None
+            file_finger_print = time.time_ns()
+            destiny_file = &#34;000101&#34;
+            status = &#34;IN PROGRESS&#34;
+            while reads:
+                try:
+                    raw_record = unblocked_str.read(4)
+                    try:
+                        record_length = struct.unpack(&#34;&gt;i&#34;, raw_record)[0]
+                    except Exception as e:
+                        record_length = 0
+
+                    if record_length == 0:
+                        reads = False
+                        break
+
+                    message_total = unblocked_str.read(20)
+                    message_type_indicator, binary_bitmap = struct.unpack(
+                        &#34;4s16s&#34;, message_total
+                    )
+
+                    header = False
+                    if message_type_indicator.decode(encoding) == &#34;1644&#34;:
+                        header = True
+                        header_of_message = False
+
+                    bitmap = self.get_bitmaps(binary_bitmap)
+
+                    if unblocked_str.tell() == (unblocked_str.getbuffer().nbytes):
+                        reads = False
+                        break
+                    write_to_file = &#34;\n&#34;+message_type_indicator.decode(encoding) + &#34;|&#34;
+                    for i in self.nums(2, 128):
+                        de_value = b&#34;&#34;
+                        if i in bitmap:
+                            if i &gt; 1:
+                                de_length = 0
+                                if parameters[i][&#34;fixed&#34;]:
+                                    de_length = parameters[i][&#34;length&#34;]
+                                    de_value = unblocked_str.read(de_length)
+                                else:
+                                    _re_num = unblocked_str.read(
+                                        parameters[i][&#34;length&#34;]
+                                    ).decode(encoding)
+                                    de_length = int((_re_num))
+                                    de_value = unblocked_str.read(de_length)
+                                    if i == 55:
+                                        de_value = self.icc_to_somethingreadable(de_value)
+                                if (
+                                    header
+                                    and i == 24
+                                    and de_value.decode(encoding) == &#34;697&#34;
+                                ):
+                                    finished_out = None
+                                    header_of_message = True
+                                if header and i == 48 and header_of_message:
+                                    destiny_file = self.look_for_date(
+                                        de_value.decode(encoding)
+                                    )
+                                    header_of_message = False
+                                    header = False
+
+                        else:
+                            de_value = b&#34;&#34;
+                        write_to_file += de_value.decode(encoding).replace(&#34;|&#34;, &#34; &#34;) + &#34;|&#34;
+                    write_to_file += f&#34;{client}|{hash}|{destiny_file}&#34;
+
+                    if messages == 0:
+                        date_of_file = datetime.strptime(destiny_file, &#34;%y%m%d&#34;)
+                        date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+                        date_formated_as = date_of_file.strftime(&#34;%Y-%m-%d&#34;)
+                        # checking if is reprocesing
+                        check_reprocces = conn().select(
+                            &#34;CONTROL.T_CONTROL_FILE&#34;,
+                            f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;MC&#39;
+                            and code = &#39;{hash}&#39;
+                            &#34;&#34;&#34;,
+                            &#34;count(code) as file&#34;,
+                        )
+
+                        if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                            status = &#34;REVISION&#34;
+                            log.logs().exist_file(
+                                &#34;OPERATIONAL&#34;,
+                                client,
+                                &#34;MASTERCARD&#34;,
+                                log_name,
+                                step,
+                                &#34;WARNING&#34;,
+                                &#34;This file has already been checked&#34;,
+                                module
+                            )
+
+                        updating = conn().update(
+                            &#34;CONTROL.T_CONTROL_FILE&#34;,
+                            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                            {
+                                &#34;description_status&#34;: status,
+                                &#34;records_number&#34;: str(messages),
+                                &#34;file_date&#34;: date_of_file,
+                                &#34;control_message&#34;: &#34;Interpretation&#34;,
+                            },
+                        )
+                        if updating[0]:
+                            message_type = &#34;INFO&#34;
+                            message = updating[1][&#34;Message&#34;]
+                        else:
+                            message_type = &#34;CRITICAL&#34;
+                            message = (
+                                &#34;status cannot be updated, Exception: &#34;
+                                + updating[1][&#34;Message&#34;]
+                            )
+
+                        header = (
+                            &#34;MESSAGE_TYPE|&#34;
+                            + &#34;|&#34;.join(&#34;DE&#34; + str(i) for i in self.nums(2, 128))
+                            + &#34;|app_client|app_hash|app_file_date&#34;
+                        )
+                        if status == &#34;REVISION&#34;:
+                            self.path_to_file_destiny = (
+                                self.path_to_file_destiny + &#34;/REVISION&#34;
+                            )
+                        pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                            parents=True, exist_ok=True
+                        )
+                        finished_out = open(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;,
+                            &#34;a&#34;,
+                            encoding=&#34;Latin-1&#34;,
+                        )
+
+                        finished_out.write(header)
+                    else:
+                        finished_out = open(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;,
+                            &#34;a&#34;,
+                            encoding=&#34;Latin-1&#34;,
+                        )
+
+                    finished_out.write(write_to_file)
+                    messages += 1
+                    finished_out.close()
+                except KeyError as ke:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                        os.remove(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;
+                        )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | KeyException on parameters: &#39;&#34;
+                        + str(ke)
+                        + &#34;&#39; key is not founded in DataElements, Bad binary map&#34;,
+                        module
+                    )
+
+                except ValueError as e:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                        os.remove(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;
+                        )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | exception reading file: &#34;
+                        + str(e),
+                        module
+                    )
+                except Exception as e:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | exception reading file: &#34;
+                        + str(log.logs().print_except()),
+                        module
+                    )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module
+                )
+                status = &#34;ERROR&#34;
+                messages = 0
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed messages: &#34;
+                    + str(messages),
+                    module
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(messages),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module
+            )
+            csv_name = self.path_to_file_destiny + &#34;/&#34; + destiny_file + &#34;/&#34;+ destiny_file + str(file_finger_print)+ &#34;.csv&#34;
+            if (on_error):
+                parquet_file = []
+            else:
+                parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,type,hash,client,status,log_name)
+            
+            return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;on_error&#34;: on_error, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status }
+        except Exception as e:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;END OF INTERPRETATION&#34;,
+                &#34;CRITICAL&#34;,
+                f&#34;UNHANDLED EXCEPTION: {str(log.logs().print_except())}&#34;,
+                &#34;INTERPRETATION&#34;
+            )
+
+    def __convert_to_binary(self, char: str) -&gt; str:
+        &#34;&#34;&#34;Returns binary rep of char
+        
+        Args:
+            char (str): char to be converted
+
+        Returns:
+            res (str): binary representation. 
+        
+        &#34;&#34;&#34;
+        fmt = (&#34;{:02x} &#34; * len(char))[:-1]
+        ini_string = fmt.format(*char)
+        res = f&#34;{int(ini_string,16):08b}&#34;
+        return res
+
+    def unblock_file(self, fileobj: str, sizeinbytes: int) -&gt; str:
+        &#34;&#34;&#34;Unblocks files blocked in 1014 bytes, returns binary string without 2 last bytes every 1014 bytes
+
+        Args:
+            fileobj (str): readed file.
+            sizeinbytes (int): file size.
+
+        Returns:
+            result (str): unblocked file string.
+           
+        &#34;&#34;&#34;
+        result = b&#34;&#34;
+        d = fileobj.read(-1)
+        chunks = [d[i : i + 1014] for i in range(0, sizeinbytes, 1014)]
+        result = b&#34;&#34;.join(map(lambda x: x[0:1012], chunks))
+        return result
+
+    def get_bitmaps(self, bitmap: str) -&gt; List[int]:
+        &#34;&#34;&#34;gets dataelemnts present in bitmap
+        
+        Args:
+            bitmap (str): bitmap as string.
+
+        Returns:
+            array_elements (list):ist of dataelements.
+        &#34;&#34;&#34;
+        array_elements = []
+        DE = 1
+        for i in range(0, len(bitmap)):
+            b = bitmap[i : i + 1]
+            res = self.__convert_to_binary(b)
+            for j in range(0, len(res)):
+                if res[j : j + 1] == &#34;1&#34;:
+                    array_elements.append(DE)
+                DE = DE + 1
+
+        return array_elements
+
+    def nums(self, first_number: int, last_number: int, step:int =1) -&gt; range:
+        &#34;&#34;&#34;returns range of number between first and last number
+        
+        Args:
+            first_number (int): start number.  
+            last_number (int): last number of range.
+            step (int): steps for loop.
+        
+        Returns:
+            range: range from first_number to last_number by step
+        &#34;&#34;&#34;
+        return range(first_number, last_number + 1, step)
+
+    def look_for_date(self, de: str) -&gt; str:
+        &#34;&#34;&#34;Looks for date in file header
+        
+        Args:
+            de: dataelement string
+        
+        Returns:
+            get_date (str): date in format yymmdd or 010101
+        &#34;&#34;&#34;
+        readed = 0
+        while readed &lt; len(de):
+            get_pds = de[readed : readed + 4]
+            readed = readed + 4
+            get_size = de[readed : readed + 3]
+            readed = readed + 3
+            if get_pds == &#34;0105&#34;:
+                readed = readed + 3
+                get_date = de[readed : readed + 6]
+                return get_date
+            else:
+                readed = readed + str(get_size)
+        return &#34;010101&#34;
+
+    def icc_to_somethingreadable(self, message: str) -&gt; str:
+        &#34;&#34;&#34;Function to read DE55
+        
+        Args:
+            message: message to decode
+        
+        Returns:
+            values (str): decoded message in hex
+        &#34;&#34;&#34;
+        # Exists 2 bytes
+        bytes_prefixes = [b&#34;\x9f&#34;, b&#34;\x5f&#34;]
+        values = binascii.b2a_hex(message)
+
+        return values
+
+    def IAR_mc_read(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+        table_to_look: str,
+        blocked: bool = True,
+        ebcdic: bool = False,
+        encoding: str = None,
+    ):
+        &#34;&#34;&#34;IAR read method, works similar to the interchange file interpreter.
+        This method works for table &#34;IP0040T1&#34;, but can be configured to use more tables.
+        Must have a config dict to work properly.
+        Also, this method depends on the RWD or message lenght from the first 4 characters of each message
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict: dictionary with file data.
+        &#34;&#34;&#34;
+        module = &#34;INTERPRETATION&#34;
+        step = &#34;INTERPRETATION OF IAR FILE&#34;
+        try:
+            file = open(path_to_file, &#34;br&#34;)
+            filezise = os.path.getsize(path_to_file)
+            bufferfile = io.BytesIO(file.read(-1))
+            counter = 0
+            if ebcdic == True and encoding == None:
+                encoding = &#34;cp500&#34;
+            elif ebcdic == False and encoding == None:
+                encoding = &#34;Latin-1&#34;
+
+            if blocked:
+                unblocked_str = self.unblock_file(bufferfile, filezise)
+                unblocked_str = io.BytesIO(unblocked_str)
+            else:
+                unblocked_str = bufferfile
+            file.close()
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Start read of file: &#34;
+                + path_to_file
+                + &#34; |Blocked: &#34;
+                + str(blocked)
+                + &#34; |ebcdic: &#34;
+                + str(ebcdic)
+                + &#34; |encoding: &#34;
+                + encoding,
+                module
+            )
+            # Get header date
+            # Tries to get the header date, when is an update file is tested, but no when is a replacement file
+            params = de.Parameters().getIPMParameters()
+
+            reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+            reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+            if len(reader_position) == 27:
+                header_config = params[&#34;update_header&#34;]
+                title = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_title&#34;][&#34;end&#34;]
+                ]
+                date = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_date&#34;][&#34;end&#34;]
+                ]
+                htime = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_time&#34;][&#34;end&#34;]
+                ]
+                
+                dobj = datetime.strptime(str(date), &#34;%Y%m%d&#34;)
+
+
+            elif len(reader_position) == 80:
+                header_config = params[&#34;replace_header&#34;]
+                title = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_title&#34;][&#34;end&#34;]
+                ]
+                date = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_date&#34;][&#34;end&#34;]
+                ].replace(&#34;/&#34;, &#34;&#34;)
+                htime = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_time&#34;][&#34;end&#34;]
+                ].replace(&#34;:&#34;, &#34;&#34;)
+                dobj = datetime.strptime(date.strip(), &#34;%m%d%y&#34;)
+            else:
+                dobj = datetime.now()
+                title = &#34;unknow_type&#34;
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;This file have an unknow header, please check the file&#34;,
+                    module
+                )
+                return False
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;File header indicates {path_to_file} is a {title} type file&#34;,
+                module
+            )
+            # Get Keys of file
+            # This part gets the tables sub keys (wich are distinct from the tables names key) represented by a 3 chars string
+            # All of this is similar to a list of tables presents in the file and all must be under the the same table table layout, in this case
+            # &#34;IP0000T1&#34;
+            # This part iterates until a trailer record is found
+            # The table is readed in its compresed form!!!!
+            Keys = True
+            key_config = params[&#34;key&#34;]
+            tables = dict()
+            records_exists = False
+            while Keys:
+                reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+                reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+                key = reader_position[
+                    key_config[&#34;key&#34;][&#34;start&#34;] : key_config[&#34;key&#34;][&#34;end&#34;]
+                ]
+                if key != key_config[&#34;layout&#34;]:
+                    if reader_position.startswith(&#34;TRAILER RECORD IP0000T1&#34;):
+                        records_exists = True
+                    Keys = False
+                    break
+                table = reader_position[
+                    key_config[&#34;table_ipm_id&#34;][&#34;start&#34;] : key_config[&#34;table_ipm_id&#34;][
+                        &#34;end&#34;
+                    ]
+                ]
+                sub_id = reader_position[
+                    key_config[&#34;table_sub_id&#34;][&#34;start&#34;] : key_config[&#34;table_sub_id&#34;][
+                        &#34;end&#34;
+                    ]
+                ]
+
+                tables[sub_id] = table
+
+            if records_exists == False:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    f&#34;No IP0000T1 trailer records founded in file {path_to_file}&#34;,
+                    module
+                )
+                return False
+
+            if table_to_look not in tables.values():
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    f&#34;No {table_to_look} is present in file {path_to_file}&#34;,
+                    module
+                )
+                return False
+
+            # reading records
+            # If the looking table is present in the list of keys, now is time to start to looking for the values
+            # for convenience the trailer header line is skiped and only values are captured.
+            # Also the identifier for the record value is the sub key, not the table key (Tested and compared)
+            records = True
+            record_config = params[&#34;record&#34;]
+            messages = []
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Reading record in file {path_to_file}&#34;,
+                module
+            )
+            destiny_file = dobj.strftime(&#34;%y%m%d&#34;)
+            date_for_name = dobj.strftime(&#34;%Y%m%d&#34;)
+            while records:
+                try:
+                    reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+                except Exception as e:
+                    reader_next_jump = 0
+
+                if reader_next_jump == 0:
+                    records = False
+                    break
+                reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+                record_table_id = reader_position[
+                    record_config[&#34;start&#34;] : record_config[&#34;end&#34;]
+                ]
+                if tables.get(record_table_id) == table_to_look:
+                    table_params = params[&#34;tables&#34;][table_to_look]
+                    line = dict()
+                    for key in table_params:
+                        start = table_params[key][&#34;start&#34;]
+                        end = table_params[key][&#34;end&#34;]
+                        line[key] = reader_position[start:end]
+                    line[&#34;app_full_data&#34;] = reader_position
+                    line[&#34;app_processing_date&#34;] = date_for_name
+                    line[&#34;app_header_type&#34;] = title.strip()
+                    line[&#34;app_customer_code&#34;] = client
+                    line[&#34;app_hash_file&#34;] = hash
+                    line[&#34;app_type_file&#34;] = &#34;IAR&#34;
+                    messages.append(line)
+
+            d = pd.DataFrame(messages)
+            counter = len(d.index)
+            destiny_directory = (
+                parent_directory + &#34;/RESULT/MASTERCARD/IAR/&#34; + destiny_file
+            )
+            pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+            d.to_csv(
+                destiny_directory
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;_&#34;
+                + title.strip().replace(&#34; &#34;, &#34;_&#34;)
+                + &#34;.csv&#34;,
+                index=False,
+                sep=&#34;|&#34;,
+            )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Finished reading of file {path_to_file}&#34;,
+                module
+            )
+            status = &#34;PROCESSED&#34;
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: len(d),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+            step =&#34;UPDATING STATUS OF FILE&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module
+            )
+            csv_name = destiny_directory+ &#34;/&#34;+ destiny_file+ &#34;_&#34;+ title.strip().replace(&#34; &#34;, &#34;_&#34;)+ &#34;.csv&#34;
+            parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,&#34;IAR&#34;,hash,client,status,log_name)
+            
+            return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status}
+
+        except Exception as e:
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;INTERPRETATION OF IAR FILE&#34;,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed messages: &#34;
+                + str(counter)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;INTERPRETATION OF IAR FILE&#34;,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module
+            )
+            status = &#34;ERROR&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: 0,
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module
+            )
+
+            
+
+
+class Utils:
+    &#34;&#34;&#34;Class with other methods used in interpretation of mastercard file&#34;&#34;&#34;
+    def __init__(self):
+        self.structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+        pass
+
+    def generate_parquet_for_mc(self, parent_path:str,date:str,from_file: str,file_type: str, hash: str, client: str,status:str, log_name:str):
+        &#34;&#34;&#34;Generates a parquet file from mc csv base file
+        
+        Args:
+            parent_path (str): parent path.
+            date (str): file header.
+            from_file (str): path to csv file.
+            file_type (str): type of file.
+            hash (str): hash code of file.
+            client (str): client code.
+            status (str): status of file.
+            log_name (str): log file name.
+        
+        Returns:
+            dict: dicionary with file data
+        &#34;&#34;&#34;
+        result_path =  f&#34;{parent_path}/RESULT/MASTERCARD/{file_type}&#34; 
+
+        step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+        module = &#34;INTERPRETATION&#34;
+        s3_to = &#34;&#34;
+        if status == &#34;REVISION&#34;:
+            result_path+=&#34;/REVISION&#34; 
+            s3_to = &#34;REVISION/&#34;
+
+        df = pd.read_csv(from_file, sep=&#34;|&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+
+        parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+        local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+        pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+        df.to_parquet(local_route)
+
+        s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+        upload = s3().upload_object(
+            self.structured, local_route, s3_route
+        )
+        if upload:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+                module
+            )
+        return  {&#34;type&#34;: file_type, &#34;s3&#34;: s3_route, &#34;local&#34;: local_route,&#39;file_header&#39;: date,&#39;hash&#39;:hash}</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils"><code class="flex name class">
+<span>class <span class="ident">Utils</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class with other methods used in interpretation of mastercard file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Utils:
+    &#34;&#34;&#34;Class with other methods used in interpretation of mastercard file&#34;&#34;&#34;
+    def __init__(self):
+        self.structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+        pass
+
+    def generate_parquet_for_mc(self, parent_path:str,date:str,from_file: str,file_type: str, hash: str, client: str,status:str, log_name:str):
+        &#34;&#34;&#34;Generates a parquet file from mc csv base file
+        
+        Args:
+            parent_path (str): parent path.
+            date (str): file header.
+            from_file (str): path to csv file.
+            file_type (str): type of file.
+            hash (str): hash code of file.
+            client (str): client code.
+            status (str): status of file.
+            log_name (str): log file name.
+        
+        Returns:
+            dict: dicionary with file data
+        &#34;&#34;&#34;
+        result_path =  f&#34;{parent_path}/RESULT/MASTERCARD/{file_type}&#34; 
+
+        step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+        module = &#34;INTERPRETATION&#34;
+        s3_to = &#34;&#34;
+        if status == &#34;REVISION&#34;:
+            result_path+=&#34;/REVISION&#34; 
+            s3_to = &#34;REVISION/&#34;
+
+        df = pd.read_csv(from_file, sep=&#34;|&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+
+        parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+        local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+        pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+        df.to_parquet(local_route)
+
+        s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+        upload = s3().upload_object(
+            self.structured, local_route, s3_route
+        )
+        if upload:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+                module
+            )
+        return  {&#34;type&#34;: file_type, &#34;s3&#34;: s3_route, &#34;local&#34;: local_route,&#39;file_header&#39;: date,&#39;hash&#39;:hash}</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils.generate_parquet_for_mc"><code class="name flex">
+<span>def <span class="ident">generate_parquet_for_mc</span></span>(<span>self, parent_path: str, date: str, from_file: str, file_type: str, hash: str, client: str, status: str, log_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a parquet file from mc csv base file</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>parent_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>parent path.</dd>
+<dt><strong><code>date</code></strong> :&ensp;<code>str</code></dt>
+<dd>file header.</dd>
+<dt><strong><code>from_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to csv file.</dd>
+<dt><strong><code>file_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client code.</dd>
+<dt><strong><code>status</code></strong> :&ensp;<code>str</code></dt>
+<dd>status of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>log file name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>dicionary with file data</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_parquet_for_mc(self, parent_path:str,date:str,from_file: str,file_type: str, hash: str, client: str,status:str, log_name:str):
+    &#34;&#34;&#34;Generates a parquet file from mc csv base file
+    
+    Args:
+        parent_path (str): parent path.
+        date (str): file header.
+        from_file (str): path to csv file.
+        file_type (str): type of file.
+        hash (str): hash code of file.
+        client (str): client code.
+        status (str): status of file.
+        log_name (str): log file name.
+    
+    Returns:
+        dict: dicionary with file data
+    &#34;&#34;&#34;
+    result_path =  f&#34;{parent_path}/RESULT/MASTERCARD/{file_type}&#34; 
+
+    step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+    module = &#34;INTERPRETATION&#34;
+    s3_to = &#34;&#34;
+    if status == &#34;REVISION&#34;:
+        result_path+=&#34;/REVISION&#34; 
+        s3_to = &#34;REVISION/&#34;
+
+    df = pd.read_csv(from_file, sep=&#34;|&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+
+    parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+    local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+    pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+    df.to_parquet(local_route)
+
+    s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+    upload = s3().upload_object(
+        self.structured, local_route, s3_route
+    )
+    if upload:
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+            module
+        )
+    return  {&#34;type&#34;: file_type, &#34;s3&#34;: s3_route, &#34;local&#34;: local_route,&#39;file_header&#39;: date,&#39;hash&#39;:hash}</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files"><code class="flex name class">
+<span>class <span class="ident">read_files</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class for read and interpretation of mastercard interchange files.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class read_files:
+    &#34;&#34;&#34;Class for read and interpretation of mastercard interchange files.&#34;&#34;&#34;
+    def __init__(self):
+        pass
+
+    def read_mc_file(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+        blocked: bool = True,
+        ebcdic: bool = False,
+        encoding: str = None,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start decoding MC transaction files
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        try:
+            if ebcdic == True and encoding == None:
+                encoding = &#34;cp500&#34;
+            elif ebcdic == False and encoding == None:
+                encoding = &#34;Latin-1&#34;
+            step = &#34;INTERPRETATION OF FILE&#34;
+            module = &#34;INTERPRETATION&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;opening file: &#34;
+                + path_to_file
+                + &#34; |Blocked: &#34;
+                + str(blocked)
+                + &#34; |ebcdic: &#34;
+                + str(ebcdic)
+                + &#34; |encoding: &#34;
+                + encoding,
+                module
+            )
+            file = open(path_to_file, &#34;br&#34;)
+            filezise = os.path.getsize(path_to_file)
+            bufferfile = io.BytesIO(file.read(-1))
+
+            if blocked:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;unblocking file&#34;,
+                    module
+                )
+                unblocked_str = self.unblock_file(bufferfile, filezise)
+                unblocked_str = io.BytesIO(unblocked_str)
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;file is now unblocked&#34;,
+                    module
+                )
+            else:
+                unblocked_str = bufferfile
+            file.close()
+            self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/MASTERCARD/&#34; + type
+            pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+            parameters = de.Parameters().getdataelements()
+            reads = True
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Reading file: &#34; + path_to_file,
+                module
+            )
+            messages = 0
+            on_error = False
+            finished_out = None
+            file_finger_print = time.time_ns()
+            destiny_file = &#34;000101&#34;
+            status = &#34;IN PROGRESS&#34;
+            while reads:
+                try:
+                    raw_record = unblocked_str.read(4)
+                    try:
+                        record_length = struct.unpack(&#34;&gt;i&#34;, raw_record)[0]
+                    except Exception as e:
+                        record_length = 0
+
+                    if record_length == 0:
+                        reads = False
+                        break
+
+                    message_total = unblocked_str.read(20)
+                    message_type_indicator, binary_bitmap = struct.unpack(
+                        &#34;4s16s&#34;, message_total
+                    )
+
+                    header = False
+                    if message_type_indicator.decode(encoding) == &#34;1644&#34;:
+                        header = True
+                        header_of_message = False
+
+                    bitmap = self.get_bitmaps(binary_bitmap)
+
+                    if unblocked_str.tell() == (unblocked_str.getbuffer().nbytes):
+                        reads = False
+                        break
+                    write_to_file = &#34;\n&#34;+message_type_indicator.decode(encoding) + &#34;|&#34;
+                    for i in self.nums(2, 128):
+                        de_value = b&#34;&#34;
+                        if i in bitmap:
+                            if i &gt; 1:
+                                de_length = 0
+                                if parameters[i][&#34;fixed&#34;]:
+                                    de_length = parameters[i][&#34;length&#34;]
+                                    de_value = unblocked_str.read(de_length)
+                                else:
+                                    _re_num = unblocked_str.read(
+                                        parameters[i][&#34;length&#34;]
+                                    ).decode(encoding)
+                                    de_length = int((_re_num))
+                                    de_value = unblocked_str.read(de_length)
+                                    if i == 55:
+                                        de_value = self.icc_to_somethingreadable(de_value)
+                                if (
+                                    header
+                                    and i == 24
+                                    and de_value.decode(encoding) == &#34;697&#34;
+                                ):
+                                    finished_out = None
+                                    header_of_message = True
+                                if header and i == 48 and header_of_message:
+                                    destiny_file = self.look_for_date(
+                                        de_value.decode(encoding)
+                                    )
+                                    header_of_message = False
+                                    header = False
+
+                        else:
+                            de_value = b&#34;&#34;
+                        write_to_file += de_value.decode(encoding).replace(&#34;|&#34;, &#34; &#34;) + &#34;|&#34;
+                    write_to_file += f&#34;{client}|{hash}|{destiny_file}&#34;
+
+                    if messages == 0:
+                        date_of_file = datetime.strptime(destiny_file, &#34;%y%m%d&#34;)
+                        date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+                        date_formated_as = date_of_file.strftime(&#34;%Y-%m-%d&#34;)
+                        # checking if is reprocesing
+                        check_reprocces = conn().select(
+                            &#34;CONTROL.T_CONTROL_FILE&#34;,
+                            f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;MC&#39;
+                            and code = &#39;{hash}&#39;
+                            &#34;&#34;&#34;,
+                            &#34;count(code) as file&#34;,
+                        )
+
+                        if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                            status = &#34;REVISION&#34;
+                            log.logs().exist_file(
+                                &#34;OPERATIONAL&#34;,
+                                client,
+                                &#34;MASTERCARD&#34;,
+                                log_name,
+                                step,
+                                &#34;WARNING&#34;,
+                                &#34;This file has already been checked&#34;,
+                                module
+                            )
+
+                        updating = conn().update(
+                            &#34;CONTROL.T_CONTROL_FILE&#34;,
+                            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                            {
+                                &#34;description_status&#34;: status,
+                                &#34;records_number&#34;: str(messages),
+                                &#34;file_date&#34;: date_of_file,
+                                &#34;control_message&#34;: &#34;Interpretation&#34;,
+                            },
+                        )
+                        if updating[0]:
+                            message_type = &#34;INFO&#34;
+                            message = updating[1][&#34;Message&#34;]
+                        else:
+                            message_type = &#34;CRITICAL&#34;
+                            message = (
+                                &#34;status cannot be updated, Exception: &#34;
+                                + updating[1][&#34;Message&#34;]
+                            )
+
+                        header = (
+                            &#34;MESSAGE_TYPE|&#34;
+                            + &#34;|&#34;.join(&#34;DE&#34; + str(i) for i in self.nums(2, 128))
+                            + &#34;|app_client|app_hash|app_file_date&#34;
+                        )
+                        if status == &#34;REVISION&#34;:
+                            self.path_to_file_destiny = (
+                                self.path_to_file_destiny + &#34;/REVISION&#34;
+                            )
+                        pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                            parents=True, exist_ok=True
+                        )
+                        finished_out = open(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;,
+                            &#34;a&#34;,
+                            encoding=&#34;Latin-1&#34;,
+                        )
+
+                        finished_out.write(header)
+                    else:
+                        finished_out = open(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;,
+                            &#34;a&#34;,
+                            encoding=&#34;Latin-1&#34;,
+                        )
+
+                    finished_out.write(write_to_file)
+                    messages += 1
+                    finished_out.close()
+                except KeyError as ke:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                        os.remove(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;
+                        )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | KeyException on parameters: &#39;&#34;
+                        + str(ke)
+                        + &#34;&#39; key is not founded in DataElements, Bad binary map&#34;,
+                        module
+                    )
+
+                except ValueError as e:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                        os.remove(
+                            self.path_to_file_destiny
+                            + &#34;/&#34;
+                            + destiny_file
+                            + &#34;/&#34;
+                            + destiny_file
+                            + str(file_finger_print)
+                            + &#34;.csv&#34;
+                        )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | exception reading file: &#34;
+                        + str(e),
+                        module
+                    )
+                except Exception as e:
+                    reads = False
+                    on_error = True
+                    if finished_out != None:
+                        finished_out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;Error reading file: &#34;
+                        + path_to_file
+                        + &#34; | readed messages: &#34;
+                        + str(messages)
+                        + &#34; | exception reading file: &#34;
+                        + str(log.logs().print_except()),
+                        module
+                    )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module
+                )
+                status = &#34;ERROR&#34;
+                messages = 0
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed messages: &#34;
+                    + str(messages),
+                    module
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(messages),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module
+            )
+            csv_name = self.path_to_file_destiny + &#34;/&#34; + destiny_file + &#34;/&#34;+ destiny_file + str(file_finger_print)+ &#34;.csv&#34;
+            if (on_error):
+                parquet_file = []
+            else:
+                parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,type,hash,client,status,log_name)
+            
+            return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;on_error&#34;: on_error, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status }
+        except Exception as e:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;END OF INTERPRETATION&#34;,
+                &#34;CRITICAL&#34;,
+                f&#34;UNHANDLED EXCEPTION: {str(log.logs().print_except())}&#34;,
+                &#34;INTERPRETATION&#34;
+            )
+
+    def __convert_to_binary(self, char: str) -&gt; str:
+        &#34;&#34;&#34;Returns binary rep of char
+        
+        Args:
+            char (str): char to be converted
+
+        Returns:
+            res (str): binary representation. 
+        
+        &#34;&#34;&#34;
+        fmt = (&#34;{:02x} &#34; * len(char))[:-1]
+        ini_string = fmt.format(*char)
+        res = f&#34;{int(ini_string,16):08b}&#34;
+        return res
+
+    def unblock_file(self, fileobj: str, sizeinbytes: int) -&gt; str:
+        &#34;&#34;&#34;Unblocks files blocked in 1014 bytes, returns binary string without 2 last bytes every 1014 bytes
+
+        Args:
+            fileobj (str): readed file.
+            sizeinbytes (int): file size.
+
+        Returns:
+            result (str): unblocked file string.
+           
+        &#34;&#34;&#34;
+        result = b&#34;&#34;
+        d = fileobj.read(-1)
+        chunks = [d[i : i + 1014] for i in range(0, sizeinbytes, 1014)]
+        result = b&#34;&#34;.join(map(lambda x: x[0:1012], chunks))
+        return result
+
+    def get_bitmaps(self, bitmap: str) -&gt; List[int]:
+        &#34;&#34;&#34;gets dataelemnts present in bitmap
+        
+        Args:
+            bitmap (str): bitmap as string.
+
+        Returns:
+            array_elements (list):ist of dataelements.
+        &#34;&#34;&#34;
+        array_elements = []
+        DE = 1
+        for i in range(0, len(bitmap)):
+            b = bitmap[i : i + 1]
+            res = self.__convert_to_binary(b)
+            for j in range(0, len(res)):
+                if res[j : j + 1] == &#34;1&#34;:
+                    array_elements.append(DE)
+                DE = DE + 1
+
+        return array_elements
+
+    def nums(self, first_number: int, last_number: int, step:int =1) -&gt; range:
+        &#34;&#34;&#34;returns range of number between first and last number
+        
+        Args:
+            first_number (int): start number.  
+            last_number (int): last number of range.
+            step (int): steps for loop.
+        
+        Returns:
+            range: range from first_number to last_number by step
+        &#34;&#34;&#34;
+        return range(first_number, last_number + 1, step)
+
+    def look_for_date(self, de: str) -&gt; str:
+        &#34;&#34;&#34;Looks for date in file header
+        
+        Args:
+            de: dataelement string
+        
+        Returns:
+            get_date (str): date in format yymmdd or 010101
+        &#34;&#34;&#34;
+        readed = 0
+        while readed &lt; len(de):
+            get_pds = de[readed : readed + 4]
+            readed = readed + 4
+            get_size = de[readed : readed + 3]
+            readed = readed + 3
+            if get_pds == &#34;0105&#34;:
+                readed = readed + 3
+                get_date = de[readed : readed + 6]
+                return get_date
+            else:
+                readed = readed + str(get_size)
+        return &#34;010101&#34;
+
+    def icc_to_somethingreadable(self, message: str) -&gt; str:
+        &#34;&#34;&#34;Function to read DE55
+        
+        Args:
+            message: message to decode
+        
+        Returns:
+            values (str): decoded message in hex
+        &#34;&#34;&#34;
+        # Exists 2 bytes
+        bytes_prefixes = [b&#34;\x9f&#34;, b&#34;\x5f&#34;]
+        values = binascii.b2a_hex(message)
+
+        return values
+
+    def IAR_mc_read(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+        table_to_look: str,
+        blocked: bool = True,
+        ebcdic: bool = False,
+        encoding: str = None,
+    ):
+        &#34;&#34;&#34;IAR read method, works similar to the interchange file interpreter.
+        This method works for table &#34;IP0040T1&#34;, but can be configured to use more tables.
+        Must have a config dict to work properly.
+        Also, this method depends on the RWD or message lenght from the first 4 characters of each message
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict: dictionary with file data.
+        &#34;&#34;&#34;
+        module = &#34;INTERPRETATION&#34;
+        step = &#34;INTERPRETATION OF IAR FILE&#34;
+        try:
+            file = open(path_to_file, &#34;br&#34;)
+            filezise = os.path.getsize(path_to_file)
+            bufferfile = io.BytesIO(file.read(-1))
+            counter = 0
+            if ebcdic == True and encoding == None:
+                encoding = &#34;cp500&#34;
+            elif ebcdic == False and encoding == None:
+                encoding = &#34;Latin-1&#34;
+
+            if blocked:
+                unblocked_str = self.unblock_file(bufferfile, filezise)
+                unblocked_str = io.BytesIO(unblocked_str)
+            else:
+                unblocked_str = bufferfile
+            file.close()
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Start read of file: &#34;
+                + path_to_file
+                + &#34; |Blocked: &#34;
+                + str(blocked)
+                + &#34; |ebcdic: &#34;
+                + str(ebcdic)
+                + &#34; |encoding: &#34;
+                + encoding,
+                module
+            )
+            # Get header date
+            # Tries to get the header date, when is an update file is tested, but no when is a replacement file
+            params = de.Parameters().getIPMParameters()
+
+            reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+            reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+            if len(reader_position) == 27:
+                header_config = params[&#34;update_header&#34;]
+                title = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_title&#34;][&#34;end&#34;]
+                ]
+                date = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_date&#34;][&#34;end&#34;]
+                ]
+                htime = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_time&#34;][&#34;end&#34;]
+                ]
+                
+                dobj = datetime.strptime(str(date), &#34;%Y%m%d&#34;)
+
+
+            elif len(reader_position) == 80:
+                header_config = params[&#34;replace_header&#34;]
+                title = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_title&#34;][&#34;end&#34;]
+                ]
+                date = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_date&#34;][&#34;end&#34;]
+                ].replace(&#34;/&#34;, &#34;&#34;)
+                htime = reader_position[
+                    header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                        &#34;header&#34;
+                    ][&#34;header_time&#34;][&#34;end&#34;]
+                ].replace(&#34;:&#34;, &#34;&#34;)
+                dobj = datetime.strptime(date.strip(), &#34;%m%d%y&#34;)
+            else:
+                dobj = datetime.now()
+                title = &#34;unknow_type&#34;
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;This file have an unknow header, please check the file&#34;,
+                    module
+                )
+                return False
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;File header indicates {path_to_file} is a {title} type file&#34;,
+                module
+            )
+            # Get Keys of file
+            # This part gets the tables sub keys (wich are distinct from the tables names key) represented by a 3 chars string
+            # All of this is similar to a list of tables presents in the file and all must be under the the same table table layout, in this case
+            # &#34;IP0000T1&#34;
+            # This part iterates until a trailer record is found
+            # The table is readed in its compresed form!!!!
+            Keys = True
+            key_config = params[&#34;key&#34;]
+            tables = dict()
+            records_exists = False
+            while Keys:
+                reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+                reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+                key = reader_position[
+                    key_config[&#34;key&#34;][&#34;start&#34;] : key_config[&#34;key&#34;][&#34;end&#34;]
+                ]
+                if key != key_config[&#34;layout&#34;]:
+                    if reader_position.startswith(&#34;TRAILER RECORD IP0000T1&#34;):
+                        records_exists = True
+                    Keys = False
+                    break
+                table = reader_position[
+                    key_config[&#34;table_ipm_id&#34;][&#34;start&#34;] : key_config[&#34;table_ipm_id&#34;][
+                        &#34;end&#34;
+                    ]
+                ]
+                sub_id = reader_position[
+                    key_config[&#34;table_sub_id&#34;][&#34;start&#34;] : key_config[&#34;table_sub_id&#34;][
+                        &#34;end&#34;
+                    ]
+                ]
+
+                tables[sub_id] = table
+
+            if records_exists == False:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    f&#34;No IP0000T1 trailer records founded in file {path_to_file}&#34;,
+                    module
+                )
+                return False
+
+            if table_to_look not in tables.values():
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    f&#34;No {table_to_look} is present in file {path_to_file}&#34;,
+                    module
+                )
+                return False
+
+            # reading records
+            # If the looking table is present in the list of keys, now is time to start to looking for the values
+            # for convenience the trailer header line is skiped and only values are captured.
+            # Also the identifier for the record value is the sub key, not the table key (Tested and compared)
+            records = True
+            record_config = params[&#34;record&#34;]
+            messages = []
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Reading record in file {path_to_file}&#34;,
+                module
+            )
+            destiny_file = dobj.strftime(&#34;%y%m%d&#34;)
+            date_for_name = dobj.strftime(&#34;%Y%m%d&#34;)
+            while records:
+                try:
+                    reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+                except Exception as e:
+                    reader_next_jump = 0
+
+                if reader_next_jump == 0:
+                    records = False
+                    break
+                reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+                record_table_id = reader_position[
+                    record_config[&#34;start&#34;] : record_config[&#34;end&#34;]
+                ]
+                if tables.get(record_table_id) == table_to_look:
+                    table_params = params[&#34;tables&#34;][table_to_look]
+                    line = dict()
+                    for key in table_params:
+                        start = table_params[key][&#34;start&#34;]
+                        end = table_params[key][&#34;end&#34;]
+                        line[key] = reader_position[start:end]
+                    line[&#34;app_full_data&#34;] = reader_position
+                    line[&#34;app_processing_date&#34;] = date_for_name
+                    line[&#34;app_header_type&#34;] = title.strip()
+                    line[&#34;app_customer_code&#34;] = client
+                    line[&#34;app_hash_file&#34;] = hash
+                    line[&#34;app_type_file&#34;] = &#34;IAR&#34;
+                    messages.append(line)
+
+            d = pd.DataFrame(messages)
+            counter = len(d.index)
+            destiny_directory = (
+                parent_directory + &#34;/RESULT/MASTERCARD/IAR/&#34; + destiny_file
+            )
+            pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+            d.to_csv(
+                destiny_directory
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;_&#34;
+                + title.strip().replace(&#34; &#34;, &#34;_&#34;)
+                + &#34;.csv&#34;,
+                index=False,
+                sep=&#34;|&#34;,
+            )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Finished reading of file {path_to_file}&#34;,
+                module
+            )
+            status = &#34;PROCESSED&#34;
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: len(d),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+            step =&#34;UPDATING STATUS OF FILE&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module
+            )
+            csv_name = destiny_directory+ &#34;/&#34;+ destiny_file+ &#34;_&#34;+ title.strip().replace(&#34; &#34;, &#34;_&#34;)+ &#34;.csv&#34;
+            parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,&#34;IAR&#34;,hash,client,status,log_name)
+            
+            return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status}
+
+        except Exception as e:
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;INTERPRETATION OF IAR FILE&#34;,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed messages: &#34;
+                + str(counter)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;INTERPRETATION OF IAR FILE&#34;,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module
+            )
+            status = &#34;ERROR&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: 0,
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module
+            )</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.IAR_mc_read"><code class="name flex">
+<span>def <span class="ident">IAR_mc_read</span></span>(<span>self, path_to_file: str, parent_directory: str, type: str, log_name: str, client: str, hash: str, table_to_look: str, blocked: bool = True, ebcdic: bool = False, encoding: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>IAR read method, works similar to the interchange file interpreter.
+This method works for table "IP0040T1", but can be configured to use more tables.
+Must have a config dict to work properly.
+Also, this method depends on the RWD or message lenght from the first 4 characters of each message</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to local file.</dd>
+<dt><strong><code>parent_directory</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to execution folder.</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client name.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+<dt><strong><code>blocked</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is blocked in 1014 bytes string.</dd>
+<dt><strong><code>ebcdic</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is encoded in ebcdic, False if is binary.</dd>
+<dt><strong><code>encoding</code></strong> :&ensp;<code>str</code></dt>
+<dd>if 'None' and ebcdic = True then cp500 else if 'None' and ebcdic = False then 'Latin-1'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>dictionary with file data.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def IAR_mc_read(
+    self,
+    path_to_file: str,
+    parent_directory: str,
+    type: str,
+    log_name: str,
+    client: str,
+    hash: str,
+    table_to_look: str,
+    blocked: bool = True,
+    ebcdic: bool = False,
+    encoding: str = None,
+):
+    &#34;&#34;&#34;IAR read method, works similar to the interchange file interpreter.
+    This method works for table &#34;IP0040T1&#34;, but can be configured to use more tables.
+    Must have a config dict to work properly.
+    Also, this method depends on the RWD or message lenght from the first 4 characters of each message
+
+    Args:
+        path_to_file (str): path to local file.
+        parent_directory (str): path to execution folder.
+        type (str): type of file.
+        log_name (str): name of log file.
+        client (str): client name.
+        hash (str): hash code of file.
+        blocked (bool): True if file is blocked in 1014 bytes string.
+        ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+        encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+    Returns:
+        dict: dictionary with file data.
+    &#34;&#34;&#34;
+    module = &#34;INTERPRETATION&#34;
+    step = &#34;INTERPRETATION OF IAR FILE&#34;
+    try:
+        file = open(path_to_file, &#34;br&#34;)
+        filezise = os.path.getsize(path_to_file)
+        bufferfile = io.BytesIO(file.read(-1))
+        counter = 0
+        if ebcdic == True and encoding == None:
+            encoding = &#34;cp500&#34;
+        elif ebcdic == False and encoding == None:
+            encoding = &#34;Latin-1&#34;
+
+        if blocked:
+            unblocked_str = self.unblock_file(bufferfile, filezise)
+            unblocked_str = io.BytesIO(unblocked_str)
+        else:
+            unblocked_str = bufferfile
+        file.close()
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Start read of file: &#34;
+            + path_to_file
+            + &#34; |Blocked: &#34;
+            + str(blocked)
+            + &#34; |ebcdic: &#34;
+            + str(ebcdic)
+            + &#34; |encoding: &#34;
+            + encoding,
+            module
+        )
+        # Get header date
+        # Tries to get the header date, when is an update file is tested, but no when is a replacement file
+        params = de.Parameters().getIPMParameters()
+
+        reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+        reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+        if len(reader_position) == 27:
+            header_config = params[&#34;update_header&#34;]
+            title = reader_position[
+                header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_title&#34;][&#34;end&#34;]
+            ]
+            date = reader_position[
+                header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_date&#34;][&#34;end&#34;]
+            ]
+            htime = reader_position[
+                header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_time&#34;][&#34;end&#34;]
+            ]
+            
+            dobj = datetime.strptime(str(date), &#34;%Y%m%d&#34;)
+
+
+        elif len(reader_position) == 80:
+            header_config = params[&#34;replace_header&#34;]
+            title = reader_position[
+                header_config[&#34;header&#34;][&#34;header_title&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_title&#34;][&#34;end&#34;]
+            ]
+            date = reader_position[
+                header_config[&#34;header&#34;][&#34;header_date&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_date&#34;][&#34;end&#34;]
+            ].replace(&#34;/&#34;, &#34;&#34;)
+            htime = reader_position[
+                header_config[&#34;header&#34;][&#34;header_time&#34;][&#34;start&#34;] : header_config[
+                    &#34;header&#34;
+                ][&#34;header_time&#34;][&#34;end&#34;]
+            ].replace(&#34;:&#34;, &#34;&#34;)
+            dobj = datetime.strptime(date.strip(), &#34;%m%d%y&#34;)
+        else:
+            dobj = datetime.now()
+            title = &#34;unknow_type&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                &#34;This file have an unknow header, please check the file&#34;,
+                module
+            )
+            return False
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            f&#34;File header indicates {path_to_file} is a {title} type file&#34;,
+            module
+        )
+        # Get Keys of file
+        # This part gets the tables sub keys (wich are distinct from the tables names key) represented by a 3 chars string
+        # All of this is similar to a list of tables presents in the file and all must be under the the same table table layout, in this case
+        # &#34;IP0000T1&#34;
+        # This part iterates until a trailer record is found
+        # The table is readed in its compresed form!!!!
+        Keys = True
+        key_config = params[&#34;key&#34;]
+        tables = dict()
+        records_exists = False
+        while Keys:
+            reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+            reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+            key = reader_position[
+                key_config[&#34;key&#34;][&#34;start&#34;] : key_config[&#34;key&#34;][&#34;end&#34;]
+            ]
+            if key != key_config[&#34;layout&#34;]:
+                if reader_position.startswith(&#34;TRAILER RECORD IP0000T1&#34;):
+                    records_exists = True
+                Keys = False
+                break
+            table = reader_position[
+                key_config[&#34;table_ipm_id&#34;][&#34;start&#34;] : key_config[&#34;table_ipm_id&#34;][
+                    &#34;end&#34;
+                ]
+            ]
+            sub_id = reader_position[
+                key_config[&#34;table_sub_id&#34;][&#34;start&#34;] : key_config[&#34;table_sub_id&#34;][
+                    &#34;end&#34;
+                ]
+            ]
+
+            tables[sub_id] = table
+
+        if records_exists == False:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                f&#34;No IP0000T1 trailer records founded in file {path_to_file}&#34;,
+                module
+            )
+            return False
+
+        if table_to_look not in tables.values():
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                f&#34;No {table_to_look} is present in file {path_to_file}&#34;,
+                module
+            )
+            return False
+
+        # reading records
+        # If the looking table is present in the list of keys, now is time to start to looking for the values
+        # for convenience the trailer header line is skiped and only values are captured.
+        # Also the identifier for the record value is the sub key, not the table key (Tested and compared)
+        records = True
+        record_config = params[&#34;record&#34;]
+        messages = []
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            f&#34;Reading record in file {path_to_file}&#34;,
+            module
+        )
+        destiny_file = dobj.strftime(&#34;%y%m%d&#34;)
+        date_for_name = dobj.strftime(&#34;%Y%m%d&#34;)
+        while records:
+            try:
+                reader_next_jump = struct.unpack(&#34;&gt;i&#34;, unblocked_str.read(4))[0]
+            except Exception as e:
+                reader_next_jump = 0
+
+            if reader_next_jump == 0:
+                records = False
+                break
+            reader_position = unblocked_str.read(reader_next_jump).decode(encoding)
+            record_table_id = reader_position[
+                record_config[&#34;start&#34;] : record_config[&#34;end&#34;]
+            ]
+            if tables.get(record_table_id) == table_to_look:
+                table_params = params[&#34;tables&#34;][table_to_look]
+                line = dict()
+                for key in table_params:
+                    start = table_params[key][&#34;start&#34;]
+                    end = table_params[key][&#34;end&#34;]
+                    line[key] = reader_position[start:end]
+                line[&#34;app_full_data&#34;] = reader_position
+                line[&#34;app_processing_date&#34;] = date_for_name
+                line[&#34;app_header_type&#34;] = title.strip()
+                line[&#34;app_customer_code&#34;] = client
+                line[&#34;app_hash_file&#34;] = hash
+                line[&#34;app_type_file&#34;] = &#34;IAR&#34;
+                messages.append(line)
+
+        d = pd.DataFrame(messages)
+        counter = len(d.index)
+        destiny_directory = (
+            parent_directory + &#34;/RESULT/MASTERCARD/IAR/&#34; + destiny_file
+        )
+        pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+        d.to_csv(
+            destiny_directory
+            + &#34;/&#34;
+            + destiny_file
+            + &#34;_&#34;
+            + title.strip().replace(&#34; &#34;, &#34;_&#34;)
+            + &#34;.csv&#34;,
+            index=False,
+            sep=&#34;|&#34;,
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            f&#34;Finished reading of file {path_to_file}&#34;,
+            module
+        )
+        status = &#34;PROCESSED&#34;
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: len(d),
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+        step =&#34;UPDATING STATUS OF FILE&#34;
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            message_type,
+            &#34;Updated status: &#34; + message,
+            module
+        )
+        csv_name = destiny_directory+ &#34;/&#34;+ destiny_file+ &#34;_&#34;+ title.strip().replace(&#34; &#34;, &#34;_&#34;)+ &#34;.csv&#34;
+        parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,&#34;IAR&#34;,hash,client,status,log_name)
+        
+        return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status}
+
+    except Exception as e:
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;INTERPRETATION OF IAR FILE&#34;,
+            &#34;WARNING&#34;,
+            &#34;Error reading file: &#34;
+            + path_to_file
+            + &#34; | readed messages: &#34;
+            + str(counter)
+            + &#34; | exception reading file: &#34;
+            + str(e),
+            module
+        )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;INTERPRETATION OF IAR FILE&#34;,
+            &#34;ERROR&#34;,
+            &#34;Closed reading of file with error: &#34; + path_to_file,
+            module
+        )
+        status = &#34;ERROR&#34;
+
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: 0,
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;UPDATING STATUS OF FILE&#34;,
+            message_type,
+            &#34;Updated status: &#34; + message,
+            module
+        )</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.get_bitmaps"><code class="name flex">
+<span>def <span class="ident">get_bitmaps</span></span>(<span>self, bitmap: str) ‑> List[int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>gets dataelemnts present in bitmap</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bitmap</code></strong> :&ensp;<code>str</code></dt>
+<dd>bitmap as string.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>array_elements (list):ist of dataelements.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bitmaps(self, bitmap: str) -&gt; List[int]:
+    &#34;&#34;&#34;gets dataelemnts present in bitmap
+    
+    Args:
+        bitmap (str): bitmap as string.
+
+    Returns:
+        array_elements (list):ist of dataelements.
+    &#34;&#34;&#34;
+    array_elements = []
+    DE = 1
+    for i in range(0, len(bitmap)):
+        b = bitmap[i : i + 1]
+        res = self.__convert_to_binary(b)
+        for j in range(0, len(res)):
+            if res[j : j + 1] == &#34;1&#34;:
+                array_elements.append(DE)
+            DE = DE + 1
+
+    return array_elements</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.icc_to_somethingreadable"><code class="name flex">
+<span>def <span class="ident">icc_to_somethingreadable</span></span>(<span>self, message: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to read DE55</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>message</code></strong></dt>
+<dd>message to decode</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>values (str): decoded message in hex</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def icc_to_somethingreadable(self, message: str) -&gt; str:
+    &#34;&#34;&#34;Function to read DE55
+    
+    Args:
+        message: message to decode
+    
+    Returns:
+        values (str): decoded message in hex
+    &#34;&#34;&#34;
+    # Exists 2 bytes
+    bytes_prefixes = [b&#34;\x9f&#34;, b&#34;\x5f&#34;]
+    values = binascii.b2a_hex(message)
+
+    return values</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.look_for_date"><code class="name flex">
+<span>def <span class="ident">look_for_date</span></span>(<span>self, de: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Looks for date in file header</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>de</code></strong></dt>
+<dd>dataelement string</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>get_date (str): date in format yymmdd or 010101</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def look_for_date(self, de: str) -&gt; str:
+    &#34;&#34;&#34;Looks for date in file header
+    
+    Args:
+        de: dataelement string
+    
+    Returns:
+        get_date (str): date in format yymmdd or 010101
+    &#34;&#34;&#34;
+    readed = 0
+    while readed &lt; len(de):
+        get_pds = de[readed : readed + 4]
+        readed = readed + 4
+        get_size = de[readed : readed + 3]
+        readed = readed + 3
+        if get_pds == &#34;0105&#34;:
+            readed = readed + 3
+            get_date = de[readed : readed + 6]
+            return get_date
+        else:
+            readed = readed + str(get_size)
+    return &#34;010101&#34;</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.nums"><code class="name flex">
+<span>def <span class="ident">nums</span></span>(<span>self, first_number: int, last_number: int, step: int = 1) ‑> range</span>
+</code></dt>
+<dd>
+<div class="desc"><p>returns range of number between first and last number</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>first_number</code></strong> :&ensp;<code>int</code></dt>
+<dd>start number.
+</dd>
+<dt><strong><code>last_number</code></strong> :&ensp;<code>int</code></dt>
+<dd>last number of range.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code></dt>
+<dd>steps for loop.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>range</code></dt>
+<dd>range from first_number to last_number by step</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def nums(self, first_number: int, last_number: int, step:int =1) -&gt; range:
+    &#34;&#34;&#34;returns range of number between first and last number
+    
+    Args:
+        first_number (int): start number.  
+        last_number (int): last number of range.
+        step (int): steps for loop.
+    
+    Returns:
+        range: range from first_number to last_number by step
+    &#34;&#34;&#34;
+    return range(first_number, last_number + 1, step)</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.read_mc_file"><code class="name flex">
+<span>def <span class="ident">read_mc_file</span></span>(<span>self, path_to_file: str, parent_directory: str, type: str, log_name: str, client: str, hash: str, blocked: bool = True, ebcdic: bool = False, encoding: str = None) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to start decoding MC transaction files</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to local file.</dd>
+<dt><strong><code>parent_directory</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to execution folder.</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client name.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+<dt><strong><code>blocked</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is blocked in 1014 bytes string.</dd>
+<dt><strong><code>ebcdic</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is encoded in ebcdic, False if is binary.</dd>
+<dt><strong><code>encoding</code></strong> :&ensp;<code>str</code></dt>
+<dd>if 'None' and ebcdic = True then cp500 else if 'None' and ebcdic = False then 'Latin-1'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict </code></dt>
+<dd>dictionary of file data.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_mc_file(
+    self,
+    path_to_file: str,
+    parent_directory: str,
+    type: str,
+    log_name: str,
+    client: str,
+    hash: str,
+    blocked: bool = True,
+    ebcdic: bool = False,
+    encoding: str = None,
+) -&gt; dict:
+    &#34;&#34;&#34;Method to start decoding MC transaction files
+
+    Args:
+        path_to_file (str): path to local file.
+        parent_directory (str): path to execution folder.
+        type (str): type of file.
+        log_name (str): name of log file.
+        client (str): client name.
+        hash (str): hash code of file.
+        blocked (bool): True if file is blocked in 1014 bytes string.
+        ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+        encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+    Returns:
+        dict : dictionary of file data.
+
+    &#34;&#34;&#34;
+    try:
+        if ebcdic == True and encoding == None:
+            encoding = &#34;cp500&#34;
+        elif ebcdic == False and encoding == None:
+            encoding = &#34;Latin-1&#34;
+        step = &#34;INTERPRETATION OF FILE&#34;
+        module = &#34;INTERPRETATION&#34;
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;opening file: &#34;
+            + path_to_file
+            + &#34; |Blocked: &#34;
+            + str(blocked)
+            + &#34; |ebcdic: &#34;
+            + str(ebcdic)
+            + &#34; |encoding: &#34;
+            + encoding,
+            module
+        )
+        file = open(path_to_file, &#34;br&#34;)
+        filezise = os.path.getsize(path_to_file)
+        bufferfile = io.BytesIO(file.read(-1))
+
+        if blocked:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;unblocking file&#34;,
+                module
+            )
+            unblocked_str = self.unblock_file(bufferfile, filezise)
+            unblocked_str = io.BytesIO(unblocked_str)
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;file is now unblocked&#34;,
+                module
+            )
+        else:
+            unblocked_str = bufferfile
+        file.close()
+        self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/MASTERCARD/&#34; + type
+        pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+        parameters = de.Parameters().getdataelements()
+        reads = True
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Reading file: &#34; + path_to_file,
+            module
+        )
+        messages = 0
+        on_error = False
+        finished_out = None
+        file_finger_print = time.time_ns()
+        destiny_file = &#34;000101&#34;
+        status = &#34;IN PROGRESS&#34;
+        while reads:
+            try:
+                raw_record = unblocked_str.read(4)
+                try:
+                    record_length = struct.unpack(&#34;&gt;i&#34;, raw_record)[0]
+                except Exception as e:
+                    record_length = 0
+
+                if record_length == 0:
+                    reads = False
+                    break
+
+                message_total = unblocked_str.read(20)
+                message_type_indicator, binary_bitmap = struct.unpack(
+                    &#34;4s16s&#34;, message_total
+                )
+
+                header = False
+                if message_type_indicator.decode(encoding) == &#34;1644&#34;:
+                    header = True
+                    header_of_message = False
+
+                bitmap = self.get_bitmaps(binary_bitmap)
+
+                if unblocked_str.tell() == (unblocked_str.getbuffer().nbytes):
+                    reads = False
+                    break
+                write_to_file = &#34;\n&#34;+message_type_indicator.decode(encoding) + &#34;|&#34;
+                for i in self.nums(2, 128):
+                    de_value = b&#34;&#34;
+                    if i in bitmap:
+                        if i &gt; 1:
+                            de_length = 0
+                            if parameters[i][&#34;fixed&#34;]:
+                                de_length = parameters[i][&#34;length&#34;]
+                                de_value = unblocked_str.read(de_length)
+                            else:
+                                _re_num = unblocked_str.read(
+                                    parameters[i][&#34;length&#34;]
+                                ).decode(encoding)
+                                de_length = int((_re_num))
+                                de_value = unblocked_str.read(de_length)
+                                if i == 55:
+                                    de_value = self.icc_to_somethingreadable(de_value)
+                            if (
+                                header
+                                and i == 24
+                                and de_value.decode(encoding) == &#34;697&#34;
+                            ):
+                                finished_out = None
+                                header_of_message = True
+                            if header and i == 48 and header_of_message:
+                                destiny_file = self.look_for_date(
+                                    de_value.decode(encoding)
+                                )
+                                header_of_message = False
+                                header = False
+
+                    else:
+                        de_value = b&#34;&#34;
+                    write_to_file += de_value.decode(encoding).replace(&#34;|&#34;, &#34; &#34;) + &#34;|&#34;
+                write_to_file += f&#34;{client}|{hash}|{destiny_file}&#34;
+
+                if messages == 0:
+                    date_of_file = datetime.strptime(destiny_file, &#34;%y%m%d&#34;)
+                    date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+                    date_formated_as = date_of_file.strftime(&#34;%Y-%m-%d&#34;)
+                    # checking if is reprocesing
+                    check_reprocces = conn().select(
+                        &#34;CONTROL.T_CONTROL_FILE&#34;,
+                        f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;MC&#39;
+                        and code = &#39;{hash}&#39;
+                        &#34;&#34;&#34;,
+                        &#34;count(code) as file&#34;,
+                    )
+
+                    if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                        status = &#34;REVISION&#34;
+                        log.logs().exist_file(
+                            &#34;OPERATIONAL&#34;,
+                            client,
+                            &#34;MASTERCARD&#34;,
+                            log_name,
+                            step,
+                            &#34;WARNING&#34;,
+                            &#34;This file has already been checked&#34;,
+                            module
+                        )
+
+                    updating = conn().update(
+                        &#34;CONTROL.T_CONTROL_FILE&#34;,
+                        f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                        {
+                            &#34;description_status&#34;: status,
+                            &#34;records_number&#34;: str(messages),
+                            &#34;file_date&#34;: date_of_file,
+                            &#34;control_message&#34;: &#34;Interpretation&#34;,
+                        },
+                    )
+                    if updating[0]:
+                        message_type = &#34;INFO&#34;
+                        message = updating[1][&#34;Message&#34;]
+                    else:
+                        message_type = &#34;CRITICAL&#34;
+                        message = (
+                            &#34;status cannot be updated, Exception: &#34;
+                            + updating[1][&#34;Message&#34;]
+                        )
+
+                    header = (
+                        &#34;MESSAGE_TYPE|&#34;
+                        + &#34;|&#34;.join(&#34;DE&#34; + str(i) for i in self.nums(2, 128))
+                        + &#34;|app_client|app_hash|app_file_date&#34;
+                    )
+                    if status == &#34;REVISION&#34;:
+                        self.path_to_file_destiny = (
+                            self.path_to_file_destiny + &#34;/REVISION&#34;
+                        )
+                    pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                        parents=True, exist_ok=True
+                    )
+                    finished_out = open(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;,
+                        &#34;a&#34;,
+                        encoding=&#34;Latin-1&#34;,
+                    )
+
+                    finished_out.write(header)
+                else:
+                    finished_out = open(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;,
+                        &#34;a&#34;,
+                        encoding=&#34;Latin-1&#34;,
+                    )
+
+                finished_out.write(write_to_file)
+                messages += 1
+                finished_out.close()
+            except KeyError as ke:
+                reads = False
+                on_error = True
+                if finished_out != None:
+                    finished_out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed messages: &#34;
+                    + str(messages)
+                    + &#34; | KeyException on parameters: &#39;&#34;
+                    + str(ke)
+                    + &#34;&#39; key is not founded in DataElements, Bad binary map&#34;,
+                    module
+                )
+
+            except ValueError as e:
+                reads = False
+                on_error = True
+                if finished_out != None:
+                    finished_out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed messages: &#34;
+                    + str(messages)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module
+                )
+            except Exception as e:
+                reads = False
+                on_error = True
+                if finished_out != None:
+                    finished_out.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed messages: &#34;
+                    + str(messages)
+                    + &#34; | exception reading file: &#34;
+                    + str(log.logs().print_except()),
+                    module
+                )
+
+        if on_error:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module
+            )
+            status = &#34;ERROR&#34;
+            messages = 0
+        else:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Finished read of file: &#34;
+                + path_to_file
+                + &#34; | readed messages: &#34;
+                + str(messages),
+                module
+            )
+            if status == &#34;IN PROGRESS&#34;:
+                status = &#34;PROCESSED&#34;
+
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: str(messages),
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+        
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;UPDATING STATUS OF FILE&#34;,
+            message_type,
+            &#34;UPDATE STATUS: &#34; + message,
+            module
+        )
+        csv_name = self.path_to_file_destiny + &#34;/&#34; + destiny_file + &#34;/&#34;+ destiny_file + str(file_finger_print)+ &#34;.csv&#34;
+        if (on_error):
+            parquet_file = []
+        else:
+            parquet_file = Utils().generate_parquet_for_mc(parent_directory,date_for_name,csv_name,type,hash,client,status,log_name)
+        
+        return {&#34;result&#34;: True, &#34;message&#34;: &#34;Finished&#34;, &#34;on_error&#34;: on_error, &#34;parquet_info&#34;:parquet_file, &#34;status&#34;:status }
+    except Exception as e:
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;END OF INTERPRETATION&#34;,
+            &#34;CRITICAL&#34;,
+            f&#34;UNHANDLED EXCEPTION: {str(log.logs().print_except())}&#34;,
+            &#34;INTERPRETATION&#34;
+        )</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.unblock_file"><code class="name flex">
+<span>def <span class="ident">unblock_file</span></span>(<span>self, fileobj: str, sizeinbytes: int) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Unblocks files blocked in 1014 bytes, returns binary string without 2 last bytes every 1014 bytes</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>fileobj</code></strong> :&ensp;<code>str</code></dt>
+<dd>readed file.</dd>
+<dt><strong><code>sizeinbytes</code></strong> :&ensp;<code>int</code></dt>
+<dd>file size.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result (str): unblocked file string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unblock_file(self, fileobj: str, sizeinbytes: int) -&gt; str:
+    &#34;&#34;&#34;Unblocks files blocked in 1014 bytes, returns binary string without 2 last bytes every 1014 bytes
+
+    Args:
+        fileobj (str): readed file.
+        sizeinbytes (int): file size.
+
+    Returns:
+        result (str): unblocked file string.
+       
+    &#34;&#34;&#34;
+    result = b&#34;&#34;
+    d = fileobj.read(-1)
+    chunks = [d[i : i + 1014] for i in range(0, sizeinbytes, 1014)]
+    result = b&#34;&#34;.join(map(lambda x: x[0:1012], chunks))
+    return result</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils">Utils</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils.generate_parquet_for_mc" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.Utils.generate_parquet_for_mc">generate_parquet_for_mc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files">read_files</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.IAR_mc_read" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.IAR_mc_read">IAR_mc_read</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.get_bitmaps" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.get_bitmaps">get_bitmaps</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.icc_to_somethingreadable" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.icc_to_somethingreadable">icc_to_somethingreadable</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.look_for_date" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.look_for_date">look_for_date</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.nums" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.nums">nums</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.read_mc_file" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.read_mc_file">read_mc_file</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.unblock_file" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.mcfiles.read_files.unblock_file">unblock_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

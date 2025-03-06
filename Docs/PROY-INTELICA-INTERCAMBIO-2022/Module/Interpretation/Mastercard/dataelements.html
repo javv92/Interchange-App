@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import json
+
+
+class Parameters:
+    &#34;&#34;&#34;Class for store parameters for Mastercard files&#34;&#34;&#34;
+    def __init__(self, *args):
+        super(Parameters, self).__init__(*args)
+
+    def getdataelements(self)-&gt; dict:
+        &#34;&#34;&#34;store dataelements configuration.
+
+        Returns:
+            dataelements (dict): Dictionary with dataelements configuration.
+        &#34;&#34;&#34;
+        dataelements = {
+            1: {&#34;fixed&#34;: True, &#34;length&#34;: 8},
+            2: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            3: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            4: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            5: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            6: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            9: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            10: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            12: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            14: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            22: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            23: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            24: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            25: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            26: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            30: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 24,
+            },
+            31: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            32: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            33: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            37: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            38: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            40: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            41: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            42: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 15,
+            },
+            43: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            48: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            49: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            50: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            51: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            54: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            55: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            62: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            63: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            71: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            72: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            73: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            93: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            94: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            95: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            100: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            111: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            123: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            124: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            125: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            127: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+        }
+
+        return dataelements
+
+    def getIPMParameters(self)-&gt;dict:
+        &#34;&#34;&#34;stores IPM tables parameters
+        
+        Returns:
+           params (dict): Dictionary with structure for IPM tables read 
+        
+        &#34;&#34;&#34;
+
+        params = {
+            &#34;update_header&#34;: {
+                &#34;header&#34;: {
+                    &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 15},
+                    &#34;header_date&#34;: {&#34;start&#34;: 15, &#34;end&#34;: 23},
+                    &#34;header_time&#34;: {&#34;start&#34;: 23, &#34;end&#34;: 28},
+                }
+            },
+            &#34;replace_header&#34;: {
+                &#34;header&#34;: {
+                    &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 17},
+                    &#34;header_date&#34;: {&#34;start&#34;: 45, &#34;end&#34;: 54},
+                    &#34;header_time&#34;: {&#34;start&#34;: 61, &#34;end&#34;: 69},
+                }
+            },
+            &#34;key&#34;: {
+                &#34;layout&#34;: &#34;IP0000T1&#34;,
+                &#34;key&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 19},
+                &#34;table_ipm_id&#34;: {&#34;start&#34;: 19, &#34;end&#34;: 27},
+                &#34;table_sub_id&#34;: {&#34;start&#34;: 243, &#34;end&#34;: 246},
+            },
+            &#34;record&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+            &#34;tables&#34;: {
+                &#34;IP0040T1&#34;: {
+                    &#34;effective_timestamp&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 7},
+                    &#34;active_inactive_code&#34;: {&#34;start&#34;: 7, &#34;end&#34;: 8},
+                    &#34;table_id&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+                    &#34;low_range&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 30,&#34;data_type&#34;:&#34;int64&#34;},  # part_of_key
+                    &#34;gcms_product&#34;: {&#34;start&#34;: 30, &#34;end&#34;: 33},  # part_of_key
+                    &#34;high_range&#34;: {&#34;start&#34;: 33, &#34;end&#34;: 52,&#34;data_type&#34;:&#34;int64&#34;},
+                    &#34;card_program_identifier&#34;: {&#34;start&#34;: 52, &#34;end&#34;: 55},
+                    &#34;card_program_priority&#34;: {&#34;start&#34;: 55, &#34;end&#34;: 57},
+                    &#34;member_id&#34;: {&#34;start&#34;: 57, &#34;end&#34;: 68},
+                    &#34;product_type&#34;: {&#34;start&#34;: 68, &#34;end&#34;: 69},
+                    &#34;endpoint&#34;: {&#34;start&#34;: 69, &#34;end&#34;: 76},
+                    &#34;card_country_alpha&#34;: {&#34;start&#34;: 76, &#34;end&#34;: 79},
+                    &#34;card_country_numeric&#34;: {&#34;start&#34;: 79, &#34;end&#34;: 82},
+                    &#34;region&#34;: {&#34;start&#34;: 82, &#34;end&#34;: 83},
+                    &#34;product_class&#34;: {&#34;start&#34;: 83, &#34;end&#34;: 86},
+                    &#34;tran_routing_ind&#34;: {&#34;start&#34;: 86, &#34;end&#34;: 87},
+                    &#34;first_present_reassign_ind&#34;: {&#34;start&#34;: 87, &#34;end&#34;: 88},
+                    &#34;product_reassign_switch&#34;: {&#34;start&#34;: 88, &#34;end&#34;: 89},
+                    &#34;pwcb_optin_switch&#34;: {&#34;start&#34;: 89, &#34;end&#34;: 90},
+                    &#34;licensed_product_id&#34;: {&#34;start&#34;: 90, &#34;end&#34;: 93},
+                    &#34;mapping_service_ind&#34;: {&#34;start&#34;: 93, &#34;end&#34;: 94},
+                    &#34;alm_participation_ind&#34;: {&#34;start&#34;: 94, &#34;end&#34;: 95},
+                    &#34;alm_activation_date&#34;: {&#34;start&#34;: 95, &#34;end&#34;: 101},
+                    &#34;cardholder_billing_currency_default&#34;: {&#34;start&#34;: 101, &#34;end&#34;: 104},
+                    &#34;cardholder_billing_currency_exponent_default&#34;: {
+                        &#34;start&#34;: 104,
+                        &#34;end&#34;: 105,
+                    },
+                    &#34;cardholder_billing_primary_currency&#34;: {&#34;start&#34;: 105, &#34;end&#34;: 133},
+                    &#34;chip_to_magnetic&#34;: {&#34;start&#34;: 133, &#34;end&#34;: 134},
+                    &#34;floor_expiration_date&#34;: {&#34;start&#34;: 134, &#34;end&#34;: 140},
+                    &#34;co_brand_participation_switch&#34;: {&#34;start&#34;: 140, &#34;end&#34;: 141},
+                    &#34;spend_control_switch&#34;: {&#34;start&#34;: 141, &#34;end&#34;: 142},
+                    &#34;merchant_cleansing_service&#34;: {&#34;start&#34;: 142, &#34;end&#34;: 145},
+                    &#34;merchant_cleansing_activation&#34;: {&#34;start&#34;: 145, &#34;end&#34;: 151},
+                    &#34;contactless_enabled_indicator&#34;: {&#34;start&#34;: 151, &#34;end&#34;: 152},
+                    &#34;regulated_rate_type&#34;: {&#34;start&#34;: 152, &#34;end&#34;: 153},
+                    &#34;psn_route_indicator&#34;: {&#34;start&#34;: 153, &#34;end&#34;: 154},
+                    &#34;cashback_without_purchase_indicator&#34;: {&#34;start&#34;: 154, &#34;end&#34;: 155},
+                    # &#34;filler_1&#34;:{&#34;start&#34;:155,&#34;end&#34;:156},
+                    &#34;repower_reload_participation_indicator&#34;: {
+                        &#34;start&#34;: 156,
+                        &#34;end&#34;: 157,
+                    },
+                    &#34;moneysend_indicator&#34;: {&#34;start&#34;: 157, &#34;end&#34;: 158},
+                    &#34;durbin_regulated_rate_indicator&#34;: {&#34;start&#34;: 158, &#34;end&#34;: 159},
+                    &#34;cash_access_only_participating_indicator&#34;: {
+                        &#34;start&#34;: 159,
+                        &#34;end&#34;: 160,
+                    },
+                    &#34;authenticator_indicator&#34;: {&#34;start&#34;: 160, &#34;end&#34;: 161},
+                    # &#34;filler_2&#34;:{&#34;start&#34;:161,&#34;end&#34;:162},
+                    &#34;issuer_target_market_participation_indicator&#34;: {
+                        &#34;start&#34;: 162,
+                        &#34;end&#34;: 163,
+                    },
+                    &#34;post_date_service_indicator&#34;: {&#34;start&#34;: 163, &#34;end&#34;: 164},
+                    &#34;meal_voucher_indicator&#34;: {&#34;start&#34;: 164, &#34;end&#34;: 165},
+                    &#34;non_reloadable_prepaid_switch&#34;: {&#34;start&#34;: 165, &#34;end&#34;: 167},
+                    &#34;faster_funds_indicator&#34;: {&#34;start&#34;: 167, &#34;end&#34;: 168},
+                    &#34;anonymous_prepaid_indicator&#34;: {&#34;start&#34;: 168, &#34;end&#34;: 169},
+                    &#34;cardholder_currency_indicator&#34;: {&#34;start&#34;: 169, &#34;end&#34;: 170},
+                    &#34;pay_by_account_indicator&#34;: {&#34;start&#34;: 170, &#34;end&#34;: 171},
+                    &#34;issuer_account_range_gaming_participation_indicator&#34;:{&#34;start&#34;:171,&#34;end&#34;:172},
+                }
+            },
+        }
+
+        return params</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters"><code class="flex name class">
+<span>class <span class="ident">Parameters</span></span>
+<span>(</span><span>*args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class for store parameters for Mastercard files</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Parameters:
+    &#34;&#34;&#34;Class for store parameters for Mastercard files&#34;&#34;&#34;
+    def __init__(self, *args):
+        super(Parameters, self).__init__(*args)
+
+    def getdataelements(self)-&gt; dict:
+        &#34;&#34;&#34;store dataelements configuration.
+
+        Returns:
+            dataelements (dict): Dictionary with dataelements configuration.
+        &#34;&#34;&#34;
+        dataelements = {
+            1: {&#34;fixed&#34;: True, &#34;length&#34;: 8},
+            2: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            3: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            4: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            5: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            6: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            9: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            10: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            12: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            14: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            22: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            23: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            24: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            25: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            26: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 4,
+            },
+            30: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 24,
+            },
+            31: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            32: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            33: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            37: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 12,
+            },
+            38: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            40: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            41: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            42: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 15,
+            },
+            43: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            48: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            49: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            50: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            51: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 3,
+            },
+            54: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            55: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            62: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            63: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            71: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 8,
+            },
+            72: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            73: {
+                &#34;fixed&#34;: True,
+                &#34;length&#34;: 6,
+            },
+            93: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            94: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            95: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            100: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 2,
+            },
+            111: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            123: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            124: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            125: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+            127: {
+                &#34;fixed&#34;: False,
+                &#34;length&#34;: 3,
+            },
+        }
+
+        return dataelements
+
+    def getIPMParameters(self)-&gt;dict:
+        &#34;&#34;&#34;stores IPM tables parameters
+        
+        Returns:
+           params (dict): Dictionary with structure for IPM tables read 
+        
+        &#34;&#34;&#34;
+
+        params = {
+            &#34;update_header&#34;: {
+                &#34;header&#34;: {
+                    &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 15},
+                    &#34;header_date&#34;: {&#34;start&#34;: 15, &#34;end&#34;: 23},
+                    &#34;header_time&#34;: {&#34;start&#34;: 23, &#34;end&#34;: 28},
+                }
+            },
+            &#34;replace_header&#34;: {
+                &#34;header&#34;: {
+                    &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 17},
+                    &#34;header_date&#34;: {&#34;start&#34;: 45, &#34;end&#34;: 54},
+                    &#34;header_time&#34;: {&#34;start&#34;: 61, &#34;end&#34;: 69},
+                }
+            },
+            &#34;key&#34;: {
+                &#34;layout&#34;: &#34;IP0000T1&#34;,
+                &#34;key&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 19},
+                &#34;table_ipm_id&#34;: {&#34;start&#34;: 19, &#34;end&#34;: 27},
+                &#34;table_sub_id&#34;: {&#34;start&#34;: 243, &#34;end&#34;: 246},
+            },
+            &#34;record&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+            &#34;tables&#34;: {
+                &#34;IP0040T1&#34;: {
+                    &#34;effective_timestamp&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 7},
+                    &#34;active_inactive_code&#34;: {&#34;start&#34;: 7, &#34;end&#34;: 8},
+                    &#34;table_id&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+                    &#34;low_range&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 30,&#34;data_type&#34;:&#34;int64&#34;},  # part_of_key
+                    &#34;gcms_product&#34;: {&#34;start&#34;: 30, &#34;end&#34;: 33},  # part_of_key
+                    &#34;high_range&#34;: {&#34;start&#34;: 33, &#34;end&#34;: 52,&#34;data_type&#34;:&#34;int64&#34;},
+                    &#34;card_program_identifier&#34;: {&#34;start&#34;: 52, &#34;end&#34;: 55},
+                    &#34;card_program_priority&#34;: {&#34;start&#34;: 55, &#34;end&#34;: 57},
+                    &#34;member_id&#34;: {&#34;start&#34;: 57, &#34;end&#34;: 68},
+                    &#34;product_type&#34;: {&#34;start&#34;: 68, &#34;end&#34;: 69},
+                    &#34;endpoint&#34;: {&#34;start&#34;: 69, &#34;end&#34;: 76},
+                    &#34;card_country_alpha&#34;: {&#34;start&#34;: 76, &#34;end&#34;: 79},
+                    &#34;card_country_numeric&#34;: {&#34;start&#34;: 79, &#34;end&#34;: 82},
+                    &#34;region&#34;: {&#34;start&#34;: 82, &#34;end&#34;: 83},
+                    &#34;product_class&#34;: {&#34;start&#34;: 83, &#34;end&#34;: 86},
+                    &#34;tran_routing_ind&#34;: {&#34;start&#34;: 86, &#34;end&#34;: 87},
+                    &#34;first_present_reassign_ind&#34;: {&#34;start&#34;: 87, &#34;end&#34;: 88},
+                    &#34;product_reassign_switch&#34;: {&#34;start&#34;: 88, &#34;end&#34;: 89},
+                    &#34;pwcb_optin_switch&#34;: {&#34;start&#34;: 89, &#34;end&#34;: 90},
+                    &#34;licensed_product_id&#34;: {&#34;start&#34;: 90, &#34;end&#34;: 93},
+                    &#34;mapping_service_ind&#34;: {&#34;start&#34;: 93, &#34;end&#34;: 94},
+                    &#34;alm_participation_ind&#34;: {&#34;start&#34;: 94, &#34;end&#34;: 95},
+                    &#34;alm_activation_date&#34;: {&#34;start&#34;: 95, &#34;end&#34;: 101},
+                    &#34;cardholder_billing_currency_default&#34;: {&#34;start&#34;: 101, &#34;end&#34;: 104},
+                    &#34;cardholder_billing_currency_exponent_default&#34;: {
+                        &#34;start&#34;: 104,
+                        &#34;end&#34;: 105,
+                    },
+                    &#34;cardholder_billing_primary_currency&#34;: {&#34;start&#34;: 105, &#34;end&#34;: 133},
+                    &#34;chip_to_magnetic&#34;: {&#34;start&#34;: 133, &#34;end&#34;: 134},
+                    &#34;floor_expiration_date&#34;: {&#34;start&#34;: 134, &#34;end&#34;: 140},
+                    &#34;co_brand_participation_switch&#34;: {&#34;start&#34;: 140, &#34;end&#34;: 141},
+                    &#34;spend_control_switch&#34;: {&#34;start&#34;: 141, &#34;end&#34;: 142},
+                    &#34;merchant_cleansing_service&#34;: {&#34;start&#34;: 142, &#34;end&#34;: 145},
+                    &#34;merchant_cleansing_activation&#34;: {&#34;start&#34;: 145, &#34;end&#34;: 151},
+                    &#34;contactless_enabled_indicator&#34;: {&#34;start&#34;: 151, &#34;end&#34;: 152},
+                    &#34;regulated_rate_type&#34;: {&#34;start&#34;: 152, &#34;end&#34;: 153},
+                    &#34;psn_route_indicator&#34;: {&#34;start&#34;: 153, &#34;end&#34;: 154},
+                    &#34;cashback_without_purchase_indicator&#34;: {&#34;start&#34;: 154, &#34;end&#34;: 155},
+                    # &#34;filler_1&#34;:{&#34;start&#34;:155,&#34;end&#34;:156},
+                    &#34;repower_reload_participation_indicator&#34;: {
+                        &#34;start&#34;: 156,
+                        &#34;end&#34;: 157,
+                    },
+                    &#34;moneysend_indicator&#34;: {&#34;start&#34;: 157, &#34;end&#34;: 158},
+                    &#34;durbin_regulated_rate_indicator&#34;: {&#34;start&#34;: 158, &#34;end&#34;: 159},
+                    &#34;cash_access_only_participating_indicator&#34;: {
+                        &#34;start&#34;: 159,
+                        &#34;end&#34;: 160,
+                    },
+                    &#34;authenticator_indicator&#34;: {&#34;start&#34;: 160, &#34;end&#34;: 161},
+                    # &#34;filler_2&#34;:{&#34;start&#34;:161,&#34;end&#34;:162},
+                    &#34;issuer_target_market_participation_indicator&#34;: {
+                        &#34;start&#34;: 162,
+                        &#34;end&#34;: 163,
+                    },
+                    &#34;post_date_service_indicator&#34;: {&#34;start&#34;: 163, &#34;end&#34;: 164},
+                    &#34;meal_voucher_indicator&#34;: {&#34;start&#34;: 164, &#34;end&#34;: 165},
+                    &#34;non_reloadable_prepaid_switch&#34;: {&#34;start&#34;: 165, &#34;end&#34;: 167},
+                    &#34;faster_funds_indicator&#34;: {&#34;start&#34;: 167, &#34;end&#34;: 168},
+                    &#34;anonymous_prepaid_indicator&#34;: {&#34;start&#34;: 168, &#34;end&#34;: 169},
+                    &#34;cardholder_currency_indicator&#34;: {&#34;start&#34;: 169, &#34;end&#34;: 170},
+                    &#34;pay_by_account_indicator&#34;: {&#34;start&#34;: 170, &#34;end&#34;: 171},
+                    &#34;issuer_account_range_gaming_participation_indicator&#34;:{&#34;start&#34;:171,&#34;end&#34;:172},
+                }
+            },
+        }
+
+        return params</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getIPMParameters"><code class="name flex">
+<span>def <span class="ident">getIPMParameters</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>stores IPM tables parameters</p>
+<h2 id="returns">Returns</h2>
+<p>params (dict): Dictionary with structure for IPM tables read</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getIPMParameters(self)-&gt;dict:
+    &#34;&#34;&#34;stores IPM tables parameters
+    
+    Returns:
+       params (dict): Dictionary with structure for IPM tables read 
+    
+    &#34;&#34;&#34;
+
+    params = {
+        &#34;update_header&#34;: {
+            &#34;header&#34;: {
+                &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 15},
+                &#34;header_date&#34;: {&#34;start&#34;: 15, &#34;end&#34;: 23},
+                &#34;header_time&#34;: {&#34;start&#34;: 23, &#34;end&#34;: 28},
+            }
+        },
+        &#34;replace_header&#34;: {
+            &#34;header&#34;: {
+                &#34;header_title&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 17},
+                &#34;header_date&#34;: {&#34;start&#34;: 45, &#34;end&#34;: 54},
+                &#34;header_time&#34;: {&#34;start&#34;: 61, &#34;end&#34;: 69},
+            }
+        },
+        &#34;key&#34;: {
+            &#34;layout&#34;: &#34;IP0000T1&#34;,
+            &#34;key&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 19},
+            &#34;table_ipm_id&#34;: {&#34;start&#34;: 19, &#34;end&#34;: 27},
+            &#34;table_sub_id&#34;: {&#34;start&#34;: 243, &#34;end&#34;: 246},
+        },
+        &#34;record&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+        &#34;tables&#34;: {
+            &#34;IP0040T1&#34;: {
+                &#34;effective_timestamp&#34;: {&#34;start&#34;: 0, &#34;end&#34;: 7},
+                &#34;active_inactive_code&#34;: {&#34;start&#34;: 7, &#34;end&#34;: 8},
+                &#34;table_id&#34;: {&#34;start&#34;: 8, &#34;end&#34;: 11},
+                &#34;low_range&#34;: {&#34;start&#34;: 11, &#34;end&#34;: 30,&#34;data_type&#34;:&#34;int64&#34;},  # part_of_key
+                &#34;gcms_product&#34;: {&#34;start&#34;: 30, &#34;end&#34;: 33},  # part_of_key
+                &#34;high_range&#34;: {&#34;start&#34;: 33, &#34;end&#34;: 52,&#34;data_type&#34;:&#34;int64&#34;},
+                &#34;card_program_identifier&#34;: {&#34;start&#34;: 52, &#34;end&#34;: 55},
+                &#34;card_program_priority&#34;: {&#34;start&#34;: 55, &#34;end&#34;: 57},
+                &#34;member_id&#34;: {&#34;start&#34;: 57, &#34;end&#34;: 68},
+                &#34;product_type&#34;: {&#34;start&#34;: 68, &#34;end&#34;: 69},
+                &#34;endpoint&#34;: {&#34;start&#34;: 69, &#34;end&#34;: 76},
+                &#34;card_country_alpha&#34;: {&#34;start&#34;: 76, &#34;end&#34;: 79},
+                &#34;card_country_numeric&#34;: {&#34;start&#34;: 79, &#34;end&#34;: 82},
+                &#34;region&#34;: {&#34;start&#34;: 82, &#34;end&#34;: 83},
+                &#34;product_class&#34;: {&#34;start&#34;: 83, &#34;end&#34;: 86},
+                &#34;tran_routing_ind&#34;: {&#34;start&#34;: 86, &#34;end&#34;: 87},
+                &#34;first_present_reassign_ind&#34;: {&#34;start&#34;: 87, &#34;end&#34;: 88},
+                &#34;product_reassign_switch&#34;: {&#34;start&#34;: 88, &#34;end&#34;: 89},
+                &#34;pwcb_optin_switch&#34;: {&#34;start&#34;: 89, &#34;end&#34;: 90},
+                &#34;licensed_product_id&#34;: {&#34;start&#34;: 90, &#34;end&#34;: 93},
+                &#34;mapping_service_ind&#34;: {&#34;start&#34;: 93, &#34;end&#34;: 94},
+                &#34;alm_participation_ind&#34;: {&#34;start&#34;: 94, &#34;end&#34;: 95},
+                &#34;alm_activation_date&#34;: {&#34;start&#34;: 95, &#34;end&#34;: 101},
+                &#34;cardholder_billing_currency_default&#34;: {&#34;start&#34;: 101, &#34;end&#34;: 104},
+                &#34;cardholder_billing_currency_exponent_default&#34;: {
+                    &#34;start&#34;: 104,
+                    &#34;end&#34;: 105,
+                },
+                &#34;cardholder_billing_primary_currency&#34;: {&#34;start&#34;: 105, &#34;end&#34;: 133},
+                &#34;chip_to_magnetic&#34;: {&#34;start&#34;: 133, &#34;end&#34;: 134},
+                &#34;floor_expiration_date&#34;: {&#34;start&#34;: 134, &#34;end&#34;: 140},
+                &#34;co_brand_participation_switch&#34;: {&#34;start&#34;: 140, &#34;end&#34;: 141},
+                &#34;spend_control_switch&#34;: {&#34;start&#34;: 141, &#34;end&#34;: 142},
+                &#34;merchant_cleansing_service&#34;: {&#34;start&#34;: 142, &#34;end&#34;: 145},
+                &#34;merchant_cleansing_activation&#34;: {&#34;start&#34;: 145, &#34;end&#34;: 151},
+                &#34;contactless_enabled_indicator&#34;: {&#34;start&#34;: 151, &#34;end&#34;: 152},
+                &#34;regulated_rate_type&#34;: {&#34;start&#34;: 152, &#34;end&#34;: 153},
+                &#34;psn_route_indicator&#34;: {&#34;start&#34;: 153, &#34;end&#34;: 154},
+                &#34;cashback_without_purchase_indicator&#34;: {&#34;start&#34;: 154, &#34;end&#34;: 155},
+                # &#34;filler_1&#34;:{&#34;start&#34;:155,&#34;end&#34;:156},
+                &#34;repower_reload_participation_indicator&#34;: {
+                    &#34;start&#34;: 156,
+                    &#34;end&#34;: 157,
+                },
+                &#34;moneysend_indicator&#34;: {&#34;start&#34;: 157, &#34;end&#34;: 158},
+                &#34;durbin_regulated_rate_indicator&#34;: {&#34;start&#34;: 158, &#34;end&#34;: 159},
+                &#34;cash_access_only_participating_indicator&#34;: {
+                    &#34;start&#34;: 159,
+                    &#34;end&#34;: 160,
+                },
+                &#34;authenticator_indicator&#34;: {&#34;start&#34;: 160, &#34;end&#34;: 161},
+                # &#34;filler_2&#34;:{&#34;start&#34;:161,&#34;end&#34;:162},
+                &#34;issuer_target_market_participation_indicator&#34;: {
+                    &#34;start&#34;: 162,
+                    &#34;end&#34;: 163,
+                },
+                &#34;post_date_service_indicator&#34;: {&#34;start&#34;: 163, &#34;end&#34;: 164},
+                &#34;meal_voucher_indicator&#34;: {&#34;start&#34;: 164, &#34;end&#34;: 165},
+                &#34;non_reloadable_prepaid_switch&#34;: {&#34;start&#34;: 165, &#34;end&#34;: 167},
+                &#34;faster_funds_indicator&#34;: {&#34;start&#34;: 167, &#34;end&#34;: 168},
+                &#34;anonymous_prepaid_indicator&#34;: {&#34;start&#34;: 168, &#34;end&#34;: 169},
+                &#34;cardholder_currency_indicator&#34;: {&#34;start&#34;: 169, &#34;end&#34;: 170},
+                &#34;pay_by_account_indicator&#34;: {&#34;start&#34;: 170, &#34;end&#34;: 171},
+                &#34;issuer_account_range_gaming_participation_indicator&#34;:{&#34;start&#34;:171,&#34;end&#34;:172},
+            }
+        },
+    }
+
+    return params</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getdataelements"><code class="name flex">
+<span>def <span class="ident">getdataelements</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>store dataelements configuration.</p>
+<h2 id="returns">Returns</h2>
+<p>dataelements (dict): Dictionary with dataelements configuration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getdataelements(self)-&gt; dict:
+    &#34;&#34;&#34;store dataelements configuration.
+
+    Returns:
+        dataelements (dict): Dictionary with dataelements configuration.
+    &#34;&#34;&#34;
+    dataelements = {
+        1: {&#34;fixed&#34;: True, &#34;length&#34;: 8},
+        2: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        3: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 6,
+        },
+        4: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        5: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        6: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        9: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 8,
+        },
+        10: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 8,
+        },
+        12: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        14: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 4,
+        },
+        22: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        23: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        24: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        25: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 4,
+        },
+        26: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 4,
+        },
+        30: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 24,
+        },
+        31: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        32: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        33: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        37: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 12,
+        },
+        38: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 6,
+        },
+        40: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        41: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 8,
+        },
+        42: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 15,
+        },
+        43: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        48: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        49: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        50: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        51: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 3,
+        },
+        54: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        55: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        62: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        63: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        71: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 8,
+        },
+        72: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        73: {
+            &#34;fixed&#34;: True,
+            &#34;length&#34;: 6,
+        },
+        93: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        94: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        95: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        100: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 2,
+        },
+        111: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        123: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        124: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        125: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+        127: {
+            &#34;fixed&#34;: False,
+            &#34;length&#34;: 3,
+        },
+    }
+
+    return dataelements</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters">Parameters</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getIPMParameters" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getIPMParameters">getIPMParameters</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getdataelements" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Mastercard.dataelements.Parameters.getdataelements">getdataelements</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

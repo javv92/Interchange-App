@@ -1,0 +1,3390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from array import ArrayType
+import requests
+from typing import List
+import json
+import time, random
+from datetime import datetime
+import sqlalchemy
+from bs4 import BeautifulSoup
+import warnings
+import pandas as pd
+import numpy as np
+import concurrent.futures
+import Module.Logs.logs as log
+from Module.Persistence.connection import connect_to_postgreSQL as bdpostgre
+from Module.Persistence.connection import connect_to_s3 as s3
+import pathlib, os
+from dotenv import load_dotenv
+
+
+class ExchangeRates:
+    &#34;&#34;&#34;Class used for obtain exchange rates of the day.
+    
+    settings are obtained from S3 repository via request to bucket.
+    Params:
+        info_date (str): date of the day to extract exchange rate.
+    &#34;&#34;&#34;
+    warnings.simplefilter(action=&#34;ignore&#34;, category=FutureWarning)
+    def __init__(self, info_date, **kwargs) -&gt; None:
+        load_dotenv()
+        self.structured = os.getenv(&#34;INTELICA_DEVOPS&#34;)
+        info_settings = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        settings = json.loads(info_settings[&#34;Body&#34;].read())
+        self.HEADERS_VISA = settings.get(&#34;header_settings&#34;).get(&#34;HEADERS_VISA&#34;)
+        self.HEADERS_MASTERCARD = settings.get(&#34;header_settings&#34;).get(&#34;HEADERS_MASTERCARD&#34;)
+        self.brand_visa = &#34;VISA&#34;
+        self.brand_mastercard = &#34;MasterCard&#34;
+        self.VERIFY: bool = True
+
+        if info_date is None:
+            info_date = datetime.now().strftime(&#34;%m/%d/%Y&#34;)
+            self.info_date = info_date
+        else:
+            info_date = info_date.strftime(&#34;%m/%d/%Y&#34;)
+            self.info_date = info_date
+
+        super().__init__(**kwargs)
+
+    def get_currency_list_visa(self) -&gt; List:
+        &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Visa&#34;&#34;&#34;
+        visa = requests.get(
+            &#34;https://usa.visa.com/support/consumer/travel-support/exchange-rate-calculator.html&#34;,
+            headers=self.HEADERS_VISA,
+            verify=self.VERIFY,
+        )
+        body = BeautifulSoup(visa.text, &#34;html.parser&#34;)
+        calculator_data = body.find(&#34;dm-calculator&#34;).get(&#34;content&#34;)
+        currency_list = json.loads(calculator_data)
+        currency_list = currency_list[&#34;currencyList&#34;]
+        currency_keys_visa = [
+            types[&#34;key&#34;] for types in currency_list if types[&#34;key&#34;] != &#34;None&#34;
+        ]
+        results_visa = []
+        for type_1 in currency_keys_visa:
+            for type_2 in currency_keys_visa:
+                if type_1 != type_2:
+                    results_visa.append([type_1, type_2])
+        return results_visa
+
+    def initial_exchange_conversor_visa(self, element_visa) -&gt; ArrayType:
+        &#34;&#34;&#34;Exchange rate extractor from VISA information to be executed in multithreading
+        
+        Args:
+            element_visa (list): list of currency for exchange
+        Returns:
+            type_1 (str): currency from
+            type_2 (str): currency to
+            value (str): value for combination of type 1 and type 2 currency.
+        
+        &#34;&#34;&#34;
+        s = requests.Session()
+        type_1 = element_visa[0]
+        type_2 = element_visa[1]
+        visa_params = {
+            &#34;amount&#34;: &#34;1&#34;,
+            &#34;fee&#34;: &#34;0&#34;,
+            &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+            &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+            &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+            &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+        }
+        try:
+            visa = s.get(
+                &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                headers=self.HEADERS_VISA,
+                verify=self.VERIFY,
+                params=visa_params,
+                timeout=2,
+            )
+            response = json.loads(visa.content)
+
+            if len(response.keys()) == 1:
+                visa_params[&#34;fromCurr&#34;] = type_1
+                visa_params[&#34;toCurr&#34;] = type_2
+
+                visa = s.get(
+                    &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                    headers=self.HEADERS_VISA,
+                    params=visa_params,
+                    verify=self.VERIFY,
+                    timeout=2,
+                )
+                response = json.loads(visa.content)
+                value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+            else:
+                value = float(
+                    str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+                )
+        except Exception:
+            value = np.nan
+            return type_1, type_2, value
+        return type_1, type_2, value
+
+    def reprocess_exchange_conversor_visa(self, list_visa, proxy_element) -&gt; ArrayType:
+        &#34;&#34;&#34;Visa multiprocess that takes the time of mastercard but that is used once the initial price has been executed to reprocess exchange rates that were not successfully achieved in the initial process
+        
+        Args:
+            list_visa (list):  list of currency for exchange
+            proxy_element (list): list of proxy for beign used
+        Returns:
+            result_visa_list (list): result of obtained data.
+            proxy_element (list): proxy element.
+        
+        &#34;&#34;&#34;
+        proxy = proxy_element[&#34;proxy&#34;]
+        proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+        s = requests.Session()
+        if list_visa != []:
+            result_visa_list = []
+            for element_visa in list_visa:
+                type_1 = element_visa[0]
+                type_2 = element_visa[1]
+                visa_params = {
+                    &#34;amount&#34;: &#34;1&#34;,
+                    &#34;fee&#34;: &#34;0&#34;,
+                    &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+                    &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+                    &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+                    &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+                }
+
+                try:
+                    visa = s.get(
+                        &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                        headers=self.HEADERS_VISA,
+                        verify=self.VERIFY,
+                        params=visa_params,
+                        timeout=2,
+                        proxies=proxy_dict,
+                    )
+                    response = json.loads(visa.content)
+
+                    if len(response.keys()) == 1:
+                        visa_params[&#34;fromCurr&#34;] = type_1
+                        visa_params[&#34;toCurr&#34;] = type_2
+
+                        visa = s.get(
+                            &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                            headers=self.HEADERS_VISA,
+                            params=visa_params,
+                            verify=self.VERIFY,
+                            timeout=3,
+                            proxies=proxy_dict,
+                        )
+                        response = json.loads(visa.content)
+                        value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+                    else:
+                        value = float(
+                            str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(
+                                &#34;,&#34;, &#34;&#34;
+                            )
+                        )
+                except Exception:
+                    value = np.nan
+                    proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+                data = (type_1, type_2, value)
+                result_visa_list.append(data)
+
+            return result_visa_list, proxy_element
+
+        else:
+            return [], proxy_element
+
+    def get_currency_list_mastercard(self) -&gt; List:
+        &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Mastercard&#34;&#34;&#34;
+        s = requests.Session()
+        header_list_mastercard = self.HEADERS_MASTERCARD
+        header_list_mastercard[&#34;sec-fetch-mode&#34;] = &#34;navigate&#34;
+        header_list_mastercard[&#34;sec-fetch-site&#34;] = &#34;none&#34;
+        header_list_mastercard[&#34;purpose&#34;] = &#34;prefetch&#34;
+
+        try:
+            response = s.get(
+                &#34;https://www.mastercard.us/settlement/currencyrate/settlement-currencies&#34;,
+                headers=header_list_mastercard,
+                verify=self.VERIFY,
+                timeout=3,
+            )
+            data = json.loads(response.content)
+
+        except json.JSONDecodeError:
+            return f&#34;error&#34;
+
+        currency_list = [currency[&#34;alphaCd&#34;] for currency in data[&#34;data&#34;][&#34;currencies&#34;]]
+
+        results_mastercard = []
+        for type_1 in currency_list:
+            for type_2 in currency_list:
+                if type_1 != type_2:
+                    results_mastercard.append([type_1, type_2])
+
+        return results_mastercard
+
+    def exchange_conversor_mastercard(self, list_mastercard, proxy_element ) -&gt; List:
+        &#34;&#34;&#34;Exchange Converter of Mastercard
+        
+        Args:
+            list_mastercard (list): list of currency for exchange
+            proxy_element (list): list of proxy element
+        Returns:
+            result_mastercard_list (list):  list of proxy element.
+            proxy_element (list): result of the search.
+        
+        &#34;&#34;&#34;
+        proxy = proxy_element[&#34;proxy&#34;]
+        proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+        date_mastercard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        s = requests.Session()
+        if list_mastercard != []:
+
+            result_mastercard_list = []
+            for i in list_mastercard:
+                type_1 = i[0]
+                type_2 = i[1]
+
+                mastercard_params = {
+                    &#34;fxDate&#34;: str(date_mastercard),
+                    &#34;transCurr&#34;: f&#34;{type_1}&#34;,
+                    &#34;crdhldBillCurr&#34;: f&#34;{type_2}&#34;,
+                    &#34;bankFee&#34;: &#34;0&#34;,
+                    &#34;transAmt&#34;: &#34;1&#34;,
+                }
+
+                try:
+                    mastercard = s.get(
+                        &#34;https://www.mastercard.us/settlement/currencyrate/conversion-rate&#34;,
+                        params=mastercard_params,
+                        headers=self.HEADERS_MASTERCARD,
+                        verify=self.VERIFY,
+                        proxies=proxy_dict,
+                        timeout=3,
+                    )
+                    response = json.loads(mastercard.content)
+                    value = float(
+                        str(response[&#34;data&#34;][&#34;conversionRate&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+                    )
+                    time.sleep(round((3.50 + random.uniform(1, 2)), 2))
+
+                except Exception:
+                    value = np.nan
+                    proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+                data = (type_1, type_2, value)
+                result_mastercard_list.append(data)
+
+            return result_mastercard_list, proxy_element
+        else:
+            return [], proxy_element
+
+    def run_full_initial_visa(self, available_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+        Returns:
+            df_conversor_visa (Dataframe): data extracted with the exchange rates.
+        
+        &#34;&#34;&#34;
+        with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+            results_visa = executor.map(
+                self.initial_exchange_conversor_visa, available_list
+            )
+
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_conversor_changes_visa = [
+            [type_1, type_2, value, header_date, self.brand_visa]
+            for (type_1, type_2, value) in results_visa
+        ]
+        df_conversor_visa = pd.DataFrame(
+            all_conversor_changes_visa,
+            columns=[
+                &#34;currency_from&#34;,
+                &#34;currency_to&#34;,
+                &#34;exchange_value&#34;,
+                &#34;date&#34;,
+                &#34;brand&#34;,
+            ],
+        )
+        df_conversor_visa = df_conversor_visa.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+        return df_conversor_visa
+
+    def run_full_visa(self, available_list, proxy_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+           proxy_list (list): list of available proxy
+        Returns:
+            df_conversor_visa (Dataframe): data extracted with the exchange rates.
+            inactive_proxies (list): list of inactive proxys.
+        
+        &#34;&#34;&#34;
+        active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+        divider = np.array_split(available_list, len(active_proxy_list))
+
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            results_v = executor.map(
+                self.reprocess_exchange_conversor_visa, divider, active_proxy_list
+            )
+
+        results_visa = []
+        inactive_proxies = []
+        for i in results_v:
+            if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+                inactive_proxies.append(i[1])
+            for a in i[0]:
+                results_visa.append(a)
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_conversor_changes_visa = [
+            [type_1, type_2, value, header_date, self.brand_visa]
+            for (type_1, type_2, value) in results_visa
+        ]
+        df_conversor_visa = pd.DataFrame(
+            all_conversor_changes_visa,
+            columns=[
+                &#34;currency_from&#34;,
+                &#34;currency_to&#34;,
+                &#34;exchange_value&#34;,
+                &#34;date&#34;,
+                &#34;brand&#34;,
+            ],
+        )
+        df_conversor_visa = df_conversor_visa.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+
+        return df_conversor_visa, inactive_proxies
+
+    def run_full_mastercard(self, available_list, proxy_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the MASTERCARD page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+           proxy_list (list): list of available proxy
+        Returns:
+            df_conversor_mastercard (Dataframe): data extracted with the exchange rates.
+            inactive_proxies (list): list of inactive proxys.
+        
+        
+        &#34;&#34;&#34;
+
+        active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+
+        divider = np.array_split(available_list, len(active_proxy_list))
+
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            results_m = executor.map(
+                self.exchange_conversor_mastercard, divider, active_proxy_list
+            )
+
+        results_mastercard = []
+        inactive_proxies = []
+        for i in results_m:
+            if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+                inactive_proxies.append(i[1])
+            for a in i[0]:
+                results_mastercard.append(a)
+
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_converter_changes_mastercard = [
+            [type_1, type_2, value, header_date, self.brand_mastercard]
+            for (type_1, type_2, value) in results_mastercard
+        ]
+
+        df_conversor_mastercard = pd.DataFrame(
+            all_converter_changes_mastercard,
+            columns=[&#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;, &#34;date&#34;, &#34;brand&#34;],
+        )
+        df_conversor_mastercard = df_conversor_mastercard.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+        return df_conversor_mastercard, inactive_proxies
+
+    def combiner_process(self, log_name) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Executor of the process for the generation of all information on visa and mastercard exchange rates considering reprocesses
+        
+        Args:
+           log_name (str): name of log file.
+        Returns:
+           all_data (pd.Dataframe): processed data
+        &#34;&#34;&#34;
+        module_name = &#34;EXCHANGE RATE&#34;
+        all_visa = self.get_currency_list_visa()
+        all_mastercard = self.get_currency_list_mastercard()
+        info_settings_visa = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        info_settings_mastercard = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        settings_visa = json.loads(info_settings_visa[&#34;Body&#34;].read())
+        settings_mastercard = json.loads(info_settings_mastercard[&#34;Body&#34;].read())
+        proxy_list_visa = settings_visa.get(&#34;proxy_settings&#34;).get(&#34;proxy_list&#34;)
+        proxy_list_mastercard = settings_mastercard.get(&#34;proxy_settings&#34;).get(
+            &#34;proxy_list&#34;
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to processing : &#34; + str(len(all_visa)),
+            module_name,
+        )
+
+        visa_process = self.run_full_initial_visa(all_visa)
+        visa_data = pd.DataFrame(visa_process)
+        visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+        counter_visa = 0
+        initial_proxy_list_visa = proxy_list_visa
+        r_analyze_proxy_visa = [
+            proxy for proxy in initial_proxy_list_visa if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+
+        original_info_settings_visa = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        original_settings_visa = json.loads(original_info_settings_visa[&#34;Body&#34;].read())
+        original_proxy_list_visa = original_settings_visa.get(&#34;proxy_settings&#34;).get(
+            &#34;proxy_list&#34;
+        )
+        quality_proxies_visa = (
+            len(r_analyze_proxy_visa) / len(initial_proxy_list_visa)
+        ) * 100
+        quantity_missing_visa = (len(visa_reprocess) / len(visa_data)) * 100
+
+        if visa_reprocess.empty:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;NO UNPPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34; + str(len(visa_reprocess)),
+                module_name,
+            )
+        else:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_visa,2))}% AND A NUMBER OF MISSING OF THE {str(len(visa_reprocess))} ({str(round(quantity_missing_visa,2))}%)&#34;,
+                &#34;INFO&#34;,
+                f&#34;Analyzing to respond to the process&#34;,
+                module_name,
+            )
+
+            if quality_proxies_visa &lt; 50:
+                if quantity_missing_visa &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1200)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+
+                    initial_proxy_list_visa = original_proxy_list_visa
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+            else:
+                if quantity_missing_visa &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 5 minutes timeout to restart proxies and start reprocess&#34;,
+                        module_name,
+                    )
+                    time.sleep(300)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+        while not visa_reprocess.empty:
+            counter_visa += 1
+            r_available_proxy_visa = [
+                proxy
+                for proxy in initial_proxy_list_visa
+                if proxy[&#34;status&#34;] == &#34;active&#34;
+            ]
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+                + str(int(counter_visa)),
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(visa_reprocess))
+                + f&#34; with {len(r_available_proxy_visa)} active proxies&#34;,
+                module_name,
+            )
+
+            if len(r_available_proxy_visa) == 0:
+                missing_exchange_rates_visa = len(visa_reprocess)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;ERROR&#34;,
+                    f&#34;Finishing obtaining exchange rates from VISA, missing {missing_exchange_rates_visa} exchange rates&#34;,
+                    module_name,
+                )
+                break
+
+            reprocess_visa_data = visa_reprocess[
+                [&#34;currency_from&#34;, &#34;currency_to&#34;]
+            ].values.tolist()
+
+            visa_r = self.run_full_visa(reprocess_visa_data, r_available_proxy_visa)
+            visa_r_data = pd.DataFrame(visa_r[0])
+            r_inactive_proxy_visa = visa_r[1]
+
+            if len(r_inactive_proxy_visa) &gt; 0:
+                for i in initial_proxy_list_visa:
+                    for r in r_inactive_proxy_visa:
+                        if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                            i[&#34;status&#34;] = r[&#34;status&#34;]
+
+            for index, row in visa_r_data.iterrows():
+                a = row[&#34;currency_from&#34;]
+                b = row[&#34;currency_to&#34;]
+                value = row[&#34;exchange_value&#34;]
+                visa_data.loc[
+                    (visa_data[&#34;currency_from&#34;] == a) &amp; (visa_data[&#34;currency_to&#34;] == b),
+                    &#34;exchange_value&#34;,
+                ] = value
+
+            visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;completed&#34;,
+            module_name,
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to processing : &#34; + str(len(all_mastercard)),
+            module_name,
+        )
+
+        mastercard_process = self.run_full_mastercard(
+            all_mastercard, proxy_list_mastercard
+        )
+        mastercard_data = pd.DataFrame(mastercard_process[0])
+
+        inactive_proxy_mastercard = mastercard_process[1]
+
+        for i in proxy_list_mastercard:
+            for r in inactive_proxy_mastercard:
+                if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                    i[&#34;status&#34;] = r[&#34;status&#34;]
+
+        mastercard_reprocess = mastercard_data.query(
+            &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+        )
+
+        counter_mastercard = 0
+        initial_proxy_list_mastercard = proxy_list_mastercard
+        r_analyze_proxy_mastercard = [
+            proxy
+            for proxy in initial_proxy_list_mastercard
+            if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+        original_info_settings_mastercard = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        original_settings_mastercard = json.loads(
+            original_info_settings_mastercard[&#34;Body&#34;].read()
+        )
+        original_proxy_list_mastercard = original_settings_mastercard.get(
+            &#34;proxy_settings&#34;
+        ).get(&#34;proxy_list&#34;)
+        quality_proxies_mastercard = (
+            len(r_analyze_proxy_mastercard) / len(original_proxy_list_mastercard)
+        ) * 100
+        quantity_missing_mastercard = (
+            len(mastercard_reprocess) / len(mastercard_data)
+        ) * 100
+
+        if mastercard_reprocess.empty:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;NO UNPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(mastercard_reprocess)),
+                module_name,
+            )
+        else:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_mastercard,2))}% AND A NUMBER OF MISSING OF THE {str(len(mastercard_reprocess))} ({str(round(quantity_missing_mastercard,2))}%)&#34;,
+                &#34;INFO&#34;,
+                f&#34;Analyzing to respond to the process&#34;,
+                module_name,
+            )
+            if quality_proxies_mastercard &lt; 50:
+                if quantity_missing_mastercard &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1200)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+            else:
+                if quantity_missing_mastercard &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 10 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(600)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;Process with proxies enabled&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+        while not mastercard_reprocess.empty:
+            counter_mastercard += 1
+            r_available_proxy_mastercard = [
+                proxy
+                for proxy in starting_proxy_list_mastercard
+                if proxy[&#34;status&#34;] == &#34;active&#34;
+            ]
+
+            if len(r_available_proxy_mastercard) == 0:
+                missing_exchange_rates_mc = len(mastercard_reprocess)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;ERROR&#34;,
+                    f&#34;Finishing obtaining exchange rates from MASTERCARD, missing {missing_exchange_rates_mc} exchange rates&#34;,
+                    module_name,
+                )
+                break
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+                + str(int(counter_mastercard)),
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(mastercard_reprocess))
+                + f&#34; with {len(r_available_proxy_mastercard)} active proxies&#34;,
+                module_name,
+            )
+            reprocess_mastercard_data = mastercard_reprocess[
+                [&#34;currency_from&#34;, &#34;currency_to&#34;]
+            ].values.tolist()
+
+            mastercard_r = self.run_full_mastercard(
+                reprocess_mastercard_data, r_available_proxy_mastercard
+            )
+            mastercard_r_data = pd.DataFrame(mastercard_r[0])
+            r_inactive_proxy_mastercard = mastercard_r[1]
+
+            if len(r_inactive_proxy_mastercard) &gt; 0:
+                for i in starting_proxy_list_mastercard:
+                    for r in r_inactive_proxy_mastercard:
+                        if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                            i[&#34;status&#34;] = r[&#34;status&#34;]
+
+            for index, row in mastercard_r_data.iterrows():
+                a = row[&#34;currency_from&#34;]
+                b = row[&#34;currency_to&#34;]
+                value = row[&#34;exchange_value&#34;]
+                mastercard_data.loc[
+                    (mastercard_data[&#34;currency_from&#34;] == a)
+                    &amp; (mastercard_data[&#34;currency_to&#34;] == b),
+                    &#34;exchange_value&#34;,
+                ] = value
+
+            mastercard_reprocess = mastercard_data.query(
+                &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+            )
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;completed&#34;,
+            module_name,
+        )
+        frames = [visa_data, mastercard_data]
+        all_data = pd.concat(frames, ignore_index=True)
+
+        return all_data
+
+    def updater_process(self) -&gt; None:
+        &#34;&#34;&#34;Process that connects to the database and updates the exchange rates.&#34;&#34;&#34;
+        module_name = &#34;EXCHANGE RATE&#34;
+        log_name = log.logs().new_log(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;&#34;,
+            &#34;INTELICA&#34;,
+            &#34;GET VISA AND MASTERCARD EXCHANGE RATES&#34;,
+            &#34;SYSTEM&#34;,
+            module_name,
+        )
+
+        date_input = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        try:
+            df = pd.DataFrame(self.combiner_process(log_name))
+            check_codes = pd.DataFrame(bdpostgre().select(&#34;operational.m_currency&#34;))
+
+            for index, row in check_codes.iterrows():
+                a = row[&#34;currency_alphabetic_code&#34;]
+                b = row[&#34;currency_numeric_code&#34;]
+
+                df.loc[
+                    (df[&#34;currency_from&#34;] == a),
+                    &#34;currency_from_code&#34;,
+                ] = b
+                df.loc[
+                    (df[&#34;currency_to&#34;] == a),
+                    &#34;currency_to_code&#34;,
+                ] = b
+
+            file_date_standard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;)
+            file_date = file_date_standard.strftime(&#34;%Y%m%d&#34;)
+            file_date_format = file_date_standard.strftime(&#34;%Y-%m-%d&#34;)
+            execution_detail = int(float(datetime.now().timestamp()))
+            file_name = f&#34;{file_date}_{execution_detail}&#34;
+            local_route = f&#34;FILES/EXCHANGE_RATE/&#34;
+            pathlib.Path(local_route).mkdir(parents=True, exist_ok=True)
+            s3_route = f&#34;EXCHANGE_RATE/{file_name}.parquet&#34;
+            local_file_parquet = f&#34;{local_route}{file_name}.parquet&#34;
+            df.to_parquet(local_file_parquet)
+            structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+            upload = s3().upload_object(structured, local_file_parquet, s3_route)
+            db = bdpostgre().prepare_engine()
+            db.execution_options(autocommit=False)
+            table_new = f&#34;tmp_exchange_rate_{file_name}&#34;
+            schem = &#34;temporal&#34;
+            tran = None
+            df = pd.read_parquet(
+                path=local_file_parquet, engine=&#34;fastparquet&#34;, storage_options=None
+            )
+            df.index = np.arange(1, len(df) + 1)
+            df[&#34;app_id&#34;] = df.index
+            df[&#34;app_type_file&#34;] = &#34;EXCHANGE_RATE&#34;
+            df[&#34;app_processing_date&#34;] = df[&#34;date&#34;]
+            list_of_columns = list(df.columns)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+            
+            rows_inserted = bdpostgre().insert_from_dataframe(
+                table_new,
+                schem,
+                df,
+                if_exists=&#34;replace&#34;,
+                dtype={
+                    &#34;date&#34;: sqlalchemy.DateTime,
+                    &#34;exchange_value&#34;: sqlalchemy.Numeric,
+                    &#34;app_processing_date&#34;: sqlalchemy.Date,
+                },
+            )
+            check_reprocces = bdpostgre().select(
+                &#34;OPERATIONAL.DH_EXCHANGE_RATE&#34;,
+                f&#34;&#34;&#34;WHERE date = &#39;{file_date_format}&#39;&#34;&#34;&#34;,
+                &#34;count(date)&#34;,
+            )
+
+            if check_reprocces[0][&#34;count&#34;] &gt; 1:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA AND MASTERCARD&#34;,
+                    log_name,
+                    &#34;THE INFORMATION HAS ALREADY BEEN LOADED WITH THAT DATE&#34;,
+                    &#34;WARNING&#34;,
+                    &#34;clear the data with that date in the operational table&#34;,
+                    module_name,
+                )
+                sql3 = f&#34;drop table {schem}.{table_new};&#34;
+                bdpostgre().execute_block(sql3)
+
+            else:
+                sql2 = f&#34;&#34;&#34;
+                    insert into operational.dh_exchange_rate({list_of_columns}) select {list_of_columns} from
+                    {schem}.{table_new} &#34;&#34;&#34;
+                rs = 0
+                rs = bdpostgre().execute_block(sql2,True)
+
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA AND MASTERCARD&#34;,
+                    log_name,
+                    &#34;UPDATING OPERATIONAL EXCHANGE RATE DATA TABLE&#34;,
+                    &#34;INFO&#34;,
+                    &#34;inserted rows : &#34; + str(rs[1]),
+                    module_name,
+                )
+
+                sql3 = f&#34;drop table {schem}.{table_new};&#34;
+                bdpostgre().execute_block(sql3)
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+        except Exception as e:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;ERROR&#34;,
+                &#34;A critical error has been detected, review or update the exchange rate configuration file: &#34;
+                + str(e),
+                module_name,
+            )
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;ERROR&#34;,
+                &#34;Closing process with error&#34;,
+                module_name,
+            )</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates"><code class="flex name class">
+<span>class <span class="ident">ExchangeRates</span></span>
+<span>(</span><span>info_date, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class used for obtain exchange rates of the day.</p>
+<p>settings are obtained from S3 repository via request to bucket.</p>
+<h2 id="params">Params</h2>
+<p>info_date (str): date of the day to extract exchange rate.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ExchangeRates:
+    &#34;&#34;&#34;Class used for obtain exchange rates of the day.
+    
+    settings are obtained from S3 repository via request to bucket.
+    Params:
+        info_date (str): date of the day to extract exchange rate.
+    &#34;&#34;&#34;
+    warnings.simplefilter(action=&#34;ignore&#34;, category=FutureWarning)
+    def __init__(self, info_date, **kwargs) -&gt; None:
+        load_dotenv()
+        self.structured = os.getenv(&#34;INTELICA_DEVOPS&#34;)
+        info_settings = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        settings = json.loads(info_settings[&#34;Body&#34;].read())
+        self.HEADERS_VISA = settings.get(&#34;header_settings&#34;).get(&#34;HEADERS_VISA&#34;)
+        self.HEADERS_MASTERCARD = settings.get(&#34;header_settings&#34;).get(&#34;HEADERS_MASTERCARD&#34;)
+        self.brand_visa = &#34;VISA&#34;
+        self.brand_mastercard = &#34;MasterCard&#34;
+        self.VERIFY: bool = True
+
+        if info_date is None:
+            info_date = datetime.now().strftime(&#34;%m/%d/%Y&#34;)
+            self.info_date = info_date
+        else:
+            info_date = info_date.strftime(&#34;%m/%d/%Y&#34;)
+            self.info_date = info_date
+
+        super().__init__(**kwargs)
+
+    def get_currency_list_visa(self) -&gt; List:
+        &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Visa&#34;&#34;&#34;
+        visa = requests.get(
+            &#34;https://usa.visa.com/support/consumer/travel-support/exchange-rate-calculator.html&#34;,
+            headers=self.HEADERS_VISA,
+            verify=self.VERIFY,
+        )
+        body = BeautifulSoup(visa.text, &#34;html.parser&#34;)
+        calculator_data = body.find(&#34;dm-calculator&#34;).get(&#34;content&#34;)
+        currency_list = json.loads(calculator_data)
+        currency_list = currency_list[&#34;currencyList&#34;]
+        currency_keys_visa = [
+            types[&#34;key&#34;] for types in currency_list if types[&#34;key&#34;] != &#34;None&#34;
+        ]
+        results_visa = []
+        for type_1 in currency_keys_visa:
+            for type_2 in currency_keys_visa:
+                if type_1 != type_2:
+                    results_visa.append([type_1, type_2])
+        return results_visa
+
+    def initial_exchange_conversor_visa(self, element_visa) -&gt; ArrayType:
+        &#34;&#34;&#34;Exchange rate extractor from VISA information to be executed in multithreading
+        
+        Args:
+            element_visa (list): list of currency for exchange
+        Returns:
+            type_1 (str): currency from
+            type_2 (str): currency to
+            value (str): value for combination of type 1 and type 2 currency.
+        
+        &#34;&#34;&#34;
+        s = requests.Session()
+        type_1 = element_visa[0]
+        type_2 = element_visa[1]
+        visa_params = {
+            &#34;amount&#34;: &#34;1&#34;,
+            &#34;fee&#34;: &#34;0&#34;,
+            &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+            &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+            &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+            &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+        }
+        try:
+            visa = s.get(
+                &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                headers=self.HEADERS_VISA,
+                verify=self.VERIFY,
+                params=visa_params,
+                timeout=2,
+            )
+            response = json.loads(visa.content)
+
+            if len(response.keys()) == 1:
+                visa_params[&#34;fromCurr&#34;] = type_1
+                visa_params[&#34;toCurr&#34;] = type_2
+
+                visa = s.get(
+                    &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                    headers=self.HEADERS_VISA,
+                    params=visa_params,
+                    verify=self.VERIFY,
+                    timeout=2,
+                )
+                response = json.loads(visa.content)
+                value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+            else:
+                value = float(
+                    str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+                )
+        except Exception:
+            value = np.nan
+            return type_1, type_2, value
+        return type_1, type_2, value
+
+    def reprocess_exchange_conversor_visa(self, list_visa, proxy_element) -&gt; ArrayType:
+        &#34;&#34;&#34;Visa multiprocess that takes the time of mastercard but that is used once the initial price has been executed to reprocess exchange rates that were not successfully achieved in the initial process
+        
+        Args:
+            list_visa (list):  list of currency for exchange
+            proxy_element (list): list of proxy for beign used
+        Returns:
+            result_visa_list (list): result of obtained data.
+            proxy_element (list): proxy element.
+        
+        &#34;&#34;&#34;
+        proxy = proxy_element[&#34;proxy&#34;]
+        proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+        s = requests.Session()
+        if list_visa != []:
+            result_visa_list = []
+            for element_visa in list_visa:
+                type_1 = element_visa[0]
+                type_2 = element_visa[1]
+                visa_params = {
+                    &#34;amount&#34;: &#34;1&#34;,
+                    &#34;fee&#34;: &#34;0&#34;,
+                    &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+                    &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+                    &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+                    &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+                }
+
+                try:
+                    visa = s.get(
+                        &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                        headers=self.HEADERS_VISA,
+                        verify=self.VERIFY,
+                        params=visa_params,
+                        timeout=2,
+                        proxies=proxy_dict,
+                    )
+                    response = json.loads(visa.content)
+
+                    if len(response.keys()) == 1:
+                        visa_params[&#34;fromCurr&#34;] = type_1
+                        visa_params[&#34;toCurr&#34;] = type_2
+
+                        visa = s.get(
+                            &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                            headers=self.HEADERS_VISA,
+                            params=visa_params,
+                            verify=self.VERIFY,
+                            timeout=3,
+                            proxies=proxy_dict,
+                        )
+                        response = json.loads(visa.content)
+                        value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+                    else:
+                        value = float(
+                            str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(
+                                &#34;,&#34;, &#34;&#34;
+                            )
+                        )
+                except Exception:
+                    value = np.nan
+                    proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+                data = (type_1, type_2, value)
+                result_visa_list.append(data)
+
+            return result_visa_list, proxy_element
+
+        else:
+            return [], proxy_element
+
+    def get_currency_list_mastercard(self) -&gt; List:
+        &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Mastercard&#34;&#34;&#34;
+        s = requests.Session()
+        header_list_mastercard = self.HEADERS_MASTERCARD
+        header_list_mastercard[&#34;sec-fetch-mode&#34;] = &#34;navigate&#34;
+        header_list_mastercard[&#34;sec-fetch-site&#34;] = &#34;none&#34;
+        header_list_mastercard[&#34;purpose&#34;] = &#34;prefetch&#34;
+
+        try:
+            response = s.get(
+                &#34;https://www.mastercard.us/settlement/currencyrate/settlement-currencies&#34;,
+                headers=header_list_mastercard,
+                verify=self.VERIFY,
+                timeout=3,
+            )
+            data = json.loads(response.content)
+
+        except json.JSONDecodeError:
+            return f&#34;error&#34;
+
+        currency_list = [currency[&#34;alphaCd&#34;] for currency in data[&#34;data&#34;][&#34;currencies&#34;]]
+
+        results_mastercard = []
+        for type_1 in currency_list:
+            for type_2 in currency_list:
+                if type_1 != type_2:
+                    results_mastercard.append([type_1, type_2])
+
+        return results_mastercard
+
+    def exchange_conversor_mastercard(self, list_mastercard, proxy_element ) -&gt; List:
+        &#34;&#34;&#34;Exchange Converter of Mastercard
+        
+        Args:
+            list_mastercard (list): list of currency for exchange
+            proxy_element (list): list of proxy element
+        Returns:
+            result_mastercard_list (list):  list of proxy element.
+            proxy_element (list): result of the search.
+        
+        &#34;&#34;&#34;
+        proxy = proxy_element[&#34;proxy&#34;]
+        proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+        date_mastercard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        s = requests.Session()
+        if list_mastercard != []:
+
+            result_mastercard_list = []
+            for i in list_mastercard:
+                type_1 = i[0]
+                type_2 = i[1]
+
+                mastercard_params = {
+                    &#34;fxDate&#34;: str(date_mastercard),
+                    &#34;transCurr&#34;: f&#34;{type_1}&#34;,
+                    &#34;crdhldBillCurr&#34;: f&#34;{type_2}&#34;,
+                    &#34;bankFee&#34;: &#34;0&#34;,
+                    &#34;transAmt&#34;: &#34;1&#34;,
+                }
+
+                try:
+                    mastercard = s.get(
+                        &#34;https://www.mastercard.us/settlement/currencyrate/conversion-rate&#34;,
+                        params=mastercard_params,
+                        headers=self.HEADERS_MASTERCARD,
+                        verify=self.VERIFY,
+                        proxies=proxy_dict,
+                        timeout=3,
+                    )
+                    response = json.loads(mastercard.content)
+                    value = float(
+                        str(response[&#34;data&#34;][&#34;conversionRate&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+                    )
+                    time.sleep(round((3.50 + random.uniform(1, 2)), 2))
+
+                except Exception:
+                    value = np.nan
+                    proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+                data = (type_1, type_2, value)
+                result_mastercard_list.append(data)
+
+            return result_mastercard_list, proxy_element
+        else:
+            return [], proxy_element
+
+    def run_full_initial_visa(self, available_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+        Returns:
+            df_conversor_visa (Dataframe): data extracted with the exchange rates.
+        
+        &#34;&#34;&#34;
+        with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+            results_visa = executor.map(
+                self.initial_exchange_conversor_visa, available_list
+            )
+
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_conversor_changes_visa = [
+            [type_1, type_2, value, header_date, self.brand_visa]
+            for (type_1, type_2, value) in results_visa
+        ]
+        df_conversor_visa = pd.DataFrame(
+            all_conversor_changes_visa,
+            columns=[
+                &#34;currency_from&#34;,
+                &#34;currency_to&#34;,
+                &#34;exchange_value&#34;,
+                &#34;date&#34;,
+                &#34;brand&#34;,
+            ],
+        )
+        df_conversor_visa = df_conversor_visa.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+        return df_conversor_visa
+
+    def run_full_visa(self, available_list, proxy_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+           proxy_list (list): list of available proxy
+        Returns:
+            df_conversor_visa (Dataframe): data extracted with the exchange rates.
+            inactive_proxies (list): list of inactive proxys.
+        
+        &#34;&#34;&#34;
+        active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+        divider = np.array_split(available_list, len(active_proxy_list))
+
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            results_v = executor.map(
+                self.reprocess_exchange_conversor_visa, divider, active_proxy_list
+            )
+
+        results_visa = []
+        inactive_proxies = []
+        for i in results_v:
+            if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+                inactive_proxies.append(i[1])
+            for a in i[0]:
+                results_visa.append(a)
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_conversor_changes_visa = [
+            [type_1, type_2, value, header_date, self.brand_visa]
+            for (type_1, type_2, value) in results_visa
+        ]
+        df_conversor_visa = pd.DataFrame(
+            all_conversor_changes_visa,
+            columns=[
+                &#34;currency_from&#34;,
+                &#34;currency_to&#34;,
+                &#34;exchange_value&#34;,
+                &#34;date&#34;,
+                &#34;brand&#34;,
+            ],
+        )
+        df_conversor_visa = df_conversor_visa.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+
+        return df_conversor_visa, inactive_proxies
+
+    def run_full_mastercard(self, available_list, proxy_list) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Performer that requests the information from the MASTERCARD page of the available exchange rates that are an input to this function along with a proxy list
+        
+        Args:
+           available_list (list): list of currency.
+           proxy_list (list): list of available proxy
+        Returns:
+            df_conversor_mastercard (Dataframe): data extracted with the exchange rates.
+            inactive_proxies (list): list of inactive proxys.
+        
+        
+        &#34;&#34;&#34;
+
+        active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+
+        divider = np.array_split(available_list, len(active_proxy_list))
+
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            results_m = executor.map(
+                self.exchange_conversor_mastercard, divider, active_proxy_list
+            )
+
+        results_mastercard = []
+        inactive_proxies = []
+        for i in results_m:
+            if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+                inactive_proxies.append(i[1])
+            for a in i[0]:
+                results_mastercard.append(a)
+
+        header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+        all_converter_changes_mastercard = [
+            [type_1, type_2, value, header_date, self.brand_mastercard]
+            for (type_1, type_2, value) in results_mastercard
+        ]
+
+        df_conversor_mastercard = pd.DataFrame(
+            all_converter_changes_mastercard,
+            columns=[&#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;, &#34;date&#34;, &#34;brand&#34;],
+        )
+        df_conversor_mastercard = df_conversor_mastercard.reindex(
+            columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+        )
+        return df_conversor_mastercard, inactive_proxies
+
+    def combiner_process(self, log_name) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Executor of the process for the generation of all information on visa and mastercard exchange rates considering reprocesses
+        
+        Args:
+           log_name (str): name of log file.
+        Returns:
+           all_data (pd.Dataframe): processed data
+        &#34;&#34;&#34;
+        module_name = &#34;EXCHANGE RATE&#34;
+        all_visa = self.get_currency_list_visa()
+        all_mastercard = self.get_currency_list_mastercard()
+        info_settings_visa = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        info_settings_mastercard = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        settings_visa = json.loads(info_settings_visa[&#34;Body&#34;].read())
+        settings_mastercard = json.loads(info_settings_mastercard[&#34;Body&#34;].read())
+        proxy_list_visa = settings_visa.get(&#34;proxy_settings&#34;).get(&#34;proxy_list&#34;)
+        proxy_list_mastercard = settings_mastercard.get(&#34;proxy_settings&#34;).get(
+            &#34;proxy_list&#34;
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to processing : &#34; + str(len(all_visa)),
+            module_name,
+        )
+
+        visa_process = self.run_full_initial_visa(all_visa)
+        visa_data = pd.DataFrame(visa_process)
+        visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+        counter_visa = 0
+        initial_proxy_list_visa = proxy_list_visa
+        r_analyze_proxy_visa = [
+            proxy for proxy in initial_proxy_list_visa if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+
+        original_info_settings_visa = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        original_settings_visa = json.loads(original_info_settings_visa[&#34;Body&#34;].read())
+        original_proxy_list_visa = original_settings_visa.get(&#34;proxy_settings&#34;).get(
+            &#34;proxy_list&#34;
+        )
+        quality_proxies_visa = (
+            len(r_analyze_proxy_visa) / len(initial_proxy_list_visa)
+        ) * 100
+        quantity_missing_visa = (len(visa_reprocess) / len(visa_data)) * 100
+
+        if visa_reprocess.empty:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;NO UNPPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34; + str(len(visa_reprocess)),
+                module_name,
+            )
+        else:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_visa,2))}% AND A NUMBER OF MISSING OF THE {str(len(visa_reprocess))} ({str(round(quantity_missing_visa,2))}%)&#34;,
+                &#34;INFO&#34;,
+                f&#34;Analyzing to respond to the process&#34;,
+                module_name,
+            )
+
+            if quality_proxies_visa &lt; 50:
+                if quantity_missing_visa &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1200)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+
+                    initial_proxy_list_visa = original_proxy_list_visa
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+            else:
+                if quantity_missing_visa &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 5 minutes timeout to restart proxies and start reprocess&#34;,
+                        module_name,
+                    )
+                    time.sleep(300)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    initial_proxy_list_visa = original_proxy_list_visa
+
+        while not visa_reprocess.empty:
+            counter_visa += 1
+            r_available_proxy_visa = [
+                proxy
+                for proxy in initial_proxy_list_visa
+                if proxy[&#34;status&#34;] == &#34;active&#34;
+            ]
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+                + str(int(counter_visa)),
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(visa_reprocess))
+                + f&#34; with {len(r_available_proxy_visa)} active proxies&#34;,
+                module_name,
+            )
+
+            if len(r_available_proxy_visa) == 0:
+                missing_exchange_rates_visa = len(visa_reprocess)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;ERROR&#34;,
+                    f&#34;Finishing obtaining exchange rates from VISA, missing {missing_exchange_rates_visa} exchange rates&#34;,
+                    module_name,
+                )
+                break
+
+            reprocess_visa_data = visa_reprocess[
+                [&#34;currency_from&#34;, &#34;currency_to&#34;]
+            ].values.tolist()
+
+            visa_r = self.run_full_visa(reprocess_visa_data, r_available_proxy_visa)
+            visa_r_data = pd.DataFrame(visa_r[0])
+            r_inactive_proxy_visa = visa_r[1]
+
+            if len(r_inactive_proxy_visa) &gt; 0:
+                for i in initial_proxy_list_visa:
+                    for r in r_inactive_proxy_visa:
+                        if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                            i[&#34;status&#34;] = r[&#34;status&#34;]
+
+            for index, row in visa_r_data.iterrows():
+                a = row[&#34;currency_from&#34;]
+                b = row[&#34;currency_to&#34;]
+                value = row[&#34;exchange_value&#34;]
+                visa_data.loc[
+                    (visa_data[&#34;currency_from&#34;] == a) &amp; (visa_data[&#34;currency_to&#34;] == b),
+                    &#34;exchange_value&#34;,
+                ] = value
+
+            visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;completed&#34;,
+            module_name,
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to processing : &#34; + str(len(all_mastercard)),
+            module_name,
+        )
+
+        mastercard_process = self.run_full_mastercard(
+            all_mastercard, proxy_list_mastercard
+        )
+        mastercard_data = pd.DataFrame(mastercard_process[0])
+
+        inactive_proxy_mastercard = mastercard_process[1]
+
+        for i in proxy_list_mastercard:
+            for r in inactive_proxy_mastercard:
+                if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                    i[&#34;status&#34;] = r[&#34;status&#34;]
+
+        mastercard_reprocess = mastercard_data.query(
+            &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+        )
+
+        counter_mastercard = 0
+        initial_proxy_list_mastercard = proxy_list_mastercard
+        r_analyze_proxy_mastercard = [
+            proxy
+            for proxy in initial_proxy_list_mastercard
+            if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+        original_info_settings_mastercard = s3().get_object(
+            self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+        )
+        original_settings_mastercard = json.loads(
+            original_info_settings_mastercard[&#34;Body&#34;].read()
+        )
+        original_proxy_list_mastercard = original_settings_mastercard.get(
+            &#34;proxy_settings&#34;
+        ).get(&#34;proxy_list&#34;)
+        quality_proxies_mastercard = (
+            len(r_analyze_proxy_mastercard) / len(original_proxy_list_mastercard)
+        ) * 100
+        quantity_missing_mastercard = (
+            len(mastercard_reprocess) / len(mastercard_data)
+        ) * 100
+
+        if mastercard_reprocess.empty:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;NO UNPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(mastercard_reprocess)),
+                module_name,
+            )
+        else:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_mastercard,2))}% AND A NUMBER OF MISSING OF THE {str(len(mastercard_reprocess))} ({str(round(quantity_missing_mastercard,2))}%)&#34;,
+                &#34;INFO&#34;,
+                f&#34;Analyzing to respond to the process&#34;,
+                module_name,
+            )
+            if quality_proxies_mastercard &lt; 50:
+                if quantity_missing_mastercard &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1200)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+            else:
+                if quantity_missing_mastercard &lt;= 3:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 10 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(600)
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+                else:
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                        module_name,
+                    )
+                    time.sleep(1500)
+
+                    log.logs().exist_file(
+                        &#34;EXCHANGE_RATE&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        log_name,
+                        f&#34;Process with proxies enabled&#34;,
+                        &#34;INFO&#34;,
+                        f&#34;Starting reprocess, time out completed&#34;,
+                        module_name,
+                    )
+                    starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+        while not mastercard_reprocess.empty:
+            counter_mastercard += 1
+            r_available_proxy_mastercard = [
+                proxy
+                for proxy in starting_proxy_list_mastercard
+                if proxy[&#34;status&#34;] == &#34;active&#34;
+            ]
+
+            if len(r_available_proxy_mastercard) == 0:
+                missing_exchange_rates_mc = len(mastercard_reprocess)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;ERROR&#34;,
+                    f&#34;Finishing obtaining exchange rates from MASTERCARD, missing {missing_exchange_rates_mc} exchange rates&#34;,
+                    module_name,
+                )
+                break
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+                + str(int(counter_mastercard)),
+                &#34;INFO&#34;,
+                &#34;amount of exchange rates to reprocess : &#34;
+                + str(len(mastercard_reprocess))
+                + f&#34; with {len(r_available_proxy_mastercard)} active proxies&#34;,
+                module_name,
+            )
+            reprocess_mastercard_data = mastercard_reprocess[
+                [&#34;currency_from&#34;, &#34;currency_to&#34;]
+            ].values.tolist()
+
+            mastercard_r = self.run_full_mastercard(
+                reprocess_mastercard_data, r_available_proxy_mastercard
+            )
+            mastercard_r_data = pd.DataFrame(mastercard_r[0])
+            r_inactive_proxy_mastercard = mastercard_r[1]
+
+            if len(r_inactive_proxy_mastercard) &gt; 0:
+                for i in starting_proxy_list_mastercard:
+                    for r in r_inactive_proxy_mastercard:
+                        if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                            i[&#34;status&#34;] = r[&#34;status&#34;]
+
+            for index, row in mastercard_r_data.iterrows():
+                a = row[&#34;currency_from&#34;]
+                b = row[&#34;currency_to&#34;]
+                value = row[&#34;exchange_value&#34;]
+                mastercard_data.loc[
+                    (mastercard_data[&#34;currency_from&#34;] == a)
+                    &amp; (mastercard_data[&#34;currency_to&#34;] == b),
+                    &#34;exchange_value&#34;,
+                ] = value
+
+            mastercard_reprocess = mastercard_data.query(
+                &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+            )
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;PROCESSING EXCHANGE RATES&#34;,
+            &#34;INFO&#34;,
+            &#34;completed&#34;,
+            module_name,
+        )
+        frames = [visa_data, mastercard_data]
+        all_data = pd.concat(frames, ignore_index=True)
+
+        return all_data
+
+    def updater_process(self) -&gt; None:
+        &#34;&#34;&#34;Process that connects to the database and updates the exchange rates.&#34;&#34;&#34;
+        module_name = &#34;EXCHANGE RATE&#34;
+        log_name = log.logs().new_log(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;&#34;,
+            &#34;INTELICA&#34;,
+            &#34;GET VISA AND MASTERCARD EXCHANGE RATES&#34;,
+            &#34;SYSTEM&#34;,
+            module_name,
+        )
+
+        date_input = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+            &#34;%Y-%m-%d&#34;
+        )
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        try:
+            df = pd.DataFrame(self.combiner_process(log_name))
+            check_codes = pd.DataFrame(bdpostgre().select(&#34;operational.m_currency&#34;))
+
+            for index, row in check_codes.iterrows():
+                a = row[&#34;currency_alphabetic_code&#34;]
+                b = row[&#34;currency_numeric_code&#34;]
+
+                df.loc[
+                    (df[&#34;currency_from&#34;] == a),
+                    &#34;currency_from_code&#34;,
+                ] = b
+                df.loc[
+                    (df[&#34;currency_to&#34;] == a),
+                    &#34;currency_to_code&#34;,
+                ] = b
+
+            file_date_standard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;)
+            file_date = file_date_standard.strftime(&#34;%Y%m%d&#34;)
+            file_date_format = file_date_standard.strftime(&#34;%Y-%m-%d&#34;)
+            execution_detail = int(float(datetime.now().timestamp()))
+            file_name = f&#34;{file_date}_{execution_detail}&#34;
+            local_route = f&#34;FILES/EXCHANGE_RATE/&#34;
+            pathlib.Path(local_route).mkdir(parents=True, exist_ok=True)
+            s3_route = f&#34;EXCHANGE_RATE/{file_name}.parquet&#34;
+            local_file_parquet = f&#34;{local_route}{file_name}.parquet&#34;
+            df.to_parquet(local_file_parquet)
+            structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+            upload = s3().upload_object(structured, local_file_parquet, s3_route)
+            db = bdpostgre().prepare_engine()
+            db.execution_options(autocommit=False)
+            table_new = f&#34;tmp_exchange_rate_{file_name}&#34;
+            schem = &#34;temporal&#34;
+            tran = None
+            df = pd.read_parquet(
+                path=local_file_parquet, engine=&#34;fastparquet&#34;, storage_options=None
+            )
+            df.index = np.arange(1, len(df) + 1)
+            df[&#34;app_id&#34;] = df.index
+            df[&#34;app_type_file&#34;] = &#34;EXCHANGE_RATE&#34;
+            df[&#34;app_processing_date&#34;] = df[&#34;date&#34;]
+            list_of_columns = list(df.columns)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+            
+            rows_inserted = bdpostgre().insert_from_dataframe(
+                table_new,
+                schem,
+                df,
+                if_exists=&#34;replace&#34;,
+                dtype={
+                    &#34;date&#34;: sqlalchemy.DateTime,
+                    &#34;exchange_value&#34;: sqlalchemy.Numeric,
+                    &#34;app_processing_date&#34;: sqlalchemy.Date,
+                },
+            )
+            check_reprocces = bdpostgre().select(
+                &#34;OPERATIONAL.DH_EXCHANGE_RATE&#34;,
+                f&#34;&#34;&#34;WHERE date = &#39;{file_date_format}&#39;&#34;&#34;&#34;,
+                &#34;count(date)&#34;,
+            )
+
+            if check_reprocces[0][&#34;count&#34;] &gt; 1:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA AND MASTERCARD&#34;,
+                    log_name,
+                    &#34;THE INFORMATION HAS ALREADY BEEN LOADED WITH THAT DATE&#34;,
+                    &#34;WARNING&#34;,
+                    &#34;clear the data with that date in the operational table&#34;,
+                    module_name,
+                )
+                sql3 = f&#34;drop table {schem}.{table_new};&#34;
+                bdpostgre().execute_block(sql3)
+
+            else:
+                sql2 = f&#34;&#34;&#34;
+                    insert into operational.dh_exchange_rate({list_of_columns}) select {list_of_columns} from
+                    {schem}.{table_new} &#34;&#34;&#34;
+                rs = 0
+                rs = bdpostgre().execute_block(sql2,True)
+
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA AND MASTERCARD&#34;,
+                    log_name,
+                    &#34;UPDATING OPERATIONAL EXCHANGE RATE DATA TABLE&#34;,
+                    &#34;INFO&#34;,
+                    &#34;inserted rows : &#34; + str(rs[1]),
+                    module_name,
+                )
+
+                sql3 = f&#34;drop table {schem}.{table_new};&#34;
+                bdpostgre().execute_block(sql3)
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+        except Exception as e:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;ERROR&#34;,
+                &#34;A critical error has been detected, review or update the exchange rate configuration file: &#34;
+                + str(e),
+                module_name,
+            )
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+                &#34;ERROR&#34;,
+                &#34;Closing process with error&#34;,
+                module_name,
+            )</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.combiner_process"><code class="name flex">
+<span>def <span class="ident">combiner_process</span></span>(<span>self, log_name) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Executor of the process for the generation of all information on visa and mastercard exchange rates considering reprocesses</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>all_data (pd.Dataframe): processed data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def combiner_process(self, log_name) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Executor of the process for the generation of all information on visa and mastercard exchange rates considering reprocesses
+    
+    Args:
+       log_name (str): name of log file.
+    Returns:
+       all_data (pd.Dataframe): processed data
+    &#34;&#34;&#34;
+    module_name = &#34;EXCHANGE RATE&#34;
+    all_visa = self.get_currency_list_visa()
+    all_mastercard = self.get_currency_list_mastercard()
+    info_settings_visa = s3().get_object(
+        self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+    )
+    info_settings_mastercard = s3().get_object(
+        self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+    )
+    settings_visa = json.loads(info_settings_visa[&#34;Body&#34;].read())
+    settings_mastercard = json.loads(info_settings_mastercard[&#34;Body&#34;].read())
+    proxy_list_visa = settings_visa.get(&#34;proxy_settings&#34;).get(&#34;proxy_list&#34;)
+    proxy_list_mastercard = settings_mastercard.get(&#34;proxy_settings&#34;).get(
+        &#34;proxy_list&#34;
+    )
+
+    log.logs().exist_file(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;INTELICA&#34;,
+        &#34;VISA&#34;,
+        log_name,
+        &#34;PROCESSING EXCHANGE RATES&#34;,
+        &#34;INFO&#34;,
+        &#34;amount of exchange rates to processing : &#34; + str(len(all_visa)),
+        module_name,
+    )
+
+    visa_process = self.run_full_initial_visa(all_visa)
+    visa_data = pd.DataFrame(visa_process)
+    visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+    counter_visa = 0
+    initial_proxy_list_visa = proxy_list_visa
+    r_analyze_proxy_visa = [
+        proxy for proxy in initial_proxy_list_visa if proxy[&#34;status&#34;] == &#34;active&#34;
+    ]
+
+    original_info_settings_visa = s3().get_object(
+        self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+    )
+    original_settings_visa = json.loads(original_info_settings_visa[&#34;Body&#34;].read())
+    original_proxy_list_visa = original_settings_visa.get(&#34;proxy_settings&#34;).get(
+        &#34;proxy_list&#34;
+    )
+    quality_proxies_visa = (
+        len(r_analyze_proxy_visa) / len(initial_proxy_list_visa)
+    ) * 100
+    quantity_missing_visa = (len(visa_reprocess) / len(visa_data)) * 100
+
+    if visa_reprocess.empty:
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;NO UNPPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to reprocess : &#34; + str(len(visa_reprocess)),
+            module_name,
+        )
+    else:
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_visa,2))}% AND A NUMBER OF MISSING OF THE {str(len(visa_reprocess))} ({str(round(quantity_missing_visa,2))}%)&#34;,
+            &#34;INFO&#34;,
+            f&#34;Analyzing to respond to the process&#34;,
+            module_name,
+        )
+
+        if quality_proxies_visa &lt; 50:
+            if quantity_missing_visa &lt;= 3:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(1200)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+
+                initial_proxy_list_visa = original_proxy_list_visa
+            else:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(1500)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                initial_proxy_list_visa = original_proxy_list_visa
+
+        else:
+            if quantity_missing_visa &lt;= 3:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess&#34;,
+                    module_name,
+                )
+                initial_proxy_list_visa = original_proxy_list_visa
+
+            else:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_visa)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 5 minutes timeout to restart proxies and start reprocess&#34;,
+                    module_name,
+                )
+                time.sleep(300)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                initial_proxy_list_visa = original_proxy_list_visa
+
+    while not visa_reprocess.empty:
+        counter_visa += 1
+        r_available_proxy_visa = [
+            proxy
+            for proxy in initial_proxy_list_visa
+            if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+            + str(int(counter_visa)),
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to reprocess : &#34;
+            + str(len(visa_reprocess))
+            + f&#34; with {len(r_available_proxy_visa)} active proxies&#34;,
+            module_name,
+        )
+
+        if len(r_available_proxy_visa) == 0:
+            missing_exchange_rates_visa = len(visa_reprocess)
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                &#34;ERROR&#34;,
+                f&#34;Finishing obtaining exchange rates from VISA, missing {missing_exchange_rates_visa} exchange rates&#34;,
+                module_name,
+            )
+            break
+
+        reprocess_visa_data = visa_reprocess[
+            [&#34;currency_from&#34;, &#34;currency_to&#34;]
+        ].values.tolist()
+
+        visa_r = self.run_full_visa(reprocess_visa_data, r_available_proxy_visa)
+        visa_r_data = pd.DataFrame(visa_r[0])
+        r_inactive_proxy_visa = visa_r[1]
+
+        if len(r_inactive_proxy_visa) &gt; 0:
+            for i in initial_proxy_list_visa:
+                for r in r_inactive_proxy_visa:
+                    if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                        i[&#34;status&#34;] = r[&#34;status&#34;]
+
+        for index, row in visa_r_data.iterrows():
+            a = row[&#34;currency_from&#34;]
+            b = row[&#34;currency_to&#34;]
+            value = row[&#34;exchange_value&#34;]
+            visa_data.loc[
+                (visa_data[&#34;currency_from&#34;] == a) &amp; (visa_data[&#34;currency_to&#34;] == b),
+                &#34;exchange_value&#34;,
+            ] = value
+
+        visa_reprocess = visa_data.query(&#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;)
+
+    log.logs().exist_file(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;INTELICA&#34;,
+        &#34;VISA&#34;,
+        log_name,
+        &#34;PROCESSING EXCHANGE RATES&#34;,
+        &#34;INFO&#34;,
+        &#34;completed&#34;,
+        module_name,
+    )
+
+    log.logs().exist_file(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;INTELICA&#34;,
+        &#34;MASTERCARD&#34;,
+        log_name,
+        &#34;PROCESSING EXCHANGE RATES&#34;,
+        &#34;INFO&#34;,
+        &#34;amount of exchange rates to processing : &#34; + str(len(all_mastercard)),
+        module_name,
+    )
+
+    mastercard_process = self.run_full_mastercard(
+        all_mastercard, proxy_list_mastercard
+    )
+    mastercard_data = pd.DataFrame(mastercard_process[0])
+
+    inactive_proxy_mastercard = mastercard_process[1]
+
+    for i in proxy_list_mastercard:
+        for r in inactive_proxy_mastercard:
+            if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                i[&#34;status&#34;] = r[&#34;status&#34;]
+
+    mastercard_reprocess = mastercard_data.query(
+        &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+    )
+
+    counter_mastercard = 0
+    initial_proxy_list_mastercard = proxy_list_mastercard
+    r_analyze_proxy_mastercard = [
+        proxy
+        for proxy in initial_proxy_list_mastercard
+        if proxy[&#34;status&#34;] == &#34;active&#34;
+    ]
+    original_info_settings_mastercard = s3().get_object(
+        self.structured, &#34;app-interchange/config/proxy_settings.json&#34;, &#34;&#34;, False
+    )
+    original_settings_mastercard = json.loads(
+        original_info_settings_mastercard[&#34;Body&#34;].read()
+    )
+    original_proxy_list_mastercard = original_settings_mastercard.get(
+        &#34;proxy_settings&#34;
+    ).get(&#34;proxy_list&#34;)
+    quality_proxies_mastercard = (
+        len(r_analyze_proxy_mastercard) / len(original_proxy_list_mastercard)
+    ) * 100
+    quantity_missing_mastercard = (
+        len(mastercard_reprocess) / len(mastercard_data)
+    ) * 100
+
+    if mastercard_reprocess.empty:
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;NO UNPROCESSED TYPES HAVE BEEN DETECTED&#34;,
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to reprocess : &#34;
+            + str(len(mastercard_reprocess)),
+            module_name,
+        )
+    else:
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            f&#34;PROCESS IDENTIFIES A QUALITY OF PROXIES OF THE {str(round(quality_proxies_mastercard,2))}% AND A NUMBER OF MISSING OF THE {str(len(mastercard_reprocess))} ({str(round(quantity_missing_mastercard,2))}%)&#34;,
+            &#34;INFO&#34;,
+            f&#34;Analyzing to respond to the process&#34;,
+            module_name,
+        )
+        if quality_proxies_mastercard &lt; 50:
+            if quantity_missing_mastercard &lt;= 3:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 20 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(1200)
+
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                starting_proxy_list_mastercard = original_proxy_list_mastercard
+            else:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS NEEDS MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE ONLY {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(1500)
+
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                starting_proxy_list_mastercard = original_proxy_list_mastercard
+        else:
+            if quantity_missing_mastercard &lt;= 3:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 10 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(600)
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS WITH PROXIES ENABLED&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+            else:
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;PROCESS HAS THE MINIMUM 50% OF PROXIES TO CONTINUE, THERE ARE {len(r_analyze_proxy_mastercard)} PROXIES ENABLED FOR REPROCESSING&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Giving a 25 minutes timeout to restart proxies&#34;,
+                    module_name,
+                )
+                time.sleep(1500)
+
+                log.logs().exist_file(
+                    &#34;EXCHANGE_RATE&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    log_name,
+                    f&#34;Process with proxies enabled&#34;,
+                    &#34;INFO&#34;,
+                    f&#34;Starting reprocess, time out completed&#34;,
+                    module_name,
+                )
+                starting_proxy_list_mastercard = original_proxy_list_mastercard
+
+    while not mastercard_reprocess.empty:
+        counter_mastercard += 1
+        r_available_proxy_mastercard = [
+            proxy
+            for proxy in starting_proxy_list_mastercard
+            if proxy[&#34;status&#34;] == &#34;active&#34;
+        ]
+
+        if len(r_available_proxy_mastercard) == 0:
+            missing_exchange_rates_mc = len(mastercard_reprocess)
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;MASTERCARD&#34;,
+                log_name,
+                &#34;PROCESS UNABLE TO CONTINUE WITH 0 PROXIES ENABLED FOR REPROCESSING&#34;,
+                &#34;ERROR&#34;,
+                f&#34;Finishing obtaining exchange rates from MASTERCARD, missing {missing_exchange_rates_mc} exchange rates&#34;,
+                module_name,
+            )
+            break
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;MASTERCARD&#34;,
+            log_name,
+            &#34;COUNTER REPROCESSING UNPROCESSED EXCHANGE RATES: &#34;
+            + str(int(counter_mastercard)),
+            &#34;INFO&#34;,
+            &#34;amount of exchange rates to reprocess : &#34;
+            + str(len(mastercard_reprocess))
+            + f&#34; with {len(r_available_proxy_mastercard)} active proxies&#34;,
+            module_name,
+        )
+        reprocess_mastercard_data = mastercard_reprocess[
+            [&#34;currency_from&#34;, &#34;currency_to&#34;]
+        ].values.tolist()
+
+        mastercard_r = self.run_full_mastercard(
+            reprocess_mastercard_data, r_available_proxy_mastercard
+        )
+        mastercard_r_data = pd.DataFrame(mastercard_r[0])
+        r_inactive_proxy_mastercard = mastercard_r[1]
+
+        if len(r_inactive_proxy_mastercard) &gt; 0:
+            for i in starting_proxy_list_mastercard:
+                for r in r_inactive_proxy_mastercard:
+                    if i[&#34;proxy&#34;] == r[&#34;proxy&#34;]:
+                        i[&#34;status&#34;] = r[&#34;status&#34;]
+
+        for index, row in mastercard_r_data.iterrows():
+            a = row[&#34;currency_from&#34;]
+            b = row[&#34;currency_to&#34;]
+            value = row[&#34;exchange_value&#34;]
+            mastercard_data.loc[
+                (mastercard_data[&#34;currency_from&#34;] == a)
+                &amp; (mastercard_data[&#34;currency_to&#34;] == b),
+                &#34;exchange_value&#34;,
+            ] = value
+
+        mastercard_reprocess = mastercard_data.query(
+            &#34;exchange_value.isnull()&#34;, engine=&#34;python&#34;
+        )
+    log.logs().exist_file(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;INTELICA&#34;,
+        &#34;MASTERCARD&#34;,
+        log_name,
+        &#34;PROCESSING EXCHANGE RATES&#34;,
+        &#34;INFO&#34;,
+        &#34;completed&#34;,
+        module_name,
+    )
+    frames = [visa_data, mastercard_data]
+    all_data = pd.concat(frames, ignore_index=True)
+
+    return all_data</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.exchange_conversor_mastercard"><code class="name flex">
+<span>def <span class="ident">exchange_conversor_mastercard</span></span>(<span>self, list_mastercard, proxy_element) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exchange Converter of Mastercard</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>list_mastercard</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency for exchange</dd>
+<dt><strong><code>proxy_element</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of proxy element</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_mastercard_list (list):
+list of proxy element.
+proxy_element (list): result of the search.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exchange_conversor_mastercard(self, list_mastercard, proxy_element ) -&gt; List:
+    &#34;&#34;&#34;Exchange Converter of Mastercard
+    
+    Args:
+        list_mastercard (list): list of currency for exchange
+        proxy_element (list): list of proxy element
+    Returns:
+        result_mastercard_list (list):  list of proxy element.
+        proxy_element (list): result of the search.
+    
+    &#34;&#34;&#34;
+    proxy = proxy_element[&#34;proxy&#34;]
+    proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+    date_mastercard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;).strftime(
+        &#34;%Y-%m-%d&#34;
+    )
+    s = requests.Session()
+    if list_mastercard != []:
+
+        result_mastercard_list = []
+        for i in list_mastercard:
+            type_1 = i[0]
+            type_2 = i[1]
+
+            mastercard_params = {
+                &#34;fxDate&#34;: str(date_mastercard),
+                &#34;transCurr&#34;: f&#34;{type_1}&#34;,
+                &#34;crdhldBillCurr&#34;: f&#34;{type_2}&#34;,
+                &#34;bankFee&#34;: &#34;0&#34;,
+                &#34;transAmt&#34;: &#34;1&#34;,
+            }
+
+            try:
+                mastercard = s.get(
+                    &#34;https://www.mastercard.us/settlement/currencyrate/conversion-rate&#34;,
+                    params=mastercard_params,
+                    headers=self.HEADERS_MASTERCARD,
+                    verify=self.VERIFY,
+                    proxies=proxy_dict,
+                    timeout=3,
+                )
+                response = json.loads(mastercard.content)
+                value = float(
+                    str(response[&#34;data&#34;][&#34;conversionRate&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+                )
+                time.sleep(round((3.50 + random.uniform(1, 2)), 2))
+
+            except Exception:
+                value = np.nan
+                proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+            data = (type_1, type_2, value)
+            result_mastercard_list.append(data)
+
+        return result_mastercard_list, proxy_element
+    else:
+        return [], proxy_element</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_mastercard"><code class="name flex">
+<span>def <span class="ident">get_currency_list_mastercard</span></span>(<span>self) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List of exchange rates available on the date the process was executed of Mastercard</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_currency_list_mastercard(self) -&gt; List:
+    &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Mastercard&#34;&#34;&#34;
+    s = requests.Session()
+    header_list_mastercard = self.HEADERS_MASTERCARD
+    header_list_mastercard[&#34;sec-fetch-mode&#34;] = &#34;navigate&#34;
+    header_list_mastercard[&#34;sec-fetch-site&#34;] = &#34;none&#34;
+    header_list_mastercard[&#34;purpose&#34;] = &#34;prefetch&#34;
+
+    try:
+        response = s.get(
+            &#34;https://www.mastercard.us/settlement/currencyrate/settlement-currencies&#34;,
+            headers=header_list_mastercard,
+            verify=self.VERIFY,
+            timeout=3,
+        )
+        data = json.loads(response.content)
+
+    except json.JSONDecodeError:
+        return f&#34;error&#34;
+
+    currency_list = [currency[&#34;alphaCd&#34;] for currency in data[&#34;data&#34;][&#34;currencies&#34;]]
+
+    results_mastercard = []
+    for type_1 in currency_list:
+        for type_2 in currency_list:
+            if type_1 != type_2:
+                results_mastercard.append([type_1, type_2])
+
+    return results_mastercard</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_visa"><code class="name flex">
+<span>def <span class="ident">get_currency_list_visa</span></span>(<span>self) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List of exchange rates available on the date the process was executed of Visa</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_currency_list_visa(self) -&gt; List:
+    &#34;&#34;&#34;List of exchange rates available on the date the process was executed of Visa&#34;&#34;&#34;
+    visa = requests.get(
+        &#34;https://usa.visa.com/support/consumer/travel-support/exchange-rate-calculator.html&#34;,
+        headers=self.HEADERS_VISA,
+        verify=self.VERIFY,
+    )
+    body = BeautifulSoup(visa.text, &#34;html.parser&#34;)
+    calculator_data = body.find(&#34;dm-calculator&#34;).get(&#34;content&#34;)
+    currency_list = json.loads(calculator_data)
+    currency_list = currency_list[&#34;currencyList&#34;]
+    currency_keys_visa = [
+        types[&#34;key&#34;] for types in currency_list if types[&#34;key&#34;] != &#34;None&#34;
+    ]
+    results_visa = []
+    for type_1 in currency_keys_visa:
+        for type_2 in currency_keys_visa:
+            if type_1 != type_2:
+                results_visa.append([type_1, type_2])
+    return results_visa</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.initial_exchange_conversor_visa"><code class="name flex">
+<span>def <span class="ident">initial_exchange_conversor_visa</span></span>(<span>self, element_visa) ‑> array.array</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exchange rate extractor from VISA information to be executed in multithreading</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>element_visa</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency for exchange</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>type_1 (str): currency from
+type_2 (str): currency to
+value (str): value for combination of type 1 and type 2 currency.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initial_exchange_conversor_visa(self, element_visa) -&gt; ArrayType:
+    &#34;&#34;&#34;Exchange rate extractor from VISA information to be executed in multithreading
+    
+    Args:
+        element_visa (list): list of currency for exchange
+    Returns:
+        type_1 (str): currency from
+        type_2 (str): currency to
+        value (str): value for combination of type 1 and type 2 currency.
+    
+    &#34;&#34;&#34;
+    s = requests.Session()
+    type_1 = element_visa[0]
+    type_2 = element_visa[1]
+    visa_params = {
+        &#34;amount&#34;: &#34;1&#34;,
+        &#34;fee&#34;: &#34;0&#34;,
+        &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+        &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+        &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+        &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+    }
+    try:
+        visa = s.get(
+            &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+            headers=self.HEADERS_VISA,
+            verify=self.VERIFY,
+            params=visa_params,
+            timeout=2,
+        )
+        response = json.loads(visa.content)
+
+        if len(response.keys()) == 1:
+            visa_params[&#34;fromCurr&#34;] = type_1
+            visa_params[&#34;toCurr&#34;] = type_2
+
+            visa = s.get(
+                &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                headers=self.HEADERS_VISA,
+                params=visa_params,
+                verify=self.VERIFY,
+                timeout=2,
+            )
+            response = json.loads(visa.content)
+            value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+        else:
+            value = float(
+                str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(&#34;,&#34;, &#34;&#34;)
+            )
+    except Exception:
+        value = np.nan
+        return type_1, type_2, value
+    return type_1, type_2, value</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.reprocess_exchange_conversor_visa"><code class="name flex">
+<span>def <span class="ident">reprocess_exchange_conversor_visa</span></span>(<span>self, list_visa, proxy_element) ‑> array.array</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Visa multiprocess that takes the time of mastercard but that is used once the initial price has been executed to reprocess exchange rates that were not successfully achieved in the initial process</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>list_visa</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency for exchange</dd>
+<dt><strong><code>proxy_element</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of proxy for beign used</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>result_visa_list (list): result of obtained data.
+proxy_element (list): proxy element.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reprocess_exchange_conversor_visa(self, list_visa, proxy_element) -&gt; ArrayType:
+    &#34;&#34;&#34;Visa multiprocess that takes the time of mastercard but that is used once the initial price has been executed to reprocess exchange rates that were not successfully achieved in the initial process
+    
+    Args:
+        list_visa (list):  list of currency for exchange
+        proxy_element (list): list of proxy for beign used
+    Returns:
+        result_visa_list (list): result of obtained data.
+        proxy_element (list): proxy element.
+    
+    &#34;&#34;&#34;
+    proxy = proxy_element[&#34;proxy&#34;]
+    proxy_dict = {&#34;http&#34;: proxy, &#34;https&#34;: proxy}
+
+    s = requests.Session()
+    if list_visa != []:
+        result_visa_list = []
+        for element_visa in list_visa:
+            type_1 = element_visa[0]
+            type_2 = element_visa[1]
+            visa_params = {
+                &#34;amount&#34;: &#34;1&#34;,
+                &#34;fee&#34;: &#34;0&#34;,
+                &#34;utcConvertedDate&#34;: f&#34;{self.info_date}&#34;,
+                &#34;exchangedate&#34;: f&#34;{self.info_date}&#34;,
+                &#34;fromCurr&#34;: f&#34;{type_2}&#34;,
+                &#34;toCurr&#34;: f&#34;{type_1}&#34;,
+            }
+
+            try:
+                visa = s.get(
+                    &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                    headers=self.HEADERS_VISA,
+                    verify=self.VERIFY,
+                    params=visa_params,
+                    timeout=2,
+                    proxies=proxy_dict,
+                )
+                response = json.loads(visa.content)
+
+                if len(response.keys()) == 1:
+                    visa_params[&#34;fromCurr&#34;] = type_1
+                    visa_params[&#34;toCurr&#34;] = type_2
+
+                    visa = s.get(
+                        &#34;https://usa.visa.com/cmsapi/fx/rates&#34;,
+                        headers=self.HEADERS_VISA,
+                        params=visa_params,
+                        verify=self.VERIFY,
+                        timeout=3,
+                        proxies=proxy_dict,
+                    )
+                    response = json.loads(visa.content)
+                    value = float(str(response[&#34;reverseAmount&#34;]).replace(&#34;,&#34;, &#34;&#34;))
+
+                else:
+                    value = float(
+                        str(response[&#34;originalValues&#34;][&#34;fxRateVisa&#34;]).replace(
+                            &#34;,&#34;, &#34;&#34;
+                        )
+                    )
+            except Exception:
+                value = np.nan
+                proxy_element[&#34;status&#34;] = &#34;inactive&#34;
+
+            data = (type_1, type_2, value)
+            result_visa_list.append(data)
+
+        return result_visa_list, proxy_element
+
+    else:
+        return [], proxy_element</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_initial_visa"><code class="name flex">
+<span>def <span class="ident">run_full_initial_visa</span></span>(<span>self, available_list) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>available_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>df_conversor_visa (Dataframe): data extracted with the exchange rates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_full_initial_visa(self, available_list) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+    
+    Args:
+       available_list (list): list of currency.
+    Returns:
+        df_conversor_visa (Dataframe): data extracted with the exchange rates.
+    
+    &#34;&#34;&#34;
+    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+        results_visa = executor.map(
+            self.initial_exchange_conversor_visa, available_list
+        )
+
+    header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+        &#34;%Y-%m-%d&#34;
+    )
+    all_conversor_changes_visa = [
+        [type_1, type_2, value, header_date, self.brand_visa]
+        for (type_1, type_2, value) in results_visa
+    ]
+    df_conversor_visa = pd.DataFrame(
+        all_conversor_changes_visa,
+        columns=[
+            &#34;currency_from&#34;,
+            &#34;currency_to&#34;,
+            &#34;exchange_value&#34;,
+            &#34;date&#34;,
+            &#34;brand&#34;,
+        ],
+    )
+    df_conversor_visa = df_conversor_visa.reindex(
+        columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+    )
+    return df_conversor_visa</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_mastercard"><code class="name flex">
+<span>def <span class="ident">run_full_mastercard</span></span>(<span>self, available_list, proxy_list) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Performer that requests the information from the MASTERCARD page of the available exchange rates that are an input to this function along with a proxy list</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>available_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency.</dd>
+<dt><strong><code>proxy_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of available proxy</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>df_conversor_mastercard (Dataframe): data extracted with the exchange rates.
+inactive_proxies (list): list of inactive proxys.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_full_mastercard(self, available_list, proxy_list) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Performer that requests the information from the MASTERCARD page of the available exchange rates that are an input to this function along with a proxy list
+    
+    Args:
+       available_list (list): list of currency.
+       proxy_list (list): list of available proxy
+    Returns:
+        df_conversor_mastercard (Dataframe): data extracted with the exchange rates.
+        inactive_proxies (list): list of inactive proxys.
+    
+    
+    &#34;&#34;&#34;
+
+    active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+
+    divider = np.array_split(available_list, len(active_proxy_list))
+
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        results_m = executor.map(
+            self.exchange_conversor_mastercard, divider, active_proxy_list
+        )
+
+    results_mastercard = []
+    inactive_proxies = []
+    for i in results_m:
+        if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+            inactive_proxies.append(i[1])
+        for a in i[0]:
+            results_mastercard.append(a)
+
+    header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+        &#34;%Y-%m-%d&#34;
+    )
+    all_converter_changes_mastercard = [
+        [type_1, type_2, value, header_date, self.brand_mastercard]
+        for (type_1, type_2, value) in results_mastercard
+    ]
+
+    df_conversor_mastercard = pd.DataFrame(
+        all_converter_changes_mastercard,
+        columns=[&#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;, &#34;date&#34;, &#34;brand&#34;],
+    )
+    df_conversor_mastercard = df_conversor_mastercard.reindex(
+        columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+    )
+    return df_conversor_mastercard, inactive_proxies</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_visa"><code class="name flex">
+<span>def <span class="ident">run_full_visa</span></span>(<span>self, available_list, proxy_list) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>available_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of currency.</dd>
+<dt><strong><code>proxy_list</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of available proxy</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>df_conversor_visa (Dataframe): data extracted with the exchange rates.
+inactive_proxies (list): list of inactive proxys.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_full_visa(self, available_list, proxy_list) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Performer that requests the information from the VISA page of the available exchange rates that are an input to this function along with a proxy list
+    
+    Args:
+       available_list (list): list of currency.
+       proxy_list (list): list of available proxy
+    Returns:
+        df_conversor_visa (Dataframe): data extracted with the exchange rates.
+        inactive_proxies (list): list of inactive proxys.
+    
+    &#34;&#34;&#34;
+    active_proxy_list = [i for i in proxy_list if i[&#34;status&#34;] == &#34;active&#34;]
+    divider = np.array_split(available_list, len(active_proxy_list))
+
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        results_v = executor.map(
+            self.reprocess_exchange_conversor_visa, divider, active_proxy_list
+        )
+
+    results_visa = []
+    inactive_proxies = []
+    for i in results_v:
+        if i[1][&#34;status&#34;] == &#34;inactive&#34;:
+            inactive_proxies.append(i[1])
+        for a in i[0]:
+            results_visa.append(a)
+    header_date = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+        &#34;%Y-%m-%d&#34;
+    )
+    all_conversor_changes_visa = [
+        [type_1, type_2, value, header_date, self.brand_visa]
+        for (type_1, type_2, value) in results_visa
+    ]
+    df_conversor_visa = pd.DataFrame(
+        all_conversor_changes_visa,
+        columns=[
+            &#34;currency_from&#34;,
+            &#34;currency_to&#34;,
+            &#34;exchange_value&#34;,
+            &#34;date&#34;,
+            &#34;brand&#34;,
+        ],
+    )
+    df_conversor_visa = df_conversor_visa.reindex(
+        columns=[&#34;date&#34;, &#34;brand&#34;, &#34;currency_from&#34;, &#34;currency_to&#34;, &#34;exchange_value&#34;]
+    )
+
+    return df_conversor_visa, inactive_proxies</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.updater_process"><code class="name flex">
+<span>def <span class="ident">updater_process</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Process that connects to the database and updates the exchange rates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updater_process(self) -&gt; None:
+    &#34;&#34;&#34;Process that connects to the database and updates the exchange rates.&#34;&#34;&#34;
+    module_name = &#34;EXCHANGE RATE&#34;
+    log_name = log.logs().new_log(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;&#34;,
+        &#34;INTELICA&#34;,
+        &#34;GET VISA AND MASTERCARD EXCHANGE RATES&#34;,
+        &#34;SYSTEM&#34;,
+        module_name,
+    )
+
+    date_input = datetime.strptime(str(self.info_date), &#34;%m/%d/%Y&#34;).strftime(
+        &#34;%Y-%m-%d&#34;
+    )
+
+    log.logs().exist_file(
+        &#34;EXCHANGE_RATE&#34;,
+        &#34;INTELICA&#34;,
+        &#34;VISA AND MASTERCARD&#34;,
+        log_name,
+        &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+        &#34;INFO&#34;,
+        &#34;in process&#34;,
+        module_name,
+    )
+
+    try:
+        df = pd.DataFrame(self.combiner_process(log_name))
+        check_codes = pd.DataFrame(bdpostgre().select(&#34;operational.m_currency&#34;))
+
+        for index, row in check_codes.iterrows():
+            a = row[&#34;currency_alphabetic_code&#34;]
+            b = row[&#34;currency_numeric_code&#34;]
+
+            df.loc[
+                (df[&#34;currency_from&#34;] == a),
+                &#34;currency_from_code&#34;,
+            ] = b
+            df.loc[
+                (df[&#34;currency_to&#34;] == a),
+                &#34;currency_to_code&#34;,
+            ] = b
+
+        file_date_standard = datetime.strptime(self.info_date, &#34;%m/%d/%Y&#34;)
+        file_date = file_date_standard.strftime(&#34;%Y%m%d&#34;)
+        file_date_format = file_date_standard.strftime(&#34;%Y-%m-%d&#34;)
+        execution_detail = int(float(datetime.now().timestamp()))
+        file_name = f&#34;{file_date}_{execution_detail}&#34;
+        local_route = f&#34;FILES/EXCHANGE_RATE/&#34;
+        pathlib.Path(local_route).mkdir(parents=True, exist_ok=True)
+        s3_route = f&#34;EXCHANGE_RATE/{file_name}.parquet&#34;
+        local_file_parquet = f&#34;{local_route}{file_name}.parquet&#34;
+        df.to_parquet(local_file_parquet)
+        structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+        upload = s3().upload_object(structured, local_file_parquet, s3_route)
+        db = bdpostgre().prepare_engine()
+        db.execution_options(autocommit=False)
+        table_new = f&#34;tmp_exchange_rate_{file_name}&#34;
+        schem = &#34;temporal&#34;
+        tran = None
+        df = pd.read_parquet(
+            path=local_file_parquet, engine=&#34;fastparquet&#34;, storage_options=None
+        )
+        df.index = np.arange(1, len(df) + 1)
+        df[&#34;app_id&#34;] = df.index
+        df[&#34;app_type_file&#34;] = &#34;EXCHANGE_RATE&#34;
+        df[&#34;app_processing_date&#34;] = df[&#34;date&#34;]
+        list_of_columns = list(df.columns)
+        list_of_columns = &#34;,&#34;.join(list_of_columns)
+        
+        rows_inserted = bdpostgre().insert_from_dataframe(
+            table_new,
+            schem,
+            df,
+            if_exists=&#34;replace&#34;,
+            dtype={
+                &#34;date&#34;: sqlalchemy.DateTime,
+                &#34;exchange_value&#34;: sqlalchemy.Numeric,
+                &#34;app_processing_date&#34;: sqlalchemy.Date,
+            },
+        )
+        check_reprocces = bdpostgre().select(
+            &#34;OPERATIONAL.DH_EXCHANGE_RATE&#34;,
+            f&#34;&#34;&#34;WHERE date = &#39;{file_date_format}&#39;&#34;&#34;&#34;,
+            &#34;count(date)&#34;,
+        )
+
+        if check_reprocces[0][&#34;count&#34;] &gt; 1:
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;THE INFORMATION HAS ALREADY BEEN LOADED WITH THAT DATE&#34;,
+                &#34;WARNING&#34;,
+                &#34;clear the data with that date in the operational table&#34;,
+                module_name,
+            )
+            sql3 = f&#34;drop table {schem}.{table_new};&#34;
+            bdpostgre().execute_block(sql3)
+
+        else:
+            sql2 = f&#34;&#34;&#34;
+                insert into operational.dh_exchange_rate({list_of_columns}) select {list_of_columns} from
+                {schem}.{table_new} &#34;&#34;&#34;
+            rs = 0
+            rs = bdpostgre().execute_block(sql2,True)
+
+            log.logs().exist_file(
+                &#34;EXCHANGE_RATE&#34;,
+                &#34;INTELICA&#34;,
+                &#34;VISA AND MASTERCARD&#34;,
+                log_name,
+                &#34;UPDATING OPERATIONAL EXCHANGE RATE DATA TABLE&#34;,
+                &#34;INFO&#34;,
+                &#34;inserted rows : &#34; + str(rs[1]),
+                module_name,
+            )
+
+            sql3 = f&#34;drop table {schem}.{table_new};&#34;
+            bdpostgre().execute_block(sql3)
+
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+            &#34;INFO&#34;,
+            &#34;finished&#34;,
+            module_name,
+        )
+
+    except Exception as e:
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+            &#34;ERROR&#34;,
+            &#34;A critical error has been detected, review or update the exchange rate configuration file: &#34;
+            + str(e),
+            module_name,
+        )
+        log.logs().exist_file(
+            &#34;EXCHANGE_RATE&#34;,
+            &#34;INTELICA&#34;,
+            &#34;VISA AND MASTERCARD&#34;,
+            log_name,
+            &#34;GETTING EXCHANGE RATES OF THE DATE &#34; + str(date_input),
+            &#34;ERROR&#34;,
+            &#34;Closing process with error&#34;,
+            module_name,
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates">ExchangeRates</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.combiner_process" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.combiner_process">combiner_process</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.exchange_conversor_mastercard" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.exchange_conversor_mastercard">exchange_conversor_mastercard</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_mastercard" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_mastercard">get_currency_list_mastercard</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.get_currency_list_visa">get_currency_list_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.initial_exchange_conversor_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.initial_exchange_conversor_visa">initial_exchange_conversor_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.reprocess_exchange_conversor_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.reprocess_exchange_conversor_visa">reprocess_exchange_conversor_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_initial_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_initial_visa">run_full_initial_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_mastercard" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_mastercard">run_full_mastercard</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.run_full_visa">run_full_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.updater_process" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.ExchangeRates.update_rates.ExchangeRates.updater_process">updater_process</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+MC:
+  dq_trx_detail_MC:
+    - name: "app_processing_date"
+      tipo: Date
+      format: '%y%m%d'
+    - name: "business activity 5"
+      tipo: Date
+      format: '%y%m%d'
+VISA:
+  stg_adapter_visa_transaction:
+    - name: "account reference number date"
+      tipo: date_julian
+      format: ''

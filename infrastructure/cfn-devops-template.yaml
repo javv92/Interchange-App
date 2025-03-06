@@ -1,0 +1,147 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Interchange Devops Stack
+
+Parameters:
+  ProjectName:
+    Description: Nombre del proyecto.
+    Type: String
+    Default: app-interchange
+
+Resources:
+  InterchangeAppApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: !Sub Application-${ProjectName}
+      ComputePlatform: Server
+      Tags:
+        - Key: Project
+          Value: AppInterchange
+
+  InterchangeAppDeploymentGroupDEV:
+    DependsOn:
+      - InterchangeAppApplication
+    Type: AWS::CodeDeploy::DeploymentGroup
+    Properties:
+      ApplicationName: !Sub Application-${ProjectName}
+      AutoRollbackConfiguration:
+        Enabled: 'true'
+        Events:
+          - DEPLOYMENT_FAILURE
+      DeploymentConfigName: CodeDeployDefault.AllAtOnce
+      DeploymentGroupName: !Sub Dg-${ProjectName}-dev
+      DeploymentStyle:
+        DeploymentOption: WITHOUT_TRAFFIC_CONTROL
+        DeploymentType: IN_PLACE
+      Ec2TagFilters:
+        - Key: Name
+          Value: APP_INTERCHANGE_DEV
+          Type: KEY_AND_VALUE
+      ServiceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/AWSCodeDeployRole
+      Tags:
+        - Key: Project
+          Value: AppInterchange
+        - Key: Environment
+          Value: dev
+
+  InterchangeAppDeploymentGroupQAS:
+    DependsOn:
+      - InterchangeAppApplication
+    Type: AWS::CodeDeploy::DeploymentGroup
+    Properties:
+      ApplicationName: !Sub Application-${ProjectName}
+      AutoRollbackConfiguration:
+        Enabled: 'true'
+        Events:
+          - DEPLOYMENT_FAILURE
+      DeploymentConfigName: CodeDeployDefault.AllAtOnce
+      DeploymentGroupName: !Sub Dg-${ProjectName}-qas
+      DeploymentStyle:
+        DeploymentOption: WITHOUT_TRAFFIC_CONTROL
+        DeploymentType: IN_PLACE
+      Ec2TagFilters:
+        - Key: Name
+          Value: APP_INTERCHANGE_QAS
+          Type: KEY_AND_VALUE
+      ServiceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/AWSCodeDeployRole
+      Tags:
+        - Key: Project
+          Value: AppInterchange
+        - Key: Environment
+          Value: qas
+
+  InterchangeAppDeploymentGroupPRD:
+    DependsOn:
+      - InterchangeAppApplication
+    Type: AWS::CodeDeploy::DeploymentGroup
+    Properties:
+      ApplicationName: !Sub Application-${ProjectName}
+      AutoRollbackConfiguration:
+        Enabled: 'true'
+        Events:
+          - DEPLOYMENT_FAILURE
+      DeploymentConfigName: CodeDeployDefault.AllAtOnce
+      DeploymentGroupName: !Sub Dg-${ProjectName}-prd
+      DeploymentStyle:
+        DeploymentOption: WITHOUT_TRAFFIC_CONTROL
+        DeploymentType: IN_PLACE
+      Ec2TagFilters:
+        - Key: Name
+          Value: APP_INTERCHANGE_PRD
+          Type: KEY_AND_VALUE
+      ServiceRoleArn: !Sub arn:aws:iam::${AWS::AccountId}:role/AWSCodeDeployRole
+      Tags:
+        - Key: Project
+          Value: AppInterchange
+        - Key: Environment
+          Value: prd
+
+  ManageAppInstanceDEV:
+    Type: AWS::SSM::Association
+    Properties:
+      AssociationName: CodeDeployDG-dev
+      ComplianceSeverity: UNSPECIFIED
+      Name: AWS-ConfigureAWSPackage
+      Parameters:
+        action:
+          - Install
+        name:
+          - AWSCodeDeployAgent
+      ScheduleExpression: rate(30 days)
+      Targets:
+        - Key: tag:Name
+          Values:
+            - APP_INTERCHANGE_DEV
+
+  ManageAppInstanceQAS:
+    Type: AWS::SSM::Association
+    Properties:
+      AssociationName: CodeDeployDG-qas
+      ComplianceSeverity: UNSPECIFIED
+      Name: AWS-ConfigureAWSPackage
+      Parameters:
+        action:
+          - Install
+        name:
+          - AWSCodeDeployAgent
+      ScheduleExpression: rate(30 days)
+      Targets:
+        - Key: tag:Name
+          Values:
+            - APP_INTERCHANGE_QAS
+
+  ManageAppInstancePRD:
+    Type: AWS::SSM::Association
+    Properties:
+      AssociationName: CodeDeployDG-prd
+      ComplianceSeverity: UNSPECIFIED
+      Name: AWS-ConfigureAWSPackage
+      Parameters:
+        action:
+          - Install
+        name:
+          - AWSCodeDeployAgent
+      ScheduleExpression: rate(30 days)
+      Targets:
+        - Key: tag:Name
+          Values:
+            - APP_INTERCHANGE_PRD

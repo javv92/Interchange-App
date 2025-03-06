@@ -1,0 +1,3129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import argparse
+from ast import Raise
+from cmath import isnan
+from errno import errorcode
+from zlib import DEF_BUF_SIZE
+import time
+import os
+from dotenv import load_dotenv
+import pandas as pd
+from sqlalchemy import create_engine
+from sqlalchemy.exc import SQLAlchemyError
+from datetime import datetime
+from os import remove
+from pathlib import Path
+import sys
+
+path = Path(__file__).resolve().parent.parent.parent
+sys.path.append(os.path.join(os.getcwd(), str(path)))
+
+from Module.Persistence.connection import connect_to_postgreSQL as bdpostgre
+from Module.Persistence.connection import connect_to_s3 as s3
+import Module.Logs.logs as log
+
+class interchangeRules:
+    &#34;&#34;&#34;Class to manage the interchange rules from bucket for both brands&#34;&#34;&#34;
+    load_dotenv()
+    def __init__(self) -&gt; None:
+        path =  r&#34;/home/ec2-user/interchange&#34;
+        self.route_visa = path + &#34;/Build/VISA Reglas Intercambio.xlsx&#34; 
+        self.route_mc =  path + &#34;/Build/MASTERCARD Reglas Intercambio.xlsx&#34; 
+        self.schema = &#39;operational&#39;
+        self.tmp_schema = &#39;temporal&#39;
+        self.table_operat_mc = &#39;m_interchange_rules_mc&#39;
+        self.table_operat_visa = &#39;m_interchange_rules_visa&#39;
+        self.bucket = os.getenv(&#34;LANDING_BUCKET&#34;) 
+        self.module = &#34;INTERCHANGERULES&#34;
+        pass
+
+    def read_file_visa(self,route:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;Reads an excel file with visa format
+
+        Args:
+            route (str): path to excel file in local  
+
+        Returns:
+            file (DataFrame): DataFrame with excel info.
+
+        &#34;&#34;&#34;
+        file = pd.read_excel(route, sheet_name = &#34;Visa&#34;, dtype = str,skiprows = 3)
+        return file
+
+    def read_file_mc(self,route:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;Reads an excel file with mastercard format
+
+        Args:
+            route (str): path to excel file in local  
+
+        Returns:
+            file (DataFrame): DataFrame with excel info.
+
+        &#34;&#34;&#34;
+        file = pd.read_excel(route, sheet_name = &#34;Mastercard ITX &amp; Service&#34;, dtype = str,skiprows = 1)
+        return file
+
+    def block_update_table_visa(self,schema:str,tmp_schema:str,table:str,engine)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;get visa tables to update
+
+        Args:
+            schema (str): main schema name
+            tmp_schema (str): temporal schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            tmp_final (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+
+        tmp1 = self.read_table(schema,table,engine)
+        tmp2 = self.read_table(tmp_schema,table,engine)
+        tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;]  + tmp1[&#39;cod_hierarchy&#39;]
+        left_key = tmp1[&#39;key&#39;].unique().tolist()
+        tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] + tmp1[&#39;cod_hierarchy&#39;]
+        right_key = tmp2[&#39;key&#39;].unique().tolist()
+        tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+        tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]).drop(columns= [&#39;key&#39;])
+        tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+        tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+        return tmp_final
+
+    def block_update_table_mc(self,schema:str,tmp_schema:str,table:str,engine):
+        &#34;&#34;&#34;get mastercard tables to update
+
+        Args:
+            schema (str): main schema name
+            tmp_schema (str): temporal schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            tmp_final (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+        tmp1 = self.read_table(schema,table,engine)
+        tmp2 = self.read_table(tmp_schema,table,engine)
+        tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;] 
+        left_key = tmp1[&#39;key&#39;].unique().tolist()
+        tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] 
+        right_key = tmp2[&#39;key&#39;].unique().tolist()
+        tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+        tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]).drop(columns= [&#39;key&#39;])
+        tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+        tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+        return tmp_final
+
+    def read_table(self,schema:str,table:str,engine)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;Reads a table
+
+        Args:
+            schema (str): main schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            dataframe (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+        dataframe = pd.read_sql(&#34;select * from %s.%s&#34;%(schema,table),engine)
+        return dataframe
+
+
+    def read_rules_visa(self,dataframe:pd.DataFrame, name_log:str):
+        &#34;&#34;&#34;VISA Rules Reader
+        
+        Args:
+            dataframe (DataFrame): DataFrame with data.
+            name_log (str): name of log file.
+
+        Returns:
+            data (DataFrame): dataframe with data processed.
+
+        &#34;&#34;&#34;
+        data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+        &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; , &#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+        &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+        &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39;, &#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39;, &#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+        &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+        &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+        &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39;, &#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+        &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+        &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+        &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()        
+        try:
+            if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES PROCESS &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES PROCESS &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD GUIDE_DATE IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD VALID_FROM IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_PROGRAM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_PROGRAM IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD INTELICA_ID IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FPI&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FPI IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_DESCRIPTOR&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_DESCRIPTOR IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_DESCRIPTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_DESCRIPTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;COD_HIERARCHY&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD COD_HIERARCHY IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_FIXED&#39;] = data[&#39;FEE_FIXED&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_FIXED!&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_MIN&#39;] = data[&#39;FEE_MIN&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_MIN!&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_CAP&#39;] = data[&#39;FEE_CAP&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_CAP!&#34;,
+                        self.module,
+                    )
+            return None
+
+        data = data[[&#39;JURISDICTION&#39;, &#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+        &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; ,&#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+        &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+        &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39; ,&#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39; ,&#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+        &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+        &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+        &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39; ,&#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+        &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+        &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+        &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()
+
+        data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_program&#39;, &#39;intelica_id&#39;, &#39;fpi&#39;, &#39;fee_descriptor&#39;, &#39;fee_description&#39;, &#39;cod_hierarchy&#39;, &#39;program_default&#39;, &#39;fee_currency&#39;, 
+        &#39;fee_variable&#39;, &#39;fee_fixed&#39;, &#39;fee_min&#39;, &#39;fee_cap&#39;, &#39;business_mode&#39;, &#39;issuer_country&#39;,&#39;issuer_region&#39; ,&#39;technology_indicator&#39;, &#39;product_id&#39;, &#39;fast_funds&#39;, &#39;travel_indicator&#39;, &#39;b2b_program_id&#39;, 
+        &#39;account_funding_source&#39;, &#39;nnss_indicator&#39;, &#39;product_subtype&#39;, &#39;transaction_code&#39;, &#39;transaction_code_qualifier&#39;, &#39;payment_credential_combination&#39;, &#39;acquiring_identifier&#39;, 
+        &#39;transaction_amount_currency&#39;, &#39;transaction_amount&#39;, &#39;acquirer_country&#39;,&#39;acquirer_region&#39; ,&#39;merchant_country_code&#39;,&#39;merchant_country_region&#39; ,&#39;merchant_category_code&#39;, &#39;requested_payment_service&#39;, &#39;usage_code&#39;, 
+        &#39;authorization_code&#39;, &#39;pos_terminal_capability&#39;, &#39;cardholder_id_method&#39;, &#39;pos_entry_mode&#39;, &#39;timeliness&#39;, &#39;reimbursement_attribute&#39;, 
+        &#39;special_condition_indicator&#39;, &#39;fee_program_indicator&#39;, &#39;moto_eci_indicator&#39;, &#39;acceptance_terminal_indicator&#39;, &#39;prepaid_card_indicator&#39;, &#39;pos_environment_code&#39;, &#39;business_format_code&#39;,
+        &#39;business_application_id&#39;,&#39;type_purchase&#39; ,&#39;network_identification_code&#39;, &#39;message_reason_code&#39;, &#39;surcharge_amount&#39;, &#39;authorized_amount&#39;, &#39;authorization_response_code&#39;, &#39;validation_code&#39;, 
+        &#39;merchant_verification_value&#39;, &#39;dynamic_currency_conversion_indicator&#39;, &#39;authorization_characteristics_indicator&#39;, &#39;cvv2_result_code&#39;, &#39;national_tax_indicator&#39;, &#39;merchant_vat&#39;, 
+        &#39;summary_commodity&#39;, &#39;message_identifier&#39;, &#39;v_i_p_full_financial_message_sets&#39;, &#39;processing_code_transaction_type&#39;, &#39;point_of_service_condition_code&#39;, &#39;sender_data&#39;, 
+        &#39;additional_sender_data&#39;, &#39;settlement_service&#39;, &#39;other_criteria_applies&#39;]
+
+        return data
+
+    def read_rules_mc(self,dataframe, name_log):
+        &#34;&#34;&#34;MASTERCARD rules reader
+        
+        Args:
+            dataframe (DataFrame): DataFrame with data.
+            name_log (str): name of log file.
+
+        Returns:
+            data (DataFrame): dataframe with data processed.
+        
+        &#34;&#34;&#34;
+        
+        data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;CATEGORY&#39;, &#39;PAYMENT_PRODUCT&#39;, 
+        &#39;FEE_TIER&#39;, &#39;INTELICA_ID&#39;, &#39;IRD&#39;, &#39;RATE_CURRENCY&#39;, &#39;RATE_VARIABLE&#39;, &#39;RATE_FIXED&#39;, &#39;RATE_MIN&#39;, &#39;RATE_CAP&#39;, 
+        &#39;PROCESSING_CODE&#39;, &#39;AMOUNT_TRANSACTION_CURRENCY&#39;, &#39;AMOUNT_TRANSACTION&#39;, &#39;CARD_ACCEPTOR_BUSINESS_CODE&#39;, 
+        &#39;GCMS_PRODUCT_IDENTIFIER&#39;, &#39;FUNDING_SOURCE&#39;, &#39;MASTERPASS_INCENTIVE_INDICATOR&#39;, &#39;MASTERCARD_ASSIGNED_ID&#39;, 
+        &#39;TTI&#39;, &#39;ADDITIONAL_DATA&#39;]].copy()
+
+        try:
+            if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+
+        try:
+            if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD GUIDE_ATE IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+            
+        try:
+            if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+            
+        try:
+            if(data[&#39;CATEGORY&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD CATEGORY IS NULL&#34;,
+                        self.module
+                    )
+            return None
+            
+        try:
+            if(data[&#39;FEE_TIER&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_TIER IS NULL&#34;,
+                        self.module
+                    )
+            return None
+            
+        try:
+            if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD INTELICA_ID IS NULL&#34;,
+                        self.module
+                    )
+            return None
+           
+        try:
+            if(data[&#39;IRD&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD IRD IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_FIXED&#39;] = data[&#39;RATE_FIXED&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_FIXED!&#34;,
+                        self.module
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_MIN&#39;] = data[&#39;RATE_MIN&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_MIN!&#34;,
+                        self.module
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_CAP&#39;] = data[&#39;RATE_CAP&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_CAP!&#34;,
+                        self.module
+                    )
+            return None
+
+        data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;category&#39;, &#39;payment_product&#39;, 
+        &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+        &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+        &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+        &#39;tti&#39;, &#39;additional_data&#39;]
+
+        data[&#39;fee_category&#39;] = data[&#39;category&#39;] + &#34; &#34; + data[&#39;payment_product&#39;]
+
+        data = data[[&#39;jurisdiction&#39;, &#39;region_country_code&#39;,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_category&#39;, 
+        &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+        &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+        &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+        &#39;tti&#39;, &#39;additional_data&#39;]].copy()
+        data.fee_tier = data.fee_tier.fillna(&#39;S/I&#39;)
+
+        return data
+
+    def update_master_interchange(self,types:str, brand:str):
+        &#34;&#34;&#34;Main method of execution for interchange rules.
+        
+        Args:
+            types (str): type of execution.
+            brand (str): brand of file.
+        
+        &#34;&#34;&#34;
+        
+        engine = bdpostgre().prepare_engine()
+        conn = engine.connect()
+        br = &#34;VISA&#34; if brand == &#34;VI&#34; else &#34;MASTERCARD&#34;
+        if types == &#39;TI&#39;:
+
+            name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, br,self.module)
+            
+            if(brand == &#39;VI&#39;):  
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                        self.module,
+                    )
+
+                if(bol == True):
+                    data = self.read_file_visa(self.route_visa)
+                    data_ingest = self.read_rules_visa(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;TRUNCATE TABLE VISA!&#34;,
+                            self.module,
+                    )
+
+                    data_ingest.to_sql(schema = self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING REAL TABLE!&#34;,
+                        self.module,
+                        )
+           
+                    remove(self.route_visa) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                    )
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                    )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                        self.module,
+                    )
+                    
+            elif(brand == &#39;MC&#39;): 
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                        self.module,
+                    )       
+                
+                if(bol == True):
+                   
+                    data = self.read_file_mc(self.route_mc)
+                    data_ingest = self.read_rules_mc(data, name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;TRUNCATE TABLE MC!&#34;,
+                            self.module,
+                    )
+                    data_ingest.to_sql(schema = self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING REAL TABLE!&#34;,
+                        self.module,
+                    )
+                        
+                    remove(self.route_mc)
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                    )
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                    )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;WARNING&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                        self.module,
+                    )
+                
+            conn.close()
+            engine.dispose()
+                           
+        elif types == &#39;U&#39;:
+            
+            name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, brand,self.module)
+
+            if(brand == &#39;VI&#39;):
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+                if(bol == True):
+                    truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data = self.read_file_visa(self.route_visa)
+                    data_ingest = self.read_rules_visa(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    
+                    data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data_update = self.block_update_table_visa(self.schema,self.tmp_schema,self.table_operat_visa,conn)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                        self.module,
+                    )
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    data_ingest.to_sql(schema =self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    remove(self.route_visa) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                        )
+                    
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                        )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                        self.module,
+                    )
+
+            elif(brand == &#39;MC&#39;):
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+                if(bol == True):
+                    truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data = self.read_file_mc(self.route_mc)
+                    data_ingest = self.read_rules_mc(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    
+                    data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data_update = self.block_update_table_mc(self.schema,self.tmp_schema,self.table_operat_mc,conn)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                        self.module,
+                    )
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    data_ingest.to_sql(schema =self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    remove(self.route_mc) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;MASTERCARD&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                        )
+                    
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;MASTERCARD&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                        )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                        self.module,
+                    )
+
+
+            conn.close()
+            engine.dispose()
+
+        return None</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules"><code class="flex name class">
+<span>class <span class="ident">interchangeRules</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class to manage the interchange rules from bucket for both brands</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class interchangeRules:
+    &#34;&#34;&#34;Class to manage the interchange rules from bucket for both brands&#34;&#34;&#34;
+    load_dotenv()
+    def __init__(self) -&gt; None:
+        path =  r&#34;/home/ec2-user/interchange&#34;
+        self.route_visa = path + &#34;/Build/VISA Reglas Intercambio.xlsx&#34; 
+        self.route_mc =  path + &#34;/Build/MASTERCARD Reglas Intercambio.xlsx&#34; 
+        self.schema = &#39;operational&#39;
+        self.tmp_schema = &#39;temporal&#39;
+        self.table_operat_mc = &#39;m_interchange_rules_mc&#39;
+        self.table_operat_visa = &#39;m_interchange_rules_visa&#39;
+        self.bucket = os.getenv(&#34;LANDING_BUCKET&#34;) 
+        self.module = &#34;INTERCHANGERULES&#34;
+        pass
+
+    def read_file_visa(self,route:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;Reads an excel file with visa format
+
+        Args:
+            route (str): path to excel file in local  
+
+        Returns:
+            file (DataFrame): DataFrame with excel info.
+
+        &#34;&#34;&#34;
+        file = pd.read_excel(route, sheet_name = &#34;Visa&#34;, dtype = str,skiprows = 3)
+        return file
+
+    def read_file_mc(self,route:str)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;Reads an excel file with mastercard format
+
+        Args:
+            route (str): path to excel file in local  
+
+        Returns:
+            file (DataFrame): DataFrame with excel info.
+
+        &#34;&#34;&#34;
+        file = pd.read_excel(route, sheet_name = &#34;Mastercard ITX &amp; Service&#34;, dtype = str,skiprows = 1)
+        return file
+
+    def block_update_table_visa(self,schema:str,tmp_schema:str,table:str,engine)-&gt; pd.DataFrame:
+        &#34;&#34;&#34;get visa tables to update
+
+        Args:
+            schema (str): main schema name
+            tmp_schema (str): temporal schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            tmp_final (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+
+        tmp1 = self.read_table(schema,table,engine)
+        tmp2 = self.read_table(tmp_schema,table,engine)
+        tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;]  + tmp1[&#39;cod_hierarchy&#39;]
+        left_key = tmp1[&#39;key&#39;].unique().tolist()
+        tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] + tmp1[&#39;cod_hierarchy&#39;]
+        right_key = tmp2[&#39;key&#39;].unique().tolist()
+        tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+        tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]).drop(columns= [&#39;key&#39;])
+        tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+        tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+        return tmp_final
+
+    def block_update_table_mc(self,schema:str,tmp_schema:str,table:str,engine):
+        &#34;&#34;&#34;get mastercard tables to update
+
+        Args:
+            schema (str): main schema name
+            tmp_schema (str): temporal schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            tmp_final (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+        tmp1 = self.read_table(schema,table,engine)
+        tmp2 = self.read_table(tmp_schema,table,engine)
+        tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;] 
+        left_key = tmp1[&#39;key&#39;].unique().tolist()
+        tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] 
+        right_key = tmp2[&#39;key&#39;].unique().tolist()
+        tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+        tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]).drop(columns= [&#39;key&#39;])
+        tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+        tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+        return tmp_final
+
+    def read_table(self,schema:str,table:str,engine)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;Reads a table
+
+        Args:
+            schema (str): main schema name
+            table (str): table name
+            engine : connection object
+
+        Returns:
+            dataframe (DataFrame): dataframe with data
+        &#34;&#34;&#34;
+        dataframe = pd.read_sql(&#34;select * from %s.%s&#34;%(schema,table),engine)
+        return dataframe
+
+
+    def read_rules_visa(self,dataframe:pd.DataFrame, name_log:str):
+        &#34;&#34;&#34;VISA Rules Reader
+        
+        Args:
+            dataframe (DataFrame): DataFrame with data.
+            name_log (str): name of log file.
+
+        Returns:
+            data (DataFrame): dataframe with data processed.
+
+        &#34;&#34;&#34;
+        data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+        &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; , &#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+        &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+        &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39;, &#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39;, &#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+        &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+        &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+        &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39;, &#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+        &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+        &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+        &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()        
+        try:
+            if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES PROCESS &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES PROCESS &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD GUIDE_DATE IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD VALID_FROM IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_PROGRAM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_PROGRAM IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD INTELICA_ID IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FPI&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FPI IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_DESCRIPTOR&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_DESCRIPTOR IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;FEE_DESCRIPTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_DESCRIPTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            if(data[&#39;COD_HIERARCHY&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD COD_HIERARCHY IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_FIXED&#39;] = data[&#39;FEE_FIXED&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_FIXED!&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_MIN&#39;] = data[&#39;FEE_MIN&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_MIN!&#34;,
+                        self.module,
+                    )
+            return None
+        try:
+            data[&#39;FEE_CAP&#39;] = data[&#39;FEE_CAP&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: FEE_CAP!&#34;,
+                        self.module,
+                    )
+            return None
+
+        data = data[[&#39;JURISDICTION&#39;, &#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+        &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; ,&#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+        &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+        &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39; ,&#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39; ,&#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+        &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+        &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+        &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39; ,&#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+        &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+        &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+        &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()
+
+        data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_program&#39;, &#39;intelica_id&#39;, &#39;fpi&#39;, &#39;fee_descriptor&#39;, &#39;fee_description&#39;, &#39;cod_hierarchy&#39;, &#39;program_default&#39;, &#39;fee_currency&#39;, 
+        &#39;fee_variable&#39;, &#39;fee_fixed&#39;, &#39;fee_min&#39;, &#39;fee_cap&#39;, &#39;business_mode&#39;, &#39;issuer_country&#39;,&#39;issuer_region&#39; ,&#39;technology_indicator&#39;, &#39;product_id&#39;, &#39;fast_funds&#39;, &#39;travel_indicator&#39;, &#39;b2b_program_id&#39;, 
+        &#39;account_funding_source&#39;, &#39;nnss_indicator&#39;, &#39;product_subtype&#39;, &#39;transaction_code&#39;, &#39;transaction_code_qualifier&#39;, &#39;payment_credential_combination&#39;, &#39;acquiring_identifier&#39;, 
+        &#39;transaction_amount_currency&#39;, &#39;transaction_amount&#39;, &#39;acquirer_country&#39;,&#39;acquirer_region&#39; ,&#39;merchant_country_code&#39;,&#39;merchant_country_region&#39; ,&#39;merchant_category_code&#39;, &#39;requested_payment_service&#39;, &#39;usage_code&#39;, 
+        &#39;authorization_code&#39;, &#39;pos_terminal_capability&#39;, &#39;cardholder_id_method&#39;, &#39;pos_entry_mode&#39;, &#39;timeliness&#39;, &#39;reimbursement_attribute&#39;, 
+        &#39;special_condition_indicator&#39;, &#39;fee_program_indicator&#39;, &#39;moto_eci_indicator&#39;, &#39;acceptance_terminal_indicator&#39;, &#39;prepaid_card_indicator&#39;, &#39;pos_environment_code&#39;, &#39;business_format_code&#39;,
+        &#39;business_application_id&#39;,&#39;type_purchase&#39; ,&#39;network_identification_code&#39;, &#39;message_reason_code&#39;, &#39;surcharge_amount&#39;, &#39;authorized_amount&#39;, &#39;authorization_response_code&#39;, &#39;validation_code&#39;, 
+        &#39;merchant_verification_value&#39;, &#39;dynamic_currency_conversion_indicator&#39;, &#39;authorization_characteristics_indicator&#39;, &#39;cvv2_result_code&#39;, &#39;national_tax_indicator&#39;, &#39;merchant_vat&#39;, 
+        &#39;summary_commodity&#39;, &#39;message_identifier&#39;, &#39;v_i_p_full_financial_message_sets&#39;, &#39;processing_code_transaction_type&#39;, &#39;point_of_service_condition_code&#39;, &#39;sender_data&#39;, 
+        &#39;additional_sender_data&#39;, &#39;settlement_service&#39;, &#39;other_criteria_applies&#39;]
+
+        return data
+
+    def read_rules_mc(self,dataframe, name_log):
+        &#34;&#34;&#34;MASTERCARD rules reader
+        
+        Args:
+            dataframe (DataFrame): DataFrame with data.
+            name_log (str): name of log file.
+
+        Returns:
+            data (DataFrame): dataframe with data processed.
+        
+        &#34;&#34;&#34;
+        
+        data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;CATEGORY&#39;, &#39;PAYMENT_PRODUCT&#39;, 
+        &#39;FEE_TIER&#39;, &#39;INTELICA_ID&#39;, &#39;IRD&#39;, &#39;RATE_CURRENCY&#39;, &#39;RATE_VARIABLE&#39;, &#39;RATE_FIXED&#39;, &#39;RATE_MIN&#39;, &#39;RATE_CAP&#39;, 
+        &#39;PROCESSING_CODE&#39;, &#39;AMOUNT_TRANSACTION_CURRENCY&#39;, &#39;AMOUNT_TRANSACTION&#39;, &#39;CARD_ACCEPTOR_BUSINESS_CODE&#39;, 
+        &#39;GCMS_PRODUCT_IDENTIFIER&#39;, &#39;FUNDING_SOURCE&#39;, &#39;MASTERPASS_INCENTIVE_INDICATOR&#39;, &#39;MASTERCARD_ASSIGNED_ID&#39;, 
+        &#39;TTI&#39;, &#39;ADDITIONAL_DATA&#39;]].copy()
+
+        try:
+            if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+
+        try:
+            if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD GUIDE_ATE IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+            
+        try:
+            if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD JURISDICTION IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+            
+        try:
+            if(data[&#39;CATEGORY&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD CATEGORY IS NULL&#34;,
+                        self.module
+                    )
+            return None
+            
+        try:
+            if(data[&#39;FEE_TIER&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD FEE_TIER IS NULL&#34;,
+                        self.module
+                    )
+            return None
+            
+        try:
+            if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD INTELICA_ID IS NULL&#34;,
+                        self.module
+                    )
+            return None
+           
+        try:
+            if(data[&#39;IRD&#39;].isnull().values.any()):
+                raise
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;FIELD IRD IS NULL&#34;,
+                        self.module,
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_FIXED&#39;] = data[&#39;RATE_FIXED&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_FIXED!&#34;,
+                        self.module
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_MIN&#39;] = data[&#39;RATE_MIN&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_MIN!&#34;,
+                        self.module
+                    )
+            return None
+
+        try:
+            data[&#39;RATE_CAP&#39;] = data[&#39;RATE_CAP&#39;].apply(lambda x: float(x))
+        except:
+            log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;CRITICAL&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;CRITICAL&#34;,
+                        &#34;not numeric field: RATE_CAP!&#34;,
+                        self.module
+                    )
+            return None
+
+        data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;category&#39;, &#39;payment_product&#39;, 
+        &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+        &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+        &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+        &#39;tti&#39;, &#39;additional_data&#39;]
+
+        data[&#39;fee_category&#39;] = data[&#39;category&#39;] + &#34; &#34; + data[&#39;payment_product&#39;]
+
+        data = data[[&#39;jurisdiction&#39;, &#39;region_country_code&#39;,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_category&#39;, 
+        &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+        &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+        &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+        &#39;tti&#39;, &#39;additional_data&#39;]].copy()
+        data.fee_tier = data.fee_tier.fillna(&#39;S/I&#39;)
+
+        return data
+
+    def update_master_interchange(self,types:str, brand:str):
+        &#34;&#34;&#34;Main method of execution for interchange rules.
+        
+        Args:
+            types (str): type of execution.
+            brand (str): brand of file.
+        
+        &#34;&#34;&#34;
+        
+        engine = bdpostgre().prepare_engine()
+        conn = engine.connect()
+        br = &#34;VISA&#34; if brand == &#34;VI&#34; else &#34;MASTERCARD&#34;
+        if types == &#39;TI&#39;:
+
+            name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, br,self.module)
+            
+            if(brand == &#39;VI&#39;):  
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                        self.module,
+                    )
+
+                if(bol == True):
+                    data = self.read_file_visa(self.route_visa)
+                    data_ingest = self.read_rules_visa(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;TRUNCATE TABLE VISA!&#34;,
+                            self.module,
+                    )
+
+                    data_ingest.to_sql(schema = self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING REAL TABLE!&#34;,
+                        self.module,
+                        )
+           
+                    remove(self.route_visa) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                    )
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                    )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                        self.module,
+                    )
+                    
+            elif(brand == &#39;MC&#39;): 
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                        self.module,
+                    )       
+                
+                if(bol == True):
+                   
+                    data = self.read_file_mc(self.route_mc)
+                    data_ingest = self.read_rules_mc(data, name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;TRUNCATE TABLE MC!&#34;,
+                            self.module,
+                    )
+                    data_ingest.to_sql(schema = self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING REAL TABLE!&#34;,
+                        self.module,
+                    )
+                        
+                    remove(self.route_mc)
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                    )
+
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;INFO&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                    )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;WARNING&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                        self.module,
+                    )
+                
+            conn.close()
+            engine.dispose()
+                           
+        elif types == &#39;U&#39;:
+            
+            name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, brand,self.module)
+
+            if(brand == &#39;VI&#39;):
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+                if(bol == True):
+                    truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data = self.read_file_visa(self.route_visa)
+                    data_ingest = self.read_rules_visa(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    
+                    data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data_update = self.block_update_table_visa(self.schema,self.tmp_schema,self.table_operat_visa,conn)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                        self.module,
+                    )
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    data_ingest.to_sql(schema =self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    remove(self.route_visa) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                        )
+                    
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                        )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                        self.module,
+                    )
+
+            elif(brand == &#39;MC&#39;):
+                bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+                if(bol == True):
+                    truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data = self.read_file_mc(self.route_mc)
+                    data_ingest = self.read_rules_mc(data,name_log)
+
+                    if(data_ingest is None):
+                        log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;VISA&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                            self.module,
+                        )
+                        sys.exit()
+                    
+                    data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING TEMPORAL TABLE!&#34;,
+                        self.module,
+                    )
+
+                    data_update = self.block_update_table_mc(self.schema,self.tmp_schema,self.table_operat_mc,conn)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                        self.module,
+                    )
+
+                    truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                    conn.execute(truncate)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    data_ingest.to_sql(schema =self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                        self.module,
+                    )
+                    remove(self.route_mc) 
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;MASTERCARD&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;REMOVING LOCAL FILE!&#34;,
+                            self.module,
+                        )
+                    
+                    log.logs().exist_file(
+                            &#34;MASTER&#34;,
+                            &#34;INTELICA&#34;,
+                            &#34;MASTERCARD&#34;,
+                            name_log,
+                            &#34;INTERCHANGE RULES &#34;,
+                            &#34;INFO&#34;,
+                            &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                            self.module,
+                        )
+
+                else:
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;WARNING&#34;,
+                        &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                        self.module,
+                    )
+
+
+            conn.close()
+            engine.dispose()
+
+        return None</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_mc"><code class="name flex">
+<span>def <span class="ident">block_update_table_mc</span></span>(<span>self, schema: str, tmp_schema: str, table: str, engine)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get mastercard tables to update</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>main schema name</dd>
+<dt><strong><code>tmp_schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>temporal schema name</dd>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name</dd>
+</dl>
+<p>engine : connection object</p>
+<h2 id="returns">Returns</h2>
+<p>tmp_final (DataFrame): dataframe with data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def block_update_table_mc(self,schema:str,tmp_schema:str,table:str,engine):
+    &#34;&#34;&#34;get mastercard tables to update
+
+    Args:
+        schema (str): main schema name
+        tmp_schema (str): temporal schema name
+        table (str): table name
+        engine : connection object
+
+    Returns:
+        tmp_final (DataFrame): dataframe with data
+    &#34;&#34;&#34;
+    tmp1 = self.read_table(schema,table,engine)
+    tmp2 = self.read_table(tmp_schema,table,engine)
+    tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;] 
+    left_key = tmp1[&#39;key&#39;].unique().tolist()
+    tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] 
+    right_key = tmp2[&#39;key&#39;].unique().tolist()
+    tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+    tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;]).drop(columns= [&#39;key&#39;])
+    tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+    tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+    return tmp_final</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_visa"><code class="name flex">
+<span>def <span class="ident">block_update_table_visa</span></span>(<span>self, schema: str, tmp_schema: str, table: str, engine) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get visa tables to update</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>main schema name</dd>
+<dt><strong><code>tmp_schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>temporal schema name</dd>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name</dd>
+</dl>
+<p>engine : connection object</p>
+<h2 id="returns">Returns</h2>
+<p>tmp_final (DataFrame): dataframe with data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def block_update_table_visa(self,schema:str,tmp_schema:str,table:str,engine)-&gt; pd.DataFrame:
+    &#34;&#34;&#34;get visa tables to update
+
+    Args:
+        schema (str): main schema name
+        tmp_schema (str): temporal schema name
+        table (str): table name
+        engine : connection object
+
+    Returns:
+        tmp_final (DataFrame): dataframe with data
+    &#34;&#34;&#34;
+
+    tmp1 = self.read_table(schema,table,engine)
+    tmp2 = self.read_table(tmp_schema,table,engine)
+    tmp1[&#39;key&#39;] = tmp1[&#39;jurisdiction&#39;] + tmp1[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str) + tmp1[&#39;intelica_id&#39;]  + tmp1[&#39;cod_hierarchy&#39;]
+    left_key = tmp1[&#39;key&#39;].unique().tolist()
+    tmp2[&#39;key&#39;] = tmp2[&#39;jurisdiction&#39;] + tmp2[&#39;guide_date&#39;].astype(str) + tmp1[&#39;valid_from&#39;].astype(str)  + tmp2[&#39;intelica_id&#39;] + tmp1[&#39;cod_hierarchy&#39;]
+    right_key = tmp2[&#39;key&#39;].unique().tolist()
+    tmp_left = tmp1[~tmp1.key.isin(right_key)].drop(columns= [&#39;key&#39;])
+    tmp_inner = tmp1.merge(tmp2[[&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]],how = &#39;inner&#39;, on = [&#39;jurisdiction&#39;,&#39;guide_date&#39;,&#39;valid_from&#39;,&#39;intelica_id&#39;,&#39;cod_hierarchy&#39;]).drop(columns= [&#39;key&#39;])
+    tmp_right = tmp2[~tmp2.key.isin(left_key)].drop(columns= [&#39;key&#39;])
+    tmp_final = pd.concat([tmp_left,tmp_inner,tmp_right])
+    return tmp_final</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_mc"><code class="name flex">
+<span>def <span class="ident">read_file_mc</span></span>(<span>self, route: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads an excel file with mastercard format</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>route</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to excel file in local
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>file (DataFrame): DataFrame with excel info.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_file_mc(self,route:str)-&gt; pd.DataFrame:
+    &#34;&#34;&#34;Reads an excel file with mastercard format
+
+    Args:
+        route (str): path to excel file in local  
+
+    Returns:
+        file (DataFrame): DataFrame with excel info.
+
+    &#34;&#34;&#34;
+    file = pd.read_excel(route, sheet_name = &#34;Mastercard ITX &amp; Service&#34;, dtype = str,skiprows = 1)
+    return file</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_visa"><code class="name flex">
+<span>def <span class="ident">read_file_visa</span></span>(<span>self, route: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads an excel file with visa format</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>route</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to excel file in local
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>file (DataFrame): DataFrame with excel info.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_file_visa(self,route:str)-&gt; pd.DataFrame:
+    &#34;&#34;&#34;Reads an excel file with visa format
+
+    Args:
+        route (str): path to excel file in local  
+
+    Returns:
+        file (DataFrame): DataFrame with excel info.
+
+    &#34;&#34;&#34;
+    file = pd.read_excel(route, sheet_name = &#34;Visa&#34;, dtype = str,skiprows = 3)
+    return file</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_mc"><code class="name flex">
+<span>def <span class="ident">read_rules_mc</span></span>(<span>self, dataframe, name_log)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>MASTERCARD rules reader</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>DataFrame</code></dt>
+<dd>DataFrame with data.</dd>
+<dt><strong><code>name_log</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>data (DataFrame): dataframe with data processed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_rules_mc(self,dataframe, name_log):
+    &#34;&#34;&#34;MASTERCARD rules reader
+    
+    Args:
+        dataframe (DataFrame): DataFrame with data.
+        name_log (str): name of log file.
+
+    Returns:
+        data (DataFrame): dataframe with data processed.
+    
+    &#34;&#34;&#34;
+    
+    data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;CATEGORY&#39;, &#39;PAYMENT_PRODUCT&#39;, 
+    &#39;FEE_TIER&#39;, &#39;INTELICA_ID&#39;, &#39;IRD&#39;, &#39;RATE_CURRENCY&#39;, &#39;RATE_VARIABLE&#39;, &#39;RATE_FIXED&#39;, &#39;RATE_MIN&#39;, &#39;RATE_CAP&#39;, 
+    &#39;PROCESSING_CODE&#39;, &#39;AMOUNT_TRANSACTION_CURRENCY&#39;, &#39;AMOUNT_TRANSACTION&#39;, &#39;CARD_ACCEPTOR_BUSINESS_CODE&#39;, 
+    &#39;GCMS_PRODUCT_IDENTIFIER&#39;, &#39;FUNDING_SOURCE&#39;, &#39;MASTERPASS_INCENTIVE_INDICATOR&#39;, &#39;MASTERCARD_ASSIGNED_ID&#39;, 
+    &#39;TTI&#39;, &#39;ADDITIONAL_DATA&#39;]].copy()
+
+    try:
+        if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD JURISDICTION IS NULL&#34;,
+                    self.module,
+                )
+        return None
+
+    try:
+        if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD GUIDE_ATE IS NULL&#34;,
+                    self.module,
+                )
+        return None
+        
+    try:
+        if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD JURISDICTION IS NULL&#34;,
+                    self.module,
+                )
+        return None
+        
+    try:
+        if(data[&#39;CATEGORY&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD CATEGORY IS NULL&#34;,
+                    self.module
+                )
+        return None
+        
+    try:
+        if(data[&#39;FEE_TIER&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD FEE_TIER IS NULL&#34;,
+                    self.module
+                )
+        return None
+        
+    try:
+        if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD INTELICA_ID IS NULL&#34;,
+                    self.module
+                )
+        return None
+       
+    try:
+        if(data[&#39;IRD&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD IRD IS NULL&#34;,
+                    self.module,
+                )
+        return None
+
+    try:
+        data[&#39;RATE_FIXED&#39;] = data[&#39;RATE_FIXED&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: RATE_FIXED!&#34;,
+                    self.module
+                )
+        return None
+
+    try:
+        data[&#39;RATE_MIN&#39;] = data[&#39;RATE_MIN&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: RATE_MIN!&#34;,
+                    self.module
+                )
+        return None
+
+    try:
+        data[&#39;RATE_CAP&#39;] = data[&#39;RATE_CAP&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: RATE_CAP!&#34;,
+                    self.module
+                )
+        return None
+
+    data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;category&#39;, &#39;payment_product&#39;, 
+    &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+    &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+    &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+    &#39;tti&#39;, &#39;additional_data&#39;]
+
+    data[&#39;fee_category&#39;] = data[&#39;category&#39;] + &#34; &#34; + data[&#39;payment_product&#39;]
+
+    data = data[[&#39;jurisdiction&#39;, &#39;region_country_code&#39;,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_category&#39;, 
+    &#39;fee_tier&#39;, &#39;intelica_id&#39;, &#39;ird&#39;, &#39;rate_currency&#39;, &#39;rate_variable&#39;, &#39;rate_fixed&#39;, &#39;rate_min&#39;, &#39;rate_cap&#39;, 
+    &#39;processing_code&#39;, &#39;amount_transaction_currency&#39;, &#39;amount_transaction&#39;, &#39;card_acceptor_business_code&#39;, 
+    &#39;gcms_product_identifier&#39;, &#39;funding_source&#39;, &#39;masterpass_incentive_indicator&#39;, &#39;mastercard_assigned_id&#39;, 
+    &#39;tti&#39;, &#39;additional_data&#39;]].copy()
+    data.fee_tier = data.fee_tier.fillna(&#39;S/I&#39;)
+
+    return data</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_visa"><code class="name flex">
+<span>def <span class="ident">read_rules_visa</span></span>(<span>self, dataframe: pandas.core.frame.DataFrame, name_log: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>VISA Rules Reader</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>DataFrame</code></dt>
+<dd>DataFrame with data.</dd>
+<dt><strong><code>name_log</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>data (DataFrame): dataframe with data processed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_rules_visa(self,dataframe:pd.DataFrame, name_log:str):
+    &#34;&#34;&#34;VISA Rules Reader
+    
+    Args:
+        dataframe (DataFrame): DataFrame with data.
+        name_log (str): name of log file.
+
+    Returns:
+        data (DataFrame): dataframe with data processed.
+
+    &#34;&#34;&#34;
+    data = dataframe[[&#39;JURISDICTION&#39;,&#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+    &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; , &#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+    &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+    &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39;, &#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39;, &#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+    &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+    &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+    &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39;, &#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+    &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+    &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+    &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()        
+    try:
+        if(data[&#39;JURISDICTION&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;CRITICAL&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES PROCESS &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD JURISDICTION IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;GUIDE_DATE&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES PROCESS &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD GUIDE_DATE IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;VALID_FROM&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD VALID_FROM IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;FEE_PROGRAM&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD FEE_PROGRAM IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;INTELICA_ID&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD INTELICA_ID IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;FPI&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD FPI IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;FEE_DESCRIPTOR&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD FEE_DESCRIPTOR IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;FEE_DESCRIPTION&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD FEE_DESCRIPTION IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        if(data[&#39;COD_HIERARCHY&#39;].isnull().values.any()):
+            raise
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;FIELD COD_HIERARCHY IS NULL&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        data[&#39;FEE_FIXED&#39;] = data[&#39;FEE_FIXED&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: FEE_FIXED!&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        data[&#39;FEE_MIN&#39;] = data[&#39;FEE_MIN&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: FEE_MIN!&#34;,
+                    self.module,
+                )
+        return None
+    try:
+        data[&#39;FEE_CAP&#39;] = data[&#39;FEE_CAP&#39;].apply(lambda x: float(x))
+    except:
+        log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;CRITICAL&#34;,
+                    &#34;not numeric field: FEE_CAP!&#34;,
+                    self.module,
+                )
+        return None
+
+    data = data[[&#39;JURISDICTION&#39;, &#39;REGION_COUNTRY_CODE&#39;,&#39;GUIDE_DATE&#39;, &#39;VALID_FROM&#39;, &#39;VALID_UNTIL&#39;, &#39;FEE_PROGRAM&#39;, &#39;INTELICA_ID&#39;, &#39;FPI&#39;, &#39;FEE_DESCRIPTOR&#39;, &#39;FEE_DESCRIPTION&#39;, &#39;COD_HIERARCHY&#39;, &#39;PROGRAM_DEFAULT&#39;, &#39;FEE_CURRENCY&#39;, 
+    &#39;FEE_VARIABLE&#39;, &#39;FEE_FIXED&#39;, &#39;FEE_MIN&#39;, &#39;FEE_CAP&#39;, &#39;BUSINESS_MODE&#39;, &#39;ISSUER_COUNTRY&#39;,&#39;ISSUER_REGION&#39; ,&#39;TECHNOLOGY_INDICATOR&#39;, &#39;PRODUCT_ID&#39;, &#39;FAST_FUNDS&#39;, &#39;TRAVEL_INDICATOR&#39;, &#39;B2B_PROGRAM_ID&#39;, 
+    &#39;ACCOUNT_FUNDING_SOURCE&#39;, &#39;NNSS_INDICATOR&#39;, &#39;PRODUCT_SUBTYPE&#39;, &#39;TRANSACTION_CODE&#39;, &#39;TRANSACTION_CODE_QUALIFIER&#39;, &#39;PAYMENT_CREDENTIAL_COMBINATION&#39;, &#39;ACQUIRING_IDENTIFIER&#39;, 
+    &#39;TRANSACTION_AMOUNT_CURRENCY&#39;, &#39;TRANSACTION_AMOUNT&#39;, &#39;ACQUIRER_COUNTRY&#39;,&#39;ACQUIRER_REGION&#39; ,&#39;MERCHANT_COUNTRY_CODE&#39;,&#39;MERCHANT_COUNTRY_REGION&#39; ,&#39;MERCHANT_CATEGORY_CODE&#39;, &#39;REQUESTED_PAYMENT_SERVICE&#39;, &#39;USAGE_CODE&#39;, 
+    &#39;AUTHORIZATION_CODE&#39;, &#39;POS_TERMINAL_CAPABILITY&#39;, &#39;CARDHOLDER_ID_METHOD&#39;, &#39;POS_ENTRY_MODE&#39;, &#39;TIMELINESS&#39;, &#39;REIMBURSEMENT_ATTRIBUTE&#39;, 
+    &#39;SPECIAL_CONDITION_INDICATOR&#39;, &#39;FEE_PROGRAM_INDICATOR&#39;, &#39;MOTO_ECI_INDICATOR&#39;, &#39;ACCEPTANCE_TERMINAL_INDICATOR&#39;, &#39;PREPAID_CARD_INDICATOR&#39;, &#39;POS_ENVIRONMENT_CODE&#39;, &#39;BUSINESS_FORMAT_CODE&#39;,
+    &#39;BUSINESS_APPLICATION_ID&#39;,&#39;TYPE_PURCHASE&#39; ,&#39;NETWORK_IDENTIFICATION_CODE&#39;, &#39;MESSAGE_REASON_CODE&#39;, &#39;SURCHARGE_AMOUNT&#39;, &#39;AUTHORIZED_AMOUNT&#39;, &#39;AUTHORIZATION_RESPONSE_CODE&#39;, &#39;VALIDATION_CODE&#39;, 
+    &#39;MERCHANT_VERIFICATION_VALUE&#39;, &#39;DYNAMIC_CURRENCY_INDICATOR&#39;, &#39;AUTHORIZATION_CHARACTERISTICS_INDICATOR&#39;, &#39;CVV2_RESULT_CODE&#39;, &#39;NATIONAL_TAX_INDICATOR&#39;, &#39;MERCHANT_VAT&#39;, 
+    &#39;SUMMARY_COMMODITY&#39;, &#39;MESSAGE_IDENTIFIER&#39;, &#39;V_I_P_FULL_FINANCIAL_MESSAGE_SETS&#39;, &#39;PROCESSING_CODE_TRANSACTION_TYPE&#39;, &#39;POINT_OF_SERVICE_CONDITION_CODE&#39;, &#39;SENDER_DATA&#39;, 
+    &#39;ADDITIONAL_SENDER_DATA&#39;, &#39;SETTLEMENT_SERVICE&#39;, &#39;OTHER_CRITERIA_APPLIES&#39;]].copy()
+
+    data.columns = [&#39;jurisdiction&#39;,&#39;region_country_code&#39; ,&#39;guide_date&#39;, &#39;valid_from&#39;, &#39;valid_until&#39;, &#39;fee_program&#39;, &#39;intelica_id&#39;, &#39;fpi&#39;, &#39;fee_descriptor&#39;, &#39;fee_description&#39;, &#39;cod_hierarchy&#39;, &#39;program_default&#39;, &#39;fee_currency&#39;, 
+    &#39;fee_variable&#39;, &#39;fee_fixed&#39;, &#39;fee_min&#39;, &#39;fee_cap&#39;, &#39;business_mode&#39;, &#39;issuer_country&#39;,&#39;issuer_region&#39; ,&#39;technology_indicator&#39;, &#39;product_id&#39;, &#39;fast_funds&#39;, &#39;travel_indicator&#39;, &#39;b2b_program_id&#39;, 
+    &#39;account_funding_source&#39;, &#39;nnss_indicator&#39;, &#39;product_subtype&#39;, &#39;transaction_code&#39;, &#39;transaction_code_qualifier&#39;, &#39;payment_credential_combination&#39;, &#39;acquiring_identifier&#39;, 
+    &#39;transaction_amount_currency&#39;, &#39;transaction_amount&#39;, &#39;acquirer_country&#39;,&#39;acquirer_region&#39; ,&#39;merchant_country_code&#39;,&#39;merchant_country_region&#39; ,&#39;merchant_category_code&#39;, &#39;requested_payment_service&#39;, &#39;usage_code&#39;, 
+    &#39;authorization_code&#39;, &#39;pos_terminal_capability&#39;, &#39;cardholder_id_method&#39;, &#39;pos_entry_mode&#39;, &#39;timeliness&#39;, &#39;reimbursement_attribute&#39;, 
+    &#39;special_condition_indicator&#39;, &#39;fee_program_indicator&#39;, &#39;moto_eci_indicator&#39;, &#39;acceptance_terminal_indicator&#39;, &#39;prepaid_card_indicator&#39;, &#39;pos_environment_code&#39;, &#39;business_format_code&#39;,
+    &#39;business_application_id&#39;,&#39;type_purchase&#39; ,&#39;network_identification_code&#39;, &#39;message_reason_code&#39;, &#39;surcharge_amount&#39;, &#39;authorized_amount&#39;, &#39;authorization_response_code&#39;, &#39;validation_code&#39;, 
+    &#39;merchant_verification_value&#39;, &#39;dynamic_currency_conversion_indicator&#39;, &#39;authorization_characteristics_indicator&#39;, &#39;cvv2_result_code&#39;, &#39;national_tax_indicator&#39;, &#39;merchant_vat&#39;, 
+    &#39;summary_commodity&#39;, &#39;message_identifier&#39;, &#39;v_i_p_full_financial_message_sets&#39;, &#39;processing_code_transaction_type&#39;, &#39;point_of_service_condition_code&#39;, &#39;sender_data&#39;, 
+    &#39;additional_sender_data&#39;, &#39;settlement_service&#39;, &#39;other_criteria_applies&#39;]
+
+    return data</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_table"><code class="name flex">
+<span>def <span class="ident">read_table</span></span>(<span>self, schema: str, table: str, engine) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads a table</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>schema</code></strong> :&ensp;<code>str</code></dt>
+<dd>main schema name</dd>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>table name</dd>
+</dl>
+<p>engine : connection object</p>
+<h2 id="returns">Returns</h2>
+<p>dataframe (DataFrame): dataframe with data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_table(self,schema:str,table:str,engine)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;Reads a table
+
+    Args:
+        schema (str): main schema name
+        table (str): table name
+        engine : connection object
+
+    Returns:
+        dataframe (DataFrame): dataframe with data
+    &#34;&#34;&#34;
+    dataframe = pd.read_sql(&#34;select * from %s.%s&#34;%(schema,table),engine)
+    return dataframe</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.update_master_interchange"><code class="name flex">
+<span>def <span class="ident">update_master_interchange</span></span>(<span>self, types: str, brand: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main method of execution for interchange rules.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>types</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of execution.</dd>
+<dt><strong><code>brand</code></strong> :&ensp;<code>str</code></dt>
+<dd>brand of file.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_master_interchange(self,types:str, brand:str):
+    &#34;&#34;&#34;Main method of execution for interchange rules.
+    
+    Args:
+        types (str): type of execution.
+        brand (str): brand of file.
+    
+    &#34;&#34;&#34;
+    
+    engine = bdpostgre().prepare_engine()
+    conn = engine.connect()
+    br = &#34;VISA&#34; if brand == &#34;VI&#34; else &#34;MASTERCARD&#34;
+    if types == &#39;TI&#39;:
+
+        name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, br,self.module)
+        
+        if(brand == &#39;VI&#39;):  
+            bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+            log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                    self.module,
+                )
+
+            if(bol == True):
+                data = self.read_file_visa(self.route_visa)
+                data_ingest = self.read_rules_visa(data,name_log)
+
+                if(data_ingest is None):
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                        self.module,
+                    )
+                    sys.exit()
+
+                truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                conn.execute(truncate)
+
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TABLE VISA!&#34;,
+                        self.module,
+                )
+
+                data_ingest.to_sql(schema = self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING REAL TABLE!&#34;,
+                    self.module,
+                    )
+       
+                remove(self.route_visa) 
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;REMOVING LOCAL FILE!&#34;,
+                        self.module,
+                )
+
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                        self.module,
+                )
+
+            else:
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;WARNING&#34;,
+                    &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                    self.module,
+                )
+                
+        elif(brand == &#39;MC&#39;): 
+            bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+            log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;INFO&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;STARTING PROCESS OF NEW MASTER DATA!&#34;,
+                    self.module,
+                )       
+            
+            if(bol == True):
+               
+                data = self.read_file_mc(self.route_mc)
+                data_ingest = self.read_rules_mc(data, name_log)
+
+                if(data_ingest is None):
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                        self.module,
+                    )
+                    sys.exit()
+                truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                conn.execute(truncate)
+
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;TRUNCATE TABLE MC!&#34;,
+                        self.module,
+                )
+                data_ingest.to_sql(schema = self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;INFO&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING REAL TABLE!&#34;,
+                    self.module,
+                )
+                    
+                remove(self.route_mc)
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;REMOVING LOCAL FILE!&#34;,
+                        self.module,
+                )
+
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;INFO&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                        self.module,
+                )
+
+            else:
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;WARNING&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;WARNING&#34;,
+                    &#34;procesoss aborted: verify that the file is uploaded to s3!!&#34;,
+                    self.module,
+                )
+            
+        conn.close()
+        engine.dispose()
+                       
+    elif types == &#39;U&#39;:
+        
+        name_log = log.logs().new_log(&#34;MASTER&#34;, &#34;INTERCHANGE RULES&#34;, &#39;&#39;, &#39;&#39;, brand,self.module)
+
+        if(brand == &#39;VI&#39;):
+            bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/VISA/VISA Reglas Intercambio.xlsx&#34;, self.route_visa)
+            if(bol == True):
+                truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_visa
+                conn.execute(truncate)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                    self.module,
+                )
+
+                data = self.read_file_visa(self.route_visa)
+                data_ingest = self.read_rules_visa(data,name_log)
+
+                if(data_ingest is None):
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                        self.module,
+                    )
+                    sys.exit()
+                
+                data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING TEMPORAL TABLE!&#34;,
+                    self.module,
+                )
+
+                data_update = self.block_update_table_visa(self.schema,self.tmp_schema,self.table_operat_visa,conn)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                    self.module,
+                )
+
+                truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_visa
+                conn.execute(truncate)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                    self.module,
+                )
+                data_ingest.to_sql(schema =self.schema, name = self.table_operat_visa, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                    self.module,
+                )
+                remove(self.route_visa) 
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;REMOVING LOCAL FILE!&#34;,
+                        self.module,
+                    )
+                
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                        self.module,
+                    )
+
+            else:
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;VISA&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;WARNING&#34;,
+                    &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                    self.module,
+                )
+
+        elif(brand == &#39;MC&#39;):
+            bol = s3().get_object(self.bucket, &#34;Intelica/INTERCHANGE_RULES/MASTERCARD/MASTERCARD Reglas Intercambio.xlsx&#34;, self.route_mc)
+            if(bol == True):
+                truncate = &#34;TRUNCATE &#34; + self.tmp_schema + &#34;.&#34; + self.table_operat_mc
+                conn.execute(truncate)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;TRUNCATE TEMPORAL TABLE!&#34;,
+                    self.module,
+                )
+
+                data = self.read_file_mc(self.route_mc)
+                data_ingest = self.read_rules_mc(data,name_log)
+
+                if(data_ingest is None):
+                    log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;VISA&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;CLOSING PROCESS FOR FAIL!&#34;,
+                        self.module,
+                    )
+                    sys.exit()
+                
+                data_ingest.to_sql(schema =self.tmp_schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING TEMPORAL TABLE!&#34;,
+                    self.module,
+                )
+
+                data_update = self.block_update_table_mc(self.schema,self.tmp_schema,self.table_operat_mc,conn)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;MERGE OPERATIONAL TABLE VS TEMPORARY TABLE FINISH!&#34;,
+                    self.module,
+                )
+
+                truncate = &#34;TRUNCATE &#34; + self.schema + &#34;.&#34; + self.table_operat_mc
+                conn.execute(truncate)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;TRUNCATE OPERATIONAL TABLE!&#34;,
+                    self.module,
+                )
+                data_ingest.to_sql(schema =self.schema, name = self.table_operat_mc, con = engine, if_exists = &#39;append&#39;, chunksize = 1000, index= False)
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;INFO&#34;,
+                    &#34;INSERTING OPERATIONAL TABLE!&#34;,
+                    self.module,
+                )
+                remove(self.route_mc) 
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;REMOVING LOCAL FILE!&#34;,
+                        self.module,
+                    )
+                
+                log.logs().exist_file(
+                        &#34;MASTER&#34;,
+                        &#34;INTELICA&#34;,
+                        &#34;MASTERCARD&#34;,
+                        name_log,
+                        &#34;INTERCHANGE RULES &#34;,
+                        &#34;INFO&#34;,
+                        &#34;PROCESS FINISHED SUCCESSFULLY!&#34;,
+                        self.module,
+                    )
+
+            else:
+                log.logs().exist_file(
+                    &#34;MASTER&#34;,
+                    &#34;INTELICA&#34;,
+                    &#34;MASTERCARD&#34;,
+                    name_log,
+                    &#34;INTERCHANGE RULES &#34;,
+                    &#34;WARNING&#34;,
+                    &#34;PROCESS ABORTED: VERIFY THAT THE FILE IS UPLOADED TO S3!!&#34;,
+                    self.module,
+                )
+
+
+        conn.close()
+        engine.dispose()
+
+    return None</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules">interchangeRules</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_mc" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_mc">block_update_table_mc</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.block_update_table_visa">block_update_table_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_mc" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_mc">read_file_mc</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_file_visa">read_file_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_mc" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_mc">read_rules_mc</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_rules_visa">read_rules_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_table" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.read_table">read_table</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.update_master_interchange" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.InterchangeRules.InterchangeRules.interchangeRules.update_master_interchange">update_master_interchange</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

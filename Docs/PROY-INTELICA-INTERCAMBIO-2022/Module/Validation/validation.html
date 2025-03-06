@@ -1,0 +1,4121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from datetime import datetime, timedelta
+from Module.Persistence.connection import connect_to_postgreSQL as bdpostgre
+import Module.Logs.logs as log
+import numpy as np
+
+
+class Validation:
+    &#34;&#34;&#34;Class for validation of files and process
+    
+    Params:
+        brand (str): brand.
+        client (str): client code.
+        log_name (str): name of log file.
+    &#34;&#34;&#34;
+    def __init__(self, brand:str, client:str, log_name: str) -&gt; None:
+        self.brand = brand
+        self.client = client
+        self.ps = bdpostgre()
+        self.log_name = log_name
+        self.module = &#34;VALIDATION&#34;
+
+    def process_validation_interpretation(self):
+        &#34;&#34;&#34;Adds the rows in the dh_visa_validation_interpretation and dh_mastercard_validation_interpretation tables resulting from the validation of the visa and mastercard interpretation that serves as a report&#34;&#34;&#34;
+
+        db = bdpostgre()
+        schem = &#34;temporal&#34;
+        module = &#34;OPERATIONAL&#34;
+        module_name = &#34;VALIDATION&#34;
+        date_now = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        table_new_visa = f&#34;tmp_visa_validation_interpretation_{self.client.lower()}&#34;
+
+        db.drop_table(f&#34;temporal.{table_new_visa}&#34;)
+        validation_interpretation_visa = f&#34;&#34;&#34;
+        create table temporal.{table_new_visa} as 
+        WITH transactions AS ( 
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_110
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_120
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_130
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_140
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_sms
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_trailer
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_header
+        group by
+            app_processing_date, app_type_file) 
+        ), control_file AS
+        (
+        select
+            cf_a.file_date, cf_a.customer,
+            cf_a.file_type,
+            cf_b.last_processed_date ,
+            cf_a.unique_files,
+            cf_a.file_times_processed,
+            cf_b.total_records_files
+        from
+            (
+            select
+                file_date ,
+                customer,
+                file_type ,
+                count(distinct code) as &#34;unique_files&#34; ,
+                (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+            from
+                control.t_control_file
+            where
+                (customer = &#39;{self.client}&#39;
+                and brand = &#39;VI&#39;
+                and (description_status = &#39;PROCESSED&#39;
+                or description_status = &#39;REVISION&#39; ))
+            group by
+                customer,
+                file_date,
+                file_type) cf_a
+        inner join (
+            select
+                tmp.file_date,
+                max(tmp.process_date) as &#34;last_processed_date&#34; ,
+                sum(tmp.records_number) as &#34;total_records_files&#34;
+            from
+                (
+                select
+                    file_date,
+                    code,
+                    process_file_name ,
+                    brand,
+                    file_type,
+                    customer ,
+                    process_date,
+                    execution_id,
+                    records_number,
+                    row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+                from
+                    control.t_control_file
+                where
+                    customer = &#39;{self.client}&#39;
+                    and description_status = &#39;PROCESSED&#39;) tmp
+            where
+                tmp.orden = 1
+            group by
+                tmp.file_date) cf_b 
+        on cf_a.file_date = cf_b.file_date 
+        )
+        select
+            (select coalesce(max(app_id),0) from operational.dh_visa_validation_interpretation) + 1 app_id,
+            cf.file_date as app_processing_date,
+            cf.customer as app_customer_code,
+            cf.file_type as app_type_file,
+            cf.last_processed_date ,
+            cf.unique_files,
+            cf.file_times_processed,
+            cf.total_records_files,
+            tr.total_row_loaded
+        from
+            control_file cf
+        inner join (
+            select
+                app_processing_date,
+                app_type_file,
+                sum(records_row_loaded) as total_row_loaded
+            from
+                Transactions r
+            group by
+                app_processing_date,
+                app_type_file ) tr 
+        on cf.file_date = tr.app_processing_date
+        and cf.file_type = tr.app_type_file 
+        WHERE cf.last_processed_date = &#39;{date_now}&#39;
+        &#34;&#34;&#34;
+ 
+        report_table_visa = db.execute_block(validation_interpretation_visa)
+        report_info_visa = db.select_to_df_object(
+            f&#34;select * from temporal.{table_new_visa}&#34;
+        )
+
+        report_info_visa.index = np.arange(1, len(report_info_visa) + 1)
+        report_info_visa[&#34;app_id&#34;] = report_info_visa.index
+
+        if report_info_visa.empty:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                self.client,
+                &#34;VISA&#34;,
+                self.log_name,
+                &#34;no interpretation run information detected&#34;,
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;INFO&#34;,
+                &#34;validation finished&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+                module_name,
+            )
+        else:
+
+            list_of_columns = list(report_info_visa)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+            sql2 = f&#34;&#34;&#34;
+            insert into operational.dh_visa_validation_interpretation({list_of_columns}) select {list_of_columns} from
+            {schem}.{table_new_visa} &#34;&#34;&#34;
+            rs = 0
+            rs = db.execute_block(sql2)
+            rs = 0
+            db.drop_table(f&#34;{schem}.{table_new_visa}&#34;)
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;VISA&#34;,
+                self.log_name,
+                &#34;INFO&#34;,
+                &#34;validation finished&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+                module_name,
+            )
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        table_new_mastercard = (
+            f&#34;tmp_mastercard_validation_interpretation_{self.client.lower()}&#34;
+        )
+        db.drop_table(f&#34;temporal.{table_new_mastercard}&#34;)
+        validation_interpretation_mastercard = f&#34;&#34;&#34;
+        create table temporal.{table_new_mastercard} as 
+        WITH transactions AS (
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_mastercard_data_element
+        group by
+            app_processing_date, app_type_file)
+        ), control_file AS
+        (
+        select
+            cf_a.file_date, cf_a.customer,
+            cf_a.file_type,
+            cf_b.last_processed_date ,
+            cf_a.unique_files,
+            cf_a.file_times_processed,
+            cf_b.total_records_files
+        from
+            (
+            select
+                file_date ,
+                customer,
+                file_type ,
+                count(distinct code) as &#34;unique_files&#34; ,
+                (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+            from
+                control.t_control_file
+            where 
+                (customer = &#39;{self.client}&#39;
+                and brand = &#39;MC&#39;
+                and (description_status = &#39;PROCESSED&#39;
+                or description_status = &#39;REVISION&#39; ))
+            group by
+                customer,
+                file_date,
+                file_type) cf_a
+        inner join (
+            select
+                tmp.file_date,
+                max(tmp.process_date) as &#34;last_processed_date&#34; ,
+                sum(tmp.records_number) as &#34;total_records_files&#34;
+            from
+                (
+                select
+                    file_date,
+                    code,
+                    process_file_name ,
+                    brand,
+                    file_type,
+                    customer ,
+                    process_date,
+                    execution_id,
+                    records_number,
+                    row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+                from
+                    control.t_control_file
+                where
+                    customer = &#39;{self.client}&#39;
+                    and description_status = &#39;PROCESSED&#39;) tmp
+            where
+                tmp.orden = 1
+            group by
+                tmp.file_date) cf_b
+        on cf_a.file_date = cf_b.file_date
+        )
+            select
+            (select coalesce(max(app_id),0) from operational.dh_mastercard_validation_interpretation) + 1 app_id,
+            cf.file_date as app_processing_date,
+            cf.customer as app_customer_code,
+            cf.file_type as app_type_file,
+            cf.last_processed_date ,
+            cf.unique_files,
+            cf.file_times_processed,
+            cf.total_records_files,
+            tr.total_row_loaded
+        from
+            control_file cf
+        inner join (
+            select
+                app_processing_date,
+                app_type_file,
+                sum(records_row_loaded) as total_row_loaded
+            from
+                Transactions r
+            group by
+                app_processing_date,
+                app_type_file ) tr 
+        on cf.file_date = tr.app_processing_date
+        and cf.file_type = tr.app_type_file 
+        WHERE cf.last_processed_date = &#39;{date_now}&#39;
+        &#34;&#34;&#34;
+        report_table_mc = db.execute_block(validation_interpretation_mastercard)
+
+        report_info_mc = db.select_to_df_object(
+            f&#34;select * from temporal.{table_new_mastercard}&#34;
+        )
+        report_info_mc.index = np.arange(1, len(report_info_mc) + 1)
+        report_info_mc[&#34;app_id&#34;] = report_info_mc.index
+        if report_info_mc.empty:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;NO INTERPRETATION RUN INFORMATION DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;FINISHED VALIDATION&#34;,
+                &#34;INFO&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+                module_name,
+            )
+
+        else:
+
+            list_of_columns = list(report_info_mc)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+
+            sql2 = f&#34;&#34;&#34;
+            insert into operational.dh_mastercard_validation_interpretation({list_of_columns}) select {list_of_columns} from
+            {schem}.{table_new_mastercard} &#34;&#34;&#34;
+            rs = 0
+            rs = db.execute_block(sql2)
+            db.drop_table(f&#34;{schem}.{table_new_mastercard}&#34;)
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;INTERPRETATION VALIDATION FINISHED&#34;,
+                &#34;INFO&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+                module_name,
+            )
+
+    def process_validation_visa_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;VISA validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_visa_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;1&#34;
+        report_type = &#34;130&#34;
+        str_business_mode = &#34;acquiring&#34;
+        settlement_string_date = string_date
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+            process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+            settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+        if type_file.lower() == &#34;in&#34;:
+            business_mode = &#34;2&#34;
+            str_business_mode = &#34;issuing&#34;
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading visa validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        with interchange_assigned as
+        (
+            SELECT 
+            ti.app_id,ti.app_hash_file,ti.app_processing_date
+            ,cf.business_mode
+            ,cf.jurisdiction_assigned
+            ,ti.intelica_id
+            ,vt.transaction_code
+            ,vt.purchase_date
+            ,trim(ir.fee_descriptor) fee_descriptor
+            ,ti.amount_transaction
+            ,cur.currency_alphabetic_code currency_transaction
+            ,ex.exchange_value
+            ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+            ,cur_local.currency_alphabetic_code local_currency_transaction
+            ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+            ,vt.destination_amount
+            ,vt.destination_currency_code
+            ,cf.settlement_report_amount
+            ,cf.settlement_report_currency_code
+            ,btt.short_description business_transaction_type
+            ,btc.short_description business_transaction_cycle
+            ,cf.reversal_indicator reversal_flag
+            FROM operational.dh_visa_interchange_{customer_code}_{type_file}_{string_date} ti
+            inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+            ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+            inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+            on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+            inner join operational.dh_visa_transaction_{customer_code} vt
+            on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+            left join control.t_customer cus 
+            on (cus.code = ti.app_customer_code)
+            left join operational.m_currency cur 
+            on (cur.currency_numeric_code = ti.currency_transaction::integer)
+            left join operational.m_currency cur_local 
+            on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+            left join operational.dh_exchange_rate ex 
+            on ex.app_processing_date = vt.purchase_date
+            and currency_from_code = ti.currency_transaction
+            and currency_to_code = cur_local.currency_numeric_code::text
+            and ex.brand = &#39;VISA&#39;
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+            WHERE to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        ),vss_report as
+        (
+            SELECT 
+            t.app_processing_date,
+            report_type,
+            t2.aggregation_level,
+            summary_level_130,
+            case 
+                when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+                else
+                    case 
+                        when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                            then c.visa_region_code::text
+                    else 
+                        c.country_code
+                    end 
+            end jurisdiction_assigned,
+            case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+            trim(t.fee_level_descriptor) fee_level_descriptor,
+            cu.currency_alphabetic_code  vss_currency,
+            btt.short_description business_transaction_type,
+            btc.short_description business_transaction_cycle,
+            case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+            sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+            sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+            sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+            from operational.dh_visa_transaction_vss_130_{customer_code}_in_{settlement_string_date} T
+            inner join operational.dh_visa_transaction_vss_calculated_field T2
+            on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+            left join operational.m_country c
+            on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                            when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                        else t.&#34;source_country_code_130&#34; end end::numeric)
+            left join operational.m_currency cu
+            on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_code = T.business_transaction_type_130)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+            where
+            trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+            t2.aggregation_level = 0
+            and length(trim(fee_level_descriptor))&gt;0
+            and not((trim(t.business_transaction_type_130)=&#39;310&#39; and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;1&#39;))
+            and not ((trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;2&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;2&#39;))
+            and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+            group by 1,2,3,4,5,6,7,8,9,10,11
+        ), interchange_report as
+        (   
+            select 
+            jurisdiction_assigned,
+            business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+            from interchange_assigned
+            group by 1,2,3,4,5,6,7,8
+        ), interchange_rules_visa_order as 
+        (
+            select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+            where to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+            group by 1,2,3
+        ), join_vss_interchange as
+        (  select
+            iro.region_country_code jurisdiction_rule
+            ,iro.order_rule
+            ,iro.fee_descriptor fee_descriptor_rule
+            ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+            ,&#39;{str_business_mode}&#39; report_business_mode
+            ,&#39;{report_type}&#39; report_type
+            ,vss.jurisdiction_assigned vss_jurisdiction
+            ,vss.business_mode vss_business_mode
+            ,vss.fee_level_descriptor vss_fee_descriptor
+            ,vss.business_transaction_type settlement_business_transaction_type
+            ,vss.business_transaction_cycle settlement_business_transaction_cycle
+            ,vss.reversal_flag settlement_reversal_flag
+            ,vss.vss_count
+            ,vss.vss_amount
+            ,vss.irf_amount
+            ,itx.jurisdiction_assigned itx_jurisdiction
+            ,itx.business_mode itx_business_mode
+            ,itx.fee_descriptor itx_fee_descriptor
+            ,itx.business_transaction_type interchange_business_transaction_type
+            ,itx.business_transaction_cycle interchange_business_transaction_cycle
+            ,itx.reversal_flag interchange_reversal_flag
+            ,itx.transaction_count itx_count
+            ,itx.local_amount_transaction itx_amount
+            ,itx.local_calculated_value itx_irf_amount
+            ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+            ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+            ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+            ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+            ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+            ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+            from vss_report vss
+            full join interchange_report itx
+            on (
+            vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+            vss.business_mode = itx.business_mode and
+            vss.fee_level_descriptor = itx.fee_descriptor and 
+            coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+            coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+            vss.reversal_flag = itx.reversal_flag
+            )
+            left join interchange_rules_visa_order iro
+            on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+        ),error_vss_interchange as
+        (
+            select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+        ),agg_error_vss_interchange as
+        (
+            select
+            sum(vss_count) vss_count
+            ,sum(diff_count_abs) - sum(metric_excess_count) diff
+            ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+            from join_vss_interchange r
+        )
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,jurisdiction_rule
+        ,order_rule
+        ,fee_descriptor_rule descriptor_rule
+        ,report_business_mode
+        ,report_type
+        ,vss_jurisdiction settlement_jurisdiction
+        ,vss_business_mode settlement_business_mode
+        ,vss_fee_descriptor settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_business_transaction_cycle
+        ,settlement_reversal_flag
+        ,vss_count settlement_count
+        ,vss_amount settlement_amount
+        ,irf_amount settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_business_transaction_cycle
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        error_vss_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = (
+            f&#34;{customer_code}_{type_file}_{string_date}_visa_validation_interchange&#34;
+        )
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;
+
+    def process_validation_visa_sms_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;VISA SMS validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_visa_sms_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;1&#34;
+        report_type = &#34;130&#34;
+        str_business_mode = &#34;acquiring&#34;
+        settlement_string_date = string_date
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+            process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+            settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading visa sms validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        with interchange_assigned as
+        (
+            SELECT 
+            ti.app_id,ti.app_hash_file,ti.app_processing_date
+            ,cf.business_mode
+            ,cf.jurisdiction_assigned
+            ,ti.intelica_id
+            ,vt.transaction_code
+            ,vt.purchase_date
+            ,trim(ir.fee_descriptor) fee_descriptor
+            ,ti.amount_transaction
+            ,cur.currency_alphabetic_code currency_transaction
+            ,ex.exchange_value
+            ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+            ,cur_local.currency_alphabetic_code local_currency_transaction
+            ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+            ,vt.destination_amount
+            ,vt.destination_currency_code
+            ,cf.settlement_report_amount
+            ,cf.settlement_report_currency_code
+            ,btt.short_description business_transaction_type
+            ,btc.short_description business_transaction_cycle
+            ,cf.reversal_indicator reversal_flag
+            FROM operational.dh_visa_sms_interchange_{customer_code}_{type_file}_{string_date} ti
+            inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+            ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+            inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+            on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+            inner join operational.dh_visa_transaction_{customer_code} vt
+            on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+            left join control.t_customer cus 
+            on (cus.code = ti.app_customer_code)
+            left join operational.m_currency cur 
+            on (cur.currency_numeric_code = ti.currency_transaction::integer)
+            left join operational.m_currency cur_local 
+            on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+            left join operational.dh_exchange_rate ex 
+            on ex.app_processing_date = vt.purchase_date
+            and currency_from_code = ti.currency_transaction
+            and currency_to_code = cur_local.currency_numeric_code::text
+            and ex.brand = &#39;VISA&#39;
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+            WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        ),vss_report as
+        (
+            SELECT 
+            t.app_processing_date,
+            report_type,
+            t2.aggregation_level,
+            summary_level_130,
+            case 
+                when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+                else
+                    case 
+                        when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                            then c.visa_region_code::text
+                    else 
+                        c.country_code
+                    end 
+            end jurisdiction_assigned,
+            case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+            trim(t.fee_level_descriptor) fee_level_descriptor,
+            cu.currency_alphabetic_code  vss_currency,
+            btt.short_description business_transaction_type,
+            btc.short_description business_transaction_cycle,
+            case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+            sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+            sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+            sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+            from operational.dh_visa_transaction_vss_130_{customer_code}_{type_file}_{settlement_string_date} T
+            inner join operational.dh_visa_transaction_vss_calculated_field T2
+            on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+            left join operational.m_country c
+            on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                            when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                        else t.&#34;source_country_code_130&#34; end end::numeric)
+            left join operational.m_currency cu
+            on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_code = T.business_transaction_type_130)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+            where
+            trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+            t2.aggregation_level = 0
+            and t2.aggregation_level = 0
+            and length(trim(&#34;fee_level_descriptor&#34;))&gt;0
+            and trim(t.business_transaction_type_130)=&#39;310&#39;
+            and trim(t.business_transaction_cycle_130) not in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;)
+            and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+            group by 1,2,3,4,5,6,7,8,9,10,11
+        ), interchange_report as
+        (   
+            select 
+            jurisdiction_assigned,
+            business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+            from interchange_assigned
+            group by 1,2,3,4,5,6,7,8
+        ), interchange_rules_visa_order as 
+        (
+            select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+            where to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+            group by 1,2,3
+        ), join_vss_interchange as
+        (  select
+            iro.region_country_code jurisdiction_rule
+            ,iro.order_rule
+            ,iro.fee_descriptor fee_descriptor_rule
+            ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+            ,&#39;{str_business_mode}&#39; report_business_mode
+            ,&#39;{report_type}&#39; report_type
+            ,vss.jurisdiction_assigned vss_jurisdiction
+            ,vss.business_mode vss_business_mode
+            ,vss.fee_level_descriptor vss_fee_descriptor
+            ,vss.business_transaction_type settlement_business_transaction_type
+            ,vss.business_transaction_cycle settlement_business_transaction_cycle
+            ,vss.reversal_flag settlement_reversal_flag
+            ,vss.vss_count
+            ,vss.vss_amount
+            ,vss.irf_amount
+            ,itx.jurisdiction_assigned itx_jurisdiction
+            ,itx.business_mode itx_business_mode
+            ,itx.fee_descriptor itx_fee_descriptor
+            ,itx.business_transaction_type interchange_business_transaction_type
+            ,itx.business_transaction_cycle interchange_business_transaction_cycle
+            ,itx.reversal_flag interchange_reversal_flag
+            ,itx.transaction_count itx_count
+            ,itx.local_amount_transaction itx_amount
+            ,itx.local_calculated_value itx_irf_amount
+            ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+            ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+            ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+            ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+            ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+            ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+            from vss_report vss
+            full join interchange_report itx
+            on (
+            vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+            vss.business_mode = itx.business_mode and
+            vss.fee_level_descriptor = itx.fee_descriptor and 
+            coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+            coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+            vss.reversal_flag = itx.reversal_flag
+            )
+            left join interchange_rules_visa_order iro
+            on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+        ),error_vss_interchange as
+        (
+            select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+        ),agg_error_vss_interchange as
+        (
+            select
+            sum(vss_count) vss_count
+            ,sum(diff_count_abs) - sum(metric_excess_count) diff
+            ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+            from join_vss_interchange r
+        )
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,jurisdiction_rule
+        ,order_rule
+        ,fee_descriptor_rule descriptor_rule
+        ,report_business_mode
+        ,report_type
+        ,vss_jurisdiction settlement_jurisdiction
+        ,vss_business_mode settlement_business_mode
+        ,vss_fee_descriptor settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_business_transaction_cycle
+        ,settlement_reversal_flag
+        ,vss_count settlement_count
+        ,vss_amount settlement_amount
+        ,irf_amount settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_business_transaction_cycle
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        error_vss_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = (
+            f&#34;{customer_code}_{type_file}_{string_date}_visa_sms_validation_interchange&#34;
+        )
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;
+
+    def process_validation_mastercard_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;MASTERCARD validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_mastercard_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;A&#34;
+        str_business_mode = &#34;acquiring&#34;
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if type_file.lower() == &#34;in&#34;:
+            business_mode = &#34;I&#34;
+            str_business_mode = &#34;issuing&#34;
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading mastercard validation interchange&#34;
+            + table_scheme
+            + &#34;.&#34;
+            + table_name,
+            self.module,
+        )
+        query_tmp = f&#34;&#34;&#34;
+        select
+        ti.app_id,
+        ti.app_hash_file,
+        ti.app_processing_date
+        ,cf.business_mode 
+        ,cf.jurisdiction
+        ,cf.jurisdiction_assigned
+        ,mt.date_and_time_local_transaction purchase_date
+        ,IR.ird
+        ,ti.currency_transaction 
+        ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+        ,cur_local.currency_alphabetic_code local_currency_transaction
+        ,ti.calculated_value * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+        ,cf.settlement_report_amount
+        ,cf.settlement_report_currency_code
+        ,btt.short_description business_transaction_type
+        ,case when upper(left(mt.message_reversal_indicator,1)) = &#39;R&#39; then 1 else 0 end reversal_flag
+        from operational.dh_mastercard_interchange_{customer_code}_{type_file}_{string_date} ti
+        inner join operational.dh_mastercard_calculated_field_{customer_code} cf on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+        inner join operational.dh_mastercard_data_element_{customer_code} mt on (ti.app_id=mt.app_id and ti.app_hash_file=mt.app_hash_file)
+        inner join operational.M_INTERCHANGE_RULES_MC IR on (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code and ir.ird = ti.ird)
+        left join control.t_customer cus on (cus.code = ti.app_customer_code)
+        left join operational.m_currency cur on (cur.currency_numeric_code = ti.currency_transaction::integer)
+        left join operational.m_currency cur_local on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+        left join operational.dh_exchange_rate ex on ex.app_processing_date = mt.date_and_time_local_transaction::date and currency_from_code = ti.currency_transaction and currency_to_code = cur_local.currency_numeric_code::text and ex.brand = &#39;MASTERCARD&#39;
+        left join operational.m_mastercard_business_transaction_type btt on (btt.business_transaction_type_id = left(mt.processing_code,2))
+        WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select 
+        app_processing_date
+        ,case upper(trim(reconciled_member_activity)) 
+            when &#39;I&#39; then &#39;issuing&#39;
+            when &#39;A&#39; then &#39;acquiring&#39;
+        end business_mode
+        ,case 
+            when reconciled_business_activity_2 = &#39;4&#39; then &#39;off-us&#39;
+            when reconciled_business_activity_2 in (&#39;1&#39;,&#39;8&#39;) then &#39;interregional&#39;
+            when reconciled_business_activity_2 in (&#39;2&#39;,&#39;3&#39;) then &#39;intraregional&#39;
+        end jurisdiction
+        ,reconciled_business_activity_4 ird
+        ,btt.short_description settlement_business_transaction_type
+        ,case when upper(trim(original_reversal_totals_indicator))=&#39;O&#39; then 0 else 1 end settlement_reversal_flag
+        ,sum(total_transaction_number) settlement_count
+        ,sum(amount_net_transaction_in_reconciliation_currency_2) settlement_amount
+        ,sum(amount_net_fee_in_reconciliation_currency_2) settlement_irf_amount
+        from operational.dh_mastercard_data_element_{customer_code}_in_{string_date} de
+        left join operational.m_mastercard_business_transaction_type btt
+        on (btt.business_transaction_type_id = de.reconciled_processing_code)
+        where 
+        app_message_type = &#39;1644&#39; 
+        and function_code=&#39;685&#39;  
+        and reconciled_member_activity=&#39;{business_mode}&#39; 
+        and (case 
+                when reconciled_member_activity = &#39;I&#39; and reconciled_transaction_function_1 = &#39;1240&#39; and reconciled_file is null then &#39;001&#39; 
+                else left(reconciled_file,3) 
+            end) in (&#39;001&#39;,&#39;002&#39;) 
+        and trim(reconciled_business_activity_4) &lt;&gt; &#39;&#39;
+        and reconciled_transaction_function_1 = &#39;1240&#39;
+        group by 
+        1,2,3,4,5,6
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select 
+        jurisdiction_assigned,
+        jurisdiction,
+        business_mode,
+        app_processing_date,
+        ird,
+        local_currency_transaction,
+        business_transaction_type
+        ,reversal_flag
+        ,count(ird) transaction_count,
+        sum(local_amount_transaction) local_amount_transaction,
+        sum(local_calculated_value) local_calculated_value
+        from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions
+        group by 1,2,3,4,5,6,7,8
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select
+        coalesce(setl.app_processing_date,ir.app_processing_date) report_processing_date
+        ,&#39;{str_business_mode}&#39; report_business_mode
+        ,setl.jurisdiction settlement_jurisdiction
+        ,setl.business_mode settlement_business_mode
+        ,setl.ird settlement_fee_descriptor
+        ,setl.settlement_business_transaction_type
+        ,setl.settlement_reversal_flag
+        ,setl.settlement_count
+        ,setl.settlement_amount
+        ,setl.settlement_irf_amount
+        ,ir.jurisdiction itx_jurisdiction
+        ,ir.business_mode itx_business_mode
+        ,ir.ird itx_fee_descriptor
+        ,ir.business_transaction_type interchange_business_transaction_type
+        ,ir.reversal_flag interchange_reversal_flag
+        ,ir.transaction_count itx_count
+        ,ir.local_amount_transaction itx_amount
+        ,ir.local_calculated_value itx_irf_amount
+        ,coalesce(setl.settlement_count,0) - coalesce(ir.transaction_count,0) diff_count
+        ,coalesce(setl.settlement_amount,0) - coalesce(ir.local_amount_transaction,0) diff_amount
+        ,coalesce(setl.settlement_irf_amount,0) - coalesce(ir.local_calculated_value,0) diff_irf_amount
+        ,abs(coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0)) diff_count_abs
+        ,case when coalesce(ir.transaction_count,0) &gt;= coalesce(setl.settlement_count,0) then  coalesce(setl.settlement_count,0) else coalesce(ir.transaction_count,0) end metric_count
+        ,case when coalesce(ir.transaction_count,0) &lt; coalesce(setl.settlement_count,0) then 0 else coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0) end metric_excess_count
+        from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements setl
+        full join temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report ir on 
+        lower(setl.jurisdiction) = lower(ir.jurisdiction) and
+        setl.business_mode = ir.business_mode and
+        setl.ird = ir.ird and
+        coalesce(setl.settlement_business_transaction_type,&#39;&#39;) = coalesce(ir.business_transaction_type,&#39;&#39;) and
+        setl.settlement_reversal_flag = ir.reversal_flag
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select vi.*,((diff_count_abs - metric_excess_count) / coalesce(settlement_count,1)::numeric) absolute_error from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange vi
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by settlement_jurisdiction,settlement_fee_descriptor) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,report_business_mode
+        ,settlement_jurisdiction
+        ,settlement_business_mode
+        ,settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_reversal_flag
+        ,settlement_count
+        ,settlement_amount
+        ,settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation"><code class="flex name class">
+<span>class <span class="ident">Validation</span></span>
+<span>(</span><span>brand: str, client: str, log_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class for validation of files and process</p>
+<h2 id="params">Params</h2>
+<p>brand (str): brand.
+client (str): client code.
+log_name (str): name of log file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Validation:
+    &#34;&#34;&#34;Class for validation of files and process
+    
+    Params:
+        brand (str): brand.
+        client (str): client code.
+        log_name (str): name of log file.
+    &#34;&#34;&#34;
+    def __init__(self, brand:str, client:str, log_name: str) -&gt; None:
+        self.brand = brand
+        self.client = client
+        self.ps = bdpostgre()
+        self.log_name = log_name
+        self.module = &#34;VALIDATION&#34;
+
+    def process_validation_interpretation(self):
+        &#34;&#34;&#34;Adds the rows in the dh_visa_validation_interpretation and dh_mastercard_validation_interpretation tables resulting from the validation of the visa and mastercard interpretation that serves as a report&#34;&#34;&#34;
+
+        db = bdpostgre()
+        schem = &#34;temporal&#34;
+        module = &#34;OPERATIONAL&#34;
+        module_name = &#34;VALIDATION&#34;
+        date_now = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        table_new_visa = f&#34;tmp_visa_validation_interpretation_{self.client.lower()}&#34;
+
+        db.drop_table(f&#34;temporal.{table_new_visa}&#34;)
+        validation_interpretation_visa = f&#34;&#34;&#34;
+        create table temporal.{table_new_visa} as 
+        WITH transactions AS ( 
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_110
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_120
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_130
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_vss_140
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_sms
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_trailer
+        group by
+            app_processing_date, app_type_file)
+        UNION ALL 
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_visa_transaction_header
+        group by
+            app_processing_date, app_type_file) 
+        ), control_file AS
+        (
+        select
+            cf_a.file_date, cf_a.customer,
+            cf_a.file_type,
+            cf_b.last_processed_date ,
+            cf_a.unique_files,
+            cf_a.file_times_processed,
+            cf_b.total_records_files
+        from
+            (
+            select
+                file_date ,
+                customer,
+                file_type ,
+                count(distinct code) as &#34;unique_files&#34; ,
+                (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+            from
+                control.t_control_file
+            where
+                (customer = &#39;{self.client}&#39;
+                and brand = &#39;VI&#39;
+                and (description_status = &#39;PROCESSED&#39;
+                or description_status = &#39;REVISION&#39; ))
+            group by
+                customer,
+                file_date,
+                file_type) cf_a
+        inner join (
+            select
+                tmp.file_date,
+                max(tmp.process_date) as &#34;last_processed_date&#34; ,
+                sum(tmp.records_number) as &#34;total_records_files&#34;
+            from
+                (
+                select
+                    file_date,
+                    code,
+                    process_file_name ,
+                    brand,
+                    file_type,
+                    customer ,
+                    process_date,
+                    execution_id,
+                    records_number,
+                    row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+                from
+                    control.t_control_file
+                where
+                    customer = &#39;{self.client}&#39;
+                    and description_status = &#39;PROCESSED&#39;) tmp
+            where
+                tmp.orden = 1
+            group by
+                tmp.file_date) cf_b 
+        on cf_a.file_date = cf_b.file_date 
+        )
+        select
+            (select coalesce(max(app_id),0) from operational.dh_visa_validation_interpretation) + 1 app_id,
+            cf.file_date as app_processing_date,
+            cf.customer as app_customer_code,
+            cf.file_type as app_type_file,
+            cf.last_processed_date ,
+            cf.unique_files,
+            cf.file_times_processed,
+            cf.total_records_files,
+            tr.total_row_loaded
+        from
+            control_file cf
+        inner join (
+            select
+                app_processing_date,
+                app_type_file,
+                sum(records_row_loaded) as total_row_loaded
+            from
+                Transactions r
+            group by
+                app_processing_date,
+                app_type_file ) tr 
+        on cf.file_date = tr.app_processing_date
+        and cf.file_type = tr.app_type_file 
+        WHERE cf.last_processed_date = &#39;{date_now}&#39;
+        &#34;&#34;&#34;
+ 
+        report_table_visa = db.execute_block(validation_interpretation_visa)
+        report_info_visa = db.select_to_df_object(
+            f&#34;select * from temporal.{table_new_visa}&#34;
+        )
+
+        report_info_visa.index = np.arange(1, len(report_info_visa) + 1)
+        report_info_visa[&#34;app_id&#34;] = report_info_visa.index
+
+        if report_info_visa.empty:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                self.client,
+                &#34;VISA&#34;,
+                self.log_name,
+                &#34;no interpretation run information detected&#34;,
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;INFO&#34;,
+                &#34;validation finished&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+                module_name,
+            )
+        else:
+
+            list_of_columns = list(report_info_visa)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+            sql2 = f&#34;&#34;&#34;
+            insert into operational.dh_visa_validation_interpretation({list_of_columns}) select {list_of_columns} from
+            {schem}.{table_new_visa} &#34;&#34;&#34;
+            rs = 0
+            rs = db.execute_block(sql2)
+            rs = 0
+            db.drop_table(f&#34;{schem}.{table_new_visa}&#34;)
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;VISA&#34;,
+                self.log_name,
+                &#34;INFO&#34;,
+                &#34;validation finished&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+                module_name,
+            )
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+            &#34;INFO&#34;,
+            &#34;in process&#34;,
+            module_name,
+        )
+
+        table_new_mastercard = (
+            f&#34;tmp_mastercard_validation_interpretation_{self.client.lower()}&#34;
+        )
+        db.drop_table(f&#34;temporal.{table_new_mastercard}&#34;)
+        validation_interpretation_mastercard = f&#34;&#34;&#34;
+        create table temporal.{table_new_mastercard} as 
+        WITH transactions AS (
+        (select
+            app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+        from
+            operational.dh_mastercard_data_element
+        group by
+            app_processing_date, app_type_file)
+        ), control_file AS
+        (
+        select
+            cf_a.file_date, cf_a.customer,
+            cf_a.file_type,
+            cf_b.last_processed_date ,
+            cf_a.unique_files,
+            cf_a.file_times_processed,
+            cf_b.total_records_files
+        from
+            (
+            select
+                file_date ,
+                customer,
+                file_type ,
+                count(distinct code) as &#34;unique_files&#34; ,
+                (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+            from
+                control.t_control_file
+            where 
+                (customer = &#39;{self.client}&#39;
+                and brand = &#39;MC&#39;
+                and (description_status = &#39;PROCESSED&#39;
+                or description_status = &#39;REVISION&#39; ))
+            group by
+                customer,
+                file_date,
+                file_type) cf_a
+        inner join (
+            select
+                tmp.file_date,
+                max(tmp.process_date) as &#34;last_processed_date&#34; ,
+                sum(tmp.records_number) as &#34;total_records_files&#34;
+            from
+                (
+                select
+                    file_date,
+                    code,
+                    process_file_name ,
+                    brand,
+                    file_type,
+                    customer ,
+                    process_date,
+                    execution_id,
+                    records_number,
+                    row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+                from
+                    control.t_control_file
+                where
+                    customer = &#39;{self.client}&#39;
+                    and description_status = &#39;PROCESSED&#39;) tmp
+            where
+                tmp.orden = 1
+            group by
+                tmp.file_date) cf_b
+        on cf_a.file_date = cf_b.file_date
+        )
+            select
+            (select coalesce(max(app_id),0) from operational.dh_mastercard_validation_interpretation) + 1 app_id,
+            cf.file_date as app_processing_date,
+            cf.customer as app_customer_code,
+            cf.file_type as app_type_file,
+            cf.last_processed_date ,
+            cf.unique_files,
+            cf.file_times_processed,
+            cf.total_records_files,
+            tr.total_row_loaded
+        from
+            control_file cf
+        inner join (
+            select
+                app_processing_date,
+                app_type_file,
+                sum(records_row_loaded) as total_row_loaded
+            from
+                Transactions r
+            group by
+                app_processing_date,
+                app_type_file ) tr 
+        on cf.file_date = tr.app_processing_date
+        and cf.file_type = tr.app_type_file 
+        WHERE cf.last_processed_date = &#39;{date_now}&#39;
+        &#34;&#34;&#34;
+        report_table_mc = db.execute_block(validation_interpretation_mastercard)
+
+        report_info_mc = db.select_to_df_object(
+            f&#34;select * from temporal.{table_new_mastercard}&#34;
+        )
+        report_info_mc.index = np.arange(1, len(report_info_mc) + 1)
+        report_info_mc[&#34;app_id&#34;] = report_info_mc.index
+        if report_info_mc.empty:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;NO INTERPRETATION RUN INFORMATION DETECTED&#34;,
+                &#34;INFO&#34;,
+                &#34;finished&#34;,
+                module_name,
+            )
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;FINISHED VALIDATION&#34;,
+                &#34;INFO&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+                module_name,
+            )
+
+        else:
+
+            list_of_columns = list(report_info_mc)
+            list_of_columns = &#34;,&#34;.join(list_of_columns)
+
+            sql2 = f&#34;&#34;&#34;
+            insert into operational.dh_mastercard_validation_interpretation({list_of_columns}) select {list_of_columns} from
+            {schem}.{table_new_mastercard} &#34;&#34;&#34;
+            rs = 0
+            rs = db.execute_block(sql2)
+            db.drop_table(f&#34;{schem}.{table_new_mastercard}&#34;)
+
+            log.logs().exist_file(
+                module,
+                self.client,
+                &#34;MASTERCARD&#34;,
+                self.log_name,
+                &#34;INTERPRETATION VALIDATION FINISHED&#34;,
+                &#34;INFO&#34;,
+                &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+                module_name,
+            )
+
+    def process_validation_visa_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;VISA validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_visa_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;1&#34;
+        report_type = &#34;130&#34;
+        str_business_mode = &#34;acquiring&#34;
+        settlement_string_date = string_date
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+            process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+            settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+        if type_file.lower() == &#34;in&#34;:
+            business_mode = &#34;2&#34;
+            str_business_mode = &#34;issuing&#34;
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading visa validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        with interchange_assigned as
+        (
+            SELECT 
+            ti.app_id,ti.app_hash_file,ti.app_processing_date
+            ,cf.business_mode
+            ,cf.jurisdiction_assigned
+            ,ti.intelica_id
+            ,vt.transaction_code
+            ,vt.purchase_date
+            ,trim(ir.fee_descriptor) fee_descriptor
+            ,ti.amount_transaction
+            ,cur.currency_alphabetic_code currency_transaction
+            ,ex.exchange_value
+            ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+            ,cur_local.currency_alphabetic_code local_currency_transaction
+            ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+            ,vt.destination_amount
+            ,vt.destination_currency_code
+            ,cf.settlement_report_amount
+            ,cf.settlement_report_currency_code
+            ,btt.short_description business_transaction_type
+            ,btc.short_description business_transaction_cycle
+            ,cf.reversal_indicator reversal_flag
+            FROM operational.dh_visa_interchange_{customer_code}_{type_file}_{string_date} ti
+            inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+            ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+            inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+            on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+            inner join operational.dh_visa_transaction_{customer_code} vt
+            on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+            left join control.t_customer cus 
+            on (cus.code = ti.app_customer_code)
+            left join operational.m_currency cur 
+            on (cur.currency_numeric_code = ti.currency_transaction::integer)
+            left join operational.m_currency cur_local 
+            on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+            left join operational.dh_exchange_rate ex 
+            on ex.app_processing_date = vt.purchase_date
+            and currency_from_code = ti.currency_transaction
+            and currency_to_code = cur_local.currency_numeric_code::text
+            and ex.brand = &#39;VISA&#39;
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+            WHERE to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        ),vss_report as
+        (
+            SELECT 
+            t.app_processing_date,
+            report_type,
+            t2.aggregation_level,
+            summary_level_130,
+            case 
+                when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+                else
+                    case 
+                        when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                            then c.visa_region_code::text
+                    else 
+                        c.country_code
+                    end 
+            end jurisdiction_assigned,
+            case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+            trim(t.fee_level_descriptor) fee_level_descriptor,
+            cu.currency_alphabetic_code  vss_currency,
+            btt.short_description business_transaction_type,
+            btc.short_description business_transaction_cycle,
+            case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+            sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+            sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+            sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+            from operational.dh_visa_transaction_vss_130_{customer_code}_in_{settlement_string_date} T
+            inner join operational.dh_visa_transaction_vss_calculated_field T2
+            on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+            left join operational.m_country c
+            on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                            when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                        else t.&#34;source_country_code_130&#34; end end::numeric)
+            left join operational.m_currency cu
+            on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_code = T.business_transaction_type_130)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+            where
+            trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+            t2.aggregation_level = 0
+            and length(trim(fee_level_descriptor))&gt;0
+            and not((trim(t.business_transaction_type_130)=&#39;310&#39; and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;1&#39;))
+            and not ((trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;2&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;2&#39;))
+            and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+            group by 1,2,3,4,5,6,7,8,9,10,11
+        ), interchange_report as
+        (   
+            select 
+            jurisdiction_assigned,
+            business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+            from interchange_assigned
+            group by 1,2,3,4,5,6,7,8
+        ), interchange_rules_visa_order as 
+        (
+            select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+            where to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+            group by 1,2,3
+        ), join_vss_interchange as
+        (  select
+            iro.region_country_code jurisdiction_rule
+            ,iro.order_rule
+            ,iro.fee_descriptor fee_descriptor_rule
+            ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+            ,&#39;{str_business_mode}&#39; report_business_mode
+            ,&#39;{report_type}&#39; report_type
+            ,vss.jurisdiction_assigned vss_jurisdiction
+            ,vss.business_mode vss_business_mode
+            ,vss.fee_level_descriptor vss_fee_descriptor
+            ,vss.business_transaction_type settlement_business_transaction_type
+            ,vss.business_transaction_cycle settlement_business_transaction_cycle
+            ,vss.reversal_flag settlement_reversal_flag
+            ,vss.vss_count
+            ,vss.vss_amount
+            ,vss.irf_amount
+            ,itx.jurisdiction_assigned itx_jurisdiction
+            ,itx.business_mode itx_business_mode
+            ,itx.fee_descriptor itx_fee_descriptor
+            ,itx.business_transaction_type interchange_business_transaction_type
+            ,itx.business_transaction_cycle interchange_business_transaction_cycle
+            ,itx.reversal_flag interchange_reversal_flag
+            ,itx.transaction_count itx_count
+            ,itx.local_amount_transaction itx_amount
+            ,itx.local_calculated_value itx_irf_amount
+            ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+            ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+            ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+            ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+            ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+            ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+            from vss_report vss
+            full join interchange_report itx
+            on (
+            vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+            vss.business_mode = itx.business_mode and
+            vss.fee_level_descriptor = itx.fee_descriptor and 
+            coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+            coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+            vss.reversal_flag = itx.reversal_flag
+            )
+            left join interchange_rules_visa_order iro
+            on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+        ),error_vss_interchange as
+        (
+            select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+        ),agg_error_vss_interchange as
+        (
+            select
+            sum(vss_count) vss_count
+            ,sum(diff_count_abs) - sum(metric_excess_count) diff
+            ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+            from join_vss_interchange r
+        )
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,jurisdiction_rule
+        ,order_rule
+        ,fee_descriptor_rule descriptor_rule
+        ,report_business_mode
+        ,report_type
+        ,vss_jurisdiction settlement_jurisdiction
+        ,vss_business_mode settlement_business_mode
+        ,vss_fee_descriptor settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_business_transaction_cycle
+        ,settlement_reversal_flag
+        ,vss_count settlement_count
+        ,vss_amount settlement_amount
+        ,irf_amount settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_business_transaction_cycle
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        error_vss_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = (
+            f&#34;{customer_code}_{type_file}_{string_date}_visa_validation_interchange&#34;
+        )
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;
+
+    def process_validation_visa_sms_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;VISA SMS validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_visa_sms_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;1&#34;
+        report_type = &#34;130&#34;
+        str_business_mode = &#34;acquiring&#34;
+        settlement_string_date = string_date
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+            process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+            settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading visa sms validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        with interchange_assigned as
+        (
+            SELECT 
+            ti.app_id,ti.app_hash_file,ti.app_processing_date
+            ,cf.business_mode
+            ,cf.jurisdiction_assigned
+            ,ti.intelica_id
+            ,vt.transaction_code
+            ,vt.purchase_date
+            ,trim(ir.fee_descriptor) fee_descriptor
+            ,ti.amount_transaction
+            ,cur.currency_alphabetic_code currency_transaction
+            ,ex.exchange_value
+            ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+            ,cur_local.currency_alphabetic_code local_currency_transaction
+            ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+            ,vt.destination_amount
+            ,vt.destination_currency_code
+            ,cf.settlement_report_amount
+            ,cf.settlement_report_currency_code
+            ,btt.short_description business_transaction_type
+            ,btc.short_description business_transaction_cycle
+            ,cf.reversal_indicator reversal_flag
+            FROM operational.dh_visa_sms_interchange_{customer_code}_{type_file}_{string_date} ti
+            inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+            ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+            inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+            on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+            inner join operational.dh_visa_transaction_{customer_code} vt
+            on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+            left join control.t_customer cus 
+            on (cus.code = ti.app_customer_code)
+            left join operational.m_currency cur 
+            on (cur.currency_numeric_code = ti.currency_transaction::integer)
+            left join operational.m_currency cur_local 
+            on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+            left join operational.dh_exchange_rate ex 
+            on ex.app_processing_date = vt.purchase_date
+            and currency_from_code = ti.currency_transaction
+            and currency_to_code = cur_local.currency_numeric_code::text
+            and ex.brand = &#39;VISA&#39;
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+            WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        ),vss_report as
+        (
+            SELECT 
+            t.app_processing_date,
+            report_type,
+            t2.aggregation_level,
+            summary_level_130,
+            case 
+                when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+                else
+                    case 
+                        when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                            then c.visa_region_code::text
+                    else 
+                        c.country_code
+                    end 
+            end jurisdiction_assigned,
+            case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+            trim(t.fee_level_descriptor) fee_level_descriptor,
+            cu.currency_alphabetic_code  vss_currency,
+            btt.short_description business_transaction_type,
+            btc.short_description business_transaction_cycle,
+            case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+            sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+            sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+            sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+            from operational.dh_visa_transaction_vss_130_{customer_code}_{type_file}_{settlement_string_date} T
+            inner join operational.dh_visa_transaction_vss_calculated_field T2
+            on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+            left join operational.m_country c
+            on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                            when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                        else t.&#34;source_country_code_130&#34; end end::numeric)
+            left join operational.m_currency cu
+            on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+            left join operational.m_visa_business_transaction_type btt
+            on (btt.business_transaction_type_code = T.business_transaction_type_130)
+            left join operational.m_visa_business_transaction_cycle btc
+            on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+            where
+            trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+            t2.aggregation_level = 0
+            and t2.aggregation_level = 0
+            and length(trim(&#34;fee_level_descriptor&#34;))&gt;0
+            and trim(t.business_transaction_type_130)=&#39;310&#39;
+            and trim(t.business_transaction_cycle_130) not in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;)
+            and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+            group by 1,2,3,4,5,6,7,8,9,10,11
+        ), interchange_report as
+        (   
+            select 
+            jurisdiction_assigned,
+            business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+            from interchange_assigned
+            group by 1,2,3,4,5,6,7,8
+        ), interchange_rules_visa_order as 
+        (
+            select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+            where to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+            group by 1,2,3
+        ), join_vss_interchange as
+        (  select
+            iro.region_country_code jurisdiction_rule
+            ,iro.order_rule
+            ,iro.fee_descriptor fee_descriptor_rule
+            ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+            ,&#39;{str_business_mode}&#39; report_business_mode
+            ,&#39;{report_type}&#39; report_type
+            ,vss.jurisdiction_assigned vss_jurisdiction
+            ,vss.business_mode vss_business_mode
+            ,vss.fee_level_descriptor vss_fee_descriptor
+            ,vss.business_transaction_type settlement_business_transaction_type
+            ,vss.business_transaction_cycle settlement_business_transaction_cycle
+            ,vss.reversal_flag settlement_reversal_flag
+            ,vss.vss_count
+            ,vss.vss_amount
+            ,vss.irf_amount
+            ,itx.jurisdiction_assigned itx_jurisdiction
+            ,itx.business_mode itx_business_mode
+            ,itx.fee_descriptor itx_fee_descriptor
+            ,itx.business_transaction_type interchange_business_transaction_type
+            ,itx.business_transaction_cycle interchange_business_transaction_cycle
+            ,itx.reversal_flag interchange_reversal_flag
+            ,itx.transaction_count itx_count
+            ,itx.local_amount_transaction itx_amount
+            ,itx.local_calculated_value itx_irf_amount
+            ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+            ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+            ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+            ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+            ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+            ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+            from vss_report vss
+            full join interchange_report itx
+            on (
+            vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+            vss.business_mode = itx.business_mode and
+            vss.fee_level_descriptor = itx.fee_descriptor and 
+            coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+            coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+            vss.reversal_flag = itx.reversal_flag
+            )
+            left join interchange_rules_visa_order iro
+            on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+        ),error_vss_interchange as
+        (
+            select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+        ),agg_error_vss_interchange as
+        (
+            select
+            sum(vss_count) vss_count
+            ,sum(diff_count_abs) - sum(metric_excess_count) diff
+            ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+            from join_vss_interchange r
+        )
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,jurisdiction_rule
+        ,order_rule
+        ,fee_descriptor_rule descriptor_rule
+        ,report_business_mode
+        ,report_type
+        ,vss_jurisdiction settlement_jurisdiction
+        ,vss_business_mode settlement_business_mode
+        ,vss_fee_descriptor settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_business_transaction_cycle
+        ,settlement_reversal_flag
+        ,vss_count settlement_count
+        ,vss_amount settlement_amount
+        ,irf_amount settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_business_transaction_cycle
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        error_vss_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = (
+            f&#34;{customer_code}_{type_file}_{string_date}_visa_sms_validation_interchange&#34;
+        )
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;
+
+    def process_validation_mastercard_interchange(
+        self, string_date: str = None, type_file: str = None
+    ) -&gt; str:
+        &#34;&#34;&#34;MASTERCARD validation interchange
+        
+        Args:
+            string_date (str): string date of file.
+            type_file (str): type of file.
+
+        Returns:
+            str: Message
+        &#34;&#34;&#34;
+        table_scheme = &#34;operational&#34;
+        table_name = &#34;dh_mastercard_validation_interchange&#34;
+        customer_code = self.client
+        business_mode = &#34;A&#34;
+        str_business_mode = &#34;acquiring&#34;
+        if string_date == None:
+            string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+        if type_file.lower() == &#34;in&#34;:
+            business_mode = &#34;I&#34;
+            str_business_mode = &#34;issuing&#34;
+        list_max_id = self.ps.select(
+            f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            &#34;loading mastercard validation interchange&#34;
+            + table_scheme
+            + &#34;.&#34;
+            + table_name,
+            self.module,
+        )
+        query_tmp = f&#34;&#34;&#34;
+        select
+        ti.app_id,
+        ti.app_hash_file,
+        ti.app_processing_date
+        ,cf.business_mode 
+        ,cf.jurisdiction
+        ,cf.jurisdiction_assigned
+        ,mt.date_and_time_local_transaction purchase_date
+        ,IR.ird
+        ,ti.currency_transaction 
+        ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+        ,cur_local.currency_alphabetic_code local_currency_transaction
+        ,ti.calculated_value * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+        ,cf.settlement_report_amount
+        ,cf.settlement_report_currency_code
+        ,btt.short_description business_transaction_type
+        ,case when upper(left(mt.message_reversal_indicator,1)) = &#39;R&#39; then 1 else 0 end reversal_flag
+        from operational.dh_mastercard_interchange_{customer_code}_{type_file}_{string_date} ti
+        inner join operational.dh_mastercard_calculated_field_{customer_code} cf on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+        inner join operational.dh_mastercard_data_element_{customer_code} mt on (ti.app_id=mt.app_id and ti.app_hash_file=mt.app_hash_file)
+        inner join operational.M_INTERCHANGE_RULES_MC IR on (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code and ir.ird = ti.ird)
+        left join control.t_customer cus on (cus.code = ti.app_customer_code)
+        left join operational.m_currency cur on (cur.currency_numeric_code = ti.currency_transaction::integer)
+        left join operational.m_currency cur_local on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+        left join operational.dh_exchange_rate ex on ex.app_processing_date = mt.date_and_time_local_transaction::date and currency_from_code = ti.currency_transaction and currency_to_code = cur_local.currency_numeric_code::text and ex.brand = &#39;MASTERCARD&#39;
+        left join operational.m_mastercard_business_transaction_type btt on (btt.business_transaction_type_id = left(mt.processing_code,2))
+        WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select 
+        app_processing_date
+        ,case upper(trim(reconciled_member_activity)) 
+            when &#39;I&#39; then &#39;issuing&#39;
+            when &#39;A&#39; then &#39;acquiring&#39;
+        end business_mode
+        ,case 
+            when reconciled_business_activity_2 = &#39;4&#39; then &#39;off-us&#39;
+            when reconciled_business_activity_2 in (&#39;1&#39;,&#39;8&#39;) then &#39;interregional&#39;
+            when reconciled_business_activity_2 in (&#39;2&#39;,&#39;3&#39;) then &#39;intraregional&#39;
+        end jurisdiction
+        ,reconciled_business_activity_4 ird
+        ,btt.short_description settlement_business_transaction_type
+        ,case when upper(trim(original_reversal_totals_indicator))=&#39;O&#39; then 0 else 1 end settlement_reversal_flag
+        ,sum(total_transaction_number) settlement_count
+        ,sum(amount_net_transaction_in_reconciliation_currency_2) settlement_amount
+        ,sum(amount_net_fee_in_reconciliation_currency_2) settlement_irf_amount
+        from operational.dh_mastercard_data_element_{customer_code}_in_{string_date} de
+        left join operational.m_mastercard_business_transaction_type btt
+        on (btt.business_transaction_type_id = de.reconciled_processing_code)
+        where 
+        app_message_type = &#39;1644&#39; 
+        and function_code=&#39;685&#39;  
+        and reconciled_member_activity=&#39;{business_mode}&#39; 
+        and (case 
+                when reconciled_member_activity = &#39;I&#39; and reconciled_transaction_function_1 = &#39;1240&#39; and reconciled_file is null then &#39;001&#39; 
+                else left(reconciled_file,3) 
+            end) in (&#39;001&#39;,&#39;002&#39;) 
+        and trim(reconciled_business_activity_4) &lt;&gt; &#39;&#39;
+        and reconciled_transaction_function_1 = &#39;1240&#39;
+        group by 
+        1,2,3,4,5,6
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select 
+        jurisdiction_assigned,
+        jurisdiction,
+        business_mode,
+        app_processing_date,
+        ird,
+        local_currency_transaction,
+        business_transaction_type
+        ,reversal_flag
+        ,count(ird) transaction_count,
+        sum(local_amount_transaction) local_amount_transaction,
+        sum(local_calculated_value) local_calculated_value
+        from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions
+        group by 1,2,3,4,5,6,7,8
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select
+        coalesce(setl.app_processing_date,ir.app_processing_date) report_processing_date
+        ,&#39;{str_business_mode}&#39; report_business_mode
+        ,setl.jurisdiction settlement_jurisdiction
+        ,setl.business_mode settlement_business_mode
+        ,setl.ird settlement_fee_descriptor
+        ,setl.settlement_business_transaction_type
+        ,setl.settlement_reversal_flag
+        ,setl.settlement_count
+        ,setl.settlement_amount
+        ,setl.settlement_irf_amount
+        ,ir.jurisdiction itx_jurisdiction
+        ,ir.business_mode itx_business_mode
+        ,ir.ird itx_fee_descriptor
+        ,ir.business_transaction_type interchange_business_transaction_type
+        ,ir.reversal_flag interchange_reversal_flag
+        ,ir.transaction_count itx_count
+        ,ir.local_amount_transaction itx_amount
+        ,ir.local_calculated_value itx_irf_amount
+        ,coalesce(setl.settlement_count,0) - coalesce(ir.transaction_count,0) diff_count
+        ,coalesce(setl.settlement_amount,0) - coalesce(ir.local_amount_transaction,0) diff_amount
+        ,coalesce(setl.settlement_irf_amount,0) - coalesce(ir.local_calculated_value,0) diff_irf_amount
+        ,abs(coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0)) diff_count_abs
+        ,case when coalesce(ir.transaction_count,0) &gt;= coalesce(setl.settlement_count,0) then  coalesce(setl.settlement_count,0) else coalesce(ir.transaction_count,0) end metric_count
+        ,case when coalesce(ir.transaction_count,0) &lt; coalesce(setl.settlement_count,0) then 0 else coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0) end metric_excess_count
+        from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements setl
+        full join temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report ir on 
+        lower(setl.jurisdiction) = lower(ir.jurisdiction) and
+        setl.business_mode = ir.business_mode and
+        setl.ird = ir.ird and
+        coalesce(setl.settlement_business_transaction_type,&#39;&#39;) = coalesce(ir.business_transaction_type,&#39;&#39;) and
+        setl.settlement_reversal_flag = ir.reversal_flag
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select vi.*,((diff_count_abs - metric_excess_count) / coalesce(settlement_count,1)::numeric) absolute_error from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange vi
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        query_tmp = f&#34;&#34;&#34;
+        select
+        replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by settlement_jurisdiction,settlement_fee_descriptor) app_id
+        ,&#39;{self.client}&#39; app_customer_code
+        ,upper(&#39;{type_file}&#39;) app_type_file
+        ,&#39;&#39; app_hash_file
+        ,report_processing_date app_processing_date
+        ,report_business_mode
+        ,settlement_jurisdiction
+        ,settlement_business_mode
+        ,settlement_fee_descriptor
+        ,settlement_business_transaction_type
+        ,settlement_reversal_flag
+        ,settlement_count
+        ,settlement_amount
+        ,settlement_irf_amount
+        ,itx_jurisdiction interchange_jurisdiction
+        ,itx_business_mode interchange_business_mode
+        ,itx_fee_descriptor interchange_fee_descriptor
+        ,interchange_business_transaction_type
+        ,interchange_reversal_flag
+        ,itx_count interchange_count
+        ,itx_amount interchange_amount
+        ,itx_irf_amount interchange_irf_amount
+        ,diff_count
+        ,diff_amount
+        ,diff_irf_amount
+        ,diff_count_abs
+        ,metric_count
+        ,metric_excess_count
+        ,absolute_error
+        from 
+        temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange
+        &#34;&#34;&#34;
+        table_scheme_tmp = &#34;temporal&#34;
+        table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange&#34;
+        table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+        message_drop = self.ps.drop_table(table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_drop,
+            self.module,
+        )
+        message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+            &#34;INFO&#34;,
+            message_create,
+            self.module,
+        )
+
+        message_insert = self.ps.insert_from_table(
+            table_scheme_tmp, table_name_tmp, table_scheme, table_name
+        )
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            customer_code,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+            &#34;INFO&#34;,
+            message_insert,
+            self.module,
+        )
+
+        return &#34;finished&#34;</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_interpretation"><code class="name flex">
+<span>def <span class="ident">process_validation_interpretation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds the rows in the dh_visa_validation_interpretation and dh_mastercard_validation_interpretation tables resulting from the validation of the visa and mastercard interpretation that serves as a report</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_validation_interpretation(self):
+    &#34;&#34;&#34;Adds the rows in the dh_visa_validation_interpretation and dh_mastercard_validation_interpretation tables resulting from the validation of the visa and mastercard interpretation that serves as a report&#34;&#34;&#34;
+
+    db = bdpostgre()
+    schem = &#34;temporal&#34;
+    module = &#34;OPERATIONAL&#34;
+    module_name = &#34;VALIDATION&#34;
+    date_now = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+    log.logs().exist_file(
+        module,
+        self.client,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+        &#34;INFO&#34;,
+        &#34;in process&#34;,
+        module_name,
+    )
+
+    table_new_visa = f&#34;tmp_visa_validation_interpretation_{self.client.lower()}&#34;
+
+    db.drop_table(f&#34;temporal.{table_new_visa}&#34;)
+    validation_interpretation_visa = f&#34;&#34;&#34;
+    create table temporal.{table_new_visa} as 
+    WITH transactions AS ( 
+    (select
+        app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL
+    (select
+        app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_vss_110
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file , count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_vss_120
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_vss_130
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_vss_140
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_sms
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_trailer
+    group by
+        app_processing_date, app_type_file)
+    UNION ALL 
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_visa_transaction_header
+    group by
+        app_processing_date, app_type_file) 
+    ), control_file AS
+    (
+    select
+        cf_a.file_date, cf_a.customer,
+        cf_a.file_type,
+        cf_b.last_processed_date ,
+        cf_a.unique_files,
+        cf_a.file_times_processed,
+        cf_b.total_records_files
+    from
+        (
+        select
+            file_date ,
+            customer,
+            file_type ,
+            count(distinct code) as &#34;unique_files&#34; ,
+            (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+        from
+            control.t_control_file
+        where
+            (customer = &#39;{self.client}&#39;
+            and brand = &#39;VI&#39;
+            and (description_status = &#39;PROCESSED&#39;
+            or description_status = &#39;REVISION&#39; ))
+        group by
+            customer,
+            file_date,
+            file_type) cf_a
+    inner join (
+        select
+            tmp.file_date,
+            max(tmp.process_date) as &#34;last_processed_date&#34; ,
+            sum(tmp.records_number) as &#34;total_records_files&#34;
+        from
+            (
+            select
+                file_date,
+                code,
+                process_file_name ,
+                brand,
+                file_type,
+                customer ,
+                process_date,
+                execution_id,
+                records_number,
+                row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+            from
+                control.t_control_file
+            where
+                customer = &#39;{self.client}&#39;
+                and description_status = &#39;PROCESSED&#39;) tmp
+        where
+            tmp.orden = 1
+        group by
+            tmp.file_date) cf_b 
+    on cf_a.file_date = cf_b.file_date 
+    )
+    select
+        (select coalesce(max(app_id),0) from operational.dh_visa_validation_interpretation) + 1 app_id,
+        cf.file_date as app_processing_date,
+        cf.customer as app_customer_code,
+        cf.file_type as app_type_file,
+        cf.last_processed_date ,
+        cf.unique_files,
+        cf.file_times_processed,
+        cf.total_records_files,
+        tr.total_row_loaded
+    from
+        control_file cf
+    inner join (
+        select
+            app_processing_date,
+            app_type_file,
+            sum(records_row_loaded) as total_row_loaded
+        from
+            Transactions r
+        group by
+            app_processing_date,
+            app_type_file ) tr 
+    on cf.file_date = tr.app_processing_date
+    and cf.file_type = tr.app_type_file 
+    WHERE cf.last_processed_date = &#39;{date_now}&#39;
+    &#34;&#34;&#34;
+
+    report_table_visa = db.execute_block(validation_interpretation_visa)
+    report_info_visa = db.select_to_df_object(
+        f&#34;select * from temporal.{table_new_visa}&#34;
+    )
+
+    report_info_visa.index = np.arange(1, len(report_info_visa) + 1)
+    report_info_visa[&#34;app_id&#34;] = report_info_visa.index
+
+    if report_info_visa.empty:
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            self.client,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;no interpretation run information detected&#34;,
+            &#34;INFO&#34;,
+            &#34;finished&#34;,
+            module_name,
+        )
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;INFO&#34;,
+            &#34;validation finished&#34;,
+            &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+            module_name,
+        )
+    else:
+
+        list_of_columns = list(report_info_visa)
+        list_of_columns = &#34;,&#34;.join(list_of_columns)
+        sql2 = f&#34;&#34;&#34;
+        insert into operational.dh_visa_validation_interpretation({list_of_columns}) select {list_of_columns} from
+        {schem}.{table_new_visa} &#34;&#34;&#34;
+        rs = 0
+        rs = db.execute_block(sql2)
+        rs = 0
+        db.drop_table(f&#34;{schem}.{table_new_visa}&#34;)
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;VISA&#34;,
+            self.log_name,
+            &#34;INFO&#34;,
+            &#34;validation finished&#34;,
+            &#34;inserted rows: &#34; + str(len(report_info_visa.index)),
+            module_name,
+        )
+
+    log.logs().exist_file(
+        module,
+        self.client,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;EXECUTING THE INTERPRETATION VALIDATION PROCESS&#34;,
+        &#34;INFO&#34;,
+        &#34;in process&#34;,
+        module_name,
+    )
+
+    table_new_mastercard = (
+        f&#34;tmp_mastercard_validation_interpretation_{self.client.lower()}&#34;
+    )
+    db.drop_table(f&#34;temporal.{table_new_mastercard}&#34;)
+    validation_interpretation_mastercard = f&#34;&#34;&#34;
+    create table temporal.{table_new_mastercard} as 
+    WITH transactions AS (
+    (select
+        app_processing_date, app_type_file, count(1) as &#34;records_row_loaded&#34;
+    from
+        operational.dh_mastercard_data_element
+    group by
+        app_processing_date, app_type_file)
+    ), control_file AS
+    (
+    select
+        cf_a.file_date, cf_a.customer,
+        cf_a.file_type,
+        cf_b.last_processed_date ,
+        cf_a.unique_files,
+        cf_a.file_times_processed,
+        cf_b.total_records_files
+    from
+        (
+        select
+            file_date ,
+            customer,
+            file_type ,
+            count(distinct code) as &#34;unique_files&#34; ,
+            (count(file_date)/ count(distinct code)) as &#34;file_times_processed&#34;
+        from
+            control.t_control_file
+        where 
+            (customer = &#39;{self.client}&#39;
+            and brand = &#39;MC&#39;
+            and (description_status = &#39;PROCESSED&#39;
+            or description_status = &#39;REVISION&#39; ))
+        group by
+            customer,
+            file_date,
+            file_type) cf_a
+    inner join (
+        select
+            tmp.file_date,
+            max(tmp.process_date) as &#34;last_processed_date&#34; ,
+            sum(tmp.records_number) as &#34;total_records_files&#34;
+        from
+            (
+            select
+                file_date,
+                code,
+                process_file_name ,
+                brand,
+                file_type,
+                customer ,
+                process_date,
+                execution_id,
+                records_number,
+                row_number() over (partition by &#34;code&#34; order by &#34;process_date&#34; desc, &#34;execution_id&#34; desc) orden
+            from
+                control.t_control_file
+            where
+                customer = &#39;{self.client}&#39;
+                and description_status = &#39;PROCESSED&#39;) tmp
+        where
+            tmp.orden = 1
+        group by
+            tmp.file_date) cf_b
+    on cf_a.file_date = cf_b.file_date
+    )
+        select
+        (select coalesce(max(app_id),0) from operational.dh_mastercard_validation_interpretation) + 1 app_id,
+        cf.file_date as app_processing_date,
+        cf.customer as app_customer_code,
+        cf.file_type as app_type_file,
+        cf.last_processed_date ,
+        cf.unique_files,
+        cf.file_times_processed,
+        cf.total_records_files,
+        tr.total_row_loaded
+    from
+        control_file cf
+    inner join (
+        select
+            app_processing_date,
+            app_type_file,
+            sum(records_row_loaded) as total_row_loaded
+        from
+            Transactions r
+        group by
+            app_processing_date,
+            app_type_file ) tr 
+    on cf.file_date = tr.app_processing_date
+    and cf.file_type = tr.app_type_file 
+    WHERE cf.last_processed_date = &#39;{date_now}&#39;
+    &#34;&#34;&#34;
+    report_table_mc = db.execute_block(validation_interpretation_mastercard)
+
+    report_info_mc = db.select_to_df_object(
+        f&#34;select * from temporal.{table_new_mastercard}&#34;
+    )
+    report_info_mc.index = np.arange(1, len(report_info_mc) + 1)
+    report_info_mc[&#34;app_id&#34;] = report_info_mc.index
+    if report_info_mc.empty:
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;NO INTERPRETATION RUN INFORMATION DETECTED&#34;,
+            &#34;INFO&#34;,
+            &#34;finished&#34;,
+            module_name,
+        )
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;FINISHED VALIDATION&#34;,
+            &#34;INFO&#34;,
+            &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+            module_name,
+        )
+
+    else:
+
+        list_of_columns = list(report_info_mc)
+        list_of_columns = &#34;,&#34;.join(list_of_columns)
+
+        sql2 = f&#34;&#34;&#34;
+        insert into operational.dh_mastercard_validation_interpretation({list_of_columns}) select {list_of_columns} from
+        {schem}.{table_new_mastercard} &#34;&#34;&#34;
+        rs = 0
+        rs = db.execute_block(sql2)
+        db.drop_table(f&#34;{schem}.{table_new_mastercard}&#34;)
+
+        log.logs().exist_file(
+            module,
+            self.client,
+            &#34;MASTERCARD&#34;,
+            self.log_name,
+            &#34;INTERPRETATION VALIDATION FINISHED&#34;,
+            &#34;INFO&#34;,
+            &#34;inserted rows: &#34; + str(len(report_info_mc.index)),
+            module_name,
+        )</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_mastercard_interchange"><code class="name flex">
+<span>def <span class="ident">process_validation_mastercard_interchange</span></span>(<span>self, string_date: str = None, type_file: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>MASTERCARD validation interchange</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>string_date</code></strong> :&ensp;<code>str</code></dt>
+<dd>string date of file.</dd>
+<dt><strong><code>type_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Message</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_validation_mastercard_interchange(
+    self, string_date: str = None, type_file: str = None
+) -&gt; str:
+    &#34;&#34;&#34;MASTERCARD validation interchange
+    
+    Args:
+        string_date (str): string date of file.
+        type_file (str): type of file.
+
+    Returns:
+        str: Message
+    &#34;&#34;&#34;
+    table_scheme = &#34;operational&#34;
+    table_name = &#34;dh_mastercard_validation_interchange&#34;
+    customer_code = self.client
+    business_mode = &#34;A&#34;
+    str_business_mode = &#34;acquiring&#34;
+    if string_date == None:
+        string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+    if type_file.lower() == &#34;in&#34;:
+        business_mode = &#34;I&#34;
+        str_business_mode = &#34;issuing&#34;
+    list_max_id = self.ps.select(
+        f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        &#34;loading mastercard validation interchange&#34;
+        + table_scheme
+        + &#34;.&#34;
+        + table_name,
+        self.module,
+    )
+    query_tmp = f&#34;&#34;&#34;
+    select
+    ti.app_id,
+    ti.app_hash_file,
+    ti.app_processing_date
+    ,cf.business_mode 
+    ,cf.jurisdiction
+    ,cf.jurisdiction_assigned
+    ,mt.date_and_time_local_transaction purchase_date
+    ,IR.ird
+    ,ti.currency_transaction 
+    ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+    ,cur_local.currency_alphabetic_code local_currency_transaction
+    ,ti.calculated_value * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+    ,cf.settlement_report_amount
+    ,cf.settlement_report_currency_code
+    ,btt.short_description business_transaction_type
+    ,case when upper(left(mt.message_reversal_indicator,1)) = &#39;R&#39; then 1 else 0 end reversal_flag
+    from operational.dh_mastercard_interchange_{customer_code}_{type_file}_{string_date} ti
+    inner join operational.dh_mastercard_calculated_field_{customer_code} cf on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+    inner join operational.dh_mastercard_data_element_{customer_code} mt on (ti.app_id=mt.app_id and ti.app_hash_file=mt.app_hash_file)
+    inner join operational.M_INTERCHANGE_RULES_MC IR on (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code and ir.ird = ti.ird)
+    left join control.t_customer cus on (cus.code = ti.app_customer_code)
+    left join operational.m_currency cur on (cur.currency_numeric_code = ti.currency_transaction::integer)
+    left join operational.m_currency cur_local on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+    left join operational.dh_exchange_rate ex on ex.app_processing_date = mt.date_and_time_local_transaction::date and currency_from_code = ti.currency_transaction and currency_to_code = cur_local.currency_numeric_code::text and ex.brand = &#39;MASTERCARD&#39;
+    left join operational.m_mastercard_business_transaction_type btt on (btt.business_transaction_type_id = left(mt.processing_code,2))
+    WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    select 
+    app_processing_date
+    ,case upper(trim(reconciled_member_activity)) 
+        when &#39;I&#39; then &#39;issuing&#39;
+        when &#39;A&#39; then &#39;acquiring&#39;
+    end business_mode
+    ,case 
+        when reconciled_business_activity_2 = &#39;4&#39; then &#39;off-us&#39;
+        when reconciled_business_activity_2 in (&#39;1&#39;,&#39;8&#39;) then &#39;interregional&#39;
+        when reconciled_business_activity_2 in (&#39;2&#39;,&#39;3&#39;) then &#39;intraregional&#39;
+    end jurisdiction
+    ,reconciled_business_activity_4 ird
+    ,btt.short_description settlement_business_transaction_type
+    ,case when upper(trim(original_reversal_totals_indicator))=&#39;O&#39; then 0 else 1 end settlement_reversal_flag
+    ,sum(total_transaction_number) settlement_count
+    ,sum(amount_net_transaction_in_reconciliation_currency_2) settlement_amount
+    ,sum(amount_net_fee_in_reconciliation_currency_2) settlement_irf_amount
+    from operational.dh_mastercard_data_element_{customer_code}_in_{string_date} de
+    left join operational.m_mastercard_business_transaction_type btt
+    on (btt.business_transaction_type_id = de.reconciled_processing_code)
+    where 
+    app_message_type = &#39;1644&#39; 
+    and function_code=&#39;685&#39;  
+    and reconciled_member_activity=&#39;{business_mode}&#39; 
+    and (case 
+            when reconciled_member_activity = &#39;I&#39; and reconciled_transaction_function_1 = &#39;1240&#39; and reconciled_file is null then &#39;001&#39; 
+            else left(reconciled_file,3) 
+        end) in (&#39;001&#39;,&#39;002&#39;) 
+    and trim(reconciled_business_activity_4) &lt;&gt; &#39;&#39;
+    and reconciled_transaction_function_1 = &#39;1240&#39;
+    group by 
+    1,2,3,4,5,6
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    select 
+    jurisdiction_assigned,
+    jurisdiction,
+    business_mode,
+    app_processing_date,
+    ird,
+    local_currency_transaction,
+    business_transaction_type
+    ,reversal_flag
+    ,count(ird) transaction_count,
+    sum(local_amount_transaction) local_amount_transaction,
+    sum(local_calculated_value) local_calculated_value
+    from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_assigned_transactions
+    group by 1,2,3,4,5,6,7,8
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    select
+    coalesce(setl.app_processing_date,ir.app_processing_date) report_processing_date
+    ,&#39;{str_business_mode}&#39; report_business_mode
+    ,setl.jurisdiction settlement_jurisdiction
+    ,setl.business_mode settlement_business_mode
+    ,setl.ird settlement_fee_descriptor
+    ,setl.settlement_business_transaction_type
+    ,setl.settlement_reversal_flag
+    ,setl.settlement_count
+    ,setl.settlement_amount
+    ,setl.settlement_irf_amount
+    ,ir.jurisdiction itx_jurisdiction
+    ,ir.business_mode itx_business_mode
+    ,ir.ird itx_fee_descriptor
+    ,ir.business_transaction_type interchange_business_transaction_type
+    ,ir.reversal_flag interchange_reversal_flag
+    ,ir.transaction_count itx_count
+    ,ir.local_amount_transaction itx_amount
+    ,ir.local_calculated_value itx_irf_amount
+    ,coalesce(setl.settlement_count,0) - coalesce(ir.transaction_count,0) diff_count
+    ,coalesce(setl.settlement_amount,0) - coalesce(ir.local_amount_transaction,0) diff_amount
+    ,coalesce(setl.settlement_irf_amount,0) - coalesce(ir.local_calculated_value,0) diff_irf_amount
+    ,abs(coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0)) diff_count_abs
+    ,case when coalesce(ir.transaction_count,0) &gt;= coalesce(setl.settlement_count,0) then  coalesce(setl.settlement_count,0) else coalesce(ir.transaction_count,0) end metric_count
+    ,case when coalesce(ir.transaction_count,0) &lt; coalesce(setl.settlement_count,0) then 0 else coalesce(ir.transaction_count,0) - coalesce(setl.settlement_count,0) end metric_excess_count
+    from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_settlements setl
+    full join temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange_report ir on 
+    lower(setl.jurisdiction) = lower(ir.jurisdiction) and
+    setl.business_mode = ir.business_mode and
+    setl.ird = ir.ird and
+    coalesce(setl.settlement_business_transaction_type,&#39;&#39;) = coalesce(ir.business_transaction_type,&#39;&#39;) and
+    setl.settlement_reversal_flag = ir.reversal_flag
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    select vi.*,((diff_count_abs - metric_excess_count) / coalesce(settlement_count,1)::numeric) absolute_error from temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_join_interchange vi
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    select
+    replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by settlement_jurisdiction,settlement_fee_descriptor) app_id
+    ,&#39;{self.client}&#39; app_customer_code
+    ,upper(&#39;{type_file}&#39;) app_type_file
+    ,&#39;&#39; app_hash_file
+    ,report_processing_date app_processing_date
+    ,report_business_mode
+    ,settlement_jurisdiction
+    ,settlement_business_mode
+    ,settlement_fee_descriptor
+    ,settlement_business_transaction_type
+    ,settlement_reversal_flag
+    ,settlement_count
+    ,settlement_amount
+    ,settlement_irf_amount
+    ,itx_jurisdiction interchange_jurisdiction
+    ,itx_business_mode interchange_business_mode
+    ,itx_fee_descriptor interchange_fee_descriptor
+    ,interchange_business_transaction_type
+    ,interchange_reversal_flag
+    ,itx_count interchange_count
+    ,itx_amount interchange_amount
+    ,itx_irf_amount interchange_irf_amount
+    ,diff_count
+    ,diff_amount
+    ,diff_irf_amount
+    ,diff_count_abs
+    ,metric_count
+    ,metric_excess_count
+    ,absolute_error
+    from 
+    temporal.{customer_code}_{type_file}_{string_date}_mastercard_validation_error_sett_interchange
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = f&#34;{customer_code}_{type_file}_{string_date}_mastercard_validation_interchange&#34;
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    message_insert = self.ps.insert_from_table(
+        table_scheme_tmp, table_name_tmp, table_scheme, table_name
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;MASTERCARD&#34;,
+        self.log_name,
+        &#34;VALIDATION OF MASTERCARD INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        message_insert,
+        self.module,
+    )
+
+    return &#34;finished&#34;</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_interchange"><code class="name flex">
+<span>def <span class="ident">process_validation_visa_interchange</span></span>(<span>self, string_date: str = None, type_file: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>VISA validation interchange</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>string_date</code></strong> :&ensp;<code>str</code></dt>
+<dd>string date of file.</dd>
+<dt><strong><code>type_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Message</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_validation_visa_interchange(
+    self, string_date: str = None, type_file: str = None
+) -&gt; str:
+    &#34;&#34;&#34;VISA validation interchange
+    
+    Args:
+        string_date (str): string date of file.
+        type_file (str): type of file.
+
+    Returns:
+        str: Message
+    &#34;&#34;&#34;
+    table_scheme = &#34;operational&#34;
+    table_name = &#34;dh_visa_validation_interchange&#34;
+    customer_code = self.client
+    business_mode = &#34;1&#34;
+    report_type = &#34;130&#34;
+    str_business_mode = &#34;acquiring&#34;
+    settlement_string_date = string_date
+    if string_date == None:
+        string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+    if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+        process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+        settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+    if type_file.lower() == &#34;in&#34;:
+        business_mode = &#34;2&#34;
+        str_business_mode = &#34;issuing&#34;
+    list_max_id = self.ps.select(
+        f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        &#34;loading visa validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    with interchange_assigned as
+    (
+        SELECT 
+        ti.app_id,ti.app_hash_file,ti.app_processing_date
+        ,cf.business_mode
+        ,cf.jurisdiction_assigned
+        ,ti.intelica_id
+        ,vt.transaction_code
+        ,vt.purchase_date
+        ,trim(ir.fee_descriptor) fee_descriptor
+        ,ti.amount_transaction
+        ,cur.currency_alphabetic_code currency_transaction
+        ,ex.exchange_value
+        ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+        ,cur_local.currency_alphabetic_code local_currency_transaction
+        ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+        ,vt.destination_amount
+        ,vt.destination_currency_code
+        ,cf.settlement_report_amount
+        ,cf.settlement_report_currency_code
+        ,btt.short_description business_transaction_type
+        ,btc.short_description business_transaction_cycle
+        ,cf.reversal_indicator reversal_flag
+        FROM operational.dh_visa_interchange_{customer_code}_{type_file}_{string_date} ti
+        inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+        ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+        inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+        on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+        inner join operational.dh_visa_transaction_{customer_code} vt
+        on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+        left join control.t_customer cus 
+        on (cus.code = ti.app_customer_code)
+        left join operational.m_currency cur 
+        on (cur.currency_numeric_code = ti.currency_transaction::integer)
+        left join operational.m_currency cur_local 
+        on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+        left join operational.dh_exchange_rate ex 
+        on ex.app_processing_date = vt.purchase_date
+        and currency_from_code = ti.currency_transaction
+        and currency_to_code = cur_local.currency_numeric_code::text
+        and ex.brand = &#39;VISA&#39;
+        left join operational.m_visa_business_transaction_type btt
+        on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+        left join operational.m_visa_business_transaction_cycle btc
+        on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+        WHERE to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+    ),vss_report as
+    (
+        SELECT 
+        t.app_processing_date,
+        report_type,
+        t2.aggregation_level,
+        summary_level_130,
+        case 
+            when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+            else
+                case 
+                    when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                        then c.visa_region_code::text
+                else 
+                    c.country_code
+                end 
+        end jurisdiction_assigned,
+        case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+        trim(t.fee_level_descriptor) fee_level_descriptor,
+        cu.currency_alphabetic_code  vss_currency,
+        btt.short_description business_transaction_type,
+        btc.short_description business_transaction_cycle,
+        case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+        sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+        sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+        sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+        from operational.dh_visa_transaction_vss_130_{customer_code}_in_{settlement_string_date} T
+        inner join operational.dh_visa_transaction_vss_calculated_field T2
+        on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+        left join operational.m_country c
+        on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                        when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                    else t.&#34;source_country_code_130&#34; end end::numeric)
+        left join operational.m_currency cu
+        on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+        left join operational.m_visa_business_transaction_type btt
+        on (btt.business_transaction_type_code = T.business_transaction_type_130)
+        left join operational.m_visa_business_transaction_cycle btc
+        on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+        where
+        trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+        t2.aggregation_level = 0
+        and length(trim(fee_level_descriptor))&gt;0
+        and not((trim(t.business_transaction_type_130)=&#39;310&#39; and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;1&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;1&#39;))
+        and not ((trim(t.business_transaction_type_130)::integer&gt;=519 and t.business_mode_130 = &#39;2&#39;) or (trim(t.business_transaction_cycle_130) in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;) and t.business_mode_130=&#39;2&#39;))
+        and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+        group by 1,2,3,4,5,6,7,8,9,10,11
+    ), interchange_report as
+    (   
+        select 
+        jurisdiction_assigned,
+        business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+        from interchange_assigned
+        group by 1,2,3,4,5,6,7,8
+    ), interchange_rules_visa_order as 
+    (
+        select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+        where to_date(&#39;{settlement_string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+        group by 1,2,3
+    ), join_vss_interchange as
+    (  select
+        iro.region_country_code jurisdiction_rule
+        ,iro.order_rule
+        ,iro.fee_descriptor fee_descriptor_rule
+        ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+        ,&#39;{str_business_mode}&#39; report_business_mode
+        ,&#39;{report_type}&#39; report_type
+        ,vss.jurisdiction_assigned vss_jurisdiction
+        ,vss.business_mode vss_business_mode
+        ,vss.fee_level_descriptor vss_fee_descriptor
+        ,vss.business_transaction_type settlement_business_transaction_type
+        ,vss.business_transaction_cycle settlement_business_transaction_cycle
+        ,vss.reversal_flag settlement_reversal_flag
+        ,vss.vss_count
+        ,vss.vss_amount
+        ,vss.irf_amount
+        ,itx.jurisdiction_assigned itx_jurisdiction
+        ,itx.business_mode itx_business_mode
+        ,itx.fee_descriptor itx_fee_descriptor
+        ,itx.business_transaction_type interchange_business_transaction_type
+        ,itx.business_transaction_cycle interchange_business_transaction_cycle
+        ,itx.reversal_flag interchange_reversal_flag
+        ,itx.transaction_count itx_count
+        ,itx.local_amount_transaction itx_amount
+        ,itx.local_calculated_value itx_irf_amount
+        ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+        ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+        ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+        ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+        ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+        ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+        from vss_report vss
+        full join interchange_report itx
+        on (
+        vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+        vss.business_mode = itx.business_mode and
+        vss.fee_level_descriptor = itx.fee_descriptor and 
+        coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+        coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+        vss.reversal_flag = itx.reversal_flag
+        )
+        left join interchange_rules_visa_order iro
+        on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+    ),error_vss_interchange as
+    (
+        select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+    ),agg_error_vss_interchange as
+    (
+        select
+        sum(vss_count) vss_count
+        ,sum(diff_count_abs) - sum(metric_excess_count) diff
+        ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+        from join_vss_interchange r
+    )
+    select
+    replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+    ,&#39;{self.client}&#39; app_customer_code
+    ,upper(&#39;{type_file}&#39;) app_type_file
+    ,&#39;&#39; app_hash_file
+    ,report_processing_date app_processing_date
+    ,jurisdiction_rule
+    ,order_rule
+    ,fee_descriptor_rule descriptor_rule
+    ,report_business_mode
+    ,report_type
+    ,vss_jurisdiction settlement_jurisdiction
+    ,vss_business_mode settlement_business_mode
+    ,vss_fee_descriptor settlement_fee_descriptor
+    ,settlement_business_transaction_type
+    ,settlement_business_transaction_cycle
+    ,settlement_reversal_flag
+    ,vss_count settlement_count
+    ,vss_amount settlement_amount
+    ,irf_amount settlement_irf_amount
+    ,itx_jurisdiction interchange_jurisdiction
+    ,itx_business_mode interchange_business_mode
+    ,itx_fee_descriptor interchange_fee_descriptor
+    ,interchange_business_transaction_type
+    ,interchange_business_transaction_cycle
+    ,interchange_reversal_flag
+    ,itx_count interchange_count
+    ,itx_amount interchange_amount
+    ,itx_irf_amount interchange_irf_amount
+    ,diff_count
+    ,diff_amount
+    ,diff_irf_amount
+    ,diff_count_abs
+    ,metric_count
+    ,metric_excess_count
+    ,absolute_error
+    from 
+    error_vss_interchange
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = (
+        f&#34;{customer_code}_{type_file}_{string_date}_visa_validation_interchange&#34;
+    )
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    message_insert = self.ps.insert_from_table(
+        table_scheme_tmp, table_name_tmp, table_scheme, table_name
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        message_insert,
+        self.module,
+    )
+
+    return &#34;finished&#34;</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_sms_interchange"><code class="name flex">
+<span>def <span class="ident">process_validation_visa_sms_interchange</span></span>(<span>self, string_date: str = None, type_file: str = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>VISA SMS validation interchange</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>string_date</code></strong> :&ensp;<code>str</code></dt>
+<dd>string date of file.</dd>
+<dt><strong><code>type_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Message</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_validation_visa_sms_interchange(
+    self, string_date: str = None, type_file: str = None
+) -&gt; str:
+    &#34;&#34;&#34;VISA SMS validation interchange
+    
+    Args:
+        string_date (str): string date of file.
+        type_file (str): type of file.
+
+    Returns:
+        str: Message
+    &#34;&#34;&#34;
+    table_scheme = &#34;operational&#34;
+    table_name = &#34;dh_visa_sms_validation_interchange&#34;
+    customer_code = self.client
+    business_mode = &#34;1&#34;
+    report_type = &#34;130&#34;
+    str_business_mode = &#34;acquiring&#34;
+    settlement_string_date = string_date
+    if string_date == None:
+        string_date = datetime.now().strftime(&#34;%Y%m%d&#34;)
+    if customer_code.lower() == &#34;brdro&#34; and type_file.lower() == &#34;out&#34;:
+        process_date = datetime.strptime(string_date, &#34;%Y%m%d&#34;) - timedelta(days=1)
+        settlement_string_date = process_date.strftime(&#34;%Y%m%d&#34;)
+    list_max_id = self.ps.select(
+        f&#34;{table_scheme}.{table_name}&#34;, cols=&#34;max(app_id) app_id&#34;
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        &#34;loading visa sms validation interchange&#34; + table_scheme + &#34;.&#34; + table_name,
+        self.module,
+    )
+
+    query_tmp = f&#34;&#34;&#34;
+    with interchange_assigned as
+    (
+        SELECT 
+        ti.app_id,ti.app_hash_file,ti.app_processing_date
+        ,cf.business_mode
+        ,cf.jurisdiction_assigned
+        ,ti.intelica_id
+        ,vt.transaction_code
+        ,vt.purchase_date
+        ,trim(ir.fee_descriptor) fee_descriptor
+        ,ti.amount_transaction
+        ,cur.currency_alphabetic_code currency_transaction
+        ,ex.exchange_value
+        ,ti.amount_transaction * coalesce(ex.exchange_value::numeric,1) local_amount_transaction
+        ,cur_local.currency_alphabetic_code local_currency_transaction
+        ,(ti.calculated_value) * coalesce(ex.exchange_value::numeric,1) local_calculated_value
+        ,vt.destination_amount
+        ,vt.destination_currency_code
+        ,cf.settlement_report_amount
+        ,cf.settlement_report_currency_code
+        ,btt.short_description business_transaction_type
+        ,btc.short_description business_transaction_cycle
+        ,cf.reversal_indicator reversal_flag
+        FROM operational.dh_visa_sms_interchange_{customer_code}_{type_file}_{string_date} ti
+        inner JOIN operational.M_INTERCHANGE_RULES_VISA IR 
+        ON (IR.INTELICA_ID::numeric = TI.INTELICA_ID and ir.region_country_code = ti.region_country_code)
+        inner join operational.dh_visa_transaction_calculated_field_{customer_code} cf
+        on (ti.app_id=cf.app_id and ti.app_hash_file=cf.app_hash_file)
+        inner join operational.dh_visa_transaction_{customer_code} vt
+        on (vt.app_id = ti.app_id and vt.app_hash_file=ti.app_hash_file)
+        left join control.t_customer cus 
+        on (cus.code = ti.app_customer_code)
+        left join operational.m_currency cur 
+        on (cur.currency_numeric_code = ti.currency_transaction::integer)
+        left join operational.m_currency cur_local 
+        on (cur_local.currency_alphabetic_code = cus.local_currency_code)
+        left join operational.dh_exchange_rate ex 
+        on ex.app_processing_date = vt.purchase_date
+        and currency_from_code = ti.currency_transaction
+        and currency_to_code = cur_local.currency_numeric_code::text
+        and ex.brand = &#39;VISA&#39;
+        left join operational.m_visa_business_transaction_type btt
+        on (btt.business_transaction_type_id::int = cf.business_transaction_type)
+        left join operational.m_visa_business_transaction_cycle btc
+        on (btc.business_transaction_cycle_id::int = cf.business_transaction_cycle)
+        WHERE to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN IR.VALID_FROM AND COALESCE(IR.VALID_UNTIL,CURRENT_DATE)
+    ),vss_report as
+    (
+        SELECT 
+        t.app_processing_date,
+        report_type,
+        t2.aggregation_level,
+        summary_level_130,
+        case 
+            when jurisdiction_code_130 = &#39;00&#39; then &#39;9&#39;
+            else
+                case 
+                    when t.source_country_code_130&lt;&gt;t.destination_country_code_130
+                        then c.visa_region_code::text
+                else 
+                    c.country_code
+                end 
+        end jurisdiction_assigned,
+        case t.business_mode_130 when &#39;2&#39; then &#39;issuing&#39; when &#39;1&#39; then &#39;acquiring&#39; end business_mode,
+        trim(t.fee_level_descriptor) fee_level_descriptor,
+        cu.currency_alphabetic_code  vss_currency,
+        btt.short_description business_transaction_type,
+        btc.short_description business_transaction_cycle,
+        case when t.reversal_indicator_130 = &#39;N&#39; then 0 else 1 end reversal_flag,
+        sum(cast(case when trim(count_130) = &#39;&#39; then &#39;0&#39; else count_130 end as int))  vss_count,
+        sum(interchange_amount_settlement_currency_130::numeric) vss_amount,
+        sum(reimbursement_fee_debits_settlement_currency::numeric + reimbursement_fee_credits_settlement_currency::numeric) irf_amount
+        from operational.dh_visa_transaction_vss_130_{customer_code}_{type_file}_{settlement_string_date} T
+        inner join operational.dh_visa_transaction_vss_calculated_field T2
+        on t.app_id = t2.app_id and t.app_hash_file = t2.app_hash_file and t.app_customer_code = t2.app_customer_code
+        left join operational.m_country c
+        on (c.country_numeric =case when trim(t.&#34;source_country_code_130&#34;)&lt;&gt;&#39;&#39; then case 
+                        when t.&#34;business_mode_130&#34; = &#39;2&#39; then t.&#34;destination_country_code_130&#34; 
+                    else t.&#34;source_country_code_130&#34; end end::numeric)
+        left join operational.m_currency cu
+        on (cu.currency_numeric_code=case when trim(t.settlement_currency_code_130)&lt;&gt;&#39;&#39; then t.settlement_currency_code_130::numeric end)
+        left join operational.m_visa_business_transaction_type btt
+        on (btt.business_transaction_type_code = T.business_transaction_type_130)
+        left join operational.m_visa_business_transaction_cycle btc
+        on (btc.business_transaction_cycle_code = T.business_transaction_cycle_130)
+        where
+        trim(t.business_mode_130)=&#39;{business_mode}&#39; and
+        t2.aggregation_level = 0
+        and t2.aggregation_level = 0
+        and length(trim(&#34;fee_level_descriptor&#34;))&gt;0
+        and trim(t.business_transaction_type_130)=&#39;310&#39;
+        and trim(t.business_transaction_cycle_130) not in (&#39;7&#39;,&#39;8&#39;,&#39;0&#39;)
+        and t.return_indicator_130 in (&#39;N&#39;,&#39; &#39;)
+        group by 1,2,3,4,5,6,7,8,9,10,11
+    ), interchange_report as
+    (   
+        select 
+        jurisdiction_assigned,
+        business_mode,app_processing_date,fee_descriptor,local_currency_transaction,business_transaction_type,business_transaction_cycle,reversal_flag,count(1) transaction_count,sum(local_amount_transaction) local_amount_transaction, sum(local_calculated_value) local_calculated_value
+        from interchange_assigned
+        group by 1,2,3,4,5,6,7,8
+    ), interchange_rules_visa_order as 
+    (
+        select jurisdiction,region_country_code,fee_descriptor,min(intelica_id::numeric) order_rule from operational.m_interchange_rules_visa
+        where to_date(&#39;{string_date}&#39;,&#39;yyyymmdd&#39;) BETWEEN VALID_FROM AND COALESCE(VALID_UNTIL,CURRENT_DATE)
+        group by 1,2,3
+    ), join_vss_interchange as
+    (  select
+        iro.region_country_code jurisdiction_rule
+        ,iro.order_rule
+        ,iro.fee_descriptor fee_descriptor_rule
+        ,coalesce(vss.app_processing_date,itx.app_processing_date) report_processing_date
+        ,&#39;{str_business_mode}&#39; report_business_mode
+        ,&#39;{report_type}&#39; report_type
+        ,vss.jurisdiction_assigned vss_jurisdiction
+        ,vss.business_mode vss_business_mode
+        ,vss.fee_level_descriptor vss_fee_descriptor
+        ,vss.business_transaction_type settlement_business_transaction_type
+        ,vss.business_transaction_cycle settlement_business_transaction_cycle
+        ,vss.reversal_flag settlement_reversal_flag
+        ,vss.vss_count
+        ,vss.vss_amount
+        ,vss.irf_amount
+        ,itx.jurisdiction_assigned itx_jurisdiction
+        ,itx.business_mode itx_business_mode
+        ,itx.fee_descriptor itx_fee_descriptor
+        ,itx.business_transaction_type interchange_business_transaction_type
+        ,itx.business_transaction_cycle interchange_business_transaction_cycle
+        ,itx.reversal_flag interchange_reversal_flag
+        ,itx.transaction_count itx_count
+        ,itx.local_amount_transaction itx_amount
+        ,itx.local_calculated_value itx_irf_amount
+        ,coalesce(vss.vss_count,0) - coalesce(itx.transaction_count,0) diff_count
+        ,coalesce(vss.vss_amount,0) - coalesce(itx.local_amount_transaction,0) diff_amount
+        ,coalesce(vss.irf_amount,0) - coalesce(itx.local_calculated_value,0) diff_irf_amount
+        ,abs(coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0)) diff_count_abs
+        ,case when coalesce(itx.transaction_count,0) &gt;= coalesce(vss.vss_count,0) then  coalesce(vss.vss_count,0) else coalesce(itx.transaction_count,0) end metric_count
+        ,case when coalesce(itx.transaction_count,0) &lt; coalesce(vss.vss_count,0) then 0 else coalesce(itx.transaction_count,0) - coalesce(vss.vss_count,0) end metric_excess_count
+        from vss_report vss
+        full join interchange_report itx
+        on (
+        vss.jurisdiction_assigned=itx.jurisdiction_assigned and
+        vss.business_mode = itx.business_mode and
+        vss.fee_level_descriptor = itx.fee_descriptor and 
+        coalesce(vss.business_transaction_type,&#39;&#39;) = coalesce(itx.business_transaction_type,&#39;&#39;) and 
+        coalesce(vss.business_transaction_cycle,&#39;&#39;) = coalesce(itx.business_transaction_cycle,&#39;&#39;) and 
+        vss.reversal_flag = itx.reversal_flag
+        )
+        left join interchange_rules_visa_order iro
+        on (iro.region_country_code = coalesce(vss.jurisdiction_assigned,itx.jurisdiction_assigned) and iro.fee_descriptor = coalesce(vss.fee_level_descriptor,itx.fee_descriptor))
+    ),error_vss_interchange as
+    (
+        select vi.*,((diff_count_abs - metric_excess_count) / coalesce(vss_count,1)::numeric) absolute_error from join_vss_interchange vi
+    ),agg_error_vss_interchange as
+    (
+        select
+        sum(vss_count) vss_count
+        ,sum(diff_count_abs) - sum(metric_excess_count) diff
+        ,((sum(diff_count_abs) - sum(metric_excess_count)) / sum(vss_count)) absolute_error
+        from join_vss_interchange r
+    )
+    select
+    replace(lower(&#39;{list_max_id[0][&#39;app_id&#39;]}&#39;),&#39;none&#39;,&#39;0&#39;)::numeric + row_number()over(order by jurisdiction_rule,order_rule) app_id
+    ,&#39;{self.client}&#39; app_customer_code
+    ,upper(&#39;{type_file}&#39;) app_type_file
+    ,&#39;&#39; app_hash_file
+    ,report_processing_date app_processing_date
+    ,jurisdiction_rule
+    ,order_rule
+    ,fee_descriptor_rule descriptor_rule
+    ,report_business_mode
+    ,report_type
+    ,vss_jurisdiction settlement_jurisdiction
+    ,vss_business_mode settlement_business_mode
+    ,vss_fee_descriptor settlement_fee_descriptor
+    ,settlement_business_transaction_type
+    ,settlement_business_transaction_cycle
+    ,settlement_reversal_flag
+    ,vss_count settlement_count
+    ,vss_amount settlement_amount
+    ,irf_amount settlement_irf_amount
+    ,itx_jurisdiction interchange_jurisdiction
+    ,itx_business_mode interchange_business_mode
+    ,itx_fee_descriptor interchange_fee_descriptor
+    ,interchange_business_transaction_type
+    ,interchange_business_transaction_cycle
+    ,interchange_reversal_flag
+    ,itx_count interchange_count
+    ,itx_amount interchange_amount
+    ,itx_irf_amount interchange_irf_amount
+    ,diff_count
+    ,diff_amount
+    ,diff_irf_amount
+    ,diff_count_abs
+    ,metric_count
+    ,metric_excess_count
+    ,absolute_error
+    from 
+    error_vss_interchange
+    &#34;&#34;&#34;
+    table_scheme_tmp = &#34;temporal&#34;
+    table_name_tmp = (
+        f&#34;{customer_code}_{type_file}_{string_date}_visa_sms_validation_interchange&#34;
+    )
+    table_tmp = f&#34;{table_scheme_tmp}.{table_name_tmp}&#34;
+    message_drop = self.ps.drop_table(table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_drop,
+        self.module,
+    )
+    message_create = self.ps.create_table_from_select(query_tmp, table_tmp)
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA SMS INTERCHANGE&#34;,
+        &#34;INFO&#34;,
+        message_create,
+        self.module,
+    )
+
+    message_insert = self.ps.insert_from_table(
+        table_scheme_tmp, table_name_tmp, table_scheme, table_name
+    )
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        customer_code,
+        &#34;VISA&#34;,
+        self.log_name,
+        &#34;VALIDATION OF VISA SMS INTERCHANGE FILE&#34;,
+        &#34;INFO&#34;,
+        message_insert,
+        self.module,
+    )
+
+    return &#34;finished&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.Validation</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation">Validation</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_interpretation" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_interpretation">process_validation_interpretation</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_mastercard_interchange" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_mastercard_interchange">process_validation_mastercard_interchange</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_interchange" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_interchange">process_validation_visa_interchange</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_sms_interchange" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Validation.validation.Validation.process_validation_visa_sms_interchange">process_validation_visa_sms_interchange</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

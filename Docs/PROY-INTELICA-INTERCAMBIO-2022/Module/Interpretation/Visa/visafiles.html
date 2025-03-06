@@ -1,0 +1,3245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from email import header
+from fileinput import filename
+from itertools import groupby
+from typing import List, Dict
+import os, pathlib, time
+from Module.Interpretation.Visa.parameters import Parameters
+import glob
+from Module.Persistence.connection import (
+    connect_to_postgreSQL as conn,
+    connect_to_s3 as s3,
+)
+import Module.Logs.logs as log
+import pandas as pd
+from datetime import datetime
+import warnings
+
+
+class read_files:
+    &#34;&#34;&#34;Class for read and interpretation of visa interchange files.&#34;&#34;&#34;
+
+    warnings.simplefilter(action=&#34;ignore&#34;)
+    read_tcr_list = Parameters().getTCRParameters()[&#34;TCR_LIST&#34;]
+    TCR_LIST = [i for i in range(len(read_tcr_list))]
+
+    def __init__(self) -&gt; None:
+        pass
+
+    def group_by_header_general(self, general: list) -&gt; List:
+        &#34;&#34;&#34;general transaction header
+
+         Args:
+            general (list): list of transactions.
+
+        Returns:
+            list : processed list of headers.
+
+        &#34;&#34;&#34;
+
+        def header_counter(r: str):
+            &#34;&#34;&#34;header counter in string&#34;&#34;&#34;
+            if len(r) == 170:
+                if r[5:6] == &#34;0&#34;:
+                    header_counter.ctr += 1
+                if &#34;90  &#34; in r[0:6]:
+                    header_counter.ctr += 1
+
+            if len(r) == 168:
+                if r[3:4] == &#34;0&#34;:
+                    header_counter.ctr += 1
+                if &#34;90&#34; in r[0:4]:
+                    header_counter.ctr += 1
+            return header_counter.ctr
+
+        header_counter.ctr = 0
+        return groupby(general, key=header_counter)
+
+    def read_visa_file(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start reading Visa transaction files to the interpretation
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        step = &#34;INTERPRETATION OF FILE&#34;
+        module = &#34;INTERPRETATION&#34;
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;opening file: &#34; + path_to_file,
+            module,
+        )
+
+        self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + type
+
+        resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+        pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Reading file: &#34; + path_to_file,
+            module,
+        )
+
+        if type == &#34;IN&#34;:
+            inc = None
+            on_error = False
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+
+            try:
+                with open(path_to_file, &#34;r&#34;) as f:
+                    first_line = f.readline()
+                    header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                    header_date = header_line[10:15]
+
+                datetime_header = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%y%m%d&#34;)
+                )
+                destiny_file = datetime_header
+                date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                    &#34;%Y%m%d&#34;
+                )
+                transactions = []
+                with open(path_to_file, &#34;r&#34;) as f:
+                    for line in f:
+                        transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+                transactions_p = [
+                    list(l) for k, l in self.group_by_header_general(transactions)
+                ]
+
+                date_formated_as = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%Y-%m-%d&#34;)
+                )
+
+                check_reprocces = conn().select(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                        and code = &#39;{hash}&#39;
+                        &#34;&#34;&#34;,
+                    &#34;count(code) as file&#34;,
+                )
+
+                if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                    status = &#34;REVISION&#34;
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;VISA&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;FILE IS PART OF A REVISION&#34;,
+                        module,
+                    )
+
+                if status == &#34;REVISION&#34;:
+                    self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+                pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                    parents=True, exist_ok=True
+                )
+
+                header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+                pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+                csv_name_inc = (
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+
+                with open(csv_name_inc, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as inc:
+                    id_transaction = 1
+                    for i in transactions_p:
+                        new = []
+
+                        for b in self.TCR_LIST:
+                            value = [a for a in i if int(a[5:6]) == b]
+                            if len(value) != 0:
+                                new.append(value[0])
+                            else:
+                                new.append(&#34;&#34;)
+
+                        a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                        if len(a) != 0:
+                            new[0], new[a[0]] = new[a[0]], new[0]
+                        new.insert(0, str(id_transaction))
+                        new.insert(1, client)
+                        new.insert(2, &#34;IN&#34;)
+                        new.insert(3, str(hash))
+                        new.insert(4, str(date_formated_as))
+
+                        id_transaction = id_transaction + 1
+                        r = &#34;¿&#34;.join(new)
+                        inc.write(r)
+                        inc.write(&#34;\n&#34;)
+
+                df = pd.read_csv(
+                    csv_name_inc,
+                    sep=&#34;¿&#34;,
+                    dtype=str,
+                    header=None,
+                    encoding=&#34;Latin-1&#34;,
+                    engine=&#34;python&#34;,
+                )
+
+                updating = conn().update(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                    {
+                        &#34;description_status&#34;: status,
+                        &#34;records_number&#34;: str(len(df.index)),
+                        &#34;file_date&#34;: date_formated_as,
+                        &#34;control_message&#34;: &#34;Interpretation&#34;,
+                    },
+                )
+
+                parquet_file = Utils().generate_parquet_for_visa(
+                    parent_directory,
+                    date_for_name,
+                    csv_name_inc,
+                    type,
+                    hash,
+                    client,
+                    status,
+                    log_name,
+                )
+
+                if updating[0]:
+                    message_type = &#34;INFO&#34;
+                    message = updating[1][&#34;Message&#34;]
+                else:
+                    message_type = &#34;CRITICAL&#34;
+                    message = (
+                        &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                    )
+
+            except KeyError as ke:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | KeyException on parameters: &#39;&#34;
+                    + str(ke)
+                    + &#34;&#39; key is not founded in TCR&#34;,
+                    module,
+                )
+
+            except ValueError as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+            except Exception as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module,
+                )
+                status = &#34;ERROR&#34;
+
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(len(df.index)),
+                    module,
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module,
+            )
+
+        if type == &#34;OUT&#34;:
+            out = None
+            on_error = False
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+
+            try:
+                with open(path_to_file, &#34;r&#34;) as f:
+                    first_line = f.readline()
+                    header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                    header_date = header_line[8:13]
+
+                datetime_header = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%y%m%d&#34;)
+                )
+                destiny_file = datetime_header
+                date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                    &#34;%Y%m%d&#34;
+                )
+                transactions = []
+
+                with open(path_to_file, &#34;r&#34;) as f:
+                    for line in f:
+                        transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+                transactions_p = [
+                    list(l) for k, l in self.group_by_header_general(transactions)
+                ]
+
+                date_formated_as = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%Y-%m-%d&#34;)
+                )
+
+                check_reprocces = conn().select(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                        and code = &#39;{hash}&#39;
+                        &#34;&#34;&#34;,
+                    &#34;count(code) as file&#34;,
+                )
+
+                if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                    status = &#34;REVISION&#34;
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;VISA&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;FILE IS PART OF A REVISION&#34;,
+                        module,
+                    )
+
+                if status == &#34;REVISION&#34;:
+                    self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+                pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                    parents=True, exist_ok=True
+                )
+
+                header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+                pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+                csv_name_out = (
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+
+                with open(csv_name_out, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as out:
+                    id_transaction = 1
+                    for i in transactions_p:
+                        new = []
+                        for b in self.TCR_LIST:
+                            value = [a for a in i if int(a[3:4]) == b]
+                            if len(value) != 0:
+                                new.append(value[0])
+                            else:
+                                new.append(&#34;&#34;)
+                        a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                        if len(a) != 0:
+                            new[0], new[a[0]] = new[a[0]], new[0]
+                        new.insert(0, str(id_transaction))
+                        new.insert(1, client)
+                        new.insert(2, &#34;OUT&#34;)
+                        new.insert(3, str(hash))
+                        new.insert(4, str(date_formated_as))
+                        id_transaction = id_transaction + 1
+                        r = &#34;¿&#34;.join(new)
+                        out.write(r)
+                        out.write(&#34;\n&#34;)
+
+                df = pd.read_csv(
+                    csv_name_out,
+                    sep=&#34;¿&#34;,
+                    dtype=str,
+                    encoding=&#34;Latin-1&#34;,
+                    header=None,
+                    engine=&#34;python&#34;,
+                )
+
+                updating = conn().update(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                    {
+                        &#34;description_status&#34;: status,
+                        &#34;records_number&#34;: str(len(df.index)),
+                        &#34;file_date&#34;: date_formated_as,
+                        &#34;control_message&#34;: &#34;Interpretation&#34;,
+                    },
+                )
+
+                parquet_file = Utils().generate_parquet_for_visa(
+                    parent_directory,
+                    date_for_name,
+                    csv_name_out,
+                    type,
+                    hash,
+                    client,
+                    status,
+                    log_name,
+                )
+
+                if updating[0]:
+                    message_type = &#34;INFO&#34;
+                    message = updating[1][&#34;Message&#34;]
+                else:
+                    message_type = &#34;CRITICAL&#34;
+                    message = (
+                        &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                    )
+
+            except KeyError as ke:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | KeyException on parameters: &#39;&#34;
+                    + str(ke)
+                    + &#34;&#39; key is not founded in TCR&#34;,
+                    module,
+                )
+
+            except ValueError as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+            except Exception as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module,
+                )
+                status = &#34;ERROR&#34;
+
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(len(df.index)),
+                    module,
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module,
+            )
+
+        return {
+            &#34;result&#34;: True,
+            &#34;message&#34;: &#34;Finished&#34;,
+            &#34;on_error&#34;: on_error,
+            &#34;parquet_info&#34;: parquet_file,
+            &#34;status&#34;: status,
+        }
+
+    def read_visa_ardef(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start reading Visa ARDEF files to the interpretation
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        st_timestamp = int(float(datetime.now().timestamp()))
+        on_error = False
+        step = &#34;INTERPRETATION OF ARDEF FILE&#34;
+        module = &#34;INTERPRETATION&#34;
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;opening file: &#34; + path_to_file,
+            module,
+        )
+
+        self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + &#34;ARDEF&#34;
+        resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+        pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Reading file: &#34; + path_to_file,
+            module,
+        )
+
+        try:
+            ardef = None
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+            date_formated_as = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+            lines = []
+            versions = []
+            with open(path_to_file, &#34;r&#34;) as f:
+                for line in f:
+                    if line[0:2] == &#34;VL&#34; and &#34;C****&#34; not in line:
+                        lines.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+
+                    if line[0:8] == &#34;AAACTRNG&#34; and line[10:17] == &#34;AEPACRN&#34;:
+                        header_date = line[23:31]
+                        version_number = line[63:67]
+                        versions.append([version_number, header_date])
+
+            ultimate_header = [
+                version
+                for version in versions
+                if version[0] == max([version[0] for version in versions])
+            ]
+            ultimate_date = ultimate_header[0][1]
+            date_formated_as = (
+                datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+                .date()
+                .strftime(&#34;%Y-%m-%d&#34;)
+            )
+            destiny_file = (
+                datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+                .date()
+                .strftime(&#34;%y%m%d&#34;)
+            )
+
+            ultimate_version = ultimate_header[0][0]
+            date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+            destiny_directory = parent_directory + &#34;/RESULT/VISA/ARDEF/&#34; + destiny_file
+            pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+
+            df = pd.DataFrame(lines)
+            df.insert(0, &#34;app_file_header&#34;, date_formated_as)
+            df.insert(1, &#34;app_hash_file&#34;, hash)
+
+            df.to_csv(
+                destiny_directory
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;_&#34;
+                + ultimate_version
+                + &#34;.csv&#34;,
+                index=None,
+                header=None,
+                sep=&#34;¿&#34;,
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Finished reading of file {path_to_file}&#34;,
+                module,
+            )
+            status = &#34;PROCESSED&#34;
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;file_date&#34;: date_formated_as,
+                    &#34;control_message&#34;: &#34;Interpretation&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            step = &#34;UPDATING STATUS OF FILE&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module,
+            )
+
+            csv_name = (
+                destiny_directory + &#34;/&#34; + destiny_file + &#34;_&#34; + ultimate_version + &#34;.csv&#34;
+            )
+            parquet_file = Utils().generate_parquet_for_visa(
+                parent_directory,
+                date_for_name,
+                csv_name,
+                &#34;ARDEF&#34;,
+                hash,
+                client,
+                status,
+                log_name,
+            )
+
+            return {
+                &#34;result&#34;: True,
+                &#34;message&#34;: &#34;Finished&#34;,
+                &#34;on_error&#34;: on_error,
+                &#34;parquet_info&#34;: parquet_file,
+                &#34;status&#34;: status,
+            }
+
+        except Exception as e:
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;INTERPRETATION OF ARDEF FILE&#34;,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e)
+                + &#34; | invalid file format&#34;,
+                module,
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;INTERPRETATION OF ARDEF FILE&#34;,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module,
+            )
+            status = &#34;ERROR&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: 0,
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module,
+            )
+
+
+class Utils:
+    &#34;&#34;&#34;Class with other methods used in interpretation of visa file&#34;&#34;&#34;
+
+    read_tcr_list = Parameters().getTCRParameters()[&#34;TCR_LIST&#34;]
+    TCR_LIST = [i for i in range(len(read_tcr_list))]
+
+    def __init__(self) -&gt; None:
+        self.structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+        pass
+
+    def generate_parquet_for_visa(
+        self,
+        parent_path: str,
+        date: str,
+        from_file: str,
+        file_type: str,
+        hash: str,
+        client: str,
+        status: str,
+        log_name,
+    ):
+        &#34;&#34;&#34;Generates a parquet file from visa csv base file
+
+        Args:
+            parent_path (str): parent path.
+            date (str): file header.
+            from_file (str): path to csv file.
+            file_type (str): type of file.
+            hash (str): hash code of file.
+            client (str): client code.
+            status (str): status of file.
+            log_name (str): log file name.
+
+        Returns:
+            dict: dicionary with file data
+        &#34;&#34;&#34;
+        result_path = f&#34;{parent_path}/RESULT/VISA/{file_type}&#34;
+
+        step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+        module = &#34;INTERPRETATION&#34;
+        s3_to = &#34;&#34;
+        if status == &#34;REVISION&#34;:
+            result_path += &#34;/REVISION&#34;
+            s3_to = &#34;REVISION/&#34;
+
+        df = pd.read_csv(from_file, header=None, sep=&#34;¿&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+        df.applymap(str)
+
+        if file_type == &#34;IN&#34; or file_type == &#34;OUT&#34;:
+            column_quantity = len(self.TCR_LIST) + 5
+            df.columns = [str(i) for i in range(column_quantity)]
+
+        else:
+            df.columns = [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;]
+        parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+        local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+        pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+        df.to_parquet(local_route)
+
+        s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+        upload = s3().upload_object(self.structured, local_route, s3_route)
+        if upload:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+                module,
+            )
+        return {
+            &#34;type&#34;: file_type,
+            &#34;s3&#34;: s3_route,
+            &#34;local&#34;: local_route,
+            &#34;file_header&#34;: date,
+            &#34;hash&#34;: hash,
+        }</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils"><code class="flex name class">
+<span>class <span class="ident">Utils</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class with other methods used in interpretation of visa file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Utils:
+    &#34;&#34;&#34;Class with other methods used in interpretation of visa file&#34;&#34;&#34;
+
+    read_tcr_list = Parameters().getTCRParameters()[&#34;TCR_LIST&#34;]
+    TCR_LIST = [i for i in range(len(read_tcr_list))]
+
+    def __init__(self) -&gt; None:
+        self.structured = os.getenv(&#34;STRUCTURED_BUCKET&#34;)
+        pass
+
+    def generate_parquet_for_visa(
+        self,
+        parent_path: str,
+        date: str,
+        from_file: str,
+        file_type: str,
+        hash: str,
+        client: str,
+        status: str,
+        log_name,
+    ):
+        &#34;&#34;&#34;Generates a parquet file from visa csv base file
+
+        Args:
+            parent_path (str): parent path.
+            date (str): file header.
+            from_file (str): path to csv file.
+            file_type (str): type of file.
+            hash (str): hash code of file.
+            client (str): client code.
+            status (str): status of file.
+            log_name (str): log file name.
+
+        Returns:
+            dict: dicionary with file data
+        &#34;&#34;&#34;
+        result_path = f&#34;{parent_path}/RESULT/VISA/{file_type}&#34;
+
+        step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+        module = &#34;INTERPRETATION&#34;
+        s3_to = &#34;&#34;
+        if status == &#34;REVISION&#34;:
+            result_path += &#34;/REVISION&#34;
+            s3_to = &#34;REVISION/&#34;
+
+        df = pd.read_csv(from_file, header=None, sep=&#34;¿&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+        df.applymap(str)
+
+        if file_type == &#34;IN&#34; or file_type == &#34;OUT&#34;:
+            column_quantity = len(self.TCR_LIST) + 5
+            df.columns = [str(i) for i in range(column_quantity)]
+
+        else:
+            df.columns = [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;]
+        parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+        local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+        pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+        df.to_parquet(local_route)
+
+        s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+        upload = s3().upload_object(self.structured, local_route, s3_route)
+        if upload:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+                module,
+            )
+        return {
+            &#34;type&#34;: file_type,
+            &#34;s3&#34;: s3_route,
+            &#34;local&#34;: local_route,
+            &#34;file_header&#34;: date,
+            &#34;hash&#34;: hash,
+        }</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.TCR_LIST"><code class="name">var <span class="ident">TCR_LIST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.read_tcr_list"><code class="name">var <span class="ident">read_tcr_list</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.generate_parquet_for_visa"><code class="name flex">
+<span>def <span class="ident">generate_parquet_for_visa</span></span>(<span>self, parent_path: str, date: str, from_file: str, file_type: str, hash: str, client: str, status: str, log_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a parquet file from visa csv base file</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>parent_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>parent path.</dd>
+<dt><strong><code>date</code></strong> :&ensp;<code>str</code></dt>
+<dd>file header.</dd>
+<dt><strong><code>from_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to csv file.</dd>
+<dt><strong><code>file_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client code.</dd>
+<dt><strong><code>status</code></strong> :&ensp;<code>str</code></dt>
+<dd>status of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>log file name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>dicionary with file data</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_parquet_for_visa(
+    self,
+    parent_path: str,
+    date: str,
+    from_file: str,
+    file_type: str,
+    hash: str,
+    client: str,
+    status: str,
+    log_name,
+):
+    &#34;&#34;&#34;Generates a parquet file from visa csv base file
+
+    Args:
+        parent_path (str): parent path.
+        date (str): file header.
+        from_file (str): path to csv file.
+        file_type (str): type of file.
+        hash (str): hash code of file.
+        client (str): client code.
+        status (str): status of file.
+        log_name (str): log file name.
+
+    Returns:
+        dict: dicionary with file data
+    &#34;&#34;&#34;
+    result_path = f&#34;{parent_path}/RESULT/VISA/{file_type}&#34;
+
+    step = &#34;JOIN CSV FILES AND UPLOAD .PARQUET TO STRUCTURED BUCKET&#34;
+    module = &#34;INTERPRETATION&#34;
+    s3_to = &#34;&#34;
+    if status == &#34;REVISION&#34;:
+        result_path += &#34;/REVISION&#34;
+        s3_to = &#34;REVISION/&#34;
+
+    df = pd.read_csv(from_file, header=None, sep=&#34;¿&#34;, encoding=&#34;Latin-1&#34;, dtype=str)
+    df.applymap(str)
+
+    if file_type == &#34;IN&#34; or file_type == &#34;OUT&#34;:
+        column_quantity = len(self.TCR_LIST) + 5
+        df.columns = [str(i) for i in range(column_quantity)]
+
+    else:
+        df.columns = [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;]
+    parquet_name = f&#34;&#34;&#34;{date}_{hash}_{file_type}.parquet&#34;&#34;&#34;
+    local_route = f&#34;&#34;&#34;{result_path}/{date}/{parquet_name}&#34;&#34;&#34;
+    pathlib.Path(f&#34;{result_path}/{date}/&#34;).mkdir(parents=True, exist_ok=True)
+    df.to_parquet(local_route)
+
+    s3_route = f&#34;&#34;&#34;{s3_to}{client}/{date}/{parquet_name}&#34;&#34;&#34;
+    upload = s3().upload_object(self.structured, local_route, s3_route)
+    if upload:
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;FILE UPLOADED TO ROUTE: &#34; + s3_route,
+            module,
+        )
+    return {
+        &#34;type&#34;: file_type,
+        &#34;s3&#34;: s3_route,
+        &#34;local&#34;: local_route,
+        &#34;file_header&#34;: date,
+        &#34;hash&#34;: hash,
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files"><code class="flex name class">
+<span>class <span class="ident">read_files</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class for read and interpretation of visa interchange files.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class read_files:
+    &#34;&#34;&#34;Class for read and interpretation of visa interchange files.&#34;&#34;&#34;
+
+    warnings.simplefilter(action=&#34;ignore&#34;)
+    read_tcr_list = Parameters().getTCRParameters()[&#34;TCR_LIST&#34;]
+    TCR_LIST = [i for i in range(len(read_tcr_list))]
+
+    def __init__(self) -&gt; None:
+        pass
+
+    def group_by_header_general(self, general: list) -&gt; List:
+        &#34;&#34;&#34;general transaction header
+
+         Args:
+            general (list): list of transactions.
+
+        Returns:
+            list : processed list of headers.
+
+        &#34;&#34;&#34;
+
+        def header_counter(r: str):
+            &#34;&#34;&#34;header counter in string&#34;&#34;&#34;
+            if len(r) == 170:
+                if r[5:6] == &#34;0&#34;:
+                    header_counter.ctr += 1
+                if &#34;90  &#34; in r[0:6]:
+                    header_counter.ctr += 1
+
+            if len(r) == 168:
+                if r[3:4] == &#34;0&#34;:
+                    header_counter.ctr += 1
+                if &#34;90&#34; in r[0:4]:
+                    header_counter.ctr += 1
+            return header_counter.ctr
+
+        header_counter.ctr = 0
+        return groupby(general, key=header_counter)
+
+    def read_visa_file(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start reading Visa transaction files to the interpretation
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        step = &#34;INTERPRETATION OF FILE&#34;
+        module = &#34;INTERPRETATION&#34;
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;opening file: &#34; + path_to_file,
+            module,
+        )
+
+        self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + type
+
+        resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+        pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Reading file: &#34; + path_to_file,
+            module,
+        )
+
+        if type == &#34;IN&#34;:
+            inc = None
+            on_error = False
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+
+            try:
+                with open(path_to_file, &#34;r&#34;) as f:
+                    first_line = f.readline()
+                    header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                    header_date = header_line[10:15]
+
+                datetime_header = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%y%m%d&#34;)
+                )
+                destiny_file = datetime_header
+                date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                    &#34;%Y%m%d&#34;
+                )
+                transactions = []
+                with open(path_to_file, &#34;r&#34;) as f:
+                    for line in f:
+                        transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+                transactions_p = [
+                    list(l) for k, l in self.group_by_header_general(transactions)
+                ]
+
+                date_formated_as = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%Y-%m-%d&#34;)
+                )
+
+                check_reprocces = conn().select(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                        and code = &#39;{hash}&#39;
+                        &#34;&#34;&#34;,
+                    &#34;count(code) as file&#34;,
+                )
+
+                if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                    status = &#34;REVISION&#34;
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;VISA&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;FILE IS PART OF A REVISION&#34;,
+                        module,
+                    )
+
+                if status == &#34;REVISION&#34;:
+                    self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+                pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                    parents=True, exist_ok=True
+                )
+
+                header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+                pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+                csv_name_inc = (
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+
+                with open(csv_name_inc, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as inc:
+                    id_transaction = 1
+                    for i in transactions_p:
+                        new = []
+
+                        for b in self.TCR_LIST:
+                            value = [a for a in i if int(a[5:6]) == b]
+                            if len(value) != 0:
+                                new.append(value[0])
+                            else:
+                                new.append(&#34;&#34;)
+
+                        a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                        if len(a) != 0:
+                            new[0], new[a[0]] = new[a[0]], new[0]
+                        new.insert(0, str(id_transaction))
+                        new.insert(1, client)
+                        new.insert(2, &#34;IN&#34;)
+                        new.insert(3, str(hash))
+                        new.insert(4, str(date_formated_as))
+
+                        id_transaction = id_transaction + 1
+                        r = &#34;¿&#34;.join(new)
+                        inc.write(r)
+                        inc.write(&#34;\n&#34;)
+
+                df = pd.read_csv(
+                    csv_name_inc,
+                    sep=&#34;¿&#34;,
+                    dtype=str,
+                    header=None,
+                    encoding=&#34;Latin-1&#34;,
+                    engine=&#34;python&#34;,
+                )
+
+                updating = conn().update(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                    {
+                        &#34;description_status&#34;: status,
+                        &#34;records_number&#34;: str(len(df.index)),
+                        &#34;file_date&#34;: date_formated_as,
+                        &#34;control_message&#34;: &#34;Interpretation&#34;,
+                    },
+                )
+
+                parquet_file = Utils().generate_parquet_for_visa(
+                    parent_directory,
+                    date_for_name,
+                    csv_name_inc,
+                    type,
+                    hash,
+                    client,
+                    status,
+                    log_name,
+                )
+
+                if updating[0]:
+                    message_type = &#34;INFO&#34;
+                    message = updating[1][&#34;Message&#34;]
+                else:
+                    message_type = &#34;CRITICAL&#34;
+                    message = (
+                        &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                    )
+
+            except KeyError as ke:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | KeyException on parameters: &#39;&#34;
+                    + str(ke)
+                    + &#34;&#39; key is not founded in TCR&#34;,
+                    module,
+                )
+
+            except ValueError as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+            except Exception as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if inc != None:
+                    inc.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module,
+                )
+                status = &#34;ERROR&#34;
+
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(len(df.index)),
+                    module,
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module,
+            )
+
+        if type == &#34;OUT&#34;:
+            out = None
+            on_error = False
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+
+            try:
+                with open(path_to_file, &#34;r&#34;) as f:
+                    first_line = f.readline()
+                    header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                    header_date = header_line[8:13]
+
+                datetime_header = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%y%m%d&#34;)
+                )
+                destiny_file = datetime_header
+                date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                    &#34;%Y%m%d&#34;
+                )
+                transactions = []
+
+                with open(path_to_file, &#34;r&#34;) as f:
+                    for line in f:
+                        transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+                transactions_p = [
+                    list(l) for k, l in self.group_by_header_general(transactions)
+                ]
+
+                date_formated_as = (
+                    datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                    .date()
+                    .strftime(&#34;%Y-%m-%d&#34;)
+                )
+
+                check_reprocces = conn().select(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                        and code = &#39;{hash}&#39;
+                        &#34;&#34;&#34;,
+                    &#34;count(code) as file&#34;,
+                )
+
+                if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                    status = &#34;REVISION&#34;
+                    log.logs().exist_file(
+                        &#34;OPERATIONAL&#34;,
+                        client,
+                        &#34;VISA&#34;,
+                        log_name,
+                        step,
+                        &#34;WARNING&#34;,
+                        &#34;FILE IS PART OF A REVISION&#34;,
+                        module,
+                    )
+
+                if status == &#34;REVISION&#34;:
+                    self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+                pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                    parents=True, exist_ok=True
+                )
+
+                header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+                pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+                csv_name_out = (
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+
+                with open(csv_name_out, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as out:
+                    id_transaction = 1
+                    for i in transactions_p:
+                        new = []
+                        for b in self.TCR_LIST:
+                            value = [a for a in i if int(a[3:4]) == b]
+                            if len(value) != 0:
+                                new.append(value[0])
+                            else:
+                                new.append(&#34;&#34;)
+                        a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                        if len(a) != 0:
+                            new[0], new[a[0]] = new[a[0]], new[0]
+                        new.insert(0, str(id_transaction))
+                        new.insert(1, client)
+                        new.insert(2, &#34;OUT&#34;)
+                        new.insert(3, str(hash))
+                        new.insert(4, str(date_formated_as))
+                        id_transaction = id_transaction + 1
+                        r = &#34;¿&#34;.join(new)
+                        out.write(r)
+                        out.write(&#34;\n&#34;)
+
+                df = pd.read_csv(
+                    csv_name_out,
+                    sep=&#34;¿&#34;,
+                    dtype=str,
+                    encoding=&#34;Latin-1&#34;,
+                    header=None,
+                    engine=&#34;python&#34;,
+                )
+
+                updating = conn().update(
+                    &#34;CONTROL.T_CONTROL_FILE&#34;,
+                    f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                    {
+                        &#34;description_status&#34;: status,
+                        &#34;records_number&#34;: str(len(df.index)),
+                        &#34;file_date&#34;: date_formated_as,
+                        &#34;control_message&#34;: &#34;Interpretation&#34;,
+                    },
+                )
+
+                parquet_file = Utils().generate_parquet_for_visa(
+                    parent_directory,
+                    date_for_name,
+                    csv_name_out,
+                    type,
+                    hash,
+                    client,
+                    status,
+                    log_name,
+                )
+
+                if updating[0]:
+                    message_type = &#34;INFO&#34;
+                    message = updating[1][&#34;Message&#34;]
+                else:
+                    message_type = &#34;CRITICAL&#34;
+                    message = (
+                        &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                    )
+
+            except KeyError as ke:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | KeyException on parameters: &#39;&#34;
+                    + str(ke)
+                    + &#34;&#39; key is not founded in TCR&#34;,
+                    module,
+                )
+
+            except ValueError as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                    os.remove(
+                        self.path_to_file_destiny
+                        + &#34;/&#34;
+                        + destiny_file
+                        + &#34;/&#34;
+                        + destiny_file
+                        + str(file_finger_print)
+                        + &#34;.csv&#34;
+                    )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+            except Exception as e:
+                df = pd.DataFrame()
+                parquet_file = None
+                on_error = True
+                if out != None:
+                    out.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;Error reading file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(0)
+                    + &#34; | exception reading file: &#34;
+                    + str(e),
+                    module,
+                )
+
+            if on_error:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;ERROR&#34;,
+                    &#34;Closed reading of file with error: &#34; + path_to_file,
+                    module,
+                )
+                status = &#34;ERROR&#34;
+
+            else:
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;INFO&#34;,
+                    &#34;Finished read of file: &#34;
+                    + path_to_file
+                    + &#34; | readed rows: &#34;
+                    + str(len(df.index)),
+                    module,
+                )
+                if status == &#34;IN PROGRESS&#34;:
+                    status = &#34;PROCESSED&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;UPDATE STATUS: &#34; + message,
+                module,
+            )
+
+        return {
+            &#34;result&#34;: True,
+            &#34;message&#34;: &#34;Finished&#34;,
+            &#34;on_error&#34;: on_error,
+            &#34;parquet_info&#34;: parquet_file,
+            &#34;status&#34;: status,
+        }
+
+    def read_visa_ardef(
+        self,
+        path_to_file: str,
+        parent_directory: str,
+        type: str,
+        log_name: str,
+        client: str,
+        hash: str,
+    ) -&gt; dict:
+        &#34;&#34;&#34;Method to start reading Visa ARDEF files to the interpretation
+
+        Args:
+            path_to_file (str): path to local file.
+            parent_directory (str): path to execution folder.
+            type (str): type of file.
+            log_name (str): name of log file.
+            client (str): client name.
+            hash (str): hash code of file.
+            blocked (bool): True if file is blocked in 1014 bytes string.
+            ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+            encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+        Returns:
+            dict : dictionary of file data.
+
+        &#34;&#34;&#34;
+        st_timestamp = int(float(datetime.now().timestamp()))
+        on_error = False
+        step = &#34;INTERPRETATION OF ARDEF FILE&#34;
+        module = &#34;INTERPRETATION&#34;
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;opening file: &#34; + path_to_file,
+            module,
+        )
+
+        self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + &#34;ARDEF&#34;
+        resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+        pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            &#34;Reading file: &#34; + path_to_file,
+            module,
+        )
+
+        try:
+            ardef = None
+            file_finger_print = time.time_ns()
+            status = &#34;IN PROGRESS&#34;
+            date_formated_as = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+            lines = []
+            versions = []
+            with open(path_to_file, &#34;r&#34;) as f:
+                for line in f:
+                    if line[0:2] == &#34;VL&#34; and &#34;C****&#34; not in line:
+                        lines.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+
+                    if line[0:8] == &#34;AAACTRNG&#34; and line[10:17] == &#34;AEPACRN&#34;:
+                        header_date = line[23:31]
+                        version_number = line[63:67]
+                        versions.append([version_number, header_date])
+
+            ultimate_header = [
+                version
+                for version in versions
+                if version[0] == max([version[0] for version in versions])
+            ]
+            ultimate_date = ultimate_header[0][1]
+            date_formated_as = (
+                datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+                .date()
+                .strftime(&#34;%Y-%m-%d&#34;)
+            )
+            destiny_file = (
+                datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+                .date()
+                .strftime(&#34;%y%m%d&#34;)
+            )
+
+            ultimate_version = ultimate_header[0][0]
+            date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+            destiny_directory = parent_directory + &#34;/RESULT/VISA/ARDEF/&#34; + destiny_file
+            pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+
+            df = pd.DataFrame(lines)
+            df.insert(0, &#34;app_file_header&#34;, date_formated_as)
+            df.insert(1, &#34;app_hash_file&#34;, hash)
+
+            df.to_csv(
+                destiny_directory
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;_&#34;
+                + ultimate_version
+                + &#34;.csv&#34;,
+                index=None,
+                header=None,
+                sep=&#34;¿&#34;,
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                f&#34;Finished reading of file {path_to_file}&#34;,
+                module,
+            )
+            status = &#34;PROCESSED&#34;
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;file_date&#34;: date_formated_as,
+                    &#34;control_message&#34;: &#34;Interpretation&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            step = &#34;UPDATING STATUS OF FILE&#34;
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module,
+            )
+
+            csv_name = (
+                destiny_directory + &#34;/&#34; + destiny_file + &#34;_&#34; + ultimate_version + &#34;.csv&#34;
+            )
+            parquet_file = Utils().generate_parquet_for_visa(
+                parent_directory,
+                date_for_name,
+                csv_name,
+                &#34;ARDEF&#34;,
+                hash,
+                client,
+                status,
+                log_name,
+            )
+
+            return {
+                &#34;result&#34;: True,
+                &#34;message&#34;: &#34;Finished&#34;,
+                &#34;on_error&#34;: on_error,
+                &#34;parquet_info&#34;: parquet_file,
+                &#34;status&#34;: status,
+            }
+
+        except Exception as e:
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;INTERPRETATION OF ARDEF FILE&#34;,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e)
+                + &#34; | invalid file format&#34;,
+                module,
+            )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;INTERPRETATION OF ARDEF FILE&#34;,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module,
+            )
+            status = &#34;ERROR&#34;
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: 0,
+                    &#34;control_message&#34;: &#34;Closed&#34;,
+                },
+            )
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                &#34;UPDATING STATUS OF FILE&#34;,
+                message_type,
+                &#34;Updated status: &#34; + message,
+                module,
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.TCR_LIST"><code class="name">var <span class="ident">TCR_LIST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_tcr_list"><code class="name">var <span class="ident">read_tcr_list</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.group_by_header_general"><code class="name flex">
+<span>def <span class="ident">group_by_header_general</span></span>(<span>self, general: list) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>general transaction header</p>
+<p>Args:
+general (list): list of transactions.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>processed list of headers.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def group_by_header_general(self, general: list) -&gt; List:
+    &#34;&#34;&#34;general transaction header
+
+     Args:
+        general (list): list of transactions.
+
+    Returns:
+        list : processed list of headers.
+
+    &#34;&#34;&#34;
+
+    def header_counter(r: str):
+        &#34;&#34;&#34;header counter in string&#34;&#34;&#34;
+        if len(r) == 170:
+            if r[5:6] == &#34;0&#34;:
+                header_counter.ctr += 1
+            if &#34;90  &#34; in r[0:6]:
+                header_counter.ctr += 1
+
+        if len(r) == 168:
+            if r[3:4] == &#34;0&#34;:
+                header_counter.ctr += 1
+            if &#34;90&#34; in r[0:4]:
+                header_counter.ctr += 1
+        return header_counter.ctr
+
+    header_counter.ctr = 0
+    return groupby(general, key=header_counter)</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_ardef"><code class="name flex">
+<span>def <span class="ident">read_visa_ardef</span></span>(<span>self, path_to_file: str, parent_directory: str, type: str, log_name: str, client: str, hash: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to start reading Visa ARDEF files to the interpretation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to local file.</dd>
+<dt><strong><code>parent_directory</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to execution folder.</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client name.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+<dt><strong><code>blocked</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is blocked in 1014 bytes string.</dd>
+<dt><strong><code>ebcdic</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if file is encoded in ebcdic, False if is binary.</dd>
+<dt><strong><code>encoding</code></strong> :&ensp;<code>str</code></dt>
+<dd>if 'None' and ebcdic = True then cp500 else if 'None' and ebcdic = False then 'Latin-1'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict </code></dt>
+<dd>dictionary of file data.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_visa_ardef(
+    self,
+    path_to_file: str,
+    parent_directory: str,
+    type: str,
+    log_name: str,
+    client: str,
+    hash: str,
+) -&gt; dict:
+    &#34;&#34;&#34;Method to start reading Visa ARDEF files to the interpretation
+
+    Args:
+        path_to_file (str): path to local file.
+        parent_directory (str): path to execution folder.
+        type (str): type of file.
+        log_name (str): name of log file.
+        client (str): client name.
+        hash (str): hash code of file.
+        blocked (bool): True if file is blocked in 1014 bytes string.
+        ebcdic (bool): True if file is encoded in ebcdic, False if is binary.
+        encoding (str): if &#39;None&#39; and ebcdic = True then cp500 else if &#39;None&#39; and ebcdic = False then &#39;Latin-1&#39;.
+
+    Returns:
+        dict : dictionary of file data.
+
+    &#34;&#34;&#34;
+    st_timestamp = int(float(datetime.now().timestamp()))
+    on_error = False
+    step = &#34;INTERPRETATION OF ARDEF FILE&#34;
+    module = &#34;INTERPRETATION&#34;
+
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        client,
+        &#34;VISA&#34;,
+        log_name,
+        step,
+        &#34;INFO&#34;,
+        &#34;opening file: &#34; + path_to_file,
+        module,
+    )
+
+    self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + &#34;ARDEF&#34;
+    resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+    pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        client,
+        &#34;VISA&#34;,
+        log_name,
+        step,
+        &#34;INFO&#34;,
+        &#34;Reading file: &#34; + path_to_file,
+        module,
+    )
+
+    try:
+        ardef = None
+        file_finger_print = time.time_ns()
+        status = &#34;IN PROGRESS&#34;
+        date_formated_as = datetime.now().strftime(&#34;%Y-%m-%d&#34;)
+
+        lines = []
+        versions = []
+        with open(path_to_file, &#34;r&#34;) as f:
+            for line in f:
+                if line[0:2] == &#34;VL&#34; and &#34;C****&#34; not in line:
+                    lines.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+
+                if line[0:8] == &#34;AAACTRNG&#34; and line[10:17] == &#34;AEPACRN&#34;:
+                    header_date = line[23:31]
+                    version_number = line[63:67]
+                    versions.append([version_number, header_date])
+
+        ultimate_header = [
+            version
+            for version in versions
+            if version[0] == max([version[0] for version in versions])
+        ]
+        ultimate_date = ultimate_header[0][1]
+        date_formated_as = (
+            datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+            .date()
+            .strftime(&#34;%Y-%m-%d&#34;)
+        )
+        destiny_file = (
+            datetime.strptime(str(ultimate_date), &#34;%Y%m%d&#34;)
+            .date()
+            .strftime(&#34;%y%m%d&#34;)
+        )
+
+        ultimate_version = ultimate_header[0][0]
+        date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(&#34;%Y%m%d&#34;)
+        destiny_directory = parent_directory + &#34;/RESULT/VISA/ARDEF/&#34; + destiny_file
+        pathlib.Path(destiny_directory).mkdir(parents=True, exist_ok=True)
+
+        df = pd.DataFrame(lines)
+        df.insert(0, &#34;app_file_header&#34;, date_formated_as)
+        df.insert(1, &#34;app_hash_file&#34;, hash)
+
+        df.to_csv(
+            destiny_directory
+            + &#34;/&#34;
+            + destiny_file
+            + &#34;_&#34;
+            + ultimate_version
+            + &#34;.csv&#34;,
+            index=None,
+            header=None,
+            sep=&#34;¿&#34;,
+        )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            &#34;INFO&#34;,
+            f&#34;Finished reading of file {path_to_file}&#34;,
+            module,
+        )
+        status = &#34;PROCESSED&#34;
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: str(len(df.index)),
+                &#34;file_date&#34;: date_formated_as,
+                &#34;control_message&#34;: &#34;Interpretation&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+
+        step = &#34;UPDATING STATUS OF FILE&#34;
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            step,
+            message_type,
+            &#34;Updated status: &#34; + message,
+            module,
+        )
+
+        csv_name = (
+            destiny_directory + &#34;/&#34; + destiny_file + &#34;_&#34; + ultimate_version + &#34;.csv&#34;
+        )
+        parquet_file = Utils().generate_parquet_for_visa(
+            parent_directory,
+            date_for_name,
+            csv_name,
+            &#34;ARDEF&#34;,
+            hash,
+            client,
+            status,
+            log_name,
+        )
+
+        return {
+            &#34;result&#34;: True,
+            &#34;message&#34;: &#34;Finished&#34;,
+            &#34;on_error&#34;: on_error,
+            &#34;parquet_info&#34;: parquet_file,
+            &#34;status&#34;: status,
+        }
+
+    except Exception as e:
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;INTERPRETATION OF ARDEF FILE&#34;,
+            &#34;WARNING&#34;,
+            &#34;Error reading file: &#34;
+            + path_to_file
+            + &#34; | readed rows: &#34;
+            + str(0)
+            + &#34; | exception reading file: &#34;
+            + str(e)
+            + &#34; | invalid file format&#34;,
+            module,
+        )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;INTERPRETATION OF ARDEF FILE&#34;,
+            &#34;ERROR&#34;,
+            &#34;Closed reading of file with error: &#34; + path_to_file,
+            module,
+        )
+        status = &#34;ERROR&#34;
+
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: 0,
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;UPDATING STATUS OF FILE&#34;,
+            message_type,
+            &#34;Updated status: &#34; + message,
+            module,
+        )</code></pre>
+</details>
+</dd>
+<dt id="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_file"><code class="name flex">
+<span>def <span class="ident">read_visa_file</span></span>(<span>self, path_to_file: str, parent_directory: str, type: str, log_name: str, client: str, hash: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to start reading Visa transaction files to the interpretation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_to_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to local file.</dd>
+<dt><strong><code>parent_directory</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to execution folder.</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of file.</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of log file.</dd>
+<dt><strong><code>client</code></strong> :&ensp;<code>str</code></dt>
+<dd>client name.</dd>
+<dt><strong><code>hash</code></strong> :&ensp;<code>str</code></dt>
+<dd>hash code of file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict </code></dt>
+<dd>dictionary of file data.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_visa_file(
+    self,
+    path_to_file: str,
+    parent_directory: str,
+    type: str,
+    log_name: str,
+    client: str,
+    hash: str,
+) -&gt; dict:
+    &#34;&#34;&#34;Method to start reading Visa transaction files to the interpretation
+
+    Args:
+        path_to_file (str): path to local file.
+        parent_directory (str): path to execution folder.
+        type (str): type of file.
+        log_name (str): name of log file.
+        client (str): client name.
+        hash (str): hash code of file.
+
+    Returns:
+        dict : dictionary of file data.
+
+    &#34;&#34;&#34;
+    step = &#34;INTERPRETATION OF FILE&#34;
+    module = &#34;INTERPRETATION&#34;
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        client,
+        &#34;VISA&#34;,
+        log_name,
+        step,
+        &#34;INFO&#34;,
+        &#34;opening file: &#34; + path_to_file,
+        module,
+    )
+
+    self.path_to_file_destiny = parent_directory + &#34;/&#34; + &#34;RESULT/VISA/&#34; + type
+
+    resultfilename = pathlib.Path(path_to_file).name.replace(&#34;.&#34;, &#34;_&#34;)
+    pathlib.Path(self.path_to_file_destiny).mkdir(parents=True, exist_ok=True)
+
+    log.logs().exist_file(
+        &#34;OPERATIONAL&#34;,
+        client,
+        &#34;VISA&#34;,
+        log_name,
+        step,
+        &#34;INFO&#34;,
+        &#34;Reading file: &#34; + path_to_file,
+        module,
+    )
+
+    if type == &#34;IN&#34;:
+        inc = None
+        on_error = False
+        file_finger_print = time.time_ns()
+        status = &#34;IN PROGRESS&#34;
+
+        try:
+            with open(path_to_file, &#34;r&#34;) as f:
+                first_line = f.readline()
+                header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                header_date = header_line[10:15]
+
+            datetime_header = (
+                datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                .date()
+                .strftime(&#34;%y%m%d&#34;)
+            )
+            destiny_file = datetime_header
+            date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                &#34;%Y%m%d&#34;
+            )
+            transactions = []
+            with open(path_to_file, &#34;r&#34;) as f:
+                for line in f:
+                    transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+            transactions_p = [
+                list(l) for k, l in self.group_by_header_general(transactions)
+            ]
+
+            date_formated_as = (
+                datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                .date()
+                .strftime(&#34;%Y-%m-%d&#34;)
+            )
+
+            check_reprocces = conn().select(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                    and code = &#39;{hash}&#39;
+                    &#34;&#34;&#34;,
+                &#34;count(code) as file&#34;,
+            )
+
+            if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                status = &#34;REVISION&#34;
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;FILE IS PART OF A REVISION&#34;,
+                    module,
+                )
+
+            if status == &#34;REVISION&#34;:
+                self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+            pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                parents=True, exist_ok=True
+            )
+
+            header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+            pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+            csv_name_inc = (
+                self.path_to_file_destiny
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;/&#34;
+                + destiny_file
+                + str(file_finger_print)
+                + &#34;.csv&#34;
+            )
+
+            with open(csv_name_inc, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as inc:
+                id_transaction = 1
+                for i in transactions_p:
+                    new = []
+
+                    for b in self.TCR_LIST:
+                        value = [a for a in i if int(a[5:6]) == b]
+                        if len(value) != 0:
+                            new.append(value[0])
+                        else:
+                            new.append(&#34;&#34;)
+
+                    a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                    if len(a) != 0:
+                        new[0], new[a[0]] = new[a[0]], new[0]
+                    new.insert(0, str(id_transaction))
+                    new.insert(1, client)
+                    new.insert(2, &#34;IN&#34;)
+                    new.insert(3, str(hash))
+                    new.insert(4, str(date_formated_as))
+
+                    id_transaction = id_transaction + 1
+                    r = &#34;¿&#34;.join(new)
+                    inc.write(r)
+                    inc.write(&#34;\n&#34;)
+
+            df = pd.read_csv(
+                csv_name_inc,
+                sep=&#34;¿&#34;,
+                dtype=str,
+                header=None,
+                encoding=&#34;Latin-1&#34;,
+                engine=&#34;python&#34;,
+            )
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;file_date&#34;: date_formated_as,
+                    &#34;control_message&#34;: &#34;Interpretation&#34;,
+                },
+            )
+
+            parquet_file = Utils().generate_parquet_for_visa(
+                parent_directory,
+                date_for_name,
+                csv_name_inc,
+                type,
+                hash,
+                client,
+                status,
+                log_name,
+            )
+
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+        except KeyError as ke:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if inc != None:
+                inc.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | KeyException on parameters: &#39;&#34;
+                + str(ke)
+                + &#34;&#39; key is not founded in TCR&#34;,
+                module,
+            )
+
+        except ValueError as e:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if inc != None:
+                inc.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module,
+            )
+        except Exception as e:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if inc != None:
+                inc.close()
+            os.remove(
+                self.path_to_file_destiny
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;/&#34;
+                + destiny_file
+                + str(file_finger_print)
+                + &#34;.csv&#34;
+            )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module,
+            )
+
+        if on_error:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module,
+            )
+            status = &#34;ERROR&#34;
+
+        else:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Finished read of file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(len(df.index)),
+                module,
+            )
+            if status == &#34;IN PROGRESS&#34;:
+                status = &#34;PROCESSED&#34;
+
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: str(len(df.index)),
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;UPDATING STATUS OF FILE&#34;,
+            message_type,
+            &#34;UPDATE STATUS: &#34; + message,
+            module,
+        )
+
+    if type == &#34;OUT&#34;:
+        out = None
+        on_error = False
+        file_finger_print = time.time_ns()
+        status = &#34;IN PROGRESS&#34;
+
+        try:
+            with open(path_to_file, &#34;r&#34;) as f:
+                first_line = f.readline()
+                header_line = first_line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;)
+                header_date = header_line[8:13]
+
+            datetime_header = (
+                datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                .date()
+                .strftime(&#34;%y%m%d&#34;)
+            )
+            destiny_file = datetime_header
+            date_for_name = datetime.strptime(destiny_file, &#34;%y%m%d&#34;).strftime(
+                &#34;%Y%m%d&#34;
+            )
+            transactions = []
+
+            with open(path_to_file, &#34;r&#34;) as f:
+                for line in f:
+                    transactions.append(line.replace(&#34;\n&#34;, &#34;&#34;).replace(&#34;\r&#34;, &#34;&#34;))
+            transactions_p = [
+                list(l) for k, l in self.group_by_header_general(transactions)
+            ]
+
+            date_formated_as = (
+                datetime.strptime(str(header_date), &#34;%y%j&#34;)
+                .date()
+                .strftime(&#34;%Y-%m-%d&#34;)
+            )
+
+            check_reprocces = conn().select(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;&#34;&#34;WHERE file_type = &#39;{type}&#39; and customer = &#39;{client}&#39; and brand = &#39;VI&#39;
+                    and code = &#39;{hash}&#39;
+                    &#34;&#34;&#34;,
+                &#34;count(code) as file&#34;,
+            )
+
+            if check_reprocces[0][&#34;file&#34;] &gt; 1:
+                status = &#34;REVISION&#34;
+                log.logs().exist_file(
+                    &#34;OPERATIONAL&#34;,
+                    client,
+                    &#34;VISA&#34;,
+                    log_name,
+                    step,
+                    &#34;WARNING&#34;,
+                    &#34;FILE IS PART OF A REVISION&#34;,
+                    module,
+                )
+
+            if status == &#34;REVISION&#34;:
+                self.path_to_file_destiny = self.path_to_file_destiny + &#34;/REVISION&#34;
+            pathlib.Path(self.path_to_file_destiny + &#34;/&#34; + destiny_file).mkdir(
+                parents=True, exist_ok=True
+            )
+
+            header_path = self.path_to_file_destiny + &#34;/&#34; + datetime_header + &#34;/&#34;
+            pathlib.Path(header_path).mkdir(parents=True, exist_ok=True)
+
+            csv_name_out = (
+                self.path_to_file_destiny
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;/&#34;
+                + destiny_file
+                + str(file_finger_print)
+                + &#34;.csv&#34;
+            )
+
+            with open(csv_name_out, &#34;w&#34;, encoding=&#34;Latin-1&#34;) as out:
+                id_transaction = 1
+                for i in transactions_p:
+                    new = []
+                    for b in self.TCR_LIST:
+                        value = [a for a in i if int(a[3:4]) == b]
+                        if len(value) != 0:
+                            new.append(value[0])
+                        else:
+                            new.append(&#34;&#34;)
+                    a = [i for i, x in enumerate(new) if x[0:2] == &#34;90&#34;]
+                    if len(a) != 0:
+                        new[0], new[a[0]] = new[a[0]], new[0]
+                    new.insert(0, str(id_transaction))
+                    new.insert(1, client)
+                    new.insert(2, &#34;OUT&#34;)
+                    new.insert(3, str(hash))
+                    new.insert(4, str(date_formated_as))
+                    id_transaction = id_transaction + 1
+                    r = &#34;¿&#34;.join(new)
+                    out.write(r)
+                    out.write(&#34;\n&#34;)
+
+            df = pd.read_csv(
+                csv_name_out,
+                sep=&#34;¿&#34;,
+                dtype=str,
+                encoding=&#34;Latin-1&#34;,
+                header=None,
+                engine=&#34;python&#34;,
+            )
+
+            updating = conn().update(
+                &#34;CONTROL.T_CONTROL_FILE&#34;,
+                f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+                {
+                    &#34;description_status&#34;: status,
+                    &#34;records_number&#34;: str(len(df.index)),
+                    &#34;file_date&#34;: date_formated_as,
+                    &#34;control_message&#34;: &#34;Interpretation&#34;,
+                },
+            )
+
+            parquet_file = Utils().generate_parquet_for_visa(
+                parent_directory,
+                date_for_name,
+                csv_name_out,
+                type,
+                hash,
+                client,
+                status,
+                log_name,
+            )
+
+            if updating[0]:
+                message_type = &#34;INFO&#34;
+                message = updating[1][&#34;Message&#34;]
+            else:
+                message_type = &#34;CRITICAL&#34;
+                message = (
+                    &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+                )
+
+        except KeyError as ke:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if out != None:
+                out.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | KeyException on parameters: &#39;&#34;
+                + str(ke)
+                + &#34;&#39; key is not founded in TCR&#34;,
+                module,
+            )
+
+        except ValueError as e:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if out != None:
+                out.close()
+                os.remove(
+                    self.path_to_file_destiny
+                    + &#34;/&#34;
+                    + destiny_file
+                    + &#34;/&#34;
+                    + destiny_file
+                    + str(file_finger_print)
+                    + &#34;.csv&#34;
+                )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module,
+            )
+        except Exception as e:
+            df = pd.DataFrame()
+            parquet_file = None
+            on_error = True
+            if out != None:
+                out.close()
+            os.remove(
+                self.path_to_file_destiny
+                + &#34;/&#34;
+                + destiny_file
+                + &#34;/&#34;
+                + destiny_file
+                + str(file_finger_print)
+                + &#34;.csv&#34;
+            )
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;WARNING&#34;,
+                &#34;Error reading file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(0)
+                + &#34; | exception reading file: &#34;
+                + str(e),
+                module,
+            )
+
+        if on_error:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;ERROR&#34;,
+                &#34;Closed reading of file with error: &#34; + path_to_file,
+                module,
+            )
+            status = &#34;ERROR&#34;
+
+        else:
+            log.logs().exist_file(
+                &#34;OPERATIONAL&#34;,
+                client,
+                &#34;VISA&#34;,
+                log_name,
+                step,
+                &#34;INFO&#34;,
+                &#34;Finished read of file: &#34;
+                + path_to_file
+                + &#34; | readed rows: &#34;
+                + str(len(df.index)),
+                module,
+            )
+            if status == &#34;IN PROGRESS&#34;:
+                status = &#34;PROCESSED&#34;
+
+        updating = conn().update(
+            &#34;CONTROL.T_CONTROL_FILE&#34;,
+            f&#34;WHERE process_file_name = &#39;{path_to_file}&#39;&#34;,
+            {
+                &#34;description_status&#34;: status,
+                &#34;records_number&#34;: str(len(df.index)),
+                &#34;control_message&#34;: &#34;Closed&#34;,
+            },
+        )
+        if updating[0]:
+            message_type = &#34;INFO&#34;
+            message = updating[1][&#34;Message&#34;]
+        else:
+            message_type = &#34;CRITICAL&#34;
+            message = (
+                &#34;status cannot be updated, Exception: &#34; + updating[1][&#34;Message&#34;]
+            )
+
+        log.logs().exist_file(
+            &#34;OPERATIONAL&#34;,
+            client,
+            &#34;VISA&#34;,
+            log_name,
+            &#34;UPDATING STATUS OF FILE&#34;,
+            message_type,
+            &#34;UPDATE STATUS: &#34; + message,
+            module,
+        )
+
+    return {
+        &#34;result&#34;: True,
+        &#34;message&#34;: &#34;Finished&#34;,
+        &#34;on_error&#34;: on_error,
+        &#34;parquet_info&#34;: parquet_file,
+        &#34;status&#34;: status,
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa" href="index.html">PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils">Utils</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.TCR_LIST" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.TCR_LIST">TCR_LIST</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.generate_parquet_for_visa" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.generate_parquet_for_visa">generate_parquet_for_visa</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.read_tcr_list" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.Utils.read_tcr_list">read_tcr_list</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files">read_files</a></code></h4>
+<ul class="">
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.TCR_LIST" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.TCR_LIST">TCR_LIST</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.group_by_header_general" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.group_by_header_general">group_by_header_general</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_tcr_list" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_tcr_list">read_tcr_list</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_ardef" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_ardef">read_visa_ardef</a></code></li>
+<li><code><a title="PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_file" href="#PROY-INTELICA-INTERCAMBIO-2022.Module.Interpretation.Visa.visafiles.read_files.read_visa_file">read_visa_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
