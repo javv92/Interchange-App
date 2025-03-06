@@ -19,7 +19,7 @@ pipeline {
                 SHORT_COMMIT = getShortCommitId()
                 LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
                 APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
-
+                sh (returnStdout: true, script: "aws sts get-caller-identity", label: "aws sts get-caller-identity")
                 sh (returnStdout: true, script: "aws s3 cp s3://itl-0009-devops-all-s3-main-01/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")
             }
           }
