@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 import calendar
-import pgdb
+# import pgdb
 import os
 import argparse
 import sys
@@ -12,17 +12,17 @@ import numpy as np
 import re
 import json
 from pathlib import Path
+import psycopg2
 
 
 load_dotenv()
 
-def get_secret(secret_name,aws_access_key_id,aws_secret_access_key,region_name):
+def get_secret(secret_name, region_name='us-east-1'):
 
     # Create a Secrets Manager client
     session = boto3.session.Session()
     client = session.client(
-        service_name='secretsmanager',aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key,
+        service_name='secretsmanager',
         region_name=region_name
     )
 
@@ -61,7 +61,8 @@ def cnn_postgresql(secret_data):
         db_port = secret_data['port']
         db_username = secret_data['username']
         db_password = secret_data['password']
-        connection = pgdb.Connection(
+#         connection = pgdb.Connection(
+        connection = psycopg2.connect(
             database=db_name,
             user=db_username,
             password=db_password,
@@ -84,10 +85,8 @@ def query_to_dataframe(connection, query):
     cursor.close()
     return pd.DataFrame(data, columns=columns)
 
-def invoke_lambda(function_name, payload_json,aws_access_key_id,aws_secret_access_key):
-    lambda_client = boto3.client('lambda',
-    aws_access_key_id=aws_access_key_id,
-    aws_secret_access_key=aws_secret_access_key, region_name='us-east-1')  # Cambia la región si es necesario
+def invoke_lambda(function_name, payload_json):
+    lambda_client = boto3.client('lambda', region_name='us-east-1')  # Cambia la región si es necesario
     try:
         response = lambda_client.invoke(
             FunctionName=function_name,
@@ -102,8 +101,8 @@ def invoke_lambda(function_name, payload_json,aws_access_key_id,aws_secret_acces
 
 if __name__ == "__main__":
     aws_key = os.getenv("USER_NOTIFICATION_AWS_KEY")
-    aws_access_key = os.getenv("USER_NOTIFICATION_AWS_ACCESS_KEY") 
-    secret_data = get_secret(os.getenv("SECRET_RDS"),aws_key,aws_access_key,os.getenv("REGION_NAME"))
+    aws_access_key = os.getenv("USER_NOTIFICATION_AWS_ACCESS_KEY")
+    secret_data = get_secret(os.getenv("SECRET_RDS"))
     cnn = cnn_postgresql(secret_data)
     q_list = "select name,code  from control.t_customer where status = 'ACTIVE'"
     df_clients = query_to_dataframe(cnn, q_list)
@@ -187,7 +186,7 @@ if __name__ == "__main__":
             print(">> JSON CREATED")
             event_payload_json = json.dumps(send_email)
             print(">> Invoke Lambda to send email")
-            invoke_lambda('app-interchange-lambda-send-email-prod', event_payload_json,aws_access_key_id,aws_secret_access_key)
+            invoke_lambda(os.getenv("SEND_MAIL_LAMBDA_NAME"), event_payload_json)
         else:
             print(">> THERE ARE NO ITEMS TO REPORT.")
         print(">> End Date: " + str(datetime.now()))

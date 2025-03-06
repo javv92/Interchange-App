@@ -7,7 +7,7 @@ import Module.GetFiles.getfiles as getfiles
 import pandas as pd
 import Module.Logs.logs as log
 import urllib.parse
-
+import traceback
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -16,50 +16,65 @@ os.chdir(dname)
 route = r"/home/ec2-user/interchange/main.py"
 
 AWS_REGION = "us-east-1"
+ACCOUNT_ID = boto3.client('sts').get_caller_identity().get('Account')
+# QUEUE_URL = f"https://sqs.us-east-1.amazonaws.com/818835242461/app-interchange-"
+QUEUE_NAME = "itl-0004-itx-%s-sqs-app-%s-01"  # (dev, client)
+QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/%s/%s"  # (ACCOUNT_ID, QUEUE_NAME)
 
-QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/818835242461/app-interchange-"
 
 def get_message(client: str) -> str:
-	"""get_message method, its main role is to read the differet queues and get the message with the information to process
+    """get_message method, its main role is to read the differet queues and get the message with the information to process
 
-	Args:
-			client (str): client code.
+    Args:
+            client (str): client code.
 
-	Returns:
-			message: exit message
-	"""
-	try:
-		queue_name = "app-interchange-%s-sqs-%s" % (client.lower(), env_type)
-		queue = sqs.get_queue_by_name(QueueName=queue_name)
-		mssg_in_flight = queue.attributes.get("ApproximateNumberOfMessagesNotVisible")
-		if mssg_in_flight == "0":
-			try:
-				response = sqs_client.receive_message(
-					QueueUrl=QUEUE_URL + client.lower() + "-sqs-" + env_type,
-					MaxNumberOfMessages=1,
-					WaitTimeSeconds=10,
-				)
-				if len(response.get("Messages", [])) > 0:
-					messages = response.get("Messages", [])
-					message = messages[0]
-					return message
-				else:
-					return None
-			except:
-				None
-		else:
-			return None
-	except:
-		None
+    Returns:
+            message: exit message
+    """
+    try:
+        # queue_name = "app-interchange-%s-sqs-%s" % (client.lower(), env_type)
+        queue_name = QUEUE_NAME % (env_type, client.lower())
+
+        print("queue_name", queue_name)
+        print("QUEUE_URL", QUEUE_URL % (ACCOUNT_ID, queue_name))
+
+        queue = sqs.get_queue_by_name(QueueName=queue_name)
+        mssg_in_flight = queue.attributes.get("ApproximateNumberOfMessagesNotVisible")
+        if mssg_in_flight == "0":
+            try:
+                response = sqs_client.receive_message(
+                    # QueueUrl=QUEUE_URL + client.lower() + "-sqs-" + env_type,
+                    QueueUrl=QUEUE_URL % (ACCOUNT_ID, queue_name),
+                    MaxNumberOfMessages=1,
+                    WaitTimeSeconds=10,
+                )
+                if len(response.get("Messages", [])) > 0:
+                    messages = response.get("Messages", [])
+                    message = messages[0]
+                    return message
+                else:
+                    return None
+            except Exception as e:
+                print("An error occurred:")
+                traceback.print_exc()
+                None
+        else:
+            return None
+    except Exception as e:
+        print("An error occurred:")
+        traceback.print_exc()
+        None
 
 
 def delete_sqs_message(receipt_handle: str, client: str) -> None:
-	"""Delete received message from queue"""
-	sqs_client.delete_message(
-		QueueUrl=QUEUE_URL + client.lower() + "-sqs-" + env_type,
-		ReceiptHandle=receipt_handle,
-	)
-	return None
+    """Delete received message from queue"""
+    queue_name = QUEUE_NAME % (env_type, client.lower())
+    sqs_client.delete_message(
+        # QueueUrl=QUEUE_URL + client.lower() + "-sqs-" + env_type,
+        QueueUrl=QUEUE_URL % (ACCOUNT_ID, queue_name),
+        ReceiptHandle=receipt_handle,
+    )
+    return None
 
 
 def get_args(message) -> tuple:
@@ -116,22 +131,22 @@ def process_task(
 
 
 if __name__ == "__main__":
-	"""Executor for threads for sqs listener."""
-	num_threads = 4
-	module_name = "ORCHESTRATOR"
-	sqs_client = boto3.client(
-	"sqs",
-	region_name=AWS_REGION,
-	aws_access_key_id="AKIA35JTCHXOT4RKHYQR",
-	aws_secret_access_key="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",
-	)
+    """Executor for threads for sqs listener."""
+    num_threads = 4
+    module_name = "ORCHESTRATOR"
+    sqs_client = boto3.client(
+        "sqs",
+        region_name=AWS_REGION,
+        # aws_access_key_id="AKIA35JTCHXOT4RKHYQR",
+        # aws_secret_access_key="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",
+    )
 
-	sqs = boto3.resource(
-	"sqs",
-	region_name=AWS_REGION,
-	aws_access_key_id="AKIA35JTCHXOT4RKHYQR",
-	aws_secret_access_key="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",
-	)
+    sqs = boto3.resource(
+        "sqs",
+        region_name=AWS_REGION,
+        # aws_access_key_id="AKIA35JTCHXOT4RKHYQR",
+        # aws_secret_access_key="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",
+    )
 
 	get_files = getfiles.get_files()
 

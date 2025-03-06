@@ -38,15 +38,15 @@ class connect_to_s3:
             buckets = self.get_buckets()
             if bucket in buckets:
                 aws_region = os.getenv("AWS_DEFAULT_REGION_1", "us-west-2")
-                aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID_1", "")
-                aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY_1", "")
+                # aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID_1", "")
+                # aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY_1", "")
             else:
                 print("CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script")
                 sys.exit()
             return [
                 aws_region,
-                aws_access_key_id,
-                aws_secret_key,
+                # aws_access_key_id,
+                # aws_secret_key,
             ]
         except Exception as error:
             print("CRITICAL ERROR, BUCKET IS NOT FOUND. Terminating script")
@@ -65,8 +65,8 @@ class connect_to_s3:
             s3 = boto3.resource(
                 service_name="s3",
                 region_name=credentials[0],
-                aws_access_key_id=credentials[1],
-                aws_secret_access_key=credentials[2],
+                # aws_access_key_id=credentials[1],
+                # aws_secret_access_key=credentials[2],
             )
             return s3
         except Exception as error:
@@ -287,6 +287,7 @@ class connect_to_postgreSQL:
             conn.close()
             return result_message
         except Exception as e:
+            print(e)
             raise
 
     def insert_log(self, records_list) -> str:
