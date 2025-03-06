@@ -21,7 +21,7 @@ pipeline {
                 APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
 
                 //sh (returnStdout: true, script: "aws s3 cp s3://itl-0009-devops-all-s3-main-01/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")
-                sh (returnStdout: true, script: "echo $(aws sts get-caller-identity)", label: "Download config file")
+                sh (returnStdout: true, script: "aws sts get-caller-identity", label: "Download config file")
             }
           }
         }
