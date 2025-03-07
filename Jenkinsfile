@@ -12,18 +12,20 @@ pipeline {
     }
 
     stages {
-        stage("Setup srtifactk bucket"){
-            script{
-                switch (ENVIRONMENT) {
-                    case "dev":
-                        ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
-                        break
-                    case "prd":
-                        ARTIFACT_BUCKET = "intelica-devops"
-                        break
-                    default:
-                        rds_endpoint = ""
-                }
+        stage("Setup artifactk bucket"){
+            steps{
+                script{
+                    switch (ENVIRONMENT) {
+                        case "dev":
+                            ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
+                            break
+                        case "prd":
+                            ARTIFACT_BUCKET = "intelica-devops"
+                            break
+                        default:
+                            rds_endpoint = ""
+                    }
+                }            
             }            
         }
         stage('Preparing Configurations'){
@@ -87,7 +89,7 @@ pipeline {
             }
         }*/
 
-        stage("Infrastructure Provisioning"{
+        /*stage("Infrastructure Provisioning"{
             script{
                 switch (ENVIRONMENT) {
                     case "dev":
@@ -106,7 +108,7 @@ pipeline {
                         rds_endpoint = ""
                 }
             }            
-        })
+        })*/
 
         stage('Deploying Lambda App') {
             steps {
