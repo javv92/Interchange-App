@@ -12,10 +12,10 @@ pipeline {
     }
 
     stages {
-        stage("Setup artifactk bucket"){
+        stage("Setup srtifactk bucket"){
             steps{
                 script{
-                    switch (ENVIRONMENT) {
+                switch (ENVIRONMENT) {
                         case "dev":
                             ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
                             break
@@ -26,7 +26,7 @@ pipeline {
                             rds_endpoint = ""
                     }
                 }            
-            }            
+            }
         }
         stage('Preparing Configurations'){
           steps {
