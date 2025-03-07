@@ -15,21 +15,30 @@ pipeline {
 
         stage('Preparing Configurations'){
           steps {
+            switch (ENVIRONMENT) {
+                case "dev":
+                    ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
+                    break
+                case "prd":
+                    ARTIFACT_BUCKET = "intelica-devops"
+                    break
+                default:
+                    rds_endpoint = ""
+            }
             script{
                 SHORT_COMMIT = getShortCommitId()
                 LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
                 APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
 
-                //sh (returnStdout: true, script: "aws s3 cp s3://itl-0009-devops-all-s3-main-01/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")                
-                sh (returnStdout: true, script: "aws s3 ls", label: "Download config file")                
+                sh (returnStdout: true, script: "aws s3 cp s3://${ARTIFACT_BUCKET}/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")                
             }
           }
         }
 
-        stage('Infrastructure Provisioning'){
+        /*stage('Infrastructure Provisioning'){
             steps {
                 script {
-                    sh (returnStdout: true, script: "aws s3 cp infrastructure/cfn-main-template.yaml s3://itl-0009-devops-all-s3-main-01/app-interchange/cloudformation-templates/${ENVIRONMENT}/cfn-main-template.yaml", label: "Uploading from s3")
+                    sh (returnStdout: true, script: "aws s3 cp infrastructure/cfn-main-template.yaml s3://${ARTIFACT_BUCKET}/app-interchange/cloudformation-templates/${ENVIRONMENT}/cfn-main-template.yaml", label: "Uploading from s3")
 
                     dir('infrastructure'){
 
@@ -68,10 +77,31 @@ pipeline {
                           OPENSEARCH_SECRET = jsonResult.Stacks[0].Outputs.find {element -> element.OutputKey == 'OpenSearchSecret'}.OutputValue
                           RDS_AURORA_SECRET = jsonResult.Stacks[0].Outputs.find {element -> element.OutputKey == 'RdsAuroraSecret'}.OutputValue
                           RDS_INSTANCE_ENDPOINT = rds_endpoint
+                          CODE_DEPLOY_APPLICATION = "Application-app-interchange"
+                          CODE_DEPLOY_DEPLOYMENT_GROUP = "Dg-app-interchange-${ENVIRONMENT}"
                     }
                 }
             }
-        }
+        }*/
+
+        stage("Infrastructure Provisioning"{
+            switch (ENVIRONMENT) {
+                case "dev":
+                    LAMBDA_APP_ARN = "arn:aws:lambda:us-east-1:861276092327:function:itl-0004-itx-dev-lmbd-app-01"
+                    OPENSEARCH_URL = "https://search-itl-0004-itx-dev-srch-01-ybnsgoolbtvgknoqz5qndmfsd4.us-east-1.es.amazonaws.com"
+                    OPENSEARCH_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-opensearch-01-mZ3zDb"
+                    RDS_AURORA_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-rds-app-01-m7jFud"
+                    RDS_INSTANCE_ENDPOINT = "itl-0004-itx-dev-rds-app-01.cluster-ca5ywgwaoh7p.us-east-1.rds.amazonaws.com"
+                    CODE_DEPLOY_APPLICATION = "itl-0004-itx-all-codedeploy-ec2-app-01"
+                    CODE_DEPLOY_DEPLOYMENT_GROUP = "itl-0004-itx-all-codedeploy-ec2-app-dev-01-dg"
+                    break
+                case "prd":
+                    rds_endpoint = "app-interchange-aurora-priv-cluster-prd-cluster.cluster-cf3zxr6zcsiz.us-east-1.rds.amazonaws.com"
+                    break
+                default:
+                    rds_endpoint = ""
+            }
+        })
 
         stage('Deploying Lambda App') {
             steps {
@@ -79,7 +109,7 @@ pipeline {
                     dir('Lambdas/lambda_app'){
                         sh (returnStdout: false, script: "zip -r ${LAMBDA_APP_ZIP_NAME} *", label: "Compressing files ..." )
 
-                        sh (returnStdout: true, script: "aws s3 cp ${LAMBDA_APP_ZIP_NAME} s3://itl-0009-devops-all-s3-main-01/app-interchange/builds/${ENVIRONMENT}/lambda-app/", label: "Uploading to s3")
+                        sh (returnStdout: true, script: "aws s3 cp ${LAMBDA_APP_ZIP_NAME} s3://${ARTIFACT_BUCKET}/app-interchange/builds/${ENVIRONMENT}/lambda-app/", label: "Uploading to s3")
 
                         def scriptString = "aws lambda update-function-code \
                                           --function-name ${LAMBDA_APP_ARN} \
@@ -130,13 +160,13 @@ pipeline {
 
                     sh (returnStdout: false, script: "zip -ur ${APP_ZIP_NAME} *.py .env", label: "Compressing python files ..." )
 
-                    sh (returnStdout: false, script: "aws s3 cp ${APP_ZIP_NAME} s3://itl-0009-devops-all-s3-main-01/app-interchange/builds/${ENVIRONMENT}/ec2-app/", label: "Uploading to s3")
+                    sh (returnStdout: false, script: "aws s3 cp ${APP_ZIP_NAME} s3://${ARTIFACT_BUCKET}/app-interchange/builds/${ENVIRONMENT}/ec2-app/", label: "Uploading to s3")
 
                     def deployment = sh (returnStdout: true, script: "aws deploy create-deployment \
-                        --application-name Application-app-interchange \
-                        --deployment-group-name Dg-app-interchange-${ENVIRONMENT} \
+                        --application-name ${CODE_DEPLOY_APPLICATION} \
+                        --deployment-group-name ${CODE_DEPLOY_DEPLOYMENT_GROUP} \
                         --file-exists-behavior OVERWRITE --ignore-application-stop-failures \
-                        --s3-location bucket=itl-0009-devops-all-s3-main-01,bundleType=zip,key=app-interchange/builds/${ENVIRONMENT}/ec2-app/${APP_ZIP_NAME}", label: "Deploying App ...")
+                        --s3-location bucket=${ARTIFACT_BUCKET},bundleType=zip,key=app-interchange/builds/${ENVIRONMENT}/ec2-app/${APP_ZIP_NAME}", label: "Deploying App ...")
 
                     def jsonResult = readJSON text: deployment
 
