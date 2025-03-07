@@ -12,9 +12,7 @@ pipeline {
     }
 
     stages {
-
-        stage('Preparing Configurations'){
-          steps {
+        stage("Setup srtifactk bucket"){
             switch (ENVIRONMENT) {
                 case "dev":
                     ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
@@ -25,6 +23,9 @@ pipeline {
                 default:
                     rds_endpoint = ""
             }
+        }
+        stage('Preparing Configurations'){
+          steps {
             script{
                 SHORT_COMMIT = getShortCommitId()
                 LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
