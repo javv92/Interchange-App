@@ -12,10 +12,10 @@ pipeline {
     }
 
     stages {
-        stage("Setup srtifactk bucket"){
-            steps{
+        stage('Preparing Configurations'){
+            steps {
                 script{
-                switch (ENVIRONMENT) {
+                    switch (ENVIRONMENT) {
                         case "dev":
                             ARTIFACT_BUCKET = "itl-0009-devops-all-s3-main-01"
                             break
@@ -23,21 +23,16 @@ pipeline {
                             ARTIFACT_BUCKET = "intelica-devops"
                             break
                         default:
-                            rds_endpoint = ""
+                            ARTIFACT_BUCKET = ""
                     }
-                }            
-            }
-        }
-        stage('Preparing Configurations'){
-          steps {
-            script{
-                SHORT_COMMIT = getShortCommitId()
-                LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
-                APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
 
-                sh (returnStdout: true, script: "aws s3 cp s3://${ARTIFACT_BUCKET}/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")                
+                    SHORT_COMMIT = getShortCommitId()
+                    LAMBDA_APP_ZIP_NAME = "Lambda-app-${SHORT_COMMIT}.zip"
+                    APP_ZIP_NAME = "App-${SHORT_COMMIT}.zip"
+
+                    sh (returnStdout: true, script: "aws s3 cp s3://${ARTIFACT_BUCKET}/app-interchange/config/${ENVIRONMENT}/.env ${workspace}/.env", label: "Download config file")                
+                }
             }
-          }
         }
 
         /*stage('Infrastructure Provisioning'){
@@ -89,26 +84,28 @@ pipeline {
             }
         }*/
 
-        /*stage("Infrastructure Provisioning"{
-            script{
-                switch (ENVIRONMENT) {
-                    case "dev":
-                        LAMBDA_APP_ARN = "arn:aws:lambda:us-east-1:861276092327:function:itl-0004-itx-dev-lmbd-app-01"
-                        OPENSEARCH_URL = "https://search-itl-0004-itx-dev-srch-01-ybnsgoolbtvgknoqz5qndmfsd4.us-east-1.es.amazonaws.com"
-                        OPENSEARCH_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-opensearch-01-mZ3zDb"
-                        RDS_AURORA_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-rds-app-01-m7jFud"
-                        RDS_INSTANCE_ENDPOINT = "itl-0004-itx-dev-rds-app-01.cluster-ca5ywgwaoh7p.us-east-1.rds.amazonaws.com"
-                        CODE_DEPLOY_APPLICATION = "itl-0004-itx-all-codedeploy-ec2-app-01"
-                        CODE_DEPLOY_DEPLOYMENT_GROUP = "itl-0004-itx-all-codedeploy-ec2-app-dev-01-dg"
-                        break
-                    case "prd":
-                        rds_endpoint = "app-interchange-aurora-priv-cluster-prd-cluster.cluster-cf3zxr6zcsiz.us-east-1.rds.amazonaws.com"
-                        break
-                    default:
-                        rds_endpoint = ""
-                }
-            }            
-        })*/
+        stage("Infrastructure Provisioning"){
+            steps {
+                script{
+                    switch (ENVIRONMENT) {
+                        case "dev":
+                            LAMBDA_APP_ARN = "arn:aws:lambda:us-east-1:861276092327:function:itl-0004-itx-dev-lmbd-app-01"
+                            OPENSEARCH_URL = "https://search-itl-0004-itx-dev-srch-01-ybnsgoolbtvgknoqz5qndmfsd4.us-east-1.es.amazonaws.com"
+                            OPENSEARCH_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-opensearch-01-mZ3zDb"
+                            RDS_AURORA_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-rds-app-01-m7jFud"
+                            RDS_INSTANCE_ENDPOINT = "itl-0004-itx-dev-rds-app-01.cluster-ca5ywgwaoh7p.us-east-1.rds.amazonaws.com"
+                            CODE_DEPLOY_APPLICATION = "itl-0004-itx-all-codedeploy-ec2-app-01"
+                            CODE_DEPLOY_DEPLOYMENT_GROUP = "itl-0004-itx-all-codedeploy-ec2-app-dev-01-dg"
+                            break
+                        case "prd":
+                            rds_endpoint = "app-interchange-aurora-priv-cluster-prd-cluster.cluster-cf3zxr6zcsiz.us-east-1.rds.amazonaws.com"
+                            break
+                        default:
+                            rds_endpoint = ""
+                    }
+                }    
+            }
+        }
 
         stage('Deploying Lambda App') {
             steps {
