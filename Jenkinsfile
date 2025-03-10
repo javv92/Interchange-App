@@ -118,7 +118,7 @@ pipeline {
                         def scriptString = "aws lambda update-function-code \
                                           --function-name ${LAMBDA_APP_ARN} \
                                           --s3-bucke ${ARTIFACT_BUCKET} \
-                                          --s3-key app-interchange/builds/${ENVIRONMENT}/lambda-app/${LAMBDA_APP_ZIP_NAME}
+                                          --s3-key app-interchange/builds/${ENVIRONMENT}/lambda-app/${LAMBDA_APP_ZIP_NAME}"
                                           //--zip-file fileb://${LAMBDA_APP_ZIP_NAME}"
                         sh (returnStdout: false, script: scriptString, label: "Deploying Lambda App ..." )
                     }
