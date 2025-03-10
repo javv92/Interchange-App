@@ -94,8 +94,8 @@ pipeline {
                             OPENSEARCH_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-opensearch-01-mZ3zDb"
                             RDS_AURORA_SECRET = "arn:aws:secretsmanager:us-east-1:861276092327:secret:itl-0004-itx-dev-secret-rds-app-01-m7jFud"
                             RDS_INSTANCE_ENDPOINT = "itl-0004-itx-dev-rds-app-01.cluster-ca5ywgwaoh7p.us-east-1.rds.amazonaws.com"
-                            CODE_DEPLOY_APPLICATION = "itl-0004-itx-all-codedeploy-ec2-app-01"
-                            CODE_DEPLOY_DEPLOYMENT_GROUP = "itl-0004-itx-all-codedeploy-ec2-app-dev-01-dg"
+                            CODE_DEPLOY_APPLICATION = "itl-0004-itx-dev-codedeploy-ec2-app-01"
+                            CODE_DEPLOY_DEPLOYMENT_GROUP = "itl-0004-itx-dev-codedeploy-ec2-app-main-01-dg"
                             break
                         case "prd":
                             rds_endpoint = "app-interchange-aurora-priv-cluster-prd-cluster.cluster-cf3zxr6zcsiz.us-east-1.rds.amazonaws.com"
